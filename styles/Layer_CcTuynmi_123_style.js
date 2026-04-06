@@ -1,7 +1,7 @@
 var size = 0;
 var placement = 'point';
 
-var style_nearbyProvince_25 = function(feature, resolution){
+var style_Layer_CcTuynmi_123 = function(feature, resolution){
     var context = {
         feature: feature,
         variables: {}
@@ -21,7 +21,12 @@ var style_nearbyProvince_25 = function(feature, resolution){
         labelText = String("");
     }
     var style = [ new ol.style.Style({
-        stroke: new ol.style.Stroke({color: 'rgba(255,159,127,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 0.988}),
+        stroke: new ol.style.Stroke({color: 'rgba(255,0,0,1.0)', lineDash: null, lineCap: 'round', lineJoin: 'round', width: 5.699999999999999}),
+        text: createTextStyle(feature, resolution, labelText, labelFont,
+                              labelFill, placement, bufferColor,
+                              bufferWidth)
+    }),new ol.style.Style({
+        stroke: new ol.style.Stroke({color: 'rgba(250,255,255,1.0)', lineDash: [12.7115168,6.3557584], lineCap: 'round', lineJoin: 'round', width: 3.1778792}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)

@@ -1,7 +1,7 @@
 var size = 0;
 var placement = 'point';
 
-var style_nearbyProvince_25 = function(feature, resolution){
+var style_DSDT1_64 = function(feature, resolution){
     var context = {
         feature: feature,
         variables: {}
@@ -21,7 +21,7 @@ var style_nearbyProvince_25 = function(feature, resolution){
         labelText = String("");
     }
     var style = [ new ol.style.Style({
-        stroke: new ol.style.Stroke({color: 'rgba(255,159,127,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 0.988}),
+        stroke: new ol.style.Stroke({color: 'rgba(0,0,255,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2.508}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
