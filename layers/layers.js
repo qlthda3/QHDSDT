@@ -49,6 +49,7 @@ var wms_layers = [];
             'title': 'Google Road',
             'opacity': 1.000000,
             
+            className: 'grayscale-basemap',
             
             source: new ol.source.XYZ({
             attributions: '&nbsp;&middot; <a href="https://www.google.at/permissions/geoguidelines/attr-guide.html">Map data ©2015 Google</a>',
