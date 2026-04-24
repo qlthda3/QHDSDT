@@ -1,0 +1,4738 @@
+var wms_layers = [];
+
+
+        var lyr_OSMStandard_0 = new ol.layer.Tile({
+            'title': 'OSM Standard',
+            'opacity': 1.000000,
+            
+            
+            source: new ol.source.XYZ({
+            attributions: '&nbsp;&middot; <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors, CC-BY-SA</a>',
+                url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
+            })
+        });
+
+        var lyr_GoogleTraffic_1 = new ol.layer.Tile({
+            'title': 'Google Traffic',
+            'opacity': 1.000000,
+            
+            
+            source: new ol.source.XYZ({
+            attributions: '&nbsp;&middot; <a href="https://www.google.at/permissions/geoguidelines/attr-guide.html">Map data ©2015 Google</a>',
+                url: 'https://mt1.google.com/vt?lyrs=h@159000000,traffic|seconds_into_week:-1&style=3&x={x}&y={y}&z={z}'
+            })
+        });
+
+        var lyr_GoogleTerrain_2 = new ol.layer.Tile({
+            'title': 'Google Terrain',
+            'opacity': 1.000000,
+            
+            
+            source: new ol.source.XYZ({
+            attributions: '&nbsp;&middot; <a href="https://www.google.at/permissions/geoguidelines/attr-guide.html">Map data ©2015 Google</a>',
+                url: 'https://mt1.google.com/vt/lyrs=p&x={x}&y={y}&z={z}'
+            })
+        });
+
+        var lyr_GoogleSatellite_3 = new ol.layer.Tile({
+            'title': 'Google Satellite',
+            'opacity': 1.000000,
+            
+            
+            source: new ol.source.XYZ({
+            attributions: '&nbsp;&middot; <a href="https://www.google.at/permissions/geoguidelines/attr-guide.html">Map data ©2015 Google</a>',
+                url: 'https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}'
+            })
+        });
+
+        var lyr_GoogleRoad_4 = new ol.layer.Tile({
+            'title': 'Google Road',
+            'opacity': 1.000000,
+            
+            
+            source: new ol.source.XYZ({
+            attributions: '&nbsp;&middot; <a href="https://www.google.at/permissions/geoguidelines/attr-guide.html">Map data ©2015 Google</a>',
+                url: 'https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}'
+            })
+        });
+
+        var lyr_GoogleLabels_5 = new ol.layer.Tile({
+            'title': 'Google Labels',
+            'opacity': 1.000000,
+            
+            
+            source: new ol.source.XYZ({
+            attributions: '&nbsp;&middot; <a href="https://www.google.at/permissions/geoguidelines/attr-guide.html">Map data ©2015 Google</a>',
+                url: 'https://mt1.google.com/vt/lyrs=h&x={x}&y={y}&z={z}'
+            })
+        });
+
+        var lyr_GoogleHybrid_6 = new ol.layer.Tile({
+            'title': 'Google Hybrid',
+            'opacity': 1.000000,
+            
+            
+            source: new ol.source.XYZ({
+            attributions: '&nbsp;&middot; <a href="https://www.google.at/permissions/geoguidelines/attr-guide.html">Map data ©2015 Google</a>',
+                url: 'https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}'
+            })
+        });
+var format_SDDSonTay_7 = new ol.format.GeoJSON();
+var features_SDDSonTay_7 = format_SDDSonTay_7.readFeatures(json_SDDSonTay_7, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_SDDSonTay_7 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_SDDSonTay_7.addFeatures(features_SDDSonTay_7);
+var lyr_SDDSonTay_7 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_SDDSonTay_7, 
+                style: style_SDDSonTay_7,
+                popuplayertitle: 'SDD Son Tay',
+                interactive: true,
+    title: 'SDD Son Tay<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUDleu/iXG8IqBDMD2ikGM5ZcYw6vPOkzPyDGA9/r//0zkaEQGowaMGjBqAASwsL1lFOW9/v8/OZrZXjGIAQC+8hAA09oemgAAAABJRU5ErkJggg==" /> -H-Cayxanh-CV<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMU9hWu/iXw6xUDGYDtA5sYyy+BX68+K35+Ro4BvA94/zORoxEZjBowasCoARDAwvaBTZT3Ae9/cjSzvWcTAwDvtBEB+mMcYAAAAABJRU5ErkJggg==" /> -H-Cayxanh-CV dvo<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMU9hWu/iXw6xUDGYDtA5sYyy+BX68+K35+Ro4BvA94/zORoxEZjBowasCoARDAwvaBTZT3Ae9/cjSzvWcTAwDvtBEB+mMcYAAAAABJRU5ErkJggg==" /> @ Cay xanh khu vuc<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWOMbPWtltQUeMVABnh5/YMYi6SmwCu9QMVn5BhwmenBfyZyNCKDUQNGDRg1AAJYXtz4IMq48cF/cjS/vPZeDADvNxNcbTEzKAAAAABJRU5ErkJggg==" /> @_Cay an Qua<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUDleu/iXG8IqBDMD2ikGM5ZcYw6vPOkzPyDGA9/r//0zkaEQGowaMGjBqAASwsL1lFOW9/v8/OZrZXjGIAQC+8hAA09oemgAAAABJRU5ErkJggg==" /> @_Cay Xanh<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUNhOu/sX+6xUDGYDtJ5sYyy/2X68+831+Ro4BvJ94/zORoxEZjBowasCoARDAwvaTTZT3E+9/cjSz/WQTAwBtBxEFDB8HzQAAAABJRU5ErkJggg==" /> @_Cay xanh thanh pho<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> @_Cong Cong<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> @_cong cong KV<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsNRCu1mT99YqBDHD9N5sYiybrr1eBPJ+fkWMA01fe/0zkaEQxZNSAUQNGDWBgYGBgYLnxm01041fe/+RovvaLTQwAp54SPu7fbdgAAAAASUVORK5CYII=" /> @_CX Cach Ly<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbs2o/qUp94qBDMB2/YkYyy9NuVefAy2ekWMAL9PJ/0zkaEQGowaMGjBqAASwsN14LMq7kfE/OZrZrj0RAwC/sxFvxSmGeQAAAABJRU5ErkJggg==" /> @_Du Lich<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUNmit/sWq+YqBDMD2+7oYyy9WzVefeQKfkWMA71em/0zkaEQGowaMGjBqAASwsP2+Icr7deN/cjSz/bomBgClKhI+FHIc5gAAAABJRU5ErkJggg==" /> @_Mat Nuoc<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUNmit/sWq+YqBDMD2+7oYyy9WzVefeQKfkWMA71em/0zkaEQGowaMGjBqAASwsP2+Icr7deN/cjSz/bomBgClKhI+FHIc5gAAAABJRU5ErkJggg==" /> @_matnuoc_hat<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUNmit/sWq+YqBDMD2+7oYyy9WzVefeQKfkWMA71em/0zkaEQGowaMGjBqAASwsP2+Icr7deN/cjSz/bomBgClKhI+FHIc5gAAAABJRU5ErkJggg==" /> @_Nc New Hatch<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMyMiolpOTe8VABnjy5IkYi5yc3CsLC4tn5Bhw8uTJ/0zkaEQGowaMGjBqAASwPH78WJSRkfE/OZqfPHkiBgBk+hKLgA4SMwAAAABJRU5ErkJggg==" /> @_ngiadia_hat<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMU9hWu/iXw6xUDGYDtA5sYyy+BX68+K35+Ro4BvA94/zORoxEZjBowasCoARDAwvaBTZT3Ae9/cjSzvWcTAwDvtBEB+mMcYAAAAABJRU5ErkJggg==" /> @_Nong Nghiep<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9RWu1hT49YqBDHD9A5sYi6bAr1eBip+fkWMA0wPe/0zkaEQxZNSAUQNGDWBgYGBgYLnxgU104wPe/+RovvaeTQwARmUSO36KjtAAAAAASUVORK5CYII=" /> @_O Moi<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFfat1vwl8IqBDHCd7YMYi+YvgVeBnxWfkWMAE++D/0zkaEQxZNSAUQNGDWBgYGBgYLnB9kF0I++D/+Rovsb2XgwARG4SO/87kkUAAAAASUVORK5CYII=" /> @_Truong Dai Hoc<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPM83WqlhfgecVABnj44YsYi7wAzyt7RYln5Bhw9MHL/0zkaEQGowaMGjBqAASwPPnwVfTog5f/ydH84P0XMQCAhBTw00BrFQAAAABJRU5ErkJggg==" /> 08_Hatch<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWOM9G2tlhTQfMVABnj54boYi6SA5is9xcBn5Bhw+QHTfyZyNCKDUQNGDRg1AAJYXny4Icr4YON/cjS/fH9NDADv9BNcEOnohQAAAABJRU5ErkJggg==" /> 2-h cn<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMNxOuFmP/9YqBDPDqJ5sYixj7r1c6fJ+fkWPA9U+8/5nI0YgMRg0YNWDUAAhgefuTTfT6J97/5Gh+9ZNNDAA3YxL9FCDhxwAAAABJRU5ErkJggg==" /> 2-h coquan<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMdzOrFhNgf8VABnj14acYi5gA+ysdOb5n5BhwnfHTfyZyNCKDUQNGDRg1AAJY3n78KXr98af/5Gh+9eGnGAB0IhQQ1FGnLwAAAABJRU5ErkJggg==" /> 2-h o co<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP0bRWuFtD89YqBDPDhOpsYi4Dmr1eKgZ+fkWPAAybe/0zkaEQGowaMGjBqAASwfLjBJvpgI+9/cjS/v8YmBgBHIhI7UEfUSAAAAABJRU5ErkJggg==" /> 2-h o lxom-cxanh<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMCxeulhf79YqBDPDwFZsYi7zYr1f2Op+fkWPA0eu8/5nI0YgMRg0YNWDUAAhgefKWTfTodd7/5Gh+8IpNDACEHRL2noaVewAAAABJRU5ErkJggg==" /> 2-h o Pho cu<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP0bW2tFtDUfMVABvhw/boYi4Cm5ivFwMBn5BjwgInpPxM5GpHBqAGjBowaAAEsH27cEH2wceN/cjS/v3ZNDACbUBN1oleE4wAAAABJRU5ErkJggg==" /> 2009-10-17.Ban nen2$0$mauho<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP09fWtFhYWfsVABnj//r0Yi7Cw8CtVVdVn5Bhw586d/0zkaEQGowaMGjBqAASwvH37VpSRkfE/OZrfvXsnBgCTDRJVuwLlWgAAAABJRU5ErkJggg==" /> Baidoxe<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> CCC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMzxOuFpP/9YqBDPDqIZsYi5j8r1c69p+fkWPA9aO8/5nI0YgMRg0YNWDUAAhgefuETfT6Ud7/5Gh+9YBNDACEIRL2OePSbgAAAABJRU5ErkJggg==" /> dao o ONT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP0dTGoFuBnfcVABvjw8bcYiwA/6ytFWZ5n5BjwgPHrfyZyNCKDUQNGDRg1AAJYPnz6Lfrgydf/5Gh+//GXGAABVRQN4UdZlwAAAABJRU5ErkJggg==" /> Dat Bai Tap Ket-XL Rac Thai<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMU9vWt/iUg8IqBDMD24YMYyy8BgVefFRWfkWMA74MH/5nI0YgMRg0YNWDUAAhgYfvwQZT3wYP/5Ghme/9eDABuzBL4t7InGgAAAABJRU5ErkJggg==" /> dat chan nuoi tap trung<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUztOs/iXP8oqBDMD28I8Yyy95llef7dmekWMA71HG/0zkaEQGowaMGjBqAASwsD35K8p79Pd/cjSzPfgjBgD/ZBIAf+oPXgAAAABJRU5ErkJggg==" /> dat chuyen rau<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbhWu/qX56xUDGYDtOpsYyy/NX68+B35+Ro4BvEy8/5nI0YgMRg0YNWDUAAhgYbvBJsq7kfc/OZrZrrGJAQDEHBBEOZw1sQAAAABJRU5ErkJggg==" /> Dat CXCV-TDTT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9fWt1hQQeMVABrj+4YMYi6aAwKtARcVn5BjA9ODBfyZyNKIYMmrAqAGjBjAwMDAwsNz48EF044MH/8nRfO39ezEAxW4UMhA/u/oAAAAASUVORK5CYII=" /> dat di tich<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUDheu/iX26xUDGYDtFZsYyy+xX68+63x+Ro4BvNd5/zORoxEZjBowasCoARDAwvaWTZT3Ou9/cjSzvWITAwA3GBECYEtmRAAAAABJRU5ErkJggg==" /> đất mau<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNszfCt1pQTeMVABrj+5IMYi6acwKtAC8Vn5BjAdPLBfyZyNKIYMmrAqAGjBjAwMDAwsNx4/EF0I+OD/+RovvbkvRgAQTATZlugrmMAAAAASUVORK5CYII=" /> dat o do thi du lich<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMDxeuFhP79YqBDPDqFZsYi5jYr1c6Op+fkWPA9eu8/5nI0YgMRg0YNWDUAAhgefuWTfT6dd7/5Gh+9YpNDAABdBL6+0tzmgAAAABJRU5ErkJggg==" /> Dat O Nong Thon<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMzxOuFpP/9YqBDPDqIZsYi5j8r1c69p+fkWPA9aO8/5nI0YgMRg0YNWDUAAhgefuETfT6Ud7/5Gh+9YBNDACEIRL2OePSbgAAAABJRU5ErkJggg==" /> dat o tdcu<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWM0CxeuZhf79YqBDPDzFZsYC7vYr1d8Op+fkWPAp+u8/5nI0YgMRg0YNWDUAAhg+fmWTfTTdd7/5Gj++YpNDAA3ZhL91rRZvgAAAABJRU5ErkJggg==" /> Dat Rung San Xuat<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMU9hWu/iXw6xUDGYDtA5sYyy+BX68+K35+Ro4BvA94/zORoxEZjBowasCoARDAwvaBTZT3Ae9/cjSzvWcTAwDvtBEB+mMcYAAAAABJRU5ErkJggg==" /> DAT RUNG- LAM NGHIEP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQ0lEQVQ4jWP0CTf5r2EswEAOuHnuAwOLhrEAg1+KAlkGbJ77gIGJLJ1IYNSAUQNGDYAAlpvnPjBsnvuALM03zn5gAAD+YQ/FjHHtQgAAAABJRU5ErkJggg==" /> dat san xuat kinh doanh<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUzhOu/iX/6xUDGYDtIZsYyy/5X68+239+Ro4BvEd5/zORoxEZjBowasCoARDAwvaETZT3KO9/cjSzPWATAwC5xRD+hssGXQAAAABJRU5ErkJggg==" /> dat trong Lua<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> DATCCDVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9fWt1hQQeMVABrj+4YMYi6aAwKtARcVn5BjA9ODBfyZyNKIYMmrAqAGjBjAwMDAwsNz48EF044MH/8nRfO39ezEAxW4UMhA/u/oAAAAASUVORK5CYII=" /> DATDITICH<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9fWt1hQQeMVABrj+4YMYi6aAwKtARcVn5BjA9ODBfyZyNKIYMmrAqAGjBjAwMDAwsNz48EF044MH/8nRfO39ezEAxW4UMhA/u/oAAAAASUVORK5CYII=" /> h- ton giao<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMExaulv/16xUDGeAhG5sYi/yvX6/sP39+Ro4BR3l5/zORoxEZjBowasCoARDA8oSNTfQoL+9/cjQ/YGMTAwC7uRD+4GbxpgAAAABJRU5ErkJggg==" /> hacth cc<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP09fWtFhAQeMVABvjw4YMYi4CAwCsVFZVn5Bjw4MGD/0zkaEQGowaMGjBqAASwfPjwQfTBgwf/ydH87t07MQAT2hT1qucQIwAAAABJRU5ErkJggg==" /> HTKT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQklEQVQ4jWMM89X9b6jJxUAOOH/jGwOLoSYXQ2KACFkGMG58y8BElk4kMGrAqAGjBkAAy/kb3xkYN74lS/P5698YAGqZDpU3F8rPAAAAAElFTkSuQmCC" /> kihieu<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMCxeulhf79YqBDPDwFZsYi7zYr1f2Op+fkWPA0eu8/5nI0YgMRg0YNWDUAAhgefKWTfTodd7/5Gh+8IpNDACEHRL2noaVewAAAABJRU5ErkJggg==" /> Lang xom do thi hoa<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsbW2t1tTUfMVABrh+/boYi6am5qvAwMBn5BjAxMT0n4kcjSiGjBowasCoAQwMDAwMLDdu3BDduHHjf3I0X7t2TQwAbvsSuOqS/ZEAAAAASUVORK5CYII=" /> mo<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMDxeuFhP79YqBDPDqFZsYi5jYr1c6Op+fkWPA9eu8/5nI0YgMRg0YNWDUAAhgefuWTfT6dd7/5Gh+9YpNDAABdBL6+0tzmgAAAABJRU5ErkJggg==" /> N-dat quan su<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMDxeuFhP79YqBDPDqFZsYi5jYr1c6Op+fkWPA9eu8/5nI0YgMRg0YNWDUAAhgefuWTfT6dd7/5Gh+9YpNDAABdBL6+0tzmgAAAABJRU5ErkJggg==" /> QUAN SU<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsbW2t1tTUfMVABrh+/boYi6am5qvAwMBn5BjAxMT0n4kcjSiGjBowasCoAQwMDAwMLDdu3BDduHHjf3I0X7t2TQwAbvsSuOqS/ZEAAAAASUVORK5CYII=" /> RANH GIOI<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsbW2t1tTUfMVABrh+/boYi6am5qvAwMBn5BjAxMT0n4kcjSiGjBowasCoAQwMDAwMLDdu3BDduHHjf3I0X7t2TQwAbvsSuOqS/ZEAAAAASUVORK5CYII=" /> RANHGIOI<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMNzOrFmNnf8VABnj186cYixg7+ysdPr5n5Bhw/dOn/0zkaEQGowaMGjBqAASwvP35U/T6p0//ydH86udPMQAzuxT4UjfwXQAAAABJRU5ErkJggg==" /> T-hatch Ditich<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsjfSt1pQUeMVABrj+8oMYi6akwKtAPcVn5BjAdPnBfyZyNKIYMmrAqAGjBjAwMDAwsNx48UF0I+OD/+RovvbyvRgA71ATXMniP4kAAAAASUVORK5CYII=" /> truonghoc-NT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQklEQVQ4jWMMUZD/b/DvLwM54CITMwOLwb+/DHF/fpFlwGIWNgYmsnQigVEDRg0YNQACWC4yMTMsZmEjS/MFJmYGAHWsDDtD2hDJAAAAAElFTkSuQmCC" /> <br />' });
+var format_SDDS5_8 = new ol.format.GeoJSON();
+var features_SDDS5_8 = format_SDDS5_8.readFeatures(json_SDDS5_8, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_SDDS5_8 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_SDDS5_8.addFeatures(features_SDDS5_8);
+var lyr_SDDS5_8 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_SDDS5_8, 
+                style: style_SDDS5_8,
+                popuplayertitle: 'SDD S5',
+                interactive: true,
+    title: 'SDD S5<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbhWu/qX56xUDGYDtOpsYyy/NX68+B35+Ro4BvEy8/5nI0YgMRg0YNWDUAAhgYbvBJsq7kfc/OZrZrrGJAQDEHBBEOZw1sQAAAABJRU5ErkJggg==" /> H_CayXanh_DVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> h_CongCong_DVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARElEQVQ4je3MoREAIQxE0cDgVodq0hn9IojOWhA3cwVE5/v/mpktAEcSRcQcAI6q7gwgIrcnx78CCijga5BUd7+ZmeR8DXwSMbtLH7QAAAAASUVORK5CYII=" /> H-BAIDOXE-DVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARElEQVQ4je3MoREAIQxE0cDgVodq0hn9IojOWhA3cwVE5/v/mpktAEcSRcQcAI6q7gwgIrcnx78CCijga5BUd7+ZmeR8DXwSMbtLH7QAAAAASUVORK5CYII=" /> H-BAIDOXE-KHUO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMFxauFvv16xUDGeAVG5sYi9ivX690Pn9+Ro4B13l5/zORoxEZjBowasCoARDA8paNTfQ6L+9/cjS/YmMTAwA5EBECLKOgGQAAAABJRU5ErkJggg==" /> H-CCKV<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMFxauFvv16xUDGeAVG5sYi9ivX690Pn9+Ro4B13l5/zORoxEZjBowasCoARDA8paNTfQ6L+9/cjS/YmMTAwA5EBECLKOgGQAAAABJRU5ErkJggg==" /> H-CCTP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMEG6tlvul+YqBDPCE7boYi9wvzVcWnwOfkWPASV6m/0zkaEQGowaMGjBqAASwPGa7IcrIu/E/OZqfsF0TAwDAzxFvg/DtTQAAAABJRU5ErkJggg==" /> H-CN<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMNxOuFmP/9YqBDPDqJ5sYixj7r1c6fJ+fkWPA9U+8/5nI0YgMRg0YNWDUAAhgefuTTfT6J97/5Gh+9ZNNDAA3YxL9FCDhxwAAAABJRU5ErkJggg==" /> H-CQ<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbhWu/qX56xUDGYDtOpsYyy/NX68+B35+Ro4BvEy8/5nI0YgMRg0YNWDUAAhgYbvBJsq7kfc/OZrZrrGJAQDEHBBEOZw1sQAAAABJRU5ErkJggg==" /> H-CXKV<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUNlOu/sXO8IqBDMD2k0GM5Rc7w6vPfEzPyDGA99P//0zkaEQGowaMGjBqAASwsP1kFOX99P8/OZrZfjKIAQD04RADK1SEUAAAAABJRU5ErkJggg==" /> H-CXTP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9RWu1hT49YqBDHD9A5sYi6bAr1eBip+fkWMA0wPe/0zkaEQxZNSAUQNGDWBgYGBgYLnxgU104wPe/+RovvaeTQwARmUSO36KjtAAAAAASUVORK5CYII=" /> H-DATOMOI<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9fWt1hQQeMVABrj+4YMYi6aAwKtARcVn5BjA9ODBfyZyNKIYMmrAqAGjBjAwMDAwsNz48EF044MH/8nRfO39ezEAxW4UMhA/u/oAAAAASUVORK5CYII=" /> H-DITICH<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP0FRauFvj16xUDGeADG5sYi8CvX68UP39+Ro4BD3h5/zORoxEZjBowasCoARDA8oGNTfQBL+9/cjS/Z2MTAwDxqxEBVA7SqwAAAABJRU5ErkJggg==" /> H-HonHop<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsbRWu1tT89YqBDHD9OpsYi6bmr1eBgZ+fkWMAExPvfyZyNKIYMmrAqAGjBjAwMDAwsNy4wSa6cSPvf3I0X7vGJgYAGs0RfhnohtcAAAAASUVORK5CYII=" /> H-LANGXOM<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQklEQVQ4jWMMdtX7r6fIxUAOuHT/GwOLniIXQ7SjKFkGMDK+YWAiSycSGDVg1IBRAyCA5dKDbwyMB96QpfnS/a8MAFSsDdwssB5RAAAAAElFTkSuQmCC" /> H-QUOCPHONG<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNszRCu1pT79YqBDHD9CZsYi6bcr1eBFp+fkWMA00ne/0zkaEQxZNSAUQNGDWBgYGBgYLnxmE10IyPvf3I0X3vCJgYAwhgRbz2z3lgAAAAASUVORK5CYII=" /> H-TH-THCS<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMCxeulhf79YqBDPDwFZsYi7zYr1f2Op+fkWPA0eu8/5nI0YgMRg0YNWDUAAhgefKWTfTodd7/5Gh+8IpNDACEHRL2noaVewAAAABJRU5ErkJggg==" /> H-THPT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUzmit/iWn+YqBDMD25LoYyy85zVefLQKfkWMA70mm/0zkaEQGowaMGjBqAASwsD2+IcrLuPE/OZrZnlwTAwC/pBFvzTecoAAAAABJRU5ErkJggg==" /> HatchSongho<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsbW2t1tTUfMVABrh+/boYi6am5qvAwMBn5BjAxMT0n4kcjSiGjBowasCoAQwMDAwMLDdu3BDduHHjf3I0X7t2TQwAbvsSuOqS/ZEAAAAASUVORK5CYII=" /> KYHIEU<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQUlEQVQ4jWOUDVL9/1uPiYEcwHr5HwPLbz0mhq+RLGQZwM3wh4E8q5HAqAGjBowaAAEsrJf+MXAz/CFLM+vlfwwAN7YM7svkTrkAAAAASUVORK5CYII=" /> <br />' });
+var format_SDDS4_9 = new ol.format.GeoJSON();
+var features_SDDS4_9 = format_SDDS4_9.readFeatures(json_SDDS4_9, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_SDDS4_9 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_SDDS4_9.addFeatures(features_SDDS4_9);
+var lyr_SDDS4_9 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_SDDS4_9, 
+                style: style_SDDS4_9,
+                popuplayertitle: 'SDD S4',
+                interactive: true,
+    title: 'SDD S4<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbhWu/qX56xUDGYDtOpsYyy/NX68+B35+Ro4BvEy8/5nI0YgMRg0YNWDUAAhgYbvBJsq7kfc/OZrZrrGJAQDEHBBEOZw1sQAAAABJRU5ErkJggg==" /> @- DAT CAY XANH CANH QUAN<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9RWu1hT49YqBDHD9A5sYi6bAr1eBip+fkWMA0wPe/0zkaEQxZNSAUQNGDWBgYGBgYLnxgU104wPe/+RovvaeTQwARmUSO36KjtAAAAAASUVORK5CYII=" /> 4-hach dtht<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASElEQVQ4jWNU9BWuZhD49YqBHPCBTYyFQeDXq3+Kn5+Ro5/pAe9/JrJsRjZk1IBRA0YNYGBgYGBgYfjAJsr0gPc/Wbrfs4kBAGV9Dv6OJJUrAAAAAElFTkSuQmCC" /> cayxanh cach ly<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMU9hWu/iXw6xUDGYDtA5sYyy+BX68+K35+Ro4BvA94/zORoxEZjBowasCoARDAwvaBTZT3Ae9/cjSzvWcTAwDvtBEB+mMcYAAAAABJRU5ErkJggg==" /> DAT CAY XANH khu vuc<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMFxauFvv16xUDGeAVG5sYi9ivX690Pn9+Ro4B13l5/zORoxEZjBowasCoARDA8paNTfQ6L+9/cjS/YmMTAwA5EBECLKOgGQAAAABJRU5ErkJggg==" /> DATCC TP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> DATCCDVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMNxOuFmP/9YqBDPDqJ5sYixj7r1c6fJ+fkWPA9U+8/5nI0YgMRg0YNWDUAAhgefuTTfT6J97/5Gh+9ZNNDAA3YxL9FCDhxwAAAABJRU5ErkJggg==" /> DATCOQUAN<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARElEQVQ4jWNUDheuZhD79YqBHPCKTYyFQezXKyadz8/I0f//Ou9/JrJsRgKjBowaMGoABLAwvmUT/X+d9z9Zul+xiQEAvO4QAC7E7uQAAAAASUVORK5CYII=" /> DATCXKHUO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9fWt1hQQeMVABrj+4YMYi6aAwKtARcVn5BjA9ODBfyZyNKIYMmrAqAGjBjAwMDAwsNz48EF044MH/8nRfO39ezEAxW4UMhA/u/oAAAAASUVORK5CYII=" /> DATDITICH<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP09fWtFhAQeMVABvjw4YMYi4CAwCsVFZVn5Bjw4MGD/0zkaEQGowaMGjBqAASwfPjwQfTBgwf/ydH87t07MQAT2hT1qucQIwAAAABJRU5ErkJggg==" /> DATDOXE<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPM0xSulmf59YqBDPDwD5sYizzLr1f2bJ+fkWPAUUbe/0zkaEQGowaMGjBqAASwPPnLJnr0N+9/cjQ/+MMmBgACaRIAa0nFsgAAAABJRU5ErkJggg==" /> DATHONHOP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMyMiolpOTe8VABnjy5IkYi5yc3CsLC4tn5Bhw8uTJ/0zkaEQGowaMGjBqAASwPH78WJSRkfE/OZqfPHkiBgBk+hKLgA4SMwAAAABJRU5ErkJggg==" /> DATHTKT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMyxOulpf/9YqBDPDwIZsYi7z8r1f29p+fkWPA0aO8/5nI0YgMRg0YNWDUAAhgefKETfToUd7/5Gh+8IBNDAAG2RLyM/NWwwAAAABJRU5ErkJggg==" /> DATLANGXOM<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUzmit/iWn+YqBDMD25LoYyy85zVefLQKfkWMA70mm/0zkaEQGowaMGjBqAASwsD2+IcrLuPE/OZrZnlwTAwC/pBFvzTecoAAAAABJRU5ErkJggg==" /> DATMATNUOC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMDxeuFhP79YqBDPDqFZsYi5jYr1c6Op+fkWPA9eu8/5nI0YgMRg0YNWDUAAhgefuWTfT6dd7/5Gh+9YpNDAABdBL6+0tzmgAAAABJRU5ErkJggg==" /> DATQUANSU<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFW6t1vyl+YqBDHCd7boYi+YvzVeBnwOfkWMAEy/TfyZyNKIYMmrAqAGjBjAwMDAwsNxguyG6kXfjf3I0X2O7JgYAGZMRfiwTVVwAAAAASUVORK5CYII=" /> DATTH-NT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNszRCu1pT79YqBDHD9CZsYi6bcr1eBFp+fkWMA00ne/0zkaEQxZNSAUQNGDWBgYGBgYLnxmE10IyPvf3I0X3vCJgYAwhgRbz2z3lgAAAAASUVORK5CYII=" /> H-TRUONGHOC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsbW2t1tTUfMVABrh+/boYi6am5qvAwMBn5BjAxMT0n4kcjSiGjBowasCoAQwMDAwMLDdu3BDduHHjf3I0X7t2TQwAbvsSuOqS/ZEAAAAASUVORK5CYII=" /> KIHIEU<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQklEQVQ4jWMMt/b8byyuwkAOOPfyDgOLsbgKQ4quB1kGzGXYycBElk4kMGrAqAGjBkAAy7mXdxjmMuwkS/PZl3cYAPR6Dhf/ScSvAAAAAElFTkSuQmCC" /> <br />' });
+var format_SDDS3_10 = new ol.format.GeoJSON();
+var features_SDDS3_10 = format_SDDS3_10.readFeatures(json_SDDS3_10, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_SDDS3_10 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_SDDS3_10.addFeatures(features_SDDS3_10);
+var lyr_SDDS3_10 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_SDDS3_10, 
+                style: style_SDDS3_10,
+                popuplayertitle: 'SDD S3',
+                interactive: true,
+    title: 'SDD S3<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWM0aBWuZtX89YqBDPD7OpsYC6vmr1c8gZ+fkWPAVybe/0zkaEQGowaMGjBqAASw/L7BJvp1I+9/cjT/usYmBgCoXhI+qaE7NwAAAABJRU5ErkJggg==" /> DATCAY XANH DVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUDheu/iX26xUDGYDtFZsYyy+xX68+63x+Ro4BvNd5/zORoxEZjBowasCoARDAwvaWTZT3Ou9/cjSzvWITAwA3GBECYEtmRAAAAABJRU5ErkJggg==" /> DATCAYXANH KO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUDheu/iX26xUDGYDtFZsYyy+xX68+63x+Ro4BvNd5/zORoxEZjBowasCoARDAwvaWTZT3Ou9/cjSzvWITAwA3GBECYEtmRAAAAABJRU5ErkJggg==" /> DATCAYXANH TP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbhWu/qX56xUDGYDtOpsYyy/NX68+B35+Ro4BvEy8/5nI0YgMRg0YNWDUAAhgYbvBJsq7kfc/OZrZrrGJAQDEHBBEOZw1sQAAAABJRU5ErkJggg==" /> DATCAYXANHCLY<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMFxauFvv16xUDGeAVG5sYi9ivX690Pn9+Ro4B13l5/zORoxEZjBowasCoARDA8paNTfQ6L+9/cjS/YmMTAwA5EBECLKOgGQAAAABJRU5ErkJggg==" /> DATCC DOTHI<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMFxauFvv16xUDGeAVG5sYi9ivX690Pn9+Ro4B13l5/zORoxEZjBowasCoARDA8paNTfQ6L+9/cjS/YmMTAwA5EBECLKOgGQAAAABJRU5ErkJggg==" /> DATCC TP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> DATCCDVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMNxOuFmP/9YqBDPDqJ5sYixj7r1c6fJ+fkWPA9U+8/5nI0YgMRg0YNWDUAAhgefuTTfT6J97/5Gh+9ZNNDAA3YxL9FCDhxwAAAABJRU5ErkJggg==" /> DATCOQUAN<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9fWt1hQQeMVABrj+4YMYi6aAwKtARcVn5BjA9ODBfyZyNKIYMmrAqAGjBjAwMDAwsNz48EF044MH/8nRfO39ezEAxW4UMhA/u/oAAAAASUVORK5CYII=" /> DATDITICH<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9RWu1hT49YqBDHD9A5sYi6bAr1eBip+fkWMA0wPe/0zkaEQxZNSAUQNGDWBgYGBgYLnxgU104wPe/+RovvaeTQwARmUSO36KjtAAAAAASUVORK5CYII=" /> DAtHHDiaPhuong<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPM0xSulmf59YqBDPDwD5sYizzLr1f2bJ+fkWPAUUbe/0zkaEQGowaMGjBqAASwPPnLJnr0N+9/cjQ/+MMmBgACaRIAa0nFsgAAAABJRU5ErkJggg==" /> DATHONHOP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMyMiolpOTe8VABnjy5IkYi5yc3CsLC4tn5Bhw8uTJ/0zkaEQGowaMGjBqAASwPH78WJSRkfE/OZqfPHkiBgBk+hKLgA4SMwAAAABJRU5ErkJggg==" /> DATHTKT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMyxOulpf/9YqBDPDwIZsYi7z8r1f29p+fkWPA0aO8/5nI0YgMRg0YNWDUAAhgefKETfToUd7/5Gh+8IBNDAAG2RLyM/NWwwAAAABJRU5ErkJggg==" /> DATLANGXOM<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUzmit/iWn+YqBDMD25LoYyy85zVefLQKfkWMA70mm/0zkaEQGowaMGjBqAASwsD2+IcrLuPE/OZrZnlwTAwC/pBFvzTecoAAAAABJRU5ErkJggg==" /> DATMATNUOC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9RWu1hT49YqBDHD9A5sYi6bAr1eBip+fkWMA0wPe/0zkaEQxZNSAUQNGDWBgYGBgYLnxgU104wPe/+RovvaeTQwARmUSO36KjtAAAAAASUVORK5CYII=" /> DATOTHAPTANG<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMDxeuFhP79YqBDPDqFZsYi5jYr1c6Op+fkWPA9eu8/5nI0YgMRg0YNWDUAAhgefuWTfT6dd7/5Gh+9YpNDAABdBL6+0tzmgAAAABJRU5ErkJggg==" /> DATQUANSU<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> h_CongCong_DVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNszRCu1pT79YqBDHD9CZsYi6bcr1eBFp+fkWMA00ne/0zkaEQxZNSAUQNGDWBgYGBgYLnxmE10IyPvf3I0X3vCJgYAwhgRbz2z3lgAAAAASUVORK5CYII=" /> H-TRUONGHOC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQklEQVQ4jWP08jP8r6rFy0AOuH39MwOLqhYvg2ewFFkGMK57xsBElk4kMGrAqAGjBkAAy+3rnxkY1z0jS/Pta58ZANECDnICKUpaAAAAAElFTkSuQmCC" /> <br />' });
+var format_SDDS2_11 = new ol.format.GeoJSON();
+var features_SDDS2_11 = format_SDDS2_11.readFeatures(json_SDDS2_11, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_SDDS2_11 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_SDDS2_11.addFeatures(features_SDDS2_11);
+var lyr_SDDS2_11 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_SDDS2_11, 
+                style: style_SDDS2_11,
+                popuplayertitle: 'SDD S2',
+                interactive: true,
+    title: 'SDD S2<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMU9hWu/iXw6xUDGYDtA5sYyy+BX68+K35+Ro4BvA94/zORoxEZjBowasCoARDAwvaBTZT3Ae9/cjSzvWcTAwDvtBEB+mMcYAAAAABJRU5ErkJggg==" /> CAY XANH KHU VUC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWM0aBWuZtX89YqBDPD7OpsYC6vmr1c8gZ+fkWPAVybe/0zkaEQGowaMGjBqAASw/L7BJvp1I+9/cjT/usYmBgCoXhI+qaE7NwAAAABJRU5ErkJggg==" /> DATCAY XANH DVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUDheu/iX26xUDGYDtFZsYyy+xX68+63x+Ro4BvNd5/zORoxEZjBowasCoARDAwvaWTZT3Ou9/cjSzvWITAwA3GBECYEtmRAAAAABJRU5ErkJggg==" /> DATCAYXANH TP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMFxauFvv16xUDGeAVG5sYi9ivX690Pn9+Ro4B13l5/zORoxEZjBowasCoARDA8paNTfQ6L+9/cjS/YmMTAwA5EBECLKOgGQAAAABJRU5ErkJggg==" /> DATCC DOTHI<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMFxauFvv16xUDGeAVG5sYi9ivX690Pn9+Ro4B13l5/zORoxEZjBowasCoARDA8paNTfQ6L+9/cjS/YmMTAwA5EBECLKOgGQAAAABJRU5ErkJggg==" /> DATCC TP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> DATCCDVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMNxOuFmP/9YqBDPDqJ5sYixj7r1c6fJ+fkWPA9U+8/5nI0YgMRg0YNWDUAAhgefuTTfT6J97/5Gh+9ZNNDAA3YxL9FCDhxwAAAABJRU5ErkJggg==" /> DATCOQUAN<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9fWt1hQQeMVABrj+4YMYi6aAwKtARcVn5BjA9ODBfyZyNKIYMmrAqAGjBjAwMDAwsNz48EF044MH/8nRfO39ezEAxW4UMhA/u/oAAAAASUVORK5CYII=" /> DATDITICH<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9RWu1hT49YqBDHD9A5sYi6bAr1eBip+fkWMA0wPe/0zkaEQxZNSAUQNGDWBgYGBgYLnxgU104wPe/+RovvaeTQwARmUSO36KjtAAAAAASUVORK5CYII=" /> DAtHHDiaPhuong<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPM0xSulmf59YqBDPDwD5sYizzLr1f2bJ+fkWPAUUbe/0zkaEQGowaMGjBqAASwPPnLJnr0N+9/cjQ/+MMmBgACaRIAa0nFsgAAAABJRU5ErkJggg==" /> DATHONHOP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMyMiolpOTe8VABnjy5IkYi5yc3CsLC4tn5Bhw8uTJ/0zkaEQGowaMGjBqAASwPH78WJSRkfE/OZqfPHkiBgBk+hKLgA4SMwAAAABJRU5ErkJggg==" /> DATHTKT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMyxOulpf/9YqBDPDwIZsYi7z8r1f29p+fkWPA0aO8/5nI0YgMRg0YNWDUAAhgefKETfToUd7/5Gh+8IBNDAAG2RLyM/NWwwAAAABJRU5ErkJggg==" /> DATLANGXOM<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUzmit/iWn+YqBDMD25LoYyy85zVefLQKfkWMA70mm/0zkaEQGowaMGjBqAASwsD2+IcrLuPE/OZrZnlwTAwC/pBFvzTecoAAAAABJRU5ErkJggg==" /> DATMATNUOC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9RWu1hT49YqBDHD9A5sYi6bAr1eBip+fkWMA0wPe/0zkaEQxZNSAUQNGDWBgYGBgYLnxgU104wPe/+RovvaeTQwARmUSO36KjtAAAAAASUVORK5CYII=" /> DATOTHAPTANG<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMDxeuFhP79YqBDPDqFZsYi5jYr1c6Op+fkWPA9eu8/5nI0YgMRg0YNWDUAAhgefuWTfT6dd7/5Gh+9YpNDAABdBL6+0tzmgAAAABJRU5ErkJggg==" /> DATQUANSU<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNszRCu1pT79YqBDHD9CZsYi6bcr1eBFp+fkWMA00ne/0zkaEQxZNSAUQNGDWBgYGBgYLnxmE10IyPvf3I0X3vCJgYAwhgRbz2z3lgAAAAASUVORK5CYII=" /> H-TRUONGHOC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsbW2t1tTUfMVABrh+/boYi6am5qvAwMBn5BjAxMT0n4kcjSiGjBowasCoAQwMDAwMLDdu3BDduHHjf3I0X7t2TQwAbvsSuOqS/ZEAAAAASUVORK5CYII=" /> KIHIEU<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQUlEQVQ4je3MsQ0AIAgF0Q9hEHuG0cQ4Okxj0MLGmprr79Ho7agGMpkzRDWw5k4BBAGnzq8CCijgJWYMgqRmc8YF5T8LPmiSg/YAAAAASUVORK5CYII=" /> <br />' });
+var format_SDDS1_12 = new ol.format.GeoJSON();
+var features_SDDS1_12 = format_SDDS1_12.readFeatures(json_SDDS1_12, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_SDDS1_12 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_SDDS1_12.addFeatures(features_SDDS1_12);
+var lyr_SDDS1_12 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_SDDS1_12, 
+                style: style_SDDS1_12,
+                popuplayertitle: 'SDD S1',
+                interactive: true,
+    title: 'SDD S1<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUDheu/iX26xUDGYDtFZsYyy+xX68+63x+Ro4BvNd5/zORoxEZjBowasCoARDAwvaWTZT3Ou9/cjSzvWITAwA3GBECYEtmRAAAAABJRU5ErkJggg==" /> Cay xanh DVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWM0aBWuZtX89YqBDPD7OpsYC6vmr1c8gZ+fkWPAVybe/0zkaEQGowaMGjBqAASw/L7BJvp1I+9/cjT/usYmBgCoXhI+qaE7NwAAAABJRU5ErkJggg==" /> DATCAY XANH DVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUDheu/iX26xUDGYDtFZsYyy+xX68+63x+Ro4BvNd5/zORoxEZjBowasCoARDAwvaWTZT3Ou9/cjSzvWITAwA3GBECYEtmRAAAAABJRU5ErkJggg==" /> DATCAYXANH TP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMFxauFvv16xUDGeAVG5sYi9ivX690Pn9+Ro4B13l5/zORoxEZjBowasCoARDA8paNTfQ6L+9/cjS/YmMTAwA5EBECLKOgGQAAAABJRU5ErkJggg==" /> DATCC DOTHI<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMFxauFvv16xUDGeAVG5sYi9ivX690Pn9+Ro4B13l5/zORoxEZjBowasCoARDA8paNTfQ6L+9/cjS/YmMTAwA5EBECLKOgGQAAAABJRU5ErkJggg==" /> DATCC TP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMNxOuFmP/9YqBDPDqJ5sYixj7r1c6fJ+fkWPA9U+8/5nI0YgMRg0YNWDUAAhgefuTTfT6J97/5Gh+9ZNNDAA3YxL9FCDhxwAAAABJRU5ErkJggg==" /> DATCOQUAN<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9fWt1hQQeMVABrj+4YMYi6aAwKtARcVn5BjA9ODBfyZyNKIYMmrAqAGjBjAwMDAwsNz48EF044MH/8nRfO39ezEAxW4UMhA/u/oAAAAASUVORK5CYII=" /> DATDITICH<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9RWu1hT49YqBDHD9A5sYi6bAr1eBip+fkWMA0wPe/0zkaEQxZNSAUQNGDWBgYGBgYLnxgU104wPe/+RovvaeTQwARmUSO36KjtAAAAAASUVORK5CYII=" /> DAtHHDiaPhuong<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPM0xSulmf59YqBDPDwD5sYizzLr1f2bJ+fkWPAUUbe/0zkaEQGowaMGjBqAASwPPnLJnr0N+9/cjQ/+MMmBgACaRIAa0nFsgAAAABJRU5ErkJggg==" /> DATHONHOP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMyMiolpOTe8VABnjy5IkYi5yc3CsLC4tn5Bhw8uTJ/0zkaEQGowaMGjBqAASwPH78WJSRkfE/OZqfPHkiBgBk+hKLgA4SMwAAAABJRU5ErkJggg==" /> DATHTKT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMyxOulpf/9YqBDPDwIZsYi7z8r1f29p+fkWPA0aO8/5nI0YgMRg0YNWDUAAhgefKETfToUd7/5Gh+8IBNDAAG2RLyM/NWwwAAAABJRU5ErkJggg==" /> DATLANGXOM<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUzmit/iWn+YqBDMD25LoYyy85zVefLQKfkWMA70mm/0zkaEQGowaMGjBqAASwsD2+IcrLuPE/OZrZnlwTAwC/pBFvzTecoAAAAABJRU5ErkJggg==" /> DATMATNUOC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9RWu1hT49YqBDHD9A5sYi6bAr1eBip+fkWMA0wPe/0zkaEQxZNSAUQNGDWBgYGBgYLnxgU104wPe/+RovvaeTQwARmUSO36KjtAAAAAASUVORK5CYII=" /> DATOTHAPTANG<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMDxeuFhP79YqBDPDqFZsYi5jYr1c6Op+fkWPA9eu8/5nI0YgMRg0YNWDUAAhgefuWTfT6dd7/5Gh+9YpNDAABdBL6+0tzmgAAAABJRU5ErkJggg==" /> DATQUANSU<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFW6t1vyl+YqBDHCd7boYi+YvzVeBnwOfkWMAEy/TfyZyNKIYMmrAqAGjBjAwMDAwsNxguyG6kXfjf3I0X2O7JgYAGZMRfiwTVVwAAAAASUVORK5CYII=" /> DATTH-NT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP09fWtFhAQeMVABvjw4YMYi4CAwCsVFZVn5Bjw4MGD/0zkaEQGowaMGjBqAASwfPjwQfTBgwf/ydH87t07MQAT2hT1qucQIwAAAABJRU5ErkJggg==" /> GT_depot<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> h_CongCong_DVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQklEQVQ4jWMMNzT/b8wrwkAOOPf5LQOLMa8IQ7K0OlkGMD67xcBElk4kMGrAqAGjBkAAy7nPbxkYn90iS/PZT28YAPVIDrh7xi+SAAAAAElFTkSuQmCC" /> <br />' });
+var format_SDDPKR_13 = new ol.format.GeoJSON();
+var features_SDDPKR_13 = format_SDDPKR_13.readFeatures(json_SDDPKR_13, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_SDDPKR_13 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_SDDPKR_13.addFeatures(features_SDDPKR_13);
+var lyr_SDDPKR_13 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_SDDPKR_13, 
+                style: style_SDDPKR_13,
+                popuplayertitle: 'SDD PK R',
+                interactive: true,
+    title: 'SDD PK R<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbhWu/qX56xUDGYDtOpsYyy/NX68+B35+Ro4BvEy8/5nI0YgMRg0YNWDUAAhgYbvBJsq7kfc/OZrZrrGJAQDEHBBEOZw1sQAAAABJRU5ErkJggg==" /> 1_cau vuot<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP0FRauFvj16xUDGeADG5sYi8CvX68UP39+Ro4BD3h5/zORoxEZjBowasCoARDA8oGNTfQBL+9/cjS/Z2MTAwDxqxEBVA7SqwAAAABJRU5ErkJggg==" /> Dat cong cong<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP09TWoFhBgfcVABvjw4bcYi4AA6ytFRZ5n5Bjw4MHX/0zkaEQGowaMGjBqAASwfPjwW/TBg6//ydH8/v0vMQBTCBTycyTK5gAAAABJRU5ErkJggg==" /> dat o hien trang<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMNxOuFmP/9YqBDPDqJ5sYixj7r1c6fJ+fkWPA9U+8/5nI0YgMRg0YNWDUAAhgefuTTfT6J97/5Gh+9ZNNDAA3YxL9FCDhxwAAAABJRU5ErkJggg==" /> DATCOQUAN<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9fWt1hQQeMVABrj+4YMYi6aAwKtARcVn5BjA9ODBfyZyNKIYMmrAqAGjBjAwMDAwsNz48EF044MH/8nRfO39ezEAxW4UMhA/u/oAAAAASUVORK5CYII=" /> DATDITICH<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUzmit/iWn+YqBDMD25LoYyy85zVefLQKfkWMA70mm/0zkaEQGowaMGjBqAASwsD2+IcrLuPE/OZrZnlwTAwC/pBFvzTecoAAAAABJRU5ErkJggg==" /> DATMATNUOC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMDxeuFhP79YqBDPDqFZsYi5jYr1c6Op+fkWPA9eu8/5nI0YgMRg0YNWDUAAhgefuWTfT6dd7/5Gh+9YpNDAABdBL6+0tzmgAAAABJRU5ErkJggg==" /> DATQUANSU<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMU9rWr/iXA/YqBDMD24asYyy8B7lefFcWekWMA74PX/5nI0YgMRg0YNWDUAAhgYfvwTZT3wev/5Ghme/9VDAAfixL7N6txmQAAAABJRU5ErkJggg==" /> qh_cay xanh cach ly<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUDheu/iX26xUDGYDtFZsYyy+xX68+63x+Ro4BvNd5/zORoxEZjBowasCoARDAwvaWTZT3Ou9/cjSzvWITAwA3GBECYEtmRAAAAABJRU5ErkJggg==" /> qh_Dat cay xanh chuyen de<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUDleu/iXG8IqBDMD2ikGM5ZcYw6vPOkzPyDGA9/r//0zkaEQGowaMGjBqAASwsL1lFOW9/v8/OZrZXjGIAQC+8hAA09oemgAAAABJRU5ErkJggg==" /> qh-dat cay xanh do thi<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWM0CxeuZhf79YqBDPDzFZsYC7vYr1d8Op+fkWPAp+u8/5nI0YgMRg0YNWDUAAhg+fmWTfTTdd7/5Gj++YpNDAA3ZhL91rRZvgAAAABJRU5ErkJggg==" /> qh-dat cay xanh dvo<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> qh-dat cong cong dvo<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWN0MwuvFmAXe8VABvjw85UYiwC72Cs5Pp1n5BjA+On6fyZyNCKDUQNGDRg1AAJYPv58K/r40/X/5Gj+8POVGABzQBQQ0AOZlwAAAABJRU5ErkJggg==" /> qh-dat cong tinh dau moi HTKT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP0FRauFvj16xUDGeADG5sYi8CvX68UP39+Ro4BD3h5/zORoxEZjBowasCoARDA8oGNTfQBL+9/cjS/Z2MTAwDxqxEBVA7SqwAAAABJRU5ErkJggg==" /> qh-dat ton giao<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMCxeulhf79YqBDPDwFZsYi7zYr1f2Op+fkWPA0eu8/5nI0YgMRg0YNWDUAAhgefKWTfTodd7/5Gh+8IpNDACEHRL2noaVewAAAABJRU5ErkJggg==" /> qh-nhom nha o<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMNzOrFmNnf8VABnj186cYixg7+ysdPr5n5Bhw/dOn/0zkaEQGowaMGjBqAASwvP35U/T6p0//ydH86udPMQAzuxT4UjfwXQAAAABJRU5ErkJggg==" /> qh-truong THCS TH mam non<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMVxauFmP49YqBDPCKgU2MRYzh1ysdps/PyDHg+n/e/0zkaEQGowaMGjBqAASwvGVkE73+n/c/OZpfMbCJAQC/6BAAMnH/uwAAAABJRU5ErkJggg==" /> qh-truong THPT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP0jWytFpDUfMVABvjw8roYi4Ck5itFvcBn5Bjw4DLTfyZyNCKDUQNGDRg1AAJYPry4IfqAceN/cjS/f3lNDADwyhNcacplzAAAAABJRU5ErkJggg==" /> sdd_DIAPHUONG<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQklEQVQ4jWN0CFT5L6vDxEAOeHLlPwOLrA4Tg0UYC1kGnGT4y0Ce1Uhg1IBRA0YNgACWJ1f+M5xk+EuW5sdX/jEAAHc3Dq9O+Dc2AAAAAElFTkSuQmCC" /> <br />' });
+var format_SDDPhuctho_14 = new ol.format.GeoJSON();
+var features_SDDPhuctho_14 = format_SDDPhuctho_14.readFeatures(json_SDDPhuctho_14, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_SDDPhuctho_14 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_SDDPhuctho_14.addFeatures(features_SDDPhuctho_14);
+var lyr_SDDPhuctho_14 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_SDDPhuctho_14, 
+                style: style_SDDPhuctho_14,
+                popuplayertitle: 'SDD Phuc tho',
+                interactive: true,
+    title: 'SDD Phuc tho<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbhWu/qX56xUDGYDtOpsYyy/NX68+B35+Ro4BvEy8/5nI0YgMRg0YNWDUAAhgYbvBJsq7kfc/OZrZrrGJAQDEHBBEOZw1sQAAAABJRU5ErkJggg==" /> .hdattrongluanuoc<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWN0Es6r5vkl/4qBDPCF7aEYC88v+VcSn+2fkWPAS96j/5nI0YgMRg0YNWDUAAhg+cr2RPQl79H/5Gj+wvZADAD/gxL5eiOkQAAAAABJRU5ErkJggg==" /> D.CongNghiep<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP0jUysFhCTfsVABvjw6qkYi4CY9CsVXdNn5Bjw4DrLfyZyNCKDUQNGDRg1AAJYPrx+Ifrg+vn/5Gh+9/KJGAAC9xQlOtUhswAAAABJRU5ErkJggg==" /> d.nghia trang<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP09RWuFhD49YqBDPDhA5sYi4DAr1eKip+fkWPAgwe8/5nI0YgMRg0YNWDUAAhg+fCBTfTBA97/5Gh+/55NDAByuhL4lzWEvQAAAABJRU5ErkJggg==" /> d.o NT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMtzOrFuNmf8VABnj19acYixg3+ysdMb5n5Bhw/fWn/0zkaEQGowaMGjBqAASwvP32U/T660//ydH86utPMQBnKhT3EAX9pAAAAABJRU5ErkJggg==" /> dat cong ty<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbhWu/qX56xUDGYDtOpsYyy/NX68+B35+Ro4BvEy8/5nI0YgMRg0YNWDUAAhgYbvBJsq7kfc/OZrZrrGJAQDEHBBEOZw1sQAAAABJRU5ErkJggg==" /> DAT CX-TDTT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUzguv/iUv9oqBDMD28JUYyy95sVef7XWekWMA79Hr/5nI0YgMRg0YNWDUAAhgYXvyVpT36PX/5Ghme/BKDACAMRL22phJOwAAAABJRU5ErkJggg==" /> dat du tru phat trien<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP0FW6tFvil+YqBDPCB7boYi8AvzVeKnwOfkWPAA16m/0zkaEQGowaMGjBqAASwfGC7IfqAd+N/cjS/Z7smBgBF6BI7VcQ1egAAAABJRU5ErkJggg==" /> Dat Khai Thac VLXD<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9RWu1hT49YqBDHD9A5sYi6bAr1eBip+fkWMA0wPe/0zkaEQxZNSAUQNGDWBgYGBgYLnxgU104wPe/+RovvaeTQwARmUSO36KjtAAAAAASUVORK5CYII=" /> dat o dan cu moi<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFW6t1vyl+YqBDHCd7boYi+YvzVeBnwOfkWMAEy/TfyZyNKIYMmrAqAGjBjAwMDAwsNxguyG6kXfjf3I0X2O7JgYAGZMRfiwTVVwAAAAASUVORK5CYII=" /> dat san xuat Kinh doanh<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNszRCu1pT79YqBDHD9CZsYi6bcr1eBFp+fkWMA00ne/0zkaEQxZNSAUQNGDWBgYGBgYLnxmE10IyPvf3I0X3vCJgYAwhgRbz2z3lgAAAAASUVORK5CYII=" /> Dat TH Moi<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9fWt1hQQeMVABrj+4YMYi6aAwKtARcVn5BjA9ODBfyZyNKIYMmrAqAGjBjAwMDAwsNz48EF044MH/8nRfO39ezEAxW4UMhA/u/oAAAAASUVORK5CYII=" /> dat-tongiao<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQklEQVQ4jWO0Cnb4L64vy0AOeHXpCQOLuL4sg060JVkGXGE8wcBElk4kMGrAqAGjBkAAy8tLTxgYGE+QpfnVxccMABezDbkdIHVLAAAAAElFTkSuQmCC" /> datcoquan<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMDxeuFhP79YqBDPDqFZsYi5jYr1c6Op+fkWPA9eu8/5nI0YgMRg0YNWDUAAhgefuWTfT6dd7/5Gh+9YpNDAABdBL6+0tzmgAAAABJRU5ErkJggg==" /> DATQUANSU<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARElEQVQ4je3MoREAIQxE0cDgVodq0hn9IojOWhA3cwVE5/v/mpktAEcSRcQcAI6q7gwgIrcnx78CCijga5BUd7+ZmeR8DXwSMbtLH7QAAAAASUVORK5CYII=" /> daumoihatang<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbs2o/qUp94qBDMB2/YkYyy9NuVefAy2ekWMAL9PJ/0zkaEQGowaMGjBqAASwsN14LMq7kfE/OZrZrj0RAwC/sxFvxSmGeQAAAABJRU5ErkJggg==" /> H DL moi<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNszRCu1pT79YqBDHD9CZsYi6bcr1eBFp+fkWMA00ne/0zkaEQxZNSAUQNGDWBgYGBgYLnxmE10IyPvf3I0X3vCJgYAwhgRbz2z3lgAAAAASUVORK5CYII=" /> H-TRUONGHOC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> H.DCC Moi<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUNlOu/sXO8IqBDMD2k0GM5Rc7w6vPfEzPyDGA99P//0zkaEQGowaMGjBqAASwsP1kFOX99P8/OZrZfjKIAQD04RADK1SEUAAAAABJRU5ErkJggg==" /> hack dat cay an qua<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbhWu/qX56xUDGYDtOpsYyy/NX68+B35+Ro4BvEy8/5nI0YgMRg0YNWDUAAhgYbvBJsq7kfc/OZrZrrGJAQDEHBBEOZw1sQAAAABJRU5ErkJggg==" /> HCXST<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMU9hWu/iXw6xUDGYDtA5sYyy+BX68+K35+Ro4BvA94/zORoxEZjBowasCoARDAwvaBTZT3Ae9/cjSzvWcTAwDvtBEB+mMcYAAAAABJRU5ErkJggg==" /> hd.CX-TDTT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMU9hWu/iXw6xUDGYDtA5sYyy+BX68+K35+Ro4BvA94/zORoxEZjBowasCoARDAwvaBTZT3Ae9/cjSzvWcTAwDvtBEB+mMcYAAAAABJRU5ErkJggg==" /> hd.TDTT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> hdatconcong<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWN0Es6r5vkl/4qBDPCF7aEYC88v+VcSn+2fkWPAS96j/5nI0YgMRg0YNWDUAAhg+cr2RPQl79H/5Gj+wvZADAD/gxL5eiOkQAAAAABJRU5ErkJggg==" /> hdatcongnghiep<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9RWu1hT49YqBDHD9A5sYi6bAr1eBip+fkWMA0wPe/0zkaEQxZNSAUQNGDWBgYGBgYLnxgU104wPe/+RovvaeTQwARmUSO36KjtAAAAAASUVORK5CYII=" /> HDATODOTHI<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMDxeuFhP79YqBDPDqFZsYi5jYr1c6Op+fkWPA9eu8/5nI0YgMRg0YNWDUAAhgefuWTfT6dd7/5Gh+9YpNDAABdBL6+0tzmgAAAABJRU5ErkJggg==" /> HDATONONGTHON<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUtvOt/sUt8IqBDMD29YMYyy9ugVefxRSfkWMA7+sH/5nI0YgMRg0YNWDUAAhgYfv2QZT39YP/5Ghm+/peDAAfjhL77L662wAAAABJRU5ErkJggg==" /> hdattruonghoc<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWO0Czer5hZjf8VABvj66qcYC7cY+ysxHb5n5Bjw+vqn/0zkaEQGowaMGjBqAASwfHv7U/T19U//ydH89dVPMQBnLBT3XJnLKQAAAABJRU5ErkJggg==" /> hddulich<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsLfOt1lQReMVABrh+54MYi6aKwKtAN8Vn5BjAxPLgPxM5GlEMGTVg1IBRAxgYGBgYWG7c/yC6cd+D/+Rovnb7vRgAKzETcZTd42AAAAAASUVORK5CYII=" /> htch-new resi<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMU9m2t/iWg+YqBDMD24boYyy8BzVefFQOfkWMA7wOm/0zkaEQGowaMGjBqAASwsH24Icr7YON/cjSzvb8mBgBD8RI7tNRFxgAAAABJRU5ErkJggg==" /> htch-water<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUFm6t/vVL8xUDGYCN7boYy69fmq8+fw58Ro4BvLxM/5nI0YgMRg0YNWDUAAhgYWO7IcrLu/E/OZrZ2K6JAQDC4hBEt5YGZAAAAABJRU5ErkJggg==" /> PHAN DOT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUFm6t/vVL8xUDGYCN7boYy69fmq8+fw58Ro4BvLxM/5nI0YgMRg0YNWDUAAhgYWO7IcrLu/E/OZrZ2K6JAQDC4hBEt5YGZAAAAABJRU5ErkJggg==" /> songsuoi-l<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP09W2tFhDQfMVABvjw4boYi4CA5itFxcBn5Bjw4AHTfyZyNCKDUQNGDRg1AAJYPny4Ifrgwcb/5Gh+//6aGADG6BQyxJFGFgAAAABJRU5ErkJggg==" /> TMDV<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP09W2tFhDQfMVABvjw4boYi4CA5itFxcBn5Bjw4AHTfyZyNCKDUQNGDRg1AAJYPny4Ifrgwcb/5Gh+//6aGADG6BQyxJFGFgAAAABJRU5ErkJggg==" /> TTCN cu<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP09W2tFhDQfMVABvjw4boYi4CA5itFxcBn5Bjw4AHTfyZyNCKDUQNGDRg1AAJYPny4Ifrgwcb/5Gh+//6aGADG6BQyxJFGFgAAAABJRU5ErkJggg==" /> TTCN moi<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQklEQVQ4jWP0N3b/r8WvzEAOuPbxLgOLFr8yQ7CcK1kGMD5iZGAiSycSGDVg1IBRAyCA5drHewyMj/aQpfnax7sMAFkMDcrByEedAAAAAElFTkSuQmCC" /> <br />' });
+var format_SDDN11_15 = new ol.format.GeoJSON();
+var features_SDDN11_15 = format_SDDN11_15.readFeatures(json_SDDN11_15, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_SDDN11_15 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_SDDN11_15.addFeatures(features_SDDN11_15);
+var lyr_SDDN11_15 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_SDDN11_15, 
+                style: style_SDDN11_15,
+                popuplayertitle: 'SDD N11',
+                interactive: true,
+    title: 'SDD N11<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbs2o/qUp94qBDMB2/YkYyy9NuVefAy2ekWMAL9PJ/0zkaEQGowaMGjBqAASwsN14LMq7kfE/OZrZrj0RAwC/sxFvxSmGeQAAAABJRU5ErkJggg==" /> @_Dat DA Dac Biet<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbhWu/qX56xUDGYDtOpsYyy/NX68+B35+Ro4BvEy8/5nI0YgMRg0YNWDUAAhgYbvBJsq7kfc/OZrZrrGJAQDEHBBEOZw1sQAAAABJRU5ErkJggg==" /> @- DAT CAY XANH CANH QUAN<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMU9hWu/iXw6xUDGYDtA5sYyy+BX68+K35+Ro4BvA94/zORoxEZjBowasCoARDAwvaBTZT3Ae9/cjSzvWcTAwDvtBEB+mMcYAAAAABJRU5ErkJggg==" /> CAY XANH KHU VUC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWM0CxeuZhf79YqBDPDzFZsYC7vYr1d8Op+fkWPAp+u8/5nI0YgMRg0YNWDUAAhg+fmWTfTTdd7/5Gj++YpNDAA3ZhL91rRZvgAAAABJRU5ErkJggg==" /> DATCAYXANH<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbhWu/qX56xUDGYDtOpsYyy/NX68+B35+Ro4BvEy8/5nI0YgMRg0YNWDUAAhgYbvBJsq7kfc/OZrZrrGJAQDEHBBEOZw1sQAAAABJRU5ErkJggg==" /> DATCAYXANHCLY<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> DATCCDVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMFxauFvv16xUDGeAVG5sYi9ivX690Pn9+Ro4B13l5/zORoxEZjBowasCoARDA8paNTfQ6L+9/cjS/YmMTAwA5EBECLKOgGQAAAABJRU5ErkJggg==" /> DATCCTP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWN0Es6r5vkl/4qBDPCF7aEYC88v+VcSn+2fkWPAS96j/5nI0YgMRg0YNWDUAAhg+cr2RPQl79H/5Gj+wvZADAD/gxL5eiOkQAAAAABJRU5ErkJggg==" /> DATCONGNGHIEP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMNxOuFmP/9YqBDPDqJ5sYixj7r1c6fJ+fkWPA9U+8/5nI0YgMRg0YNWDUAAhgefuTTfT6J97/5Gh+9ZNNDAA3YxL9FCDhxwAAAABJRU5ErkJggg==" /> DATCOQUAN<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9fWt1hQQeMVABrj+4YMYi6aAwKtARcVn5BjA9ODBfyZyNKIYMmrAqAGjBjAwMDAwsNz48EF044MH/8nRfO39ezEAxW4UMhA/u/oAAAAASUVORK5CYII=" /> DATDITICH<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP09fWtFhAQeMVABvjw4YMYi4CAwCsVFZVn5Bjw4MGD/0zkaEQGowaMGjBqAASwfPjwQfTBgwf/ydH87t07MQAT2hT1qucQIwAAAABJRU5ErkJggg==" /> DATDOXE<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPM0xSulmf59YqBDPDwD5sYizzLr1f2bJ+fkWPAUUbe/0zkaEQGowaMGjBqAASwPPnLJnr0N+9/cjQ/+MMmBgACaRIAa0nFsgAAAABJRU5ErkJggg==" /> DATHONHOP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMyMiolpOTe8VABnjy5IkYi5yc3CsLC4tn5Bhw8uTJ/0zkaEQGowaMGjBqAASwPH78WJSRkfE/OZqfPHkiBgBk+hKLgA4SMwAAAABJRU5ErkJggg==" /> DATHTKT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMyxOulpf/9YqBDPDwIZsYi7z8r1f29p+fkWPA0aO8/5nI0YgMRg0YNWDUAAhgefKETfToUd7/5Gh+8IBNDAAG2RLyM/NWwwAAAABJRU5ErkJggg==" /> DATLANGXOM<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUzmit/iWn+YqBDMD25LoYyy85zVefLQKfkWMA70mm/0zkaEQGowaMGjBqAASwsD2+IcrLuPE/OZrZnlwTAwC/pBFvzTecoAAAAABJRU5ErkJggg==" /> DATMATNUOC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9RWu1hT49YqBDHD9A5sYi6bAr1eBip+fkWMA0wPe/0zkaEQxZNSAUQNGDWBgYGBgYLnxgU104wPe/+RovvaeTQwARmUSO36KjtAAAAAASUVORK5CYII=" /> DATOTHAPTANG<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMDxeuFhP79YqBDPDqFZsYi5jYr1c6Op+fkWPA9eu8/5nI0YgMRg0YNWDUAAhgefuWTfT6dd7/5Gh+9YpNDAABdBL6+0tzmgAAAABJRU5ErkJggg==" /> DATQUANSU<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFW6t1vyl+YqBDHCd7boYi+YvzVeBnwOfkWMAEy/TfyZyNKIYMmrAqAGjBjAwMDAwsNxguyG6kXfjf3I0X2O7JgYAGZMRfiwTVVwAAAAASUVORK5CYII=" /> DATTH-NT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUNmit/sWq+YqBDMD2+7oYyy9WzVefeQKfkWMA71em/0zkaEQGowaMGjBqAASwsP2+Icr7deN/cjSz/bomBgClKhI+FHIc5gAAAABJRU5ErkJggg==" /> hatch nuoc ho<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsbW2t1tTUfMVABrh+/boYi6am5qvAwMBn5BjAxMT0n4kcjSiGjBowasCoAQwMDAwMLDdu3BDduHHjf3I0X7t2TQwAbvsSuOqS/ZEAAAAASUVORK5CYII=" /> KIHIEU<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWM0aBWuZtX89YqBDPD7OpsYC6vmr1c8gZ+fkWPAVybe/0zkaEQGowaMGjBqAASw/L7BJvp1I+9/cjT/usYmBgCoXhI+qaE7NwAAAABJRU5ErkJggg==" /> Lang Trong CX<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUDheu/iX26xUDGYDtFZsYyy+xX68+63x+Ro4BvNd5/zORoxEZjBowasCoARDAwvaWTZT3Ou9/cjSzvWITAwA3GBECYEtmRAAAAABJRU5ErkJggg==" /> ThaiDgSatDoThi<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARElEQVQ4je3MoREAIQxE0cDgVodq0hn9IojOWhA3cwVE5/v/mpktAEcSRcQcAI6q7gwgIrcnx78CCijga5BUd7+ZmeR8DXwSMbtLH7QAAAAASUVORK5CYII=" /> tim long<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQUlEQVQ4jWO0DFX4L2rwl4Ec8PoCMwOLqMFfBs3432QZwMDIwMBEnk4EGDVg1IBRAyCA5fUFZgYGRvI0v77AzAAAzHcLFHdLGxkAAAAASUVORK5CYII=" /> <br />' });
+var format_SDDN10_16 = new ol.format.GeoJSON();
+var features_SDDN10_16 = format_SDDN10_16.readFeatures(json_SDDN10_16, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_SDDN10_16 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_SDDN10_16.addFeatures(features_SDDN10_16);
+var lyr_SDDN10_16 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_SDDN10_16, 
+                style: style_SDDN10_16,
+                popuplayertitle: 'SDD N10',
+                interactive: true,
+    title: 'SDD N10<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMU9hWu/iXw6xUDGYDtA5sYyy+BX68+K35+Ro4BvA94/zORoxEZjBowasCoARDAwvaBTZT3Ae9/cjSzvWcTAwDvtBEB+mMcYAAAAABJRU5ErkJggg==" /> @_Nong Nghiep<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMU9hWu/iXw6xUDGYDtA5sYyy+BX68+K35+Ro4BvA94/zORoxEZjBowasCoARDAwvaBTZT3Ae9/cjSzvWcTAwDvtBEB+mMcYAAAAABJRU5ErkJggg==" /> CAY XANH KHU VUC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> CD-220KV<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARUlEQVQ4jWMU9lWs/iXA8IqBDMD2gUGM5ZcAw6vPiv+ekWMA7wOm/0zkaEQGowaMGjBqAASwsH1gEOV9wPSfHM1s7xnEAGmDDv5ID9NQAAAAAElFTkSuQmCC" /> CX khu o<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWM0CxeuZhf79YqBDPDzFZsYC7vYr1d8Op+fkWPAp+u8/5nI0YgMRg0YNWDUAAhg+fmWTfTTdd7/5Gj++YpNDAA3ZhL91rRZvgAAAABJRU5ErkJggg==" /> DATCAYXANH<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbhWu/qX56xUDGYDtOpsYyy/NX68+B35+Ro4BvEy8/5nI0YgMRg0YNWDUAAhgYbvBJsq7kfc/OZrZrrGJAQDEHBBEOZw1sQAAAABJRU5ErkJggg==" /> DATCAYXANHCLY<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> DATCCDVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMFxauFvv16xUDGeAVG5sYi9ivX690Pn9+Ro4B13l5/zORoxEZjBowasCoARDA8paNTfQ6L+9/cjS/YmMTAwA5EBECLKOgGQAAAABJRU5ErkJggg==" /> DATCCTP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWN0Es6r5vkl/4qBDPCF7aEYC88v+VcSn+2fkWPAS96j/5nI0YgMRg0YNWDUAAhg+cr2RPQl79H/5Gj+wvZADAD/gxL5eiOkQAAAAABJRU5ErkJggg==" /> DATCONGNGHIEP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMNxOuFmP/9YqBDPDqJ5sYixj7r1c6fJ+fkWPA9U+8/5nI0YgMRg0YNWDUAAhgefuTTfT6J97/5Gh+9ZNNDAA3YxL9FCDhxwAAAABJRU5ErkJggg==" /> DATCOQUAN<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9fWt1hQQeMVABrj+4YMYi6aAwKtARcVn5BjA9ODBfyZyNKIYMmrAqAGjBjAwMDAwsNz48EF044MH/8nRfO39ezEAxW4UMhA/u/oAAAAASUVORK5CYII=" /> DATDITICH<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP09fWtFhAQeMVABvjw4YMYi4CAwCsVFZVn5Bjw4MGD/0zkaEQGowaMGjBqAASwfPjwQfTBgwf/ydH87t07MQAT2hT1qucQIwAAAABJRU5ErkJggg==" /> DATDOXE<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPM0xSulmf59YqBDPDwD5sYizzLr1f2bJ+fkWPAUUbe/0zkaEQGowaMGjBqAASwPPnLJnr0N+9/cjQ/+MMmBgACaRIAa0nFsgAAAABJRU5ErkJggg==" /> DATHONHOP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMyMiolpOTe8VABnjy5IkYi5yc3CsLC4tn5Bhw8uTJ/0zkaEQGowaMGjBqAASwPH78WJSRkfE/OZqfPHkiBgBk+hKLgA4SMwAAAABJRU5ErkJggg==" /> DATHTKT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMyxOulpf/9YqBDPDwIZsYi7z8r1f29p+fkWPA0aO8/5nI0YgMRg0YNWDUAAhgefKETfToUd7/5Gh+8IBNDAAG2RLyM/NWwwAAAABJRU5ErkJggg==" /> DATLANGXOM<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUzmit/iWn+YqBDMD25LoYyy85zVefLQKfkWMA70mm/0zkaEQGowaMGjBqAASwsD2+IcrLuPE/OZrZnlwTAwC/pBFvzTecoAAAAABJRU5ErkJggg==" /> DATMATNUOC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9RWu1hT49YqBDHD9A5sYi6bAr1eBip+fkWMA0wPe/0zkaEQxZNSAUQNGDWBgYGBgYLnxgU104wPe/+RovvaeTQwARmUSO36KjtAAAAAASUVORK5CYII=" /> DATOTHAPTANG<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMDxeuFhP79YqBDPDqFZsYi5jYr1c6Op+fkWPA9eu8/5nI0YgMRg0YNWDUAAhgefuWTfT6dd7/5Gh+9YpNDAABdBL6+0tzmgAAAABJRU5ErkJggg==" /> DATQUANSU<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFW6t1vyl+YqBDHCd7boYi+YvzVeBnwOfkWMAEy/TfyZyNKIYMmrAqAGjBjAwMDAwsNxguyG6kXfjf3I0X2O7JgYAGZMRfiwTVVwAAAAASUVORK5CYII=" /> DATTH-NT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUFm6t/vVL8xUDGYCN7boYy69fmq8+fw58Ro4BvLxM/5nI0YgMRg0YNWDUAAhgYWO7IcrLu/E/OZrZ2K6JAQDC4hBEt5YGZAAAAABJRU5ErkJggg==" /> TNT-CONG<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQ0lEQVQ4jWP00g/9r8ZjyEAOuP3lAgOLGo8hg5dEAlkGbH+5kIGJLJ1IYNSAUQNGDYAAlttfLzBsf7mQLM23vpxnAADARg/XdZFujQAAAABJRU5ErkJggg==" /> <br />' });
+var format_SDDN9_17 = new ol.format.GeoJSON();
+var features_SDDN9_17 = format_SDDN9_17.readFeatures(json_SDDN9_17, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_SDDN9_17 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_SDDN9_17.addFeatures(features_SDDN9_17);
+var lyr_SDDN9_17 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_SDDN9_17, 
+                style: style_SDDN9_17,
+                popuplayertitle: 'SDD N9',
+                interactive: true,
+    title: 'SDD N9<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9fWt1hQQeMVABrj+4YMYi6aAwKtARcVn5BjA9ODBfyZyNKIYMmrAqAGjBjAwMDAwsNz48EF044MH/8nRfO39ezEAxW4UMhA/u/oAAAAASUVORK5CYII=" /> !giaothongchinh<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMU9hWu/iXw6xUDGYDtA5sYyy+BX68+K35+Ro4BvA94/zORoxEZjBowasCoARDAwvaBTZT3Ae9/cjSzvWcTAwDvtBEB+mMcYAAAAABJRU5ErkJggg==" /> @_Nong Nghiep<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9RWu1hT49YqBDHD9A5sYi6bAr1eBip+fkWMA0wPe/0zkaEQxZNSAUQNGDWBgYGBgYLnxgU104wPe/+RovvaeTQwARmUSO36KjtAAAAAASUVORK5CYII=" /> @_O Moi<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsbW2t1tTUfMVABrh+/boYi6am5qvAwMBn5BjAxMT0n4kcjSiGjBowasCoAQwMDAwMLDdu3BDduHHjf3I0X7t2TQwAbvsSuOqS/ZEAAAAASUVORK5CYII=" /> @kyhieu<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsbW2t1tTUfMVABrh+/boYi6am5qvAwMBn5BjAxMT0n4kcjSiGjBowasCoAQwMDAwMLDdu3BDduHHjf3I0X7t2TQwAbvsSuOqS/ZEAAAAASUVORK5CYII=" /> 0<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP0bRWuFtD89YqBDPDhOpsYi4Dmr1eKgZ+fkWPAAybe/0zkaEQGowaMGjBqAASwfLjBJvpgI+9/cjS/v8YmBgBHIhI7UEfUSAAAAABJRU5ErkJggg==" /> 2-h o lxom-cxanh<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMU9hWu/iXw6xUDGYDtA5sYyy+BX68+K35+Ro4BvA94/zORoxEZjBowasCoARDAwvaBTZT3Ae9/cjSzvWcTAwDvtBEB+mMcYAAAAABJRU5ErkJggg==" /> CAY XANH KHU VUC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWM0CxeuZhf79YqBDPDzFZsYC7vYr1d8Op+fkWPAp+u8/5nI0YgMRg0YNWDUAAhg+fmWTfTTdd7/5Gj++YpNDAA3ZhL91rRZvgAAAABJRU5ErkJggg==" /> DATCAYXANH<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMFxauFvv16xUDGeAVG5sYi9ivX690Pn9+Ro4B13l5/zORoxEZjBowasCoARDA8paNTfQ6L+9/cjS/YmMTAwA5EBECLKOgGQAAAABJRU5ErkJggg==" /> DATCC DOTHI<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMFxauFvv16xUDGeAVG5sYi9ivX690Pn9+Ro4B13l5/zORoxEZjBowasCoARDA8paNTfQ6L+9/cjS/YmMTAwA5EBECLKOgGQAAAABJRU5ErkJggg==" /> DATCC TP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> DATCCDVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWN0Es6r5vkl/4qBDPCF7aEYC88v+VcSn+2fkWPAS96j/5nI0YgMRg0YNWDUAAhg+cr2RPQl79H/5Gj+wvZADAD/gxL5eiOkQAAAAABJRU5ErkJggg==" /> DATCONGNGHIEP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMNxOuFmP/9YqBDPDqJ5sYixj7r1c6fJ+fkWPA9U+8/5nI0YgMRg0YNWDUAAhgefuTTfT6J97/5Gh+9ZNNDAA3YxL9FCDhxwAAAABJRU5ErkJggg==" /> DATCOQUAN<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9fWt1hQQeMVABrj+4YMYi6aAwKtARcVn5BjA9ODBfyZyNKIYMmrAqAGjBjAwMDAwsNz48EF044MH/8nRfO39ezEAxW4UMhA/u/oAAAAASUVORK5CYII=" /> DATDITICH<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP09fWtFhAQeMVABvjw4YMYi4CAwCsVFZVn5Bjw4MGD/0zkaEQGowaMGjBqAASwfPjwQfTBgwf/ydH87t07MQAT2hT1qucQIwAAAABJRU5ErkJggg==" /> DATDOXE<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPM0xSulmf59YqBDPDwD5sYizzLr1f2bJ+fkWPAUUbe/0zkaEQGowaMGjBqAASwPPnLJnr0N+9/cjQ/+MMmBgACaRIAa0nFsgAAAABJRU5ErkJggg==" /> DATHONHOP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMyMiolpOTe8VABnjy5IkYi5yc3CsLC4tn5Bhw8uTJ/0zkaEQGowaMGjBqAASwPH78WJSRkfE/OZqfPHkiBgBk+hKLgA4SMwAAAABJRU5ErkJggg==" /> DATHTKT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUzmit/iWn+YqBDMD25LoYyy85zVefLQKfkWMA70mm/0zkaEQGowaMGjBqAASwsD2+IcrLuPE/OZrZnlwTAwC/pBFvzTecoAAAAABJRU5ErkJggg==" /> DATMATNUOC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMDxeuFhP79YqBDPDqFZsYi5jYr1c6Op+fkWPA9eu8/5nI0YgMRg0YNWDUAAhgefuWTfT6dd7/5Gh+9YpNDAABdBL6+0tzmgAAAABJRU5ErkJggg==" /> DATQUANSU<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFW6t1vyl+YqBDHCd7boYi+YvzVeBnwOfkWMAEy/TfyZyNKIYMmrAqAGjBjAwMDAwsNxguyG6kXfjf3I0X2O7JgYAGZMRfiwTVVwAAAAASUVORK5CYII=" /> DATTH-NT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsbW2t1tTUfMVABrh+/boYi6am5qvAwMBn5BjAxMT0n4kcjSiGjBowasCoAQwMDAwMLDdu3BDduHHjf3I0X7t2TQwAbvsSuOqS/ZEAAAAASUVORK5CYII=" /> duong chinh<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMDxeuFhP79YqBDPDqFZsYi5jYr1c6Op+fkWPA9eu8/5nI0YgMRg0YNWDUAAhgefuWTfT6dd7/5Gh+9YpNDAABdBL6+0tzmgAAAABJRU5ErkJggg==" /> H_langxom<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWN0CxeuFhD79YqBDPDhFZsYi4DYr1dyOp+fkWMA43Xe/0zkaEQGowaMGjBqAASwfHzLJvr4Ou9/cjR/eMUmBgB25RIVdhiwaAAAAABJRU5ErkJggg==" /> h- ko xd<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNszRCu1pT79YqBDHD9CZsYi6bcr1eBFp+fkWMA00ne/0zkaEQxZNSAUQNGDWBgYGBgYLnxmE10IyPvf3I0X3vCJgYAwhgRbz2z3lgAAAAASUVORK5CYII=" /> H-TRUONGHOC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPUzBOuZpH/9YqBDPDnIZsYC4v8r1ds9p+fkWMA41He/0zkaEQGowaMGjBqAASw/H3CJvr7KO9/cjT/ecAmBgABdxIAgthulAAAAABJRU5ErkJggg==" /> hatch-cayxxanh<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP0NRCuFmD99YqBDPDhN5sYiwDrr1eKPJ+fkWPAg6+8/5nI0YgMRg0YNWDUAAhg+fCbTfTBV97/5Gh+/4tNDADT8xL7cF2AGQAAAABJRU5ErkJggg==" /> Layer2<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP09fWtFhAQeMVABvjw4YMYi4CAwCsVFZVn5Bjw4MGD/0zkaEQGowaMGjBqAASwfPjwQfTBgwf/ydH87t07MQAT2hT1qucQIwAAAABJRU5ErkJggg==" /> PHAN DOT2<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> sdd_cc_CHO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> sdd_cc_VANHOA<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> sdd_cc_YTE<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMNxOuFmP/9YqBDPDqJ5sYixj7r1c6fJ+fkWPA9U+8/5nI0YgMRg0YNWDUAAhgefuTTfT6J97/5Gh+9ZNNDAA3YxL9FCDhxwAAAABJRU5ErkJggg==" /> sdd_COQUAN<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbhWu/qX56xUDGYDtOpsYyy/NX68+B35+Ro4BvEy8/5nI0YgMRg0YNWDUAAhgYbvBJsq7kfc/OZrZrrGJAQDEHBBEOZw1sQAAAABJRU5ErkJggg==" /> sdd_CX_cachli<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMU9hWu/iXw6xUDGYDtA5sYyy+BX68+K35+Ro4BvA94/zORoxEZjBowasCoARDAwvaBTZT3Ae9/cjSzvWcTAwDvtBEB+mMcYAAAAABJRU5ErkJggg==" /> sdd_CX_congvien<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbhWu/qX56xUDGYDtOpsYyy/NX68+B35+Ro4BvEy8/5nI0YgMRg0YNWDUAAhgYbvBJsq7kfc/OZrZrrGJAQDEHBBEOZw1sQAAAABJRU5ErkJggg==" /> sdd_CX_DVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMU9hWu/iXw6xUDGYDtA5sYyy+BX68+K35+Ro4BvA94/zORoxEZjBowasCoARDAwvaBTZT3Ae9/cjSzvWcTAwDvtBEB+mMcYAAAAABJRU5ErkJggg==" /> sdd_CX_rung<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9RWu1hT49YqBDHD9A5sYi6bAr1eBip+fkWMA0wPe/0zkaEQxZNSAUQNGDWBgYGBgYLnxgU104wPe/+RovvaeTQwARmUSO36KjtAAAAAASUVORK5CYII=" /> sdd_DIDAN<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9fWt1hQQeMVABrj+4YMYi6aAwKtARcVn5BjA9ODBfyZyNKIYMmrAqAGjBjAwMDAwsNz48EF044MH/8nRfO39ezEAxW4UMhA/u/oAAAAASUVORK5CYII=" /> sdd_DITICH<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUNguv/sUu9oqBDMD285UYyy92sVef+XSekWMA76fr/5nI0YgMRg0YNWDUAAhgYfv5VpT30/X/5Ghm+/lKDAAzcxL9E2X/ZgAAAABJRU5ErkJggg==" /> sdd_HO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP09fWtFhAQeMVABvjw4YMYi4CAwCsVFZVn5Bjw4MGD/0zkaEQGowaMGjBqAASwfPjwQfTBgwf/ydH87t07MQAT2hT1qucQIwAAAABJRU5ErkJggg==" /> sdd_HTKT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWNMzHOqlpbnecVABnj68IsYi7Q8zytTe4ln5BjAcvTlfyZyNCKDUQNGDRg1AAJYXjz5Knr+6Mv/5Gh+8uCLGAAx/xQjFFZdJAAAAABJRU5ErkJggg==" /> sdd_LANGXOM<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMDxeuFhP79YqBDPDqFZsYi5jYr1c6Op+fkWPA9eu8/5nI0YgMRg0YNWDUAAhgefuWTfT6dd7/5Gh+9YpNDAABdBL6+0tzmgAAAABJRU5ErkJggg==" /> sdd_QuanSu<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNszRCu1pT79YqBDHD9CZsYi6bcr1eBFp+fkWMA00ne/0zkaEQxZNSAUQNGDWBgYGBgYLnxmE10IyPvf3I0X3vCJgYAwhgRbz2z3lgAAAAASUVORK5CYII=" /> sdd_truong_NT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMy3OqlpfnecVABnj48IsYi7w8zyt7e4ln5Bhw9OjL/0zkaEQGowaMGjBqAASwPHnyVfTo0Zf/ydH84MEXMQBKlRTtRSG8oAAAAABJRU5ErkJggg==" /> zBolinhtinh<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAPklEQVQ4jWM081f+L6TNyEAOeHftPwOLkDYjg0oIE1kG3Fn7n4E8nUhg1IBRA0YNgACWd9cguYoc8O7qfwYAVbYPGlogR0QAAAAASUVORK5CYII=" /> <br />' });
+var format_SDDN8_18 = new ol.format.GeoJSON();
+var features_SDDN8_18 = format_SDDN8_18.readFeatures(json_SDDN8_18, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_SDDN8_18 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_SDDN8_18.addFeatures(features_SDDN8_18);
+var lyr_SDDN8_18 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_SDDN8_18, 
+                style: style_SDDN8_18,
+                popuplayertitle: 'SDD N8',
+                interactive: true,
+    title: 'SDD N8<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsbW2t1tTUfMVABrh+/boYi6am5qvAwMBn5BjAxMT0n4kcjSiGjBowasCoAQwMDAwMLDdu3BDduHHjf3I0X7t2TQwAbvsSuOqS/ZEAAAAASUVORK5CYII=" /> 0<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMc3KqlufhecVABnj45YsYizwPzyt7CYln5Bhw9OXL/0zkaEQGowaMGjBqAASwPPn6VfToy5f/ydH84MsXMQBFOxT0z5sHZQAAAABJRU5ErkJggg==" /> 4-CC-DVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9RWu1hT49YqBDHD9A5sYi6bAr1eBip+fkWMA0wPe/0zkaEQxZNSAUQNGDWBgYGBgYLnxgU104wPe/+RovvaeTQwARmUSO36KjtAAAAAASUVORK5CYII=" /> 4-hach dtht<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNszRCu1pT79YqBDHD9CZsYi6bcr1eBFp+fkWMA00ne/0zkaEQxZNSAUQNGDWBgYGBgYLnxmE10IyPvf3I0X3vCJgYAwhgRbz2z3lgAAAAASUVORK5CYII=" /> 4-hacth-cai tao<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWM0aBWuZtX89YqBDPD7OpsYC6vmr1c8gZ+fkWPAVybe/0zkaEQGowaMGjBqAASw/L7BJvp1I+9/cjT/usYmBgCoXhI+qaE7NwAAAABJRU5ErkJggg==" /> DATCAY XANH DVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUNpOt/sX+5xUDGYDtJ4sYyy/2P68+8/1+Ro4BvJ8Y/zORoxEZjBowasCoARDAwvaTRZT3E+N/cjSz/WQWAwCN1xD8FnsJZgAAAABJRU5ErkJggg==" /> DATCAYXANH CANH QUAN<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP0bRWuFtD89YqBDPDhOpsYi4Dmr1eKgZ+fkWPAAybe/0zkaEQGowaMGjBqAASwfLjBJvpgI+9/cjS/v8YmBgBHIhI7UEfUSAAAAABJRU5ErkJggg==" /> DATCAYXANH CLY<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUDheu/iX26xUDGYDtFZsYyy+xX68+63x+Ro4BvNd5/zORoxEZjBowasCoARDAwvaWTZT3Ou9/cjSzvWITAwA3GBECYEtmRAAAAABJRU5ErkJggg==" /> DATCAYXANH TP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMFxauFvv16xUDGeAVG5sYi9ivX690Pn9+Ro4B13l5/zORoxEZjBowasCoARDA8paNTfQ6L+9/cjS/YmMTAwA5EBECLKOgGQAAAABJRU5ErkJggg==" /> DATCC DOTHI<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> DATCC DVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMFxauFvv16xUDGeAVG5sYi9ivX690Pn9+Ro4B13l5/zORoxEZjBowasCoARDA8paNTfQ6L+9/cjS/YmMTAwA5EBECLKOgGQAAAABJRU5ErkJggg==" /> DATCC TP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9fWt1hQQeMVABrj+4YMYi6aAwKtARcVn5BjA9ODBfyZyNKIYMmrAqAGjBjAwMDAwsNz48EF044MH/8nRfO39ezEAxW4UMhA/u/oAAAAASUVORK5CYII=" /> DATDITICH<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP09fWtFhAQeMVABvjw4YMYi4CAwCsVFZVn5Bjw4MGD/0zkaEQGowaMGjBqAASwfPjwQfTBgwf/ydH87t07MQAT2hT1qucQIwAAAABJRU5ErkJggg==" /> DATDOXE<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMyMiolpOTe8VABnjy5IkYi5yc3CsLC4tn5Bhw8uTJ/0zkaEQGowaMGjBqAASwPH78WJSRkfE/OZqfPHkiBgBk+hKLgA4SMwAAAABJRU5ErkJggg==" /> DATHTKT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMyxOulpf/9YqBDPDwIZsYi7z8r1f29p+fkWPA0aO8/5nI0YgMRg0YNWDUAAhgefKETfToUd7/5Gh+8IBNDAAG2RLyM/NWwwAAAABJRU5ErkJggg==" /> DATLANGXOM<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUzmit/iWn+YqBDMD25LoYyy85zVefLQKfkWMA70mm/0zkaEQGowaMGjBqAASwsD2+IcrLuPE/OZrZnlwTAwC/pBFvzTecoAAAAABJRU5ErkJggg==" /> DATMATNUOC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMDxeuFhP79YqBDPDqFZsYi5jYr1c6Op+fkWPA9eu8/5nI0YgMRg0YNWDUAAhgefuWTfT6dd7/5Gh+9YpNDAABdBL6+0tzmgAAAABJRU5ErkJggg==" /> DATQUANSU<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNszRCu1pT79YqBDHD9CZsYi6bcr1eBFp+fkWMA00ne/0zkaEQxZNSAUQNGDWBgYGBgYLnxmE10IyPvf3I0X3vCJgYAwhgRbz2z3lgAAAAASUVORK5CYII=" /> H-TRUONGHOC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQklEQVQ4jWN0UfL/r8CgzUAOeMBwjYFFgUGbwf5/CFkGMDKuZWAiSycSGDVg1IBRAyCA5QHDNQZGxrVkaX7AcJUBAANaCn8O6R/MAAAAAElFTkSuQmCC" /> <br />' });
+var format_SDDN7_19 = new ol.format.GeoJSON();
+var features_SDDN7_19 = format_SDDN7_19.readFeatures(json_SDDN7_19, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_SDDN7_19 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_SDDN7_19.addFeatures(features_SDDN7_19);
+var lyr_SDDN7_19 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_SDDN7_19, 
+                style: style_SDDN7_19,
+                popuplayertitle: 'SDD N7',
+                interactive: true,
+    title: 'SDD N7<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsbW2t1tTUfMVABrh+/boYi6am5qvAwMBn5BjAxMT0n4kcjSiGjBowasCoAQwMDAwMLDdu3BDduHHjf3I0X7t2TQwAbvsSuOqS/ZEAAAAASUVORK5CYII=" /> 0<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP0bRWuFtD89YqBDPDhOpsYi4Dmr1eKgZ+fkWPAAybe/0zkaEQGowaMGjBqAASwfLjBJvpgI+9/cjS/v8YmBgBHIhI7UEfUSAAAAABJRU5ErkJggg==" /> 2-h o lxom-cxanh<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9RWu1hT49YqBDHD9A5sYi6bAr1eBip+fkWMA0wPe/0zkaEQxZNSAUQNGDWBgYGBgYLnxgU104wPe/+RovvaeTQwARmUSO36KjtAAAAAASUVORK5CYII=" /> 4-hach dtht<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNszRCu1pT79YqBDHD9CZsYi6bcr1eBFp+fkWMA00ne/0zkaEQxZNSAUQNGDWBgYGBgYLnxmE10IyPvf3I0X3vCJgYAwhgRbz2z3lgAAAAASUVORK5CYII=" /> 4-hacth-cai tao<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9W2t1hTQfMVABrj+4boYi6aA5qtAxcBn5BjA9IDpPxM5GlEMGTVg1IBRAxgYGBgYWG58uCG68cHG/+Rovvb+mhgAmpMTdcZUDfQAAAAASUVORK5CYII=" /> b-truonghoc<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWM0aBWuZtX89YqBDPD7OpsYC6vmr1c8gZ+fkWPAVybe/0zkaEQGowaMGjBqAASw/L7BJvp1I+9/cjT/usYmBgCoXhI+qaE7NwAAAABJRU5ErkJggg==" /> DATCAY XANH DVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUNpOt/sX+5xUDGYDtJ4sYyy/2P68+8/1+Ro4BvJ8Y/zORoxEZjBowasCoARDAwvaTRZT3E+N/cjSz/WQWAwCN1xD8FnsJZgAAAABJRU5ErkJggg==" /> DATCAYXANH CANH QUAN<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP0bRWuFtD89YqBDPDhOpsYi4Dmr1eKgZ+fkWPAAybe/0zkaEQGowaMGjBqAASwfLjBJvpgI+9/cjS/v8YmBgBHIhI7UEfUSAAAAABJRU5ErkJggg==" /> DATCAYXANH CLY<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUDheu/iX26xUDGYDtFZsYyy+xX68+63x+Ro4BvNd5/zORoxEZjBowasCoARDAwvaWTZT3Ou9/cjSzvWITAwA3GBECYEtmRAAAAABJRU5ErkJggg==" /> DATCAYXANH TP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMFxauFvv16xUDGeAVG5sYi9ivX690Pn9+Ro4B13l5/zORoxEZjBowasCoARDA8paNTfQ6L+9/cjS/YmMTAwA5EBECLKOgGQAAAABJRU5ErkJggg==" /> DATCC DOTHI<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> DATCC DVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMFxauFvv16xUDGeAVG5sYi9ivX690Pn9+Ro4B13l5/zORoxEZjBowasCoARDA8paNTfQ6L+9/cjS/YmMTAwA5EBECLKOgGQAAAABJRU5ErkJggg==" /> DATCC TP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMNxOuFmP/9YqBDPDqJ5sYixj7r1c6fJ+fkWPA9U+8/5nI0YgMRg0YNWDUAAhgefuTTfT6J97/5Gh+9ZNNDAA3YxL9FCDhxwAAAABJRU5ErkJggg==" /> DATCOQUAN<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9fWt1hQQeMVABrj+4YMYi6aAwKtARcVn5BjA9ODBfyZyNKIYMmrAqAGjBjAwMDAwsNz48EF044MH/8nRfO39ezEAxW4UMhA/u/oAAAAASUVORK5CYII=" /> DATDITICH<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP09fWtFhAQeMVABvjw4YMYi4CAwCsVFZVn5Bjw4MGD/0zkaEQGowaMGjBqAASwfPjwQfTBgwf/ydH87t07MQAT2hT1qucQIwAAAABJRU5ErkJggg==" /> DATDOXE<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMyMiolpOTe8VABnjy5IkYi5yc3CsLC4tn5Bhw8uTJ/0zkaEQGowaMGjBqAASwPH78WJSRkfE/OZqfPHkiBgBk+hKLgA4SMwAAAABJRU5ErkJggg==" /> DATHTKT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMyxOulpf/9YqBDPDwIZsYi7z8r1f29p+fkWPA0aO8/5nI0YgMRg0YNWDUAAhgefKETfToUd7/5Gh+8IBNDAAG2RLyM/NWwwAAAABJRU5ErkJggg==" /> DATLANGXOM<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUzmit/iWn+YqBDMD25LoYyy85zVefLQKfkWMA70mm/0zkaEQGowaMGjBqAASwsD2+IcrLuPE/OZrZnlwTAwC/pBFvzTecoAAAAABJRU5ErkJggg==" /> DATMATNUOC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMDxeuFhP79YqBDPDqFZsYi5jYr1c6Op+fkWPA9eu8/5nI0YgMRg0YNWDUAAhgefuWTfT6dd7/5Gh+9YpNDAABdBL6+0tzmgAAAABJRU5ErkJggg==" /> DATQUANSU<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNszRCu1pT79YqBDHD9CZsYi6bcr1eBFp+fkWMA00ne/0zkaEQxZNSAUQNGDWBgYGBgYLnxmE10IyPvf3I0X3vCJgYAwhgRbz2z3lgAAAAASUVORK5CYII=" /> H-TRUONGHOC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsbW2t1tTUfMVABrh+/boYi6am5qvAwMBn5BjAxMT0n4kcjSiGjBowasCoAQwMDAwMLDdu3BDduHHjf3I0X7t2TQwAbvsSuOqS/ZEAAAAASUVORK5CYII=" /> KIHIEU<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQklEQVQ4jWMMsg3/rytlzEAOuPz8HAOLrpQxQ6RxMlkGMJ5jZGAiSycSGDVg1IBRAyCA5fLzcwyM5xjJ0nz52VkGAKjIDSLcR2ZhAAAAAElFTkSuQmCC" /> <br />' });
+var format_SDDN6_20 = new ol.format.GeoJSON();
+var features_SDDN6_20 = format_SDDN6_20.readFeatures(json_SDDN6_20, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_SDDN6_20 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_SDDN6_20.addFeatures(features_SDDN6_20);
+var lyr_SDDN6_20 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_SDDN6_20, 
+                style: style_SDDN6_20,
+                popuplayertitle: 'SDD N6',
+                interactive: true,
+    title: 'SDD N6<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9RWu1hT49YqBDHD9A5sYi6bAr1eBip+fkWMA0wPe/0zkaEQxZNSAUQNGDWBgYGBgYLnxgU104wPe/+RovvaeTQwARmUSO36KjtAAAAAASUVORK5CYII=" /> cong cong dvo<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> cong cong khu vuc<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMyxOulpf/9YqBDPDwIZsYi7z8r1f29p+fkWPA0aO8/5nI0YgMRg0YNWDUAAhgefKETfToUd7/5Gh+8IBNDAAG2RLyM/NWwwAAAABJRU5ErkJggg==" /> DAN DAN<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUznOq/iXP84qBDMD28IsYyy95nlef7SWekWMA79GX/5nI0YgMRg0YNWDUAAhgYXvyVZT36Mv/5Ghme/BFDAD9gRL5FGe1qAAAAABJRU5ErkJggg==" /> DAT CAY XANH DVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWM0CxeuZhf79YqBDPDzFZsYC7vYr1d8Op+fkWPAp+u8/5nI0YgMRg0YNWDUAAhg+fmWTfTTdd7/5Gj++YpNDAA3ZhL91rRZvgAAAABJRU5ErkJggg==" /> DATCAYXANH<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbhWu/qX56xUDGYDtOpsYyy/NX68+B35+Ro4BvEy8/5nI0YgMRg0YNWDUAAhgYbvBJsq7kfc/OZrZrrGJAQDEHBBEOZw1sQAAAABJRU5ErkJggg==" /> DATCAYXANHCLY<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWN0Es6r5vkl/4qBDPCF7aEYC88v+VcSn+2fkWPAS96j/5nI0YgMRg0YNWDUAAhg+cr2RPQl79H/5Gj+wvZADAD/gxL5eiOkQAAAAABJRU5ErkJggg==" /> DATCONGNGHIEP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMNxOuFmP/9YqBDPDqJ5sYixj7r1c6fJ+fkWPA9U+8/5nI0YgMRg0YNWDUAAhgefuTTfT6J97/5Gh+9ZNNDAA3YxL9FCDhxwAAAABJRU5ErkJggg==" /> DATCOQUAN<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9fWt1hQQeMVABrj+4YMYi6aAwKtARcVn5BjA9ODBfyZyNKIYMmrAqAGjBjAwMDAwsNz48EF044MH/8nRfO39ezEAxW4UMhA/u/oAAAAASUVORK5CYII=" /> DATDITICH<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP09fWtFhAQeMVABvjw4YMYi4CAwCsVFZVn5Bjw4MGD/0zkaEQGowaMGjBqAASwfPjwQfTBgwf/ydH87t07MQAT2hT1qucQIwAAAABJRU5ErkJggg==" /> DATDOXE<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMyMiolpOTe8VABnjy5IkYi5yc3CsLC4tn5Bhw8uTJ/0zkaEQGowaMGjBqAASwPH78WJSRkfE/OZqfPHkiBgBk+hKLgA4SMwAAAABJRU5ErkJggg==" /> DATHTKT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMyxOulpf/9YqBDPDwIZsYi7z8r1f29p+fkWPA0aO8/5nI0YgMRg0YNWDUAAhgefKETfToUd7/5Gh+8IBNDAAG2RLyM/NWwwAAAABJRU5ErkJggg==" /> DATLANGXOM<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUzmit/iWn+YqBDMD25LoYyy85zVefLQKfkWMA70mm/0zkaEQGowaMGjBqAASwsD2+IcrLuPE/OZrZnlwTAwC/pBFvzTecoAAAAABJRU5ErkJggg==" /> DATMATNUOC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFW6t1vyl+YqBDHCd7boYi+YvzVeBnwOfkWMAEy/TfyZyNKIYMmrAqAGjBjAwMDAwsNxguyG6kXfjf3I0X2O7JgYAGZMRfiwTVVwAAAAASUVORK5CYII=" /> DATTH-NT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUDs+r/iUm/4qBDMD26qEYyy8x+VefdeyfkWMA7/Wj/5nI0YgMRg0YNWDUAAhgYXv7RJT3+tH/5Ghme/VADACANRL2l/ERqAAAAABJRU5ErkJggg==" /> H-matnuoc<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP0FTaoFvjF+oqBDPCB7bcYi8Av1leKn3mekWPAA96v/5nI0YgMRg0YNWDUAAhg+cD2W/QB79f/5Gh+z/ZLDADR+RL76EbjnQAAAABJRU5ErkJggg==" /> hatch-CC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMcxKuluf59YqBDPDwC5sYizzPr1f2Ep+fkWPA0Ze8/5nI0YgMRg0YNWDUAAhgefKVTfToS97/5Gh+8IVNDAABfxL5tTz7iwAAAABJRU5ErkJggg==" /> odt dot dau<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMU9m2t/iWg+YqBDMD24boYyy8BzVefFQOfkWMA7wOm/0zkaEQGowaMGjBqAASwsH24Icr7YON/cjSzvb8mBgBD8RI7tNRFxgAAAABJRU5ErkJggg==" /> Songho<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQklEQVQ4jWM0DQ37L2hoyEAOeH/hPAOLoKEhg2JCIlkGMCxkZGAiTycCjBowasCoARDA8v7CeQaGhYxkaX5//jwDAJHqDLgyicCzAAAAAElFTkSuQmCC" /> <br />' });
+var format_SDDN5_21 = new ol.format.GeoJSON();
+var features_SDDN5_21 = format_SDDN5_21.readFeatures(json_SDDN5_21, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_SDDN5_21 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_SDDN5_21.addFeatures(features_SDDN5_21);
+var lyr_SDDN5_21 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_SDDN5_21, 
+                style: style_SDDN5_21,
+                popuplayertitle: 'SDD N5',
+                interactive: true,
+    title: 'SDD N5<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9RWu1hT49YqBDHD9A5sYi6bAr1eBip+fkWMA0wPe/0zkaEQxZNSAUQNGDWBgYGBgYLnxgU104wPe/+RovvaeTQwARmUSO36KjtAAAAAASUVORK5CYII=" /> 4-hach dtht<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNszRCu1pT79YqBDHD9CZsYi6bcr1eBFp+fkWMA00ne/0zkaEQxZNSAUQNGDWBgYGBgYLnxmE10IyPvf3I0X3vCJgYAwhgRbz2z3lgAAAAASUVORK5CYII=" /> 4-hacth-cai tao<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9W2t1hTQfMVABrj+4boYi6aA5qtAxcBn5BjA9IDpPxM5GlEMGTVg1IBRAxgYGBgYWG58uCG68cHG/+Rovvb+mhgAmpMTdcZUDfQAAAAASUVORK5CYII=" /> b-truonghoc<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWM0aBWuZtX89YqBDPD7OpsYC6vmr1c8gZ+fkWPAVybe/0zkaEQGowaMGjBqAASw/L7BJvp1I+9/cjT/usYmBgCoXhI+qaE7NwAAAABJRU5ErkJggg==" /> DATCAY XANH DVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP0bRWuFtD89YqBDPDhOpsYi4Dmr1eKgZ+fkWPAAybe/0zkaEQGowaMGjBqAASwfLjBJvpgI+9/cjS/v8YmBgBHIhI7UEfUSAAAAABJRU5ErkJggg==" /> DATCAYXANH CLY<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUDheu/iX26xUDGYDtFZsYyy+xX68+63x+Ro4BvNd5/zORoxEZjBowasCoARDAwvaWTZT3Ou9/cjSzvWITAwA3GBECYEtmRAAAAABJRU5ErkJggg==" /> DATCAYXANH TP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMFxauFvv16xUDGeAVG5sYi9ivX690Pn9+Ro4B13l5/zORoxEZjBowasCoARDA8paNTfQ6L+9/cjS/YmMTAwA5EBECLKOgGQAAAABJRU5ErkJggg==" /> DATCC DOTHI<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> DATCC DVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMFxauFvv16xUDGeAVG5sYi9ivX690Pn9+Ro4B13l5/zORoxEZjBowasCoARDA8paNTfQ6L+9/cjS/YmMTAwA5EBECLKOgGQAAAABJRU5ErkJggg==" /> DATCC TP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMNxOuFmP/9YqBDPDqJ5sYixj7r1c6fJ+fkWPA9U+8/5nI0YgMRg0YNWDUAAhgefuTTfT6J97/5Gh+9ZNNDAA3YxL9FCDhxwAAAABJRU5ErkJggg==" /> DATCOQUAN<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9fWt1hQQeMVABrj+4YMYi6aAwKtARcVn5BjA9ODBfyZyNKIYMmrAqAGjBjAwMDAwsNz48EF044MH/8nRfO39ezEAxW4UMhA/u/oAAAAASUVORK5CYII=" /> DATDITICH<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP09fWtFhAQeMVABvjw4YMYi4CAwCsVFZVn5Bjw4MGD/0zkaEQGowaMGjBqAASwfPjwQfTBgwf/ydH87t07MQAT2hT1qucQIwAAAABJRU5ErkJggg==" /> DATDOXE<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMyMiolpOTe8VABnjy5IkYi5yc3CsLC4tn5Bhw8uTJ/0zkaEQGowaMGjBqAASwPH78WJSRkfE/OZqfPHkiBgBk+hKLgA4SMwAAAABJRU5ErkJggg==" /> DATHTKT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWN0Es6r5vkl/4qBDPCF7aEYC88v+VcSn+2fkWPAS96j/5nI0YgMRg0YNWDUAAhg+cr2RPQl79H/5Gj+wvZADAD/gxL5eiOkQAAAAABJRU5ErkJggg==" /> DATKHOTANGBENBAI<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMyxOulpf/9YqBDPDwIZsYi7z8r1f29p+fkWPA0aO8/5nI0YgMRg0YNWDUAAhgefKETfToUd7/5Gh+8IBNDAAG2RLyM/NWwwAAAABJRU5ErkJggg==" /> DATLANGXOM<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUzmit/iWn+YqBDMD25LoYyy85zVefLQKfkWMA70mm/0zkaEQGowaMGjBqAASwsD2+IcrLuPE/OZrZnlwTAwC/pBFvzTecoAAAAABJRU5ErkJggg==" /> DATMATNUOC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMDxeuFhP79YqBDPDqFZsYi5jYr1c6Op+fkWPA9eu8/5nI0YgMRg0YNWDUAAhgefuWTfT6dd7/5Gh+9YpNDAABdBL6+0tzmgAAAABJRU5ErkJggg==" /> DATQUANSU<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNszRCu1pT79YqBDHD9CZsYi6bcr1eBFp+fkWMA00ne/0zkaEQxZNSAUQNGDWBgYGBgYLnxmE10IyPvf3I0X3vCJgYAwhgRbz2z3lgAAAAASUVORK5CYII=" /> H-TRUONGHOC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsbW2t1tTUfMVABrh+/boYi6am5qvAwMBn5BjAxMT0n4kcjSiGjBowasCoAQwMDAwMLDdu3BDduHHjf3I0X7t2TQwAbvsSuOqS/ZEAAAAASUVORK5CYII=" /> KIHIEU<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsbW2t1tTUfMVABrh+/boYi6am5qvAwMBn5BjAxMT0n4kcjSiGjBowasCoAQwMDAwMLDdu3BDduHHjf3I0X7t2TQwAbvsSuOqS/ZEAAAAASUVORK5CYII=" /> KYHIEU<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQklEQVQ4jWMMdFL9ryvPzEAOuPLoHwOLrjwzQ7gNG1kGMBz9zcBEnk4EGDVg1IBRAyCA5fKjfwwMR3+TpfnKw78MAJiJDqs77uCZAAAAAElFTkSuQmCC" /> <br />' });
+var format_SDDN4_22 = new ol.format.GeoJSON();
+var features_SDDN4_22 = format_SDDN4_22.readFeatures(json_SDDN4_22, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_SDDN4_22 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_SDDN4_22.addFeatures(features_SDDN4_22);
+var lyr_SDDN4_22 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_SDDN4_22, 
+                style: style_SDDN4_22,
+                popuplayertitle: 'SDD N4',
+                interactive: true,
+    title: 'SDD N4<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9RWu1hT49YqBDHD9A5sYi6bAr1eBip+fkWMA0wPe/0zkaEQxZNSAUQNGDWBgYGBgYLnxgU104wPe/+RovvaeTQwARmUSO36KjtAAAAAASUVORK5CYII=" /> @_O Moi<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMC3eqlhfjecVABnj46osYi7wYzyt7HYln5Bhw9PrL/0zkaEQGowaMGjBqAASwPHn7VfTo9Zf/ydH84NUXMQDH2RTxP2HeAQAAAABJRU5ErkJggg==" /> +camxaydung<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMDxeuFhP79YqBDPDqFZsYi5jYr1c6Op+fkWPA9eu8/5nI0YgMRg0YNWDUAAhgefuWTfT6dd7/5Gh+9YpNDAABdBL6+0tzmgAAAABJRU5ErkJggg==" /> DATQUANSU<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMNxOuFmP/9YqBDPDqJ5sYixj7r1c6fJ+fkWPA9U+8/5nI0YgMRg0YNWDUAAhgefuTTfT6J97/5Gh+9ZNNDAA3YxL9FCDhxwAAAABJRU5ErkJggg==" /> H_Coquan<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARUlEQVQ4jWMU9lWs/iXA8IqBDMD2gUGM5ZcAw6vPiv+ekWMA7wOm/0zkaEQGowaMGjBqAASwsH1gEOV9wPSfHM1s7xnEAGmDDv5ID9NQAAAAAElFTkSuQmCC" /> H-CAYXANH-KHUVUC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMaBWultP89YqBDPDkOpsYi5zmr1cWgZ+fkWPASSbe/0zkaEQGowaMGjBqAASwPL7BJsq4kfc/OZqfXGMTAwDCCRFv2GRq4wAAAABJRU5ErkJggg==" /> H-cayxanhcachly<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbhWu/qX56xUDGYDtOpsYyy/NX68+B35+Ro4BvEy8/5nI0YgMRg0YNWDUAAhgYbvBJsq7kfc/OZrZrrGJAQDEHBBEOZw1sQAAAABJRU5ErkJggg==" /> H-cayxanhdonvio<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWOUNROu/sP+6xUDGYDlJ5sYyx/2X69+831+Ro4BjJ94/zORoxEZjBowasCoARDAwvKTTZTxE+9/cjQz/2QTAwCNxRD8lFUAOwAAAABJRU5ErkJggg==" /> H-CAYXANHTHANHPHO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMFxauFvv16xUDGeAVG5sYi9ivX690Pn9+Ro4B13l5/zORoxEZjBowasCoARDA8paNTfQ6L+9/cjS/YmMTAwA5EBECLKOgGQAAAABJRU5ErkJggg==" /> H-CCTP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> H-congcongDVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPM0xSulmf59YqBDPDwD5sYizzLr1f2bJ+fkWPAUUbe/0zkaEQGowaMGjBqAASwPPnLJnr0N+9/cjQ/+MMmBgACaRIAa0nFsgAAAABJRU5ErkJggg==" /> H-congcongkhuvuc<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWN0Es6r5vkl/4qBDPCF7aEYC88v+VcSn+2fkWPAS96j/5nI0YgMRg0YNWDUAAhg+cr2RPQl79H/5Gj+wvZADAD/gxL5eiOkQAAAAABJRU5ErkJggg==" /> H-congnghiep<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNszfCt1pQTeMVABrj+5IMYi6acwKtAC8Vn5BjAdPLBfyZyNKIYMmrAqAGjBjAwMDAwsNx4/EF0I+OD/+RovvbkvRgAQTATZlugrmMAAAAASUVORK5CYII=" /> H-DANDAN<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9fWt1hQQeMVABrj+4YMYi6aAwKtARcVn5BjA9ODBfyZyNKIYMmrAqAGjBjAwMDAwsNz48EF044MH/8nRfO39ezEAxW4UMhA/u/oAAAAASUVORK5CYII=" /> H-dtich<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP09fWtFhAQeMVABvjw4YMYi4CAwCsVFZVn5Bjw4MGD/0zkaEQGowaMGjBqAASwfPjwQfTBgwf/ydH87t07MQAT2hT1qucQIwAAAABJRU5ErkJggg==" /> H-hatang<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMDxeuFhP79YqBDPDqFZsYi5jYr1c6Op+fkWPA9eu8/5nI0YgMRg0YNWDUAAhgefuWTfT6dd7/5Gh+9YpNDAABdBL6+0tzmgAAAABJRU5ErkJggg==" /> H-langxom2<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUDs+r/iUm/4qBDMD26qEYyy8x+VefdeyfkWMA7/Wj/5nI0YgMRg0YNWDUAAhgYXv7RJT3+tH/5Ghme/VADACANRL2l/ERqAAAAABJRU5ErkJggg==" /> H-matnuoc<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9RWu1hT49YqBDHD9A5sYi6bAr1eBip+fkWMA0wPe/0zkaEQxZNSAUQNGDWBgYGBgYLnxgU104wPe/+RovvaeTQwARmUSO36KjtAAAAAASUVORK5CYII=" /> H-nha o<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNszRCu1pT79YqBDHD9CZsYi6bcr1eBFp+fkWMA00ne/0zkaEQxZNSAUQNGDWBgYGBgYLnxmE10IyPvf3I0X3vCJgYAwhgRbz2z3lgAAAAASUVORK5CYII=" /> H-TH_giaoduc<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsbW2t1tTUfMVABrh+/boYi6am5qvAwMBn5BjAxMT0n4kcjSiGjBowasCoAQwMDAwMLDdu3BDduHHjf3I0X7t2TQwAbvsSuOqS/ZEAAAAASUVORK5CYII=" /> KIHIEU<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsbW2t1tTUfMVABrh+/boYi6am5qvAwMBn5BjAxMT0n4kcjSiGjBowasCoAQwMDAwMLDdu3BDduHHjf3I0X7t2TQwAbvsSuOqS/ZEAAAAASUVORK5CYII=" /> KYHIEU<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsbW2t1tTUfMVABrh+/boYi6am5qvAwMBn5BjAxMT0n4kcjSiGjBowasCoAQwMDAwMLDdu3BDduHHjf3I0X7t2TQwAbvsSuOqS/ZEAAAAASUVORK5CYII=" /> nut<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQ0lEQVQ4jWM0VPf7z8eqxUAO+PTnOgMLH6sWgwxnMFkGPP2+joGJLJ1IYNSAUQNGDYAAls+/rzM8ZVhHluZPf64xAABTHQ8meVbRQAAAAABJRU5ErkJggg==" /> <br />' });
+var format_SDDN3_23 = new ol.format.GeoJSON();
+var features_SDDN3_23 = format_SDDN3_23.readFeatures(json_SDDN3_23, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_SDDN3_23 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_SDDN3_23.addFeatures(features_SDDN3_23);
+var lyr_SDDN3_23 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_SDDN3_23, 
+                style: style_SDDN3_23,
+                popuplayertitle: 'SDD N3',
+                interactive: true,
+    title: 'SDD N3<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsbW2t1tTUfMVABrh+/boYi6am5qvAwMBn5BjAxMT0n4kcjSiGjBowasCoAQwMDAwMLDdu3BDduHHjf3I0X7t2TQwAbvsSuOqS/ZEAAAAASUVORK5CYII=" /> 0<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMDxeuFhP79YqBDPDqFZsYi5jYr1c6Op+fkWPA9eu8/5nI0YgMRg0YNWDUAAhgefuWTfT6dd7/5Gh+9YpNDAABdBL6+0tzmgAAAABJRU5ErkJggg==" /> 2-h o lxom-do thi<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMFxauFvv16xUDGeAVG5sYi9ivX690Pn9+Ro4B13l5/zORoxEZjBowasCoARDA8paNTfQ6L+9/cjS/YmMTAwA5EBECLKOgGQAAAABJRU5ErkJggg==" /> DATCC DOTHI<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMFxauFvv16xUDGeAVG5sYi9ivX690Pn9+Ro4B13l5/zORoxEZjBowasCoARDA8paNTfQ6L+9/cjS/YmMTAwA5EBECLKOgGQAAAABJRU5ErkJggg==" /> DATCC TP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> DATCCDVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9fWt1hQQeMVABrj+4YMYi6aAwKtARcVn5BjA9ODBfyZyNKIYMmrAqAGjBjAwMDAwsNz48EF044MH/8nRfO39ezEAxW4UMhA/u/oAAAAASUVORK5CYII=" /> DATDITICH<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP09fWtFhAQeMVABvjw4YMYi4CAwCsVFZVn5Bjw4MGD/0zkaEQGowaMGjBqAASwfPjwQfTBgwf/ydH87t07MQAT2hT1qucQIwAAAABJRU5ErkJggg==" /> DATDOXE<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPM0xSulmf59YqBDPDwD5sYizzLr1f2bJ+fkWPAUUbe/0zkaEQGowaMGjBqAASwPPnLJnr0N+9/cjQ/+MMmBgACaRIAa0nFsgAAAABJRU5ErkJggg==" /> DATHONHOP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFW6t1vyl+YqBDHCd7boYi+YvzVeBnwOfkWMAEy/TfyZyNKIYMmrAqAGjBjAwMDAwsNxguyG6kXfjf3I0X2O7JgYAGZMRfiwTVVwAAAAASUVORK5CYII=" /> DATTH-NT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMNxOuFmP/9YqBDPDqJ5sYixj7r1c6fJ+fkWPA9U+8/5nI0YgMRg0YNWDUAAhgefuTTfT6J97/5Gh+9ZNNDAA3YxL9FCDhxwAAAABJRU5ErkJggg==" /> H_Coquan<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARUlEQVQ4jWMU9lWs/iXA8IqBDMD2gUGM5ZcAw6vPiv+ekWMA7wOm/0zkaEQGowaMGjBqAASwsH1gEOV9wPSfHM1s7xnEAGmDDv5ID9NQAAAAAElFTkSuQmCC" /> H-CAYXANH-KHUVUC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMaBWultP89YqBDPDkOpsYi5zmr1cWgZ+fkWPASSbe/0zkaEQGowaMGjBqAASwPL7BJsq4kfc/OZqfXGMTAwDCCRFv2GRq4wAAAABJRU5ErkJggg==" /> H-cayxanhcachly<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbhWu/qX56xUDGYDtOpsYyy/NX68+B35+Ro4BvEy8/5nI0YgMRg0YNWDUAAhgYbvBJsq7kfc/OZrZrrGJAQDEHBBEOZw1sQAAAABJRU5ErkJggg==" /> H-cayxanhdonvio<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARUlEQVQ4jWMU9lWs/iXA8IqBDMD2gUGM5ZcAw6vPiv+ekWMA7wOm/0zkaEQGowaMGjBqAASwsH1gEOV9wPSfHM1s7xnEAGmDDv5ID9NQAAAAAElFTkSuQmCC" /> H-cx canh quan<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP09fWtFhAQeMVABvjw4YMYi4CAwCsVFZVn5Bjw4MGD/0zkaEQGowaMGjBqAASwfPjwQfTBgwf/ydH87t07MQAT2hT1qucQIwAAAABJRU5ErkJggg==" /> H-hatang<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUDs+r/iUm/4qBDMD26qEYyy8x+VefdeyfkWMA7/Wj/5nI0YgMRg0YNWDUAAhgYXv7RJT3+tH/5Ghme/VADACANRL2l/ERqAAAAABJRU5ErkJggg==" /> H-matnuoc<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9RWu1hT49YqBDHD9A5sYi6bAr1eBip+fkWMA0wPe/0zkaEQxZNSAUQNGDWBgYGBgYLnxgU104wPe/+RovvaeTQwARmUSO36KjtAAAAAASUVORK5CYII=" /> H-nha o<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQklEQVQ4jWMM0/T9b8iuwUAOOP/rBgOLIbsGQwJPAFkGMH7ZyMBElk4kMGrAqAGjBkAAy/mfNxgYGTaSpfn8rxsMAAtbDaXeZJNrAAAAAElFTkSuQmCC" /> <br />' });
+var format_SDDN2_24 = new ol.format.GeoJSON();
+var features_SDDN2_24 = format_SDDN2_24.readFeatures(json_SDDN2_24, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_SDDN2_24 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_SDDN2_24.addFeatures(features_SDDN2_24);
+var lyr_SDDN2_24 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_SDDN2_24, 
+                style: style_SDDN2_24,
+                popuplayertitle: 'SDD N2',
+                interactive: true,
+    title: 'SDD N2<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbhWu/qX56xUDGYDtOpsYyy/NX68+B35+Ro4BvEy8/5nI0YgMRg0YNWDUAAhgYbvBJsq7kfc/OZrZrrGJAQDEHBBEOZw1sQAAAABJRU5ErkJggg==" /> @- DAT CAY XANH CANH QUAN<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWN0Es6r5vkl/4qBDPCF7aEYC88v+VcSn+2fkWPAS96j/5nI0YgMRg0YNWDUAAhg+cr2RPQl79H/5Gj+wvZADAD/gxL5eiOkQAAAAABJRU5ErkJggg==" /> 2.dien tu -det may<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWOM9G2tlhTQfMVABnj54boYi6SA5is9xcBn5Bhw+QHTfyZyNCKDUQNGDRg1AAJYXny4Icr4YON/cjS/fH9NDADv9BNcEOnohQAAAABJRU5ErkJggg==" /> 3.thuc pham-hoaduoc<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9RWu1hT49YqBDHD9A5sYi6bAr1eBip+fkWMA0wPe/0zkaEQxZNSAUQNGDWBgYGBgYLnxgU104wPe/+RovvaeTQwARmUSO36KjtAAAAAASUVORK5CYII=" /> 4-hach dtht<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWNMdMqrluaRf8VABnj65aEYizSP/CtTCftn5BjA8vLofyZyNCKDUQNGDRg1AAJYXnx9Inr+5dH/5Gh+8uWBGAAyBhQjgTt4IQAAAABJRU5ErkJggg==" /> 4.det may<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWM0aBWuZtX89YqBDPD7OpsYC6vmr1c8gZ+fkWPAVybe/0zkaEQGowaMGjBqAASw/L7BJvp1I+9/cjT/usYmBgCoXhI+qaE7NwAAAABJRU5ErkJggg==" /> DATCAY XANH DVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbhWu/qX56xUDGYDtOpsYyy/NX68+B35+Ro4BvEy8/5nI0YgMRg0YNWDUAAhgYbvBJsq7kfc/OZrZrrGJAQDEHBBEOZw1sQAAAABJRU5ErkJggg==" /> DATCAYXANHCLY<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMFxauFvv16xUDGeAVG5sYi9ivX690Pn9+Ro4B13l5/zORoxEZjBowasCoARDA8paNTfQ6L+9/cjS/YmMTAwA5EBECLKOgGQAAAABJRU5ErkJggg==" /> DATCC DOTHI<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> DATCCDVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMNxOuFmP/9YqBDPDqJ5sYixj7r1c6fJ+fkWPA9U+8/5nI0YgMRg0YNWDUAAhgefuTTfT6J97/5Gh+9ZNNDAA3YxL9FCDhxwAAAABJRU5ErkJggg==" /> DATCOQUAN<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9fWt1hQQeMVABrj+4YMYi6aAwKtARcVn5BjA9ODBfyZyNKIYMmrAqAGjBjAwMDAwsNz48EF044MH/8nRfO39ezEAxW4UMhA/u/oAAAAASUVORK5CYII=" /> DATDITICH<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP09fWtFhAQeMVABvjw4YMYi4CAwCsVFZVn5Bjw4MGD/0zkaEQGowaMGjBqAASwfPjwQfTBgwf/ydH87t07MQAT2hT1qucQIwAAAABJRU5ErkJggg==" /> DATDOXE<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMyMiolpOTe8VABnjy5IkYi5yc3CsLC4tn5Bhw8uTJ/0zkaEQGowaMGjBqAASwPH78WJSRkfE/OZqfPHkiBgBk+hKLgA4SMwAAAABJRU5ErkJggg==" /> DATHTKT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWN0Es6r5vkl/4qBDPCF7aEYC88v+VcSn+2fkWPAS96j/5nI0YgMRg0YNWDUAAhg+cr2RPQl79H/5Gj+wvZADAD/gxL5eiOkQAAAAABJRU5ErkJggg==" /> DATKHOTANGBENBAI<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMyxOulpf/9YqBDPDwIZsYi7z8r1f29p+fkWPA0aO8/5nI0YgMRg0YNWDUAAhgefKETfToUd7/5Gh+8IBNDAAG2RLyM/NWwwAAAABJRU5ErkJggg==" /> DATLANGXOM<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNszRCu1pT79YqBDHD9CZsYi6bcr1eBFp+fkWMA00ne/0zkaEQxZNSAUQNGDWBgYGBgYLnxmE10IyPvf3I0X3vCJgYAwhgRbz2z3lgAAAAASUVORK5CYII=" /> H-TRUONGHOC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMyMiolpOTe8VABnjy5IkYi5yc3CsLC4tn5Bhw8uTJ/0zkaEQGowaMGjBqAASwPH78WJSRkfE/OZqfPHkiBgBk+hKLgA4SMwAAAABJRU5ErkJggg==" /> hatchcau<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> sdd_cc_YTE<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbhWu/qX56xUDGYDtOpsYyy/NX68+B35+Ro4BvEy8/5nI0YgMRg0YNWDUAAhgYbvBJsq7kfc/OZrZrrGJAQDEHBBEOZw1sQAAAABJRU5ErkJggg==" /> sdd_CX_cachli<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMU9hWu/iXw6xUDGYDtA5sYyy+BX68+K35+Ro4BvA94/zORoxEZjBowasCoARDAwvaBTZT3Ae9/cjSzvWcTAwDvtBEB+mMcYAAAAABJRU5ErkJggg==" /> sdd_CX_congvien<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbhWu/qX56xUDGYDtOpsYyy/NX68+B35+Ro4BvEy8/5nI0YgMRg0YNWDUAAhgYbvBJsq7kfc/OZrZrrGJAQDEHBBEOZw1sQAAAABJRU5ErkJggg==" /> sdd_CX_DVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWN0yhOu5pH/9YqBDPDlIZsYC4/8r1cS9p+fkWPAy6O8/5nI0YgMRg0YNWDUAAhg+fqETfTlUd7/5Gj+8oBNDAABhhL5XV8fxwAAAABJRU5ErkJggg==" /> sdd_CX_tronghoa<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMsa/WtVtEUeMVABrhz/YMYi4qmwCu3QMVn5BjAwvTgPxM5GpHBqAGjBowaAAEs9298EN238cF/cjTfvvZeDAArLRNx3rTUTwAAAABJRU5ErkJggg==" /> sdd_DATO_sinhthai<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP0jWytFpDUfMVABvjw8roYi4Ck5itFvcBn5Bjw4DLTfyZyNCKDUQNGDRg1AAJYPry4IfqAceN/cjS/f3lNDADwyhNcacplzAAAAABJRU5ErkJggg==" /> sdd_DIAPHUONG<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9RWu1hT49YqBDHD9A5sYi6bAr1eBip+fkWMA0wPe/0zkaEQxZNSAUQNGDWBgYGBgYLnxgU104wPe/+RovvaeTQwARmUSO36KjtAAAAAASUVORK5CYII=" /> sdd_DIDAN<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9fWt1hQQeMVABrj+4YMYi6aAwKtARcVn5BjA9ODBfyZyNKIYMmrAqAGjBjAwMDAwsNz48EF044MH/8nRfO39ezEAxW4UMhA/u/oAAAAASUVORK5CYII=" /> sdd_DITICH<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUNguv/sUu9oqBDMD285UYyy92sVef+XSekWMA76fr/5nI0YgMRg0YNWDUAAhgYfv5VpT30/X/5Ghm+/lKDAAzcxL9E2X/ZgAAAABJRU5ErkJggg==" /> sdd_HO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP09fWtFhAQeMVABvjw4YMYi4CAwCsVFZVn5Bjw4MGD/0zkaEQGowaMGjBqAASwfPjwQfTBgwf/ydH87t07MQAT2hT1qucQIwAAAABJRU5ErkJggg==" /> sdd_HTKT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNszRCu1pT79YqBDHD9CZsYi6bcr1eBFp+fkWMA00ne/0zkaEQxZNSAUQNGDWBgYGBgYLnxmE10IyPvf3I0X3vCJgYAwhgRbz2z3lgAAAAASUVORK5CYII=" /> sdd_truong_THCS<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUVg6v/sUg9oqBDMDG8EqM5ReD2KvPTDrPyDGA9//1/0zkaEQGowaMGjBqAASwsDG+FeX9f/0/OZrZGF6JAQC7+BAAuVn2bAAAAABJRU5ErkJggg==" /> Tron ten o dat<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQklEQVQ4jWMMNrH9ry8oyUAOuPT+OQOLvqAkQ4yiEVkGLGU4z8BElk4kMGrAqAGjBkAAy6X3zxmWMpwnS/PF988ZABsaDid7YVKrAAAAAElFTkSuQmCC" /> <br />' });
+var format_SDDN1_25 = new ol.format.GeoJSON();
+var features_SDDN1_25 = format_SDDN1_25.readFeatures(json_SDDN1_25, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_SDDN1_25 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_SDDN1_25.addFeatures(features_SDDN1_25);
+var lyr_SDDN1_25 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_SDDN1_25, 
+                style: style_SDDN1_25,
+                popuplayertitle: 'SDD N1',
+                interactive: true,
+    title: 'SDD N1<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsbW2t1tTUfMVABrh+/boYi6am5qvAwMBn5BjAxMT0n4kcjSiGjBowasCoAQwMDAwMLDdu3BDduHHjf3I0X7t2TQwAbvsSuOqS/ZEAAAAASUVORK5CYII=" /> 0<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMDxeuFhP79YqBDPDqFZsYi5jYr1c6Op+fkWPA9eu8/5nI0YgMRg0YNWDUAAhgefuWTfT6dd7/5Gh+9YpNDAABdBL6+0tzmgAAAABJRU5ErkJggg==" /> H_AN_QP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> H_Congcong<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPME86rlv8l/4qBDPCQ7aEYi/wv+Vf2n+2fkWPAUd6j/5nI0YgMRg0YNWDUAAhgecL2RPQo79H/5Gh+wPZADAAE5RLy84WaRAAAAABJRU5ErkJggg==" /> H_Congnghiep<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMNxOuFmP/9YqBDPDqJ5sYixj7r1c6fJ+fkWPA9U+8/5nI0YgMRg0YNWDUAAhgefuTTfT6J97/5Gh+9ZNNDAA3YxL9FCDhxwAAAABJRU5ErkJggg==" /> H_Coquan<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9fWt1hQQeMVABrj+4YMYi6aAwKtARcVn5BjA9ODBfyZyNKIYMmrAqAGjBjAwMDAwsNz48EF044MH/8nRfO39ezEAxW4UMhA/u/oAAAAASUVORK5CYII=" /> H_DITICH<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMDxeuFhP79YqBDPDqFZsYi5jYr1c6Op+fkWPA9eu8/5nI0YgMRg0YNWDUAAhgefuWTfT6dd7/5Gh+9YpNDAABdBL6+0tzmgAAAABJRU5ErkJggg==" /> H_langxom<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9Y2s1hSQfMVABrj+4aUYi6aA5KtARb1n5BjA9ODyfyZyNKIYMmrAqAGjBjAwMDAwsNz48EJ04wPG/+Rovvb+pRgA8CYTXBk+yr0AAAAASUVORK5CYII=" /> H_TH_giaoduc<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARUlEQVQ4jWMU9lWs/iXA8IqBDMD2gUGM5ZcAw6vPiv+ekWMA7wOm/0zkaEQGowaMGjBqAASwsH1gEOV9wPSfHM1s7xnEAGmDDv5ID9NQAAAAAElFTkSuQmCC" /> H-CAYXANH-KHUVUC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMaBWultP89YqBDPDkOpsYi5zmr1cWgZ+fkWPASSbe/0zkaEQGowaMGjBqAASwPL7BJsq4kfc/OZqfXGMTAwDCCRFv2GRq4wAAAABJRU5ErkJggg==" /> H-cayxanhcachly<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbhWu/qX56xUDGYDtOpsYyy/NX68+B35+Ro4BvEy8/5nI0YgMRg0YNWDUAAhgYbvBJsq7kfc/OZrZrrGJAQDEHBBEOZw1sQAAAABJRU5ErkJggg==" /> H-cayxanhDVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWOUNROu/sP+6xUDGYDlJ5sYyx/2X69+831+Ro4BjJ94/zORoxEZjBowasCoARDAwvKTTZTxE+9/cjQz/2QTAwCNxRD8lFUAOwAAAABJRU5ErkJggg==" /> H-CAYXANHTHANHPHO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMFxauFvv16xUDGeAVG5sYi9ivX690Pn9+Ro4B13l5/zORoxEZjBowasCoARDA8paNTfQ6L+9/cjS/YmMTAwA5EBECLKOgGQAAAABJRU5ErkJggg==" /> H-CCTP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPM0xSulmf59YqBDPDwD5sYizzLr1f2bJ+fkWPAUUbe/0zkaEQGowaMGjBqAASwPPnLJnr0N+9/cjQ/+MMmBgACaRIAa0nFsgAAAABJRU5ErkJggg==" /> H-congcongkhuvuc<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMNzOrFmNnf8VABnj186cYixg7+ysdPr5n5Bhw/dOn/0zkaEQGowaMGjBqAASwvP35U/T6p0//ydH86udPMQAzuxT4UjfwXQAAAABJRU5ErkJggg==" /> H-dathonhop<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9RWu1hT49YqBDHD9A5sYi6bAr1eBip+fkWMA0wPe/0zkaEQxZNSAUQNGDWBgYGBgYLnxgU104wPe/+RovvaeTQwARmUSO36KjtAAAAAASUVORK5CYII=" /> H-datothaptang<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP09fWtFhAQeMVABvjw4YMYi4CAwCsVFZVn5Bjw4MGD/0zkaEQGowaMGjBqAASwfPjwQfTBgwf/ydH87t07MQAT2hT1qucQIwAAAABJRU5ErkJggg==" /> H-hatang<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUDs+r/iUm/4qBDMD26qEYyy8x+VefdeyfkWMA7/Wj/5nI0YgMRg0YNWDUAAhgYXv7RJT3+tH/5Ghme/VADACANRL2l/ERqAAAAABJRU5ErkJggg==" /> H-matnuoc<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQ0lEQVQ4jWO0lUnfzvtH+QUDGeALyz1xFt4/yi8kfjg+JMeAFxwMDEzkaEQGowaMGjBqAASwfGa5K8HAQZ7mLyz3xAEHkg6zJPEZDAAAAABJRU5ErkJggg==" /> <br />' });
+var format_SDDH24_26 = new ol.format.GeoJSON();
+var features_SDDH24_26 = format_SDDH24_26.readFeatures(json_SDDH24_26, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_SDDH24_26 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_SDDH24_26.addFeatures(features_SDDH24_26);
+var lyr_SDDH24_26 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_SDDH24_26, 
+                style: style_SDDH24_26,
+                popuplayertitle: 'SDD H2-4',
+                interactive: true,
+    title: 'SDD H2-4<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARUlEQVQ4jWMU9lWs/iXA8IqBDMD2gUGM5ZcAw6vPiv+ekWMA7wOm/0zkaEQGowaMGjBqAASwsH1gEOV9wPSfHM1s7xnEAGmDDv5ID9NQAAAAAElFTkSuQmCC" /> BO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP09fWtFhAQeMVABvjw4YMYi4CAwCsVFZVn5Bjw4MGD/0zkaEQGowaMGjBqAASwfPjwQfTBgwf/ydH87t07MQAT2hT1qucQIwAAAABJRU5ErkJggg==" /> DATDOXE<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMyMiolpOTe8VABnjy5IkYi5yc3CsLC4tn5Bhw8uTJ/0zkaEQGowaMGjBqAASwPH78WJSRkfE/OZqfPHkiBgBk+hKLgA4SMwAAAABJRU5ErkJggg==" /> DATHTKT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP0tROuFuD+9YqBDPDhK5sYiwD3r1eKYp+fkWPAg9e8/5nI0YgMRg0YNWDUAAhg+fCNTfTBa97/5Gh+/5VNDAAjfBL78ccg2AAAAABJRU5ErkJggg==" /> H-AN_QP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARUlEQVQ4jWMU9lWs/iXA8IqBDMD2gUGM5ZcAw6vPiv+ekWMA7wOm/0zkaEQGowaMGjBqAASwsH1gEOV9wPSfHM1s7xnEAGmDDv5ID9NQAAAAAElFTkSuQmCC" /> H-CAYXANH-KHUVUC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMaBWultP89YqBDPDkOpsYi5zmr1cWgZ+fkWPASSbe/0zkaEQGowaMGjBqAASwPL7BJsq4kfc/OZqfXGMTAwDCCRFv2GRq4wAAAABJRU5ErkJggg==" /> H-cayxanhcachly<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbhWu/qX56xUDGYDtOpsYyy/NX68+B35+Ro4BvEy8/5nI0YgMRg0YNWDUAAhgYbvBJsq7kfc/OZrZrrGJAQDEHBBEOZw1sQAAAABJRU5ErkJggg==" /> H-cayxanhDVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWOUNROu/sP+6xUDGYDlJ5sYyx/2X69+831+Ro4BjJ94/zORoxEZjBowasCoARDAwvKTTZTxE+9/cjQz/2QTAwCNxRD8lFUAOwAAAABJRU5ErkJggg==" /> H-CAYXANHTHANHPHO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQElEQVQ4jWMMFBPbI/Xjx0sGMsAzDg5xFqkfP17qf/r0kBwDGBgYGJjI1ThqwKgBowagApZnHBzi5Gp+xsEhDgDTbg1eQKDBMwAAAABJRU5ErkJggg==" /> h-ccTP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> H-Congcong DVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPM0xSulmf59YqBDPDwD5sYizzLr1f2bJ+fkWPAUUbe/0zkaEQGowaMGjBqAASwPPnLJnr0N+9/cjQ/+MMmBgACaRIAa0nFsgAAAABJRU5ErkJggg==" /> H-congcongkhuvuc<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARElEQVQ4jWMMNBHbI8Xx4yUDGeDZDw5xFimOHy/1BT49JMcAhg8MDExkaUQCowaMGjBqAASwPPvBIc7wgTzNz35wiAMA/eMPalFbbQMAAAAASUVORK5CYII=" /> H-Coquan<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9RWu1hT49YqBDHD9A5sYi6bAr1eBip+fkWMA0wPe/0zkaEQxZNSAUQNGDWBgYGBgYLnxgU104wPe/+RovvaeTQwARmUSO36KjtAAAAAASUVORK5CYII=" /> H-dat o moi<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMNzOrFmNnf8VABnj186cYixg7+ysdPr5n5Bhw/dOn/0zkaEQGowaMGjBqAASwvP35U/T6p0//ydH86udPMQAzuxT4UjfwXQAAAABJRU5ErkJggg==" /> H-dathonhop<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMDxeuFhP79YqBDPDqFZsYi5jYr1c6Op+fkWPA9eu8/5nI0YgMRg0YNWDUAAhgefuWTfT6dd7/5Gh+9YpNDAABdBL6+0tzmgAAAABJRU5ErkJggg==" /> H-datohienco<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9fWt1hQQeMVABrj+4YMYi6aAwKtARcVn5BjA9ODBfyZyNKIYMmrAqAGjBjAwMDAwsNz48EF044MH/8nRfO39ezEAxW4UMhA/u/oAAAAASUVORK5CYII=" /> H-DITICH<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQElEQVQ4jWMMDBTbIyX14yUDGeDZMw5xFimpHy/19T89JMcABgYGBiZyNY4aMGrAqAGogOXZMw5xcjU/e8YhDgCdKA20pggVIQAAAABJRU5ErkJggg==" /> H-langxom<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUDs+r/iUm/4qBDMD26qEYyy8x+VefdeyfkWMA7/Wj/5nI0YgMRg0YNWDUAAhgYXv7RJT3+tH/5Ghme/VADACANRL2l/ERqAAAAABJRU5ErkJggg==" /> H-matnuoc<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNszRCu1pT79YqBDHD9CZsYi6bcr1eBFp+fkWMA00ne/0zkaEQxZNSAUQNGDWBgYGBgYLnxmE10IyPvf3I0X3vCJgYAwhgRbz2z3lgAAAAASUVORK5CYII=" /> H-TH_giaoduc<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARElEQVQ4je3MsREAIQhEUXF26EB7oEb7NbAFlvGCS4yJ+fl/YmYLwGmJSE4AOKq6M4CI3J4Z3woooIA/RMRw95uZSc4PQqYSEL+inlYAAAAASUVORK5CYII=" /> HATCH<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQklEQVQ4jWOU0Sze85dF+yUDGYD571Vxlr8s2i9/sQU8JMcAtl8MDEzkaEQGowaMGjBqAASwMP+5Ks5Gpmbmv1fFATLSDrzuL1ibAAAAAElFTkSuQmCC" /> <br />' });
+var format_SDDH23_27 = new ol.format.GeoJSON();
+var features_SDDH23_27 = format_SDDH23_27.readFeatures(json_SDDH23_27, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_SDDH23_27 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_SDDH23_27.addFeatures(features_SDDH23_27);
+var lyr_SDDH23_27 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_SDDH23_27, 
+                style: style_SDDH23_27,
+                popuplayertitle: 'SDD H2-3',
+                interactive: true,
+    title: 'SDD H2-3<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbhWu/qX56xUDGYDtOpsYyy/NX68+B35+Ro4BvEy8/5nI0YgMRg0YNWDUAAhgYbvBJsq7kfc/OZrZrrGJAQDEHBBEOZw1sQAAAABJRU5ErkJggg==" /> !phamviga<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUzhOu/iX/6xUDGYDtIZsYyy/5X68+239+Ro4BvEd5/zORoxEZjBowasCoARDAwvaETZT3KO9/cjSzPWATAwC5xRD+hssGXQAAAABJRU5ErkJggg==" /> @cxdonvio<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWM0E9arZv/F8oqBDPCT7Y8YC/svlld8nzmekWPAJ96f/5nI0YgMRg0YNWDUAAhg+cn2R/QT78//5Gj+yfZbDABDehMCmsjdsQAAAABJRU5ErkJggg==" /> 1_DUONG PKV<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9fWt1hQQeMVABrj+4YMYi6aAwKtARcVn5BjA9ODBfyZyNKIYMmrAqAGjBjAwMDAwsNz48EF044MH/8nRfO39ezEAxW4UMhA/u/oAAAAASUVORK5CYII=" /> 2-h ton giao<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMaPWtltMUeMVABnhy/YMYi5ymwCuLQMVn5BhwkunBfyZyNCKDUQNGDRg1AAJYHt/4IMq48cF/cjQ/ufZeDABBIRNmdDAUXQAAAABJRU5ErkJggg==" /> CACHLY<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsbW2t1tTUfMVABrh+/boYi6am5qvAwMBn5BjAxMT0n4kcjSiGjBowasCoAQwMDAwMLDdu3BDduHHjf3I0X7t2TQwAbvsSuOqS/ZEAAAAASUVORK5CYII=" /> cong thoat nuoc thai<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPUzBOuZpH/9YqBDPDnIZsYC4v8r1ds9p+fkWMA41He/0zkaEQGowaMGjBqAASw/H3CJvr7KO9/cjT/ecAmBgABdxIAgthulAAAAABJRU5ErkJggg==" /> DAT_CAYXANH<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> H_Congcong<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9fWt1hQQeMVABrj+4YMYi6aAwKtARcVn5BjA9ODBfyZyNKIYMmrAqAGjBjAwMDAwsNz48EF044MH/8nRfO39ezEAxW4UMhA/u/oAAAAASUVORK5CYII=" /> H_DITICH<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9RWu1hT49YqBDHD9A5sYi6bAr1eBip+fkWMA0wPe/0zkaEQxZNSAUQNGDWBgYGBgYLnxgU104wPe/+RovvaeTQwARmUSO36KjtAAAAAASUVORK5CYII=" /> H_Odothi<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9Y2s1hSQfMVABrj+4aUYi6aA5KtARb1n5BjA9ODyfyZyNKIYMmrAqAGjBjAwMDAwsNz48EJ04wPG/+Rovvb+pRgA8CYTXBk+yr0AAAAASUVORK5CYII=" /> H_TH_giaoduc<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWOUNROu/sP+6xUDGYDlJ5sYyx/2X69+831+Ro4BjJ94/zORoxEZjBowasCoARDAwvKTTZTxE+9/cjQz/2QTAwCNxRD8lFUAOwAAAABJRU5ErkJggg==" /> H-CAYXANHTHANHPHO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMEhVdqfjz5wsGMsB9dnYJFsWfP184fvr0kBwDGPn4/jORoxEZjBowasCoARDAcp+dXZyRj+8/OZrvsbNLAAB4bg+i/pOTzQAAAABJRU5ErkJggg==" /> h-ccTP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPM0xSulmf59YqBDPDwD5sYizzLr1f2bJ+fkWPAUUbe/0zkaEQGowaMGjBqAASwPPnLJnr0N+9/cjQ/+MMmBgACaRIAa0nFsgAAAABJRU5ErkJggg==" /> H-congcongkhuvuc<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMtzOrFuNmf8VABnj19acYixg3+ysdMb5n5Bhw/fWn/0zkaEQGowaMGjBqAASwvP32U/T660//ydH86utPMQBnKhT3EAX9pAAAAABJRU5ErkJggg==" /> h-coquan<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbhWu/qX56xUDGYDtOpsYyy/NX68+B35+Ro4BvEy8/5nI0YgMRg0YNWDUAAhgYbvBJsq7kfc/OZrZrrGJAQDEHBBEOZw1sQAAAABJRU5ErkJggg==" /> H-CXKV<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMNzOrFmNnf8VABnj186cYixg7+ysdPr5n5Bhw/dOn/0zkaEQGowaMGjBqAASwvP35U/T6p0//ydH86udPMQAzuxT4UjfwXQAAAABJRU5ErkJggg==" /> H-dathonhop<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9RWu1hT49YqBDHD9A5sYi6bAr1eBip+fkWMA0wPe/0zkaEQxZNSAUQNGDWBgYGBgYLnxgU104wPe/+RovvaeTQwARmUSO36KjtAAAAAASUVORK5CYII=" /> h-dato<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARUlEQVQ4je3MIRLAIAxE0baDW59yl5y4x6pjZm1Wg8Cgo/P9f7e7fwDGlUhSbwCGmf0ZgOR8MuNZAQUUsGuSXpIzM0dEX36AFRT2jlLZAAAAAElFTkSuQmCC" /> H-HATANG<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsbRWu1tT89YqBDHD9OpsYi6bmr1eBgZ+fkWMAExPvfyZyNKIYMmrAqAGjBjAwMDAwsNy4wSa6cSPvf3I0X7vGJgYAGs0RfhnohtcAAAAASUVORK5CYII=" /> H-LANGXOM<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUDs+r/iUm/4qBDMD26qEYyy8x+VefdeyfkWMA7/Wj/5nI0YgMRg0YNWDUAAhgYXv7RJT3+tH/5Ghme/VADACANRL2l/ERqAAAAABJRU5ErkJggg==" /> H-matnuoc<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMDxeuFhP79YqBDPDqFZsYi5jYr1c6Op+fkWPA9eu8/5nI0YgMRg0YNWDUAAhgefuWTfT6dd7/5Gh+9YpNDAABdBL6+0tzmgAAAABJRU5ErkJggg==" /> h-quocphong<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsbW2t1tTUfMVABrh+/boYi6am5qvAwMBn5BjAxMT0n4kcjSiGjBowasCoAQwMDAwMLDdu3BDduHHjf3I0X7t2TQwAbvsSuOqS/ZEAAAAASUVORK5CYII=" /> HAT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARElEQVQ4je3MsREAIQhEUXF26EB7oEb7NbAFlvGCS4yJ+fl/YmYLwGmJSE4AOKq6M4CI3J4Z3woooIA/RMRw95uZSc4PQqYSEL+inlYAAAAASUVORK5CYII=" /> HATCH<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsbW2t1tTUfMVABrh+/boYi6am5qvAwMBn5BjAxMT0n4kcjSiGjBowasCoAQwMDAwMLDdu3BDduHHjf3I0X7t2TQwAbvsSuOqS/ZEAAAAASUVORK5CYII=" /> KIHIEU<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9RWu1hT49YqBDHD9A5sYi6bAr1eBip+fkWMA0wPe/0zkaEQxZNSAUQNGDWBgYGBgYLnxgU104wPe/+RovvaeTQwARmUSO36KjtAAAAAASUVORK5CYII=" /> SDD_CT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMyMiolpOTe8VABnjy5IkYi5yc3CsLC4tn5Bhw8uTJ/0zkaEQGowaMGjBqAASwPH78WJSRkfE/OZqfPHkiBgBk+hKLgA4SMwAAAABJRU5ErkJggg==" /> SDD_DX<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMdrdfqSzI+4KBDHD//WcJFmVB3hcuipIPyTFgPyPDfyZyNCKDUQNGDRg1AAJY7r//Ir6f8fl/cjTfefdFAgB/4hJcNOwBmgAAAABJRU5ErkJggg==" /> <br />' });
+var format_SDDH22_28 = new ol.format.GeoJSON();
+var features_SDDH22_28 = format_SDDH22_28.readFeatures(json_SDDH22_28, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_SDDH22_28 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_SDDH22_28.addFeatures(features_SDDH22_28);
+var lyr_SDDH22_28 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_SDDH22_28, 
+                style: style_SDDH22_28,
+                popuplayertitle: 'SDD H2-2',
+                interactive: true,
+    title: 'SDD H2-2<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP0NTOoFuBkfcVABvjw/bcYiwAn6ytFfp5n5BjwgPHrfyZyNCKDUQNGDRg1AAJYPnz/LfqA8et/cjS///ZLDABIXxMSeflKoAAAAABJRU5ErkJggg==" /> !!! BO-LODAT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbhWu/qX56xUDGYDtOpsYyy/NX68+B35+Ro4BvEy8/5nI0YgMRg0YNWDUAAhgYbvBJsq7kfc/OZrZrrGJAQDEHBBEOZw1sQAAAABJRU5ErkJggg==" /> DATCAYXANHCLY<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> DATCCDVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMNxOuFmP/9YqBDPDqJ5sYixj7r1c6fJ+fkWPA9U+8/5nI0YgMRg0YNWDUAAhgefuTTfT6J97/5Gh+9ZNNDAA3YxL9FCDhxwAAAABJRU5ErkJggg==" /> DATCOQUAN<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9fWt1hQQeMVABrj+4YMYi6aAwKtARcVn5BjA9ODBfyZyNKIYMmrAqAGjBjAwMDAwsNz48EF044MH/8nRfO39ezEAxW4UMhA/u/oAAAAASUVORK5CYII=" /> DATDITICH<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP09fWtFhAQeMVABvjw4YMYi4CAwCsVFZVn5Bjw4MGD/0zkaEQGowaMGjBqAASwfPjwQfTBgwf/ydH87t07MQAT2hT1qucQIwAAAABJRU5ErkJggg==" /> DATDOXE<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPM0xSulmf59YqBDPDwD5sYizzLr1f2bJ+fkWPAUUbe/0zkaEQGowaMGjBqAASwPPnLJnr0N+9/cjQ/+MMmBgACaRIAa0nFsgAAAABJRU5ErkJggg==" /> DATHONHOP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMyMiolpOTe8VABnjy5IkYi5yc3CsLC4tn5Bhw8uTJ/0zkaEQGowaMGjBqAASwPH78WJSRkfE/OZqfPHkiBgBk+hKLgA4SMwAAAABJRU5ErkJggg==" /> DATHTKT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMyxOulpf/9YqBDPDwIZsYi7z8r1f29p+fkWPA0aO8/5nI0YgMRg0YNWDUAAhgefKETfToUd7/5Gh+8IBNDAAG2RLyM/NWwwAAAABJRU5ErkJggg==" /> DATLANGXOM<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUzmit/iWn+YqBDMD25LoYyy85zVefLQKfkWMA70mm/0zkaEQGowaMGjBqAASwsD2+IcrLuPE/OZrZnlwTAwC/pBFvzTecoAAAAABJRU5ErkJggg==" /> DATMATNUOC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNszfCt1pQTeMVABrj+5IMYi6acwKtAC8Vn5BjAdPLBfyZyNKIYMmrAqAGjBjAwMDAwsNx4/EF0I+OD/+RovvbkvRgAQTATZlugrmMAAAAASUVORK5CYII=" /> DATO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMDxeuFhP79YqBDPDqFZsYi5jYr1c6Op+fkWPA9eu8/5nI0YgMRg0YNWDUAAhgefuWTfT6dd7/5Gh+9YpNDAABdBL6+0tzmgAAAABJRU5ErkJggg==" /> DATQUANSU<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFW6t1vyl+YqBDHCd7boYi+YvzVeBnwOfkWMAEy/TfyZyNKIYMmrAqAGjBjAwMDAwsNxguyG6kXfjf3I0X2O7JgYAGZMRfiwTVVwAAAAASUVORK5CYII=" /> DATTH-NT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARUlEQVQ4jWMU9lWs/iXA8IqBDMD2gUGM5ZcAw6vPiv+ekWMA7wOm/0zkaEQGowaMGjBqAASwsH1gEOV9wPSfHM1s7xnEAGmDDv5ID9NQAAAAAElFTkSuQmCC" /> H-CAYXANH-KHUVUC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWOUNROu/sP+6xUDGYDlJ5sYyx/2X69+831+Ro4BjJ94/zORoxEZjBowasCoARDAwvKTTZTxE+9/cjQz/2QTAwCNxRD8lFUAOwAAAABJRU5ErkJggg==" /> H-CAYXANHTHANHPHO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMFxauFvv16xUDGeAVG5sYi9ivX690Pn9+Ro4B13l5/zORoxEZjBowasCoARDA8paNTfQ6L+9/cjS/YmMTAwA5EBECLKOgGQAAAABJRU5ErkJggg==" /> H-CCTP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARUlEQVQ4jWPMMlbcoMzB+IKBDHD3x38JFmUOxhcu/P8ekmMAAwMTAxN5GpGNGDVg1IBRAxgYGBhY7v74L0GuOXd//JcAAMhfDrSOBGEeAAAAAElFTkSuQmCC" /> <br />' });
+var format_SDDH21_29 = new ol.format.GeoJSON();
+var features_SDDH21_29 = format_SDDH21_29.readFeatures(json_SDDH21_29, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_SDDH21_29 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_SDDH21_29.addFeatures(features_SDDH21_29);
+var lyr_SDDH21_29 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_SDDH21_29, 
+                style: style_SDDH21_29,
+                popuplayertitle: 'SDD H2-1',
+                interactive: true,
+    title: 'SDD H2-1<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9RWu1hT49YqBDHD9A5sYi6bAr1eBip+fkWMA0wPe/0zkaEQxZNSAUQNGDWBgYGBgYLnxgU104wPe/+RovvaeTQwARmUSO36KjtAAAAAASUVORK5CYII=" /> BO-LODAT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWM0CxeuZhf79YqBDPDzFZsYC7vYr1d8Op+fkWPAp+u8/5nI0YgMRg0YNWDUAAhg+fmWTfTTdd7/5Gj++YpNDAA3ZhL91rRZvgAAAABJRU5ErkJggg==" /> DATCAYXANH<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbhWu/qX56xUDGYDtOpsYyy/NX68+B35+Ro4BvEy8/5nI0YgMRg0YNWDUAAhgYbvBJsq7kfc/OZrZrrGJAQDEHBBEOZw1sQAAAABJRU5ErkJggg==" /> DATCAYXANHCLY<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMzxOuFpP/9YqBDPDqIZsYi5j8r1c69p+fkWPA9aO8/5nI0YgMRg0YNWDUAAhgefuETfT6Ud7/5Gh+9YBNDACEIRL2OePSbgAAAABJRU5ErkJggg==" /> DATCAYXANHDVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> DATCCDVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMFxauFvv16xUDGeAVG5sYi9ivX690Pn9+Ro4B13l5/zORoxEZjBowasCoARDA8paNTfQ6L+9/cjS/YmMTAwA5EBECLKOgGQAAAABJRU5ErkJggg==" /> DATCCTP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMNxOuFmP/9YqBDPDqJ5sYixj7r1c6fJ+fkWPA9U+8/5nI0YgMRg0YNWDUAAhgefuTTfT6J97/5Gh+9ZNNDAA3YxL9FCDhxwAAAABJRU5ErkJggg==" /> DATCOQUAN<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9fWt1hQQeMVABrj+4YMYi6aAwKtARcVn5BjA9ODBfyZyNKIYMmrAqAGjBjAwMDAwsNz48EF044MH/8nRfO39ezEAxW4UMhA/u/oAAAAASUVORK5CYII=" /> DATDITICH<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP09fWtFhAQeMVABvjw4YMYi4CAwCsVFZVn5Bjw4MGD/0zkaEQGowaMGjBqAASwfPjwQfTBgwf/ydH87t07MQAT2hT1qucQIwAAAABJRU5ErkJggg==" /> DATDOXE<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPM0xSulmf59YqBDPDwD5sYizzLr1f2bJ+fkWPAUUbe/0zkaEQGowaMGjBqAASwPPnLJnr0N+9/cjQ/+MMmBgACaRIAa0nFsgAAAABJRU5ErkJggg==" /> DATHONHOP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMyMiolpOTe8VABnjy5IkYi5yc3CsLC4tn5Bhw8uTJ/0zkaEQGowaMGjBqAASwPH78WJSRkfE/OZqfPHkiBgBk+hKLgA4SMwAAAABJRU5ErkJggg==" /> DATHTKT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMyxOulpf/9YqBDPDwIZsYi7z8r1f29p+fkWPA0aO8/5nI0YgMRg0YNWDUAAhgefKETfToUd7/5Gh+8IBNDAAG2RLyM/NWwwAAAABJRU5ErkJggg==" /> DATLANGXOM<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUzmit/iWn+YqBDMD25LoYyy85zVefLQKfkWMA70mm/0zkaEQGowaMGjBqAASwsD2+IcrLuPE/OZrZnlwTAwC/pBFvzTecoAAAAABJRU5ErkJggg==" /> DATMATNUOC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNszfCt1pQTeMVABrj+5IMYi6acwKtAC8Vn5BjAdPLBfyZyNKIYMmrAqAGjBjAwMDAwsNx4/EF0I+OD/+RovvbkvRgAQTATZlugrmMAAAAASUVORK5CYII=" /> DATO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMDxeuFhP79YqBDPDqFZsYi5jYr1c6Op+fkWPA9eu8/5nI0YgMRg0YNWDUAAhgefuWTfT6dd7/5Gh+9YpNDAABdBL6+0tzmgAAAABJRU5ErkJggg==" /> DATQUANSU<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFW6t1vyl+YqBDHCd7boYi+YvzVeBnwOfkWMAEy/TfyZyNKIYMmrAqAGjBjAwMDAwsNxguyG6kXfjf3I0X2O7JgYAGZMRfiwTVVwAAAAASUVORK5CYII=" /> DATTH-NT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsbW2t1tTUfMVABrh+/boYi6am5qvAwMBn5BjAxMT0n4kcjSiGjBowasCoAQwMDAwMLDdu3BDduHHjf3I0X7t2TQwAbvsSuOqS/ZEAAAAASUVORK5CYII=" /> KHUNG500<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQElEQVQ4jWO0ybXZzqPC85KBDPDlzhdxFh4VnpfibuIPyTGAgYGBgYlcjaMGjBowagAqYPly54s4uZq/3PkiDgB3Jg3waLTjxgAAAABJRU5ErkJggg==" /> <br />' });
+var format_SDDH14_30 = new ol.format.GeoJSON();
+var features_SDDH14_30 = format_SDDH14_30.readFeatures(json_SDDH14_30, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_SDDH14_30 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_SDDH14_30.addFeatures(features_SDDH14_30);
+var lyr_SDDH14_30 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_SDDH14_30, 
+                style: style_SDDH14_30,
+                popuplayertitle: 'SDD H1-4',
+                interactive: true,
+    title: 'SDD H1-4<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbhWu/qX56xUDGYDtOpsYyy/NX68+B35+Ro4BvEy8/5nI0YgMRg0YNWDUAAhgYbvBJsq7kfc/OZrZrrGJAQDEHBBEOZw1sQAAAABJRU5ErkJggg==" /> 1_cau vuot<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNszRCu1pT79YqBDHD9CZsYi6bcr1eBFp+fkWMA00ne/0zkaEQxZNSAUQNGDWBgYGBgYLnxmE10IyPvf3I0X3vCJgYAwhgRbz2z3lgAAAAASUVORK5CYII=" /> C1<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNszRCu1pT79YqBDHD9CZsYi6bcr1eBFp+fkWMA00ne/0zkaEQxZNSAUQNGDWBgYGBgYLnxmE10IyPvf3I0X3vCJgYAwhgRbz2z3lgAAAAASUVORK5CYII=" /> C2<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNszRCu1pT79YqBDHD9CZsYi6bcr1eBFp+fkWMA00ne/0zkaEQxZNSAUQNGDWBgYGBgYLnxmE10IyPvf3I0X3vCJgYAwhgRbz2z3lgAAAAASUVORK5CYII=" /> C3<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNszRCu1pT79YqBDHD9CZsYi6bcr1eBFp+fkWMA00ne/0zkaEQxZNSAUQNGDWBgYGBgYLnxmE10IyPvf3I0X3vCJgYAwhgRbz2z3lgAAAAASUVORK5CYII=" /> DAT NT-MG<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWM0CxeuZhf79YqBDPDzFZsYC7vYr1d8Op+fkWPAp+u8/5nI0YgMRg0YNWDUAAhg+fmWTfTTdd7/5Gj++YpNDAA3ZhL91rRZvgAAAABJRU5ErkJggg==" /> DATCAYXANH<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> DATCCDVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMFxauFvv16xUDGeAVG5sYi9ivX690Pn9+Ro4B13l5/zORoxEZjBowasCoARDA8paNTfQ6L+9/cjS/YmMTAwA5EBECLKOgGQAAAABJRU5ErkJggg==" /> DATCCTP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMNxOuFmP/9YqBDPDqJ5sYixj7r1c6fJ+fkWPA9U+8/5nI0YgMRg0YNWDUAAhgefuTTfT6J97/5Gh+9ZNNDAA3YxL9FCDhxwAAAABJRU5ErkJggg==" /> DATCOQUAN<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9fWt1hQQeMVABrj+4YMYi6aAwKtARcVn5BjA9ODBfyZyNKIYMmrAqAGjBjAwMDAwsNz48EF044MH/8nRfO39ezEAxW4UMhA/u/oAAAAASUVORK5CYII=" /> DATDITICH<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP09fWtFhAQeMVABvjw4YMYi4CAwCsVFZVn5Bjw4MGD/0zkaEQGowaMGjBqAASwfPjwQfTBgwf/ydH87t07MQAT2hT1qucQIwAAAABJRU5ErkJggg==" /> DATDOXE<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPM0xSulmf59YqBDPDwD5sYizzLr1f2bJ+fkWPAUUbe/0zkaEQGowaMGjBqAASwPPnLJnr0N+9/cjQ/+MMmBgACaRIAa0nFsgAAAABJRU5ErkJggg==" /> DATHONHOP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMyMiolpOTe8VABnjy5IkYi5yc3CsLC4tn5Bhw8uTJ/0zkaEQGowaMGjBqAASwPH78WJSRkfE/OZqfPHkiBgBk+hKLgA4SMwAAAABJRU5ErkJggg==" /> DATHTKT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUzmit/iWn+YqBDMD25LoYyy85zVefLQKfkWMA70mm/0zkaEQGowaMGjBqAASwsD2+IcrLuPE/OZrZnlwTAwC/pBFvzTecoAAAAABJRU5ErkJggg==" /> DATMATNUOC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNszfCt1pQTeMVABrj+5IMYi6acwKtAC8Vn5BjAdPLBfyZyNKIYMmrAqAGjBjAwMDAwsNx4/EF0I+OD/+RovvbkvRgAQTATZlugrmMAAAAASUVORK5CYII=" /> DATO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9RWu1hT49YqBDHD9A5sYi6bAr1eBip+fkWMA0wPe/0zkaEQxZNSAUQNGDWBgYGBgYLnxgU104wPe/+RovvaeTQwARmUSO36KjtAAAAAASUVORK5CYII=" /> DATOTHAPTANG<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMDxeuFhP79YqBDPDqFZsYi5jYr1c6Op+fkWPA9eu8/5nI0YgMRg0YNWDUAAhgefuWTfT6dd7/5Gh+9YpNDAABdBL6+0tzmgAAAABJRU5ErkJggg==" /> DATQUANSU<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARUlEQVQ4jWNMTEyslpaWfsVABnj69KkYi7S09CtDQ8Nn5BjAyMj4n4kcjchg1IBRA0YNgACWZ8+eiTIyMv4nR/PTp0/FACsfEAaLIAZkAAAAAElFTkSuQmCC" /> Khu vuc Du an Rieng<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARElEQVQ4jWPMsTXaqM7H8YKBDHDr8w8JFnU+jhce0vwPyTGA8TkDAxM5GpHBqAGjBowaAAEstz7/kGB8Tp7mmx9/SAAAqEIPsYAqUbEAAAAASUVORK5CYII=" /> <br />' });
+var format_SDDH13_31 = new ol.format.GeoJSON();
+var features_SDDH13_31 = format_SDDH13_31.readFeatures(json_SDDH13_31, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_SDDH13_31 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_SDDH13_31.addFeatures(features_SDDH13_31);
+var lyr_SDDH13_31 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_SDDH13_31, 
+                style: style_SDDH13_31,
+                popuplayertitle: 'SDD H1-3',
+                interactive: true,
+    title: 'SDD H1-3<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbhWu/qX56xUDGYDtOpsYyy/NX68+B35+Ro4BvEy8/5nI0YgMRg0YNWDUAAhgYbvBJsq7kfc/OZrZrrGJAQDEHBBEOZw1sQAAAABJRU5ErkJggg==" /> !phamviga<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbhWu/qX56xUDGYDtOpsYyy/NX68+B35+Ro4BvEy8/5nI0YgMRg0YNWDUAAhgYbvBJsq7kfc/OZrZrrGJAQDEHBBEOZw1sQAAAABJRU5ErkJggg==" /> 1_cau vuot<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsbW2t1tTUfMVABrh+/boYi6am5qvAwMBn5BjAxMT0n4kcjSiGjBowasCoAQwMDAwMLDdu3BDduHHjf3I0X7t2TQwAbvsSuOqS/ZEAAAAASUVORK5CYII=" /> 2_HACH TREN CAO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMU9hWu/iXw6xUDGYDtA5sYyy+BX68+K35+Ro4BvA94/zORoxEZjBowasCoARDAwvaBTZT3Ae9/cjSzvWcTAwDvtBEB+mMcYAAAAABJRU5ErkJggg==" /> Bo via-Q<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMN7OrFmPnfsVABnj186sYixg79ysdPrFn5Bhw/dPr/0zkaEQGowaMGjBqAASwvP35TfT6p9f/ydH86udXMQBnKxT3O2M6XgAAAABJRU5ErkJggg==" /> ĐẤT NGOẠI GIAO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbhWu/qX56xUDGYDtOpsYyy/NX68+B35+Ro4BvEy8/5nI0YgMRg0YNWDUAAhgYbvBJsq7kfc/OZrZrrGJAQDEHBBEOZw1sQAAAABJRU5ErkJggg==" /> DATCAYXANHCLY<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP09fWtFhAQeMVABvjw4YMYi4CAwCsVFZVn5Bjw4MGD/0zkaEQGowaMGjBqAASwfPjwQfTBgwf/ydH87t07MQAT2hT1qucQIwAAAABJRU5ErkJggg==" /> DATDOXE<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPM0xSulmf59YqBDPDwD5sYizzLr1f2bJ+fkWPAUUbe/0zkaEQGowaMGjBqAASwPPnLJnr0N+9/cjQ/+MMmBgACaRIAa0nFsgAAAABJRU5ErkJggg==" /> DATHONHOP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARElEQVQ4jWNM0xLbrcz84yUDGeDuXw5xFmXmHy+d2D89JMcAhp8MDExkaUQCowaMGjBqAASw3P3LIc7wkzzNd/9yiAMAfbEPjOtJDZEAAAAASUVORK5CYII=" /> DATHONHOP @ 1<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPMyMiolpOTe8VABnjy5IkYi5yc3CsLC4tn5Bhw8uTJ/0zkaEQGowaMGjBqAASwPH78WJSRkfE/OZqfPHkiBgBk+hKLgA4SMwAAAABJRU5ErkJggg==" /> DATHTKT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUzmit/iWn+YqBDMD25LoYyy85zVefLQKfkWMA70mm/0zkaEQGowaMGjBqAASwsD2+IcrLuPE/OZrZnlwTAwC/pBFvzTecoAAAAABJRU5ErkJggg==" /> DATMATNUOC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsbW2t1tTUfMVABrh+/boYi6am5qvAwMBn5BjAxMT0n4kcjSiGjBowasCoAQwMDAwMLDdu3BDduHHjf3I0X7t2TQwAbvsSuOqS/ZEAAAAASUVORK5CYII=" /> GT_text_ghi_chu<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMNxOuFmP/9YqBDPDqJ5sYixj7r1c6fJ+fkWPA9U+8/5nI0YgMRg0YNWDUAAhgefuTTfT6J97/5Gh+9ZNNDAA3YxL9FCDhxwAAAABJRU5ErkJggg==" /> H_Coquan<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9fWt1hQQeMVABrj+4YMYi6aAwKtARcVn5BjA9ODBfyZyNKIYMmrAqAGjBjAwMDAwsNz48EF044MH/8nRfO39ezEAxW4UMhA/u/oAAAAASUVORK5CYII=" /> H_DITICH<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9RWu1hT49YqBDHD9A5sYi6bAr1eBip+fkWMA0wPe/0zkaEQxZNSAUQNGDWBgYGBgYLnxgU104wPe/+RovvaeTQwARmUSO36KjtAAAAAASUVORK5CYII=" /> H_Odothi<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARUlEQVQ4jWMU9lWs/iXA8IqBDMD2gUGM5ZcAw6vPiv+ekWMA7wOm/0zkaEQGowaMGjBqAASwsH1gEOV9wPSfHM1s7xnEAGmDDv5ID9NQAAAAAElFTkSuQmCC" /> H-CAYXANH-KHUVUC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbhWu/qX56xUDGYDtOpsYyy/NX68+B35+Ro4BvEy8/5nI0YgMRg0YNWDUAAhgYbvBJsq7kfc/OZrZrrGJAQDEHBBEOZw1sQAAAABJRU5ErkJggg==" /> H-cayxanhDVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWOUNROu/sP+6xUDGYDlJ5sYyx/2X69+831+Ro4BjJ94/zORoxEZjBowasCoARDAwvKTTZTxE+9/cjQz/2QTAwCNxRD8lFUAOwAAAABJRU5ErkJggg==" /> H-CAYXANHTHANHPHO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWPM0xSulmf59YqBDPDwD5sYizzLr1f2bJ+fkWPAUUbe/0zkaEQGowaMGjBqAASwPPnLJnr0N+9/cjQ/+MMmBgACaRIAa0nFsgAAAABJRU5ErkJggg==" /> H-congcongkhuvuc<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMDxeuFhP79YqBDPDqFZsYi5jYr1c6Op+fkWPA9eu8/5nI0YgMRg0YNWDUAAhgefuWTfT6dd7/5Gh+9YpNDAABdBL6+0tzmgAAAABJRU5ErkJggg==" /> H-datohienco<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUDs+r/iUm/4qBDMD26qEYyy8x+VefdeyfkWMA7/Wj/5nI0YgMRg0YNWDUAAhgYXv7RJT3+tH/5Ghme/VADACANRL2l/ERqAAAAABJRU5ErkJggg==" /> H-matnuoc<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMDxeuFhP79YqBDPDqFZsYi5jYr1c6Op+fkWPA9eu8/5nI0YgMRg0YNWDUAAhgefuWTfT6dd7/5Gh+9YpNDAABdBL6+0tzmgAAAABJRU5ErkJggg==" /> h-quocphong<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> HATCH CC DVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMU9vWt/iUg8IqBDMD24YMYyy8BgVefFRWfkWMA74MH/5nI0YgMRg0YNWDUAAhgYfvwQZT3wYP/5Ghme/9eDABuzBL4t7InGgAAAABJRU5ErkJggg==" /> HATCH-PK GA<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsbRWu1tT89YqBDHD9OpsYi6bmr1eBgZ+fkWMAExPvfyZyNKIYMmrAqAGjBjAwMDAwsNy4wSa6cSPvf3I0X7vGJgYAGs0RfhnohtcAAAAASUVORK5CYII=" /> kega_REV<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUzmit/iWn+YqBDMD25LoYyy85zVefLQKfkWMA70mm/0zkaEQGowaMGjBqAASwsD2+IcrLuPE/OZrZnlwTAwC/pBFvzTecoAAAAABJRU5ErkJggg==" /> SDD_DatMatNuoc<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNszRCu1pT79YqBDHD9CZsYi6bcr1eBFp+fkWMA00ne/0zkaEQxZNSAUQNGDWBgYGBgYLnxmE10IyPvf3I0X3vCJgYAwhgRbz2z3lgAAAAASUVORK5CYII=" /> SDD_TH<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQElEQVQ4jWN0D8rZLSyh9pKBDPD2xS1xFmEJtZequp4PyTGAgYGBgYlcjaMGjBowagAqYHn74pY4uZrfvrglDgDrjQ4mAE7xAwAAAABJRU5ErkJggg==" /> <br />' });
+var format_SDDH12_32 = new ol.format.GeoJSON();
+var features_SDDH12_32 = format_SDDH12_32.readFeatures(json_SDDH12_32, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_SDDH12_32 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_SDDH12_32.addFeatures(features_SDDH12_32);
+var lyr_SDDH12_32 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_SDDH12_32, 
+                style: style_SDDH12_32,
+                popuplayertitle: 'SDD H1-2',
+                interactive: true,
+    title: 'SDD H1-2<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMU9vWt/iUg8IqBDMD24YMYyy8BgVefFRWfkWMA74MH/5nI0YgMRg0YNWDUAAhgYfvwQZT3wYP/5Ghme/9eDABuzBL4t7InGgAAAABJRU5ErkJggg==" /> H-PK GA<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARUlEQVQ4jWNMTEyslpaWfsVABnj69KkYi7S09CtDQ8Nn5BjAyMj4n4kcjchg1IBRA0YNgACWZ8+eiTIyMv4nR/PTp0/FACsfEAaLIAZkAAAAAElFTkSuQmCC" /> Khu vuc Du an Rieng<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMDxeuFhP79YqBDPDqFZsYi5jYr1c6Op+fkWPA9eu8/5nI0YgMRg0YNWDUAAhgefuWTfT6dd7/5Gh+9YpNDAABdBL6+0tzmgAAAABJRU5ErkJggg==" /> SDD_DatANQP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> SDD_DatCCDothi<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> SDD_DatCCDVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP09fWtFhYWfsVABnj//r0Yi7Cw8CtVVdVn5Bhw586d/0zkaEQGowaMGjBqAASwvH37VpSRkfE/OZrfvXsnBgCTDRJVuwLlWgAAAABJRU5ErkJggg==" /> SDD_DatCongTrinhHTKT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMNxOuFmP/9YqBDPDqJ5sYixj7r1c6fJ+fkWPA9U+8/5nI0YgMRg0YNWDUAAhgefuTTfT6J97/5Gh+9ZNNDAA3YxL9FCDhxwAAAABJRU5ErkJggg==" /> SDD_DatCQ-VienNC-TruongDT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWN0yhOu5pH/9YqBDPDlIZsYC4/8r1cS9p+fkWPAy6O8/5nI0YgMRg0YNWDUAAhg+fqETfTlUd7/5Gj+8oBNDAABhhL5XV8fxwAAAABJRU5ErkJggg==" /> SDD_DatCXDoThi<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbhWu/qX56xUDGYDtOpsYyy/NX68+B35+Ro4BvEy8/5nI0YgMRg0YNWDUAAhgYbvBJsq7kfc/OZrZrrGJAQDEHBBEOZw1sQAAAABJRU5ErkJggg==" /> SDD_DatCXDVO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARElEQVQ4jWMUrRDd/1P/50sGMgD7RXZxlp/6P19+ivj0kBwD+Bj4GJjI0YgMRg0YNWDUAAhgYb/ILs7HwEeWZvaL7OIA0WYN0G+1MnEAAAAASUVORK5CYII=" /> SDD_DatCXDVO @ 1<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNszRCu1pT79YqBDHD9CZsYi6bcr1eBFp+fkWMA00ne/0zkaEQxZNSAUQNGDWBgYGBgYLnxmE10IyPvf3I0X3vCJgYAwhgRbz2z3lgAAAAASUVORK5CYII=" /> SDD_DatDancu_HC<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARElEQVQ4jWOsSBDdr6/48yUDGeDifXZxFn3Fny8j7D89JMcABgY+BibyNCLAqAGjBowaAAEsF++zizMw8JGl+eJ9dnEA+nEOJF7yhtoAAAAASUVORK5CYII=" /> SDD_DatDancu_HC @ 1<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9fWt1hQQeMVABrj+4YMYi6aAwKtARcVn5BjA9ODBfyZyNKIYMmrAqAGjBjAwMDAwsNz48EF044MH/8nRfO39ezEAxW4UMhA/u/oAAAAASUVORK5CYII=" /> SDD_DatDiTich-Ton Giao<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMNzOrFmNnf8VABnj186cYixg7+ysdPr5n5Bhw/dOn/0zkaEQGowaMGjBqAASwvP35U/T6p0//ydH86udPMQAzuxT4UjfwXQAAAABJRU5ErkJggg==" /> SDD_DatHonHop<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARUlEQVQ4jWMMMDbeL8nB8ZKBDPD8xw9xFkkOjpcGgoIPyTGA4f17BiayNCKBUQNGDRg1AAJYnv/4Ic7w/j1Zmp//+CEOACZYEXbcjFsLAAAAAElFTkSuQmCC" /> SDD_DatHonHop @ 1<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP09fWtFhAQeMVABvjw4YMYi4CAwCsVFZVn5Bjw4MGD/0zkaEQGowaMGjBqAASwfPjwQfTBgwf/ydH87t07MQAT2hT1qucQIwAAAABJRU5ErkJggg==" /> SDD_DatHTKT_BaiDoXe<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUzmit/iWn+YqBDMD25LoYyy85zVefLQKfkWMA70mm/0zkaEQGowaMGjBqAASwsD2+IcrLuPE/OZrZnlwTAwC/pBFvzTecoAAAAABJRU5ErkJggg==" /> SDD_DatMatNuoc<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQklEQVQ4jWMUTajY/1NR/yUDGYD9/kVxlp+K+i8/2Uc8JMcAPgYGBiZyNCKDUQNGDRg1AAJY2O9fFOcjUzP7/YviAPmDDiQdZKD6AAAAAElFTkSuQmCC" /> SDD_DatMatNuoc @ 1<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUtvOt/sUt8IqBDMD29YMYyy9ugVefxRSfkWMA7+sH/5nI0YgMRg0YNWDUAAhgYfv2QZT39YP/5Ghm+/peDAAfjhL77L662wAAAABJRU5ErkJggg==" /> SDD_DatNG<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9RWu1hT49YqBDHD9A5sYi6bAr1eBip+fkWMA0wPe/0zkaEQxZNSAUQNGDWBgYGBgYLnxgU104wPe/+RovvaeTQwARmUSO36KjtAAAAAASUVORK5CYII=" /> SDD_DatODT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNszRCu1pT79YqBDHD9CZsYi6bcr1eBFp+fkWMA00ne/0zkaEQxZNSAUQNGDWBgYGBgYLnxmE10IyPvf3I0X3vCJgYAwhgRbz2z3lgAAAAASUVORK5CYII=" /> SDD_Datruonghoc_THCS<br />' });
+var format_SDDA6_33 = new ol.format.GeoJSON();
+var features_SDDA6_33 = format_SDDA6_33.readFeatures(json_SDDA6_33, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_SDDA6_33 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_SDDA6_33.addFeatures(features_SDDA6_33);
+var lyr_SDDA6_33 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_SDDA6_33, 
+                style: style_SDDA6_33,
+                popuplayertitle: 'SDD A6',
+                interactive: true,
+    title: 'SDD A6<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbhWu/qX56xUDGYDtOpsYyy/NX68+B35+Ro4BvEy8/5nI0YgMRg0YNWDUAAhgYbvBJsq7kfc/OZrZrrGJAQDEHBBEOZw1sQAAAABJRU5ErkJggg==" /> dat cndvo<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUbhWu/qX56xUDGYDtOpsYyy/NX68+B35+Ro4BvEy8/5nI0YgMRg0YNWDUAAhgYbvBJsq7kfc/OZrZrrGJAQDEHBBEOZw1sQAAAABJRU5ErkJggg==" /> DATCAYXANHCLY<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUNguv/sUu9oqBDMD285UYyy92sVef+XSekWMA76fr/5nI0YgMRg0YNWDUAAhgYfv5VpT30/X/5Ghm+/lKDAAzcxL9E2X/ZgAAAABJRU5ErkJggg==" /> DATDUTRUPT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9fWt1hQQeMVABrj+4YMYi6aAwKtARcVn5BjA9ODBfyZyNKIYMmrAqAGjBjAwMDAwsNz48EF044MH/8nRfO39ezEAxW4UMhA/u/oAAAAASUVORK5CYII=" /> Di Tich<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMDxeuFhP79YqBDPDqFZsYi5jYr1c6Op+fkWPA9eu8/5nI0YgMRg0YNWDUAAhgefuWTfT6dd7/5Gh+9YpNDAABdBL6+0tzmgAAAABJRU5ErkJggg==" /> H_AN_QP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNsFRau1vz16xUDGeA6G5sYi+avX68CP39+Ro4BTLy8/5nI0YhiyKgBowaMGsDAwMDAwHKDjU10Iy/vf3I0X2NjEwMAxVYQRLLr2fAAAAAASUVORK5CYII=" /> H_Congcong<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMNxOuFmP/9YqBDPDqJ5sYixj7r1c6fJ+fkWPA9U+8/5nI0YgMRg0YNWDUAAhgefuTTfT6J97/5Gh+9ZNNDAA3YxL9FCDhxwAAAABJRU5ErkJggg==" /> H_Coquan<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMDxeuFhP79YqBDPDqFZsYi5jYr1c6Op+fkWPA9eu8/5nI0YgMRg0YNWDUAAhgefuWTfT6dd7/5Gh+9YpNDAABdBL6+0tzmgAAAABJRU5ErkJggg==" /> H_langxom<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9Y2s1hSQfMVABrj+4aUYi6aA5KtARb1n5BjA9ODyfyZyNKIYMmrAqAGjBjAwMDAwsNz48EJ04wPG/+Rovvb+pRgA8CYTXBk+yr0AAAAASUVORK5CYII=" /> H_TH_giaoduc<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWOUNROu/sP+6xUDGYDlJ5sYyx/2X69+831+Ro4BjJ94/zORoxEZjBowasCoARDAwvKTTZTxE+9/cjQz/2QTAwCNxRD8lFUAOwAAAABJRU5ErkJggg==" /> H-CAYXANHTHANHPHO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMFxauFvv16xUDGeAVG5sYi9ivX690Pn9+Ro4B13l5/zORoxEZjBowasCoARDA8paNTfQ6L+9/cjS/YmMTAwA5EBECLKOgGQAAAABJRU5ErkJggg==" /> H-CCTP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMMNzOrFmNnf8VABnj186cYixg7+ysdPr5n5Bhw/dOn/0zkaEQGowaMGjBqAASwvP35U/T6p0//ydH86udPMQAzuxT4UjfwXQAAAABJRU5ErkJggg==" /> H-dathonhop<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASklEQVQ4jWNs9RWu1hT49YqBDHD9A5sYi6bAr1eBip+fkWMA0wPe/0zkaEQxZNSAUQNGDWBgYGBgYLnxgU104wPe/+RovvaeTQwARmUSO36KjtAAAAAASUVORK5CYII=" /> H-datothaptang<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWP09fWtFhAQeMVABvjw4YMYi4CAwCsVFZVn5Bjw4MGD/0zkaEQGowaMGjBqAASwfPjwQfTBgwf/ydH87t07MQAT2hT1qucQIwAAAABJRU5ErkJggg==" /> H-hatang<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARklEQVQ4jWMUDs+r/iUm/4qBDMD26qEYyy8x+VefdeyfkWMA7/Wj/5nI0YgMRg0YNWDUAAhgYXv7RJT3+tH/5Ghme/VADACANRL2l/ERqAAAAABJRU5ErkJggg==" /> H-matnuoc<br />' });
+var format_layer_M16_34 = new ol.format.GeoJSON();
+var features_layer_M16_34 = format_layer_M16_34.readFeatures(json_layer_M16_34, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_M16_34 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_M16_34.addFeatures(features_layer_M16_34);
+var lyr_layer_M16_34 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_M16_34, 
+                style: style_layer_M16_34,
+                popuplayertitle: 'layer_M16',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAM0lEQVQ4jWNgGAUDDxhr/zPYU2IACxMDwwGybWdg+M9Eie0MDAwMLP8YGBwoNWQUDDQAAHFeBMe23b02AAAAAElFTkSuQmCC" /> layer_M16'
+            });
+var format_layer_M15_35 = new ol.format.GeoJSON();
+var features_layer_M15_35 = format_layer_M15_35.readFeatures(json_layer_M15_35, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_M15_35 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_M15_35.addFeatures(features_layer_M15_35);
+var lyr_layer_M15_35 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_M15_35, 
+                style: style_layer_M15_35,
+                popuplayertitle: 'layer_M15',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVQ4jWNgGAUDDxgZav/bU2IACwMTwwEKrP/PRIntEBf8Y3Cg1JBRMNAAAG7hBMdssCDPAAAAAElFTkSuQmCC" /> layer_M15'
+            });
+var format_layer_M14_36 = new ol.format.GeoJSON();
+var features_layer_M14_36 = format_layer_M14_36.readFeatures(json_layer_M14_36, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_M14_36 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_M14_36.addFeatures(features_layer_M14_36);
+var lyr_layer_M14_36 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_M14_36, 
+                style: style_layer_M14_36,
+                popuplayertitle: 'layer_M14',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAL0lEQVQ4je3NsREAMAjDQIXLXsD+Q5khXNDwvWU4+16jtAKJZOwVzjvADyg3crYNbmAFBovDoOcAAAAASUVORK5CYII=" /> layer_M14'
+            });
+var format_layer_M13_37 = new ol.format.GeoJSON();
+var features_layer_M13_37 = format_layer_M13_37.readFeatures(json_layer_M13_37, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_M13_37 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_M13_37.addFeatures(features_layer_M13_37);
+var lyr_layer_M13_37 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_M13_37, 
+                style: style_layer_M13_37,
+                popuplayertitle: 'layer_M13',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALElEQVQ4je3NsREAAAjCwOi5l+6/FA5BYeP3BHj3QqjdgIy90nkHKGDcyLu2Ar4GgjbaLeMAAAAASUVORK5CYII=" /> layer_M13'
+            });
+var format_layer_M12_38 = new ol.format.GeoJSON();
+var features_layer_M12_38 = format_layer_M12_38.readFeatures(json_layer_M12_38, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_M12_38 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_M12_38.addFeatures(features_layer_M12_38);
+var lyr_layer_M12_38 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_M12_38, 
+                style: style_layer_M12_38,
+                popuplayertitle: 'layer_M12',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAM0lEQVQ4jWNgGAUDDxhr//+3p8QAFiYGhgNk287A8J+JEtsZGBgYWP4xMDhQasgoGGgAAPX1BcZNkGCSAAAAAElFTkSuQmCC" /> layer_M12'
+            });
+var format_layer_M11_39 = new ol.format.GeoJSON();
+var features_layer_M11_39 = format_layer_M11_39.readFeatures(json_layer_M11_39, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_M11_39 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_M11_39.addFeatures(features_layer_M11_39);
+var lyr_layer_M11_39 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_M11_39, 
+                style: style_layer_M11_39,
+                popuplayertitle: 'layer_M11',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAMUlEQVQ4jWNgGAUDDxgLfWfZU2IAC+P//wco0P+fiRLbGRgYGFj+MzI6UGrIKBhoAACfQgaifDPv7AAAAABJRU5ErkJggg==" /> layer_M11'
+            });
+var format_layer_M10_40 = new ol.format.GeoJSON();
+var features_layer_M10_40 = format_layer_M10_40.readFeatures(json_layer_M10_40, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_M10_40 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_M10_40.addFeatures(features_layer_M10_40);
+var lyr_layer_M10_40 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_M10_40, 
+                style: style_layer_M10_40,
+                popuplayertitle: 'layer_M10',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALElEQVQ4je3NsREAAAjCwOi5l+6/FA5BYeP3BHj3QqLdgIy90nkHKGDcyLu2BLwGggKwY94AAAAASUVORK5CYII=" /> layer_M10'
+            });
+var format_layer_M09_41 = new ol.format.GeoJSON();
+var features_layer_M09_41 = format_layer_M09_41.readFeatures(json_layer_M09_41, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_M09_41 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_M09_41.addFeatures(features_layer_M09_41);
+var lyr_layer_M09_41 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_M09_41, 
+                style: style_layer_M09_41,
+                popuplayertitle: 'layer_M09',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALklEQVQ4jWNgGAUDDxj/1/63p8QAFgYmhgPkW8/wn4kS2yEu+MfgQKkho2CgAQD1dgXGqV9MKAAAAABJRU5ErkJggg==" /> layer_M09'
+            });
+var format_layer_M08_42 = new ol.format.GeoJSON();
+var features_layer_M08_42 = format_layer_M08_42.readFeatures(json_layer_M08_42, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_M08_42 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_M08_42.addFeatures(features_layer_M08_42);
+var lyr_layer_M08_42 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_M08_42, 
+                style: style_layer_M08_42,
+                popuplayertitle: 'layer_M08',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVQ4jWNgGAUDDxj/MzjaU2iA/X8K9P9nosR2BgYGBhYGBiYHSg0ZBQMNAHFYBQbhGfhCAAAAAElFTkSuQmCC" /> layer_M08'
+            });
+var format_layer_M07_43 = new ol.format.GeoJSON();
+var features_layer_M07_43 = format_layer_M07_43.readFeatures(json_layer_M07_43, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_M07_43 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_M07_43.addFeatures(features_layer_M07_43);
+var lyr_layer_M07_43 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_M07_43, 
+                style: style_layer_M07_43,
+                popuplayertitle: 'layer_M07',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAL0lEQVQ4jWNgGAUDDxgZTjHYU2bAGYb/FOj/z0SJ7QwMDAwsDP8YHCg1ZBQMNAAA/2sFGlM9mGUAAAAASUVORK5CYII=" /> layer_M07'
+            });
+var format_layer_M06_44 = new ol.format.GeoJSON();
+var features_layer_M06_44 = format_layer_M06_44.readFeatures(json_layer_M06_44, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_M06_44 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_M06_44.addFeatures(features_layer_M06_44);
+var lyr_layer_M06_44 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_M06_44, 
+                style: style_layer_M06_44,
+                popuplayertitle: 'layer_M06',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALElEQVQ4jWNgGAUDDxjv/6+1p8QAFgYGpgMU2P+fiRLboS7450CpIaNgoAEAo9cFpp/jIc8AAAAASUVORK5CYII=" /> layer_M06'
+            });
+var format_layer_M05_45 = new ol.format.GeoJSON();
+var features_layer_M05_45 = format_layer_M05_45.readFeatures(json_layer_M05_45, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_M05_45 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_M05_45.addFeatures(features_layer_M05_45);
+var lyr_layer_M05_45 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_M05_45, 
+                style: style_layer_M05_45,
+                popuplayertitle: 'layer_M05',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALElEQVQ4jWNgGAUDDxj/z6u1p8QAFgZGpgOU2M9Eie0QF/z/50CpIaNgoAEAxQAGZXUAV5IAAAAASUVORK5CYII=" /> layer_M05'
+            });
+var format_layer_M04_46 = new ol.format.GeoJSON();
+var features_layer_M04_46 = format_layer_M04_46.readFeatures(json_layer_M04_46, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_M04_46 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_M04_46.addFeatures(features_layer_M04_46);
+var lyr_layer_M04_46 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_M04_46, 
+                style: style_layer_M04_46,
+                popuplayertitle: 'layer_M04',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAM0lEQVQ4jWNgGAUDDxhr5/23p8QAFiZGhgNk287A8J+JEtsZGBgYWP79Z3Cg1JBRMNAAAMX+BmUU2CPsAAAAAElFTkSuQmCC" /> layer_M04'
+            });
+var format_layer_M03_47 = new ol.format.GeoJSON();
+var features_layer_M03_47 = format_layer_M03_47.readFeatures(json_layer_M03_47, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_M03_47 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_M03_47.addFeatures(features_layer_M03_47);
+var lyr_layer_M03_47 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_M03_47, 
+                style: style_layer_M03_47,
+                popuplayertitle: 'layer_M03',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAMUlEQVQ4jWNgGAUDDxhPnWKwp8QAFiYmhgMU6P/PRIntDAwMDCz//jE4UGrIKBhoAABygQXewYv2DwAAAABJRU5ErkJggg==" /> layer_M03'
+            });
+var format_layer_M02A_48 = new ol.format.GeoJSON();
+var features_layer_M02A_48 = format_layer_M02A_48.readFeatures(json_layer_M02A_48, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_M02A_48 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_M02A_48.addFeatures(features_layer_M02A_48);
+var lyr_layer_M02A_48 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_M02A_48, 
+                style: style_layer_M02A_48,
+                popuplayertitle: 'layer_M02A',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAMUlEQVQ4jWNgGAUDDxhPpdbaU2IACxMj0wEK7P/PRIntDAwMDCz//v9zoNSQUTDQAAB1bgb3Y3pYzQAAAABJRU5ErkJggg==" /> layer_M02A'
+            });
+var format_layer_M02_49 = new ol.format.GeoJSON();
+var features_layer_M02_49 = format_layer_M02_49.readFeatures(json_layer_M02_49, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_M02_49 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_M02_49.addFeatures(features_layer_M02_49);
+var lyr_layer_M02_49 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_M02_49, 
+                style: style_layer_M02_49,
+                popuplayertitle: 'layer_M02',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAMUlEQVQ4jWNgGAUDDxh9ZxXaU2IAy///jAco0P+fiRLbGRgYGFgYGf87UGrIKBhoAACfRwaihdaYCAAAAABJRU5ErkJggg==" /> layer_M02'
+            });
+var format_layer_M01_50 = new ol.format.GeoJSON();
+var features_layer_M01_50 = format_layer_M01_50.readFeatures(json_layer_M01_50, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_M01_50 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_M01_50.addFeatures(features_layer_M01_50);
+var lyr_layer_M01_50 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_M01_50, 
+                style: style_layer_M01_50,
+                popuplayertitle: 'layer_M01',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAJklEQVQ4jWNgGAUDDxgZGBjsKTXgPwX6/zNRYjvMBRR5YRQMBgAAZq4CgtKmlJUAAAAASUVORK5CYII=" /> layer_M01'
+            });
+var format_Ga_51 = new ol.format.GeoJSON();
+var features_Ga_51 = format_Ga_51.readFeatures(json_Ga_51, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_Ga_51 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_Ga_51.addFeatures(features_Ga_51);
+var lyr_Ga_51 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_Ga_51, 
+                style: style_Ga_51,
+                popuplayertitle: 'Ga',
+                interactive: false,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAB10lEQVQ4jbWSzWsTURTFf5PMy+QlTeJEktSOlICZChaLURRaokh1U1BEKFJ0YxH8D7oo/gHi18qF6NKtRVy4qwo1q26K2bWGFm3amBiTtLHWYRqNi3y0kkFw0QOXx73vnsN5913YZ4Rb8Z/Q5EOEt4LqsVA9FsJbRvofOLUqXbnQipy66McwffSEmtWtDchlt/nwroZt9QENZwGhFRmdiNIbd3aWX4G5FwVs61C75O5cSvmI5IUR4scEQDTo58bwEOOnB3G7FJa/ViGgg9BcfFs7wK/6LICrI1BvTGKYPgDdL3l28zJLhTKPZ+cZGzK5dmaw2WckfMBkm6a2zjCN3503X0ke5dXCInOLnwC4M/OW3lBPszOgQ30nBASB2q6DPTBjB1ktbwIwfeksz29f5frwccextAUqKK4fbG0AsPD5C6mBfgDuvk4z8WSGlNnM+V4BVWwCtb+HKEQEGThBxBDZYplb506SGugnHtGZGhthfmWd9MdVWM5sU8o9pb7zBrq+0Vvg/HiMviMoikIiGsaMhcnkiqxXa7CWhfTLPLZltCndi+Tx5kmOBjESPgL6ru3c0k8y76vY1mH2LJIzpLyPJku4VRu3aqPJEpq892+SM4Kt2D/8AfGsgsAJRxObAAAAAElFTkSuQmCC" /> Ga'
+            });
+var format_layer_DCaotoc_52 = new ol.format.GeoJSON();
+var features_layer_DCaotoc_52 = format_layer_DCaotoc_52.readFeatures(json_layer_DCaotoc_52, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_DCaotoc_52 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_DCaotoc_52.addFeatures(features_layer_DCaotoc_52);
+var lyr_layer_DCaotoc_52 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_DCaotoc_52, 
+                style: style_layer_DCaotoc_52,
+                popuplayertitle: 'layer_D-Cao toc',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAJklEQVQ4jWNgGAUDDxgZGBjsKTXgPwX6/zNRYjvMBRR5YRQMBgAAZq4CgtKmlJUAAAAASUVORK5CYII=" /> layer_D-Cao toc'
+            });
+var format_layer_DPcCaotoc_53 = new ol.format.GeoJSON();
+var features_layer_DPcCaotoc_53 = format_layer_DPcCaotoc_53.readFeatures(json_layer_DPcCaotoc_53, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_DPcCaotoc_53 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_DPcCaotoc_53.addFeatures(features_layer_DPcCaotoc_53);
+var lyr_layer_DPcCaotoc_53 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_DPcCaotoc_53, 
+                style: style_layer_DPcCaotoc_53,
+                popuplayertitle: 'layer_D-Pc Cao toc',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAJklEQVQ4jWNgGAUDDxgZ/jPYU2rAfwr0/2eixHaYCyjywigYDAAA9HQFfyyEs4gAAAAASUVORK5CYII=" /> layer_D-Pc Cao toc'
+            });
+var format_layer_ketnoidsdt_54 = new ol.format.GeoJSON();
+var features_layer_ketnoidsdt_54 = format_layer_ketnoidsdt_54.readFeatures(json_layer_ketnoidsdt_54, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_ketnoidsdt_54 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_ketnoidsdt_54.addFeatures(features_layer_ketnoidsdt_54);
+var lyr_layer_ketnoidsdt_54 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_ketnoidsdt_54, 
+                style: style_layer_ketnoidsdt_54,
+                popuplayertitle: 'layer_ket noi dsdt',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAMUlEQVQ4jWNgGAUDDxjb2trsKTGA5d+/fwco0P+fiRLbGRgYGFiYmJgcKDVkFAw0AACxwAbc/8Wr/AAAAABJRU5ErkJggg==" /> layer_ket noi dsdt'
+            });
+var format_layer_4Railwaywhite_55 = new ol.format.GeoJSON();
+var features_layer_4Railwaywhite_55 = format_layer_4Railwaywhite_55.readFeatures(json_layer_4Railwaywhite_55, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_4Railwaywhite_55 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_4Railwaywhite_55.addFeatures(features_layer_4Railwaywhite_55);
+var lyr_layer_4Railwaywhite_55 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_4Railwaywhite_55, 
+                style: style_layer_4Railwaywhite_55,
+                popuplayertitle: 'layer_4-Railway-white',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAJklEQVQ4jWNgGAUDDxj/MzDYU2rAfwr0/2eixHaYCyjywigYDAAA93EFf+pwVKQAAAAASUVORK5CYII=" /> layer_4-Railway-white'
+            });
+var format_layer_4Railway_56 = new ol.format.GeoJSON();
+var features_layer_4Railway_56 = format_layer_4Railway_56.readFeatures(json_layer_4Railway_56, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_4Railway_56 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_4Railway_56.addFeatures(features_layer_4Railway_56);
+var lyr_layer_4Railway_56 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_4Railway_56, 
+                style: style_layer_4Railway_56,
+                popuplayertitle: 'layer_4-Railway',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAJklEQVQ4jWNgGAUDDxj/MzDYU2rAfwr0/2eixHaYCyjywigYDAAA93EFf+pwVKQAAAAASUVORK5CYII=" /> layer_4-Railway'
+            });
+var format_layer_SQG_Thng2050_57 = new ol.format.GeoJSON();
+var features_layer_SQG_Thng2050_57 = format_layer_SQG_Thng2050_57.readFeatures(json_layer_SQG_Thng2050_57, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_SQG_Thng2050_57 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_SQG_Thng2050_57.addFeatures(features_layer_SQG_Thng2050_57);
+var lyr_layer_SQG_Thng2050_57 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_SQG_Thng2050_57, 
+                style: style_layer_SQG_Thng2050_57,
+                popuplayertitle: 'layer_ĐSQG_Thường 2050',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALElEQVQ4je3NsREAAAjCwOi5l+6/FA5BYeP3BHj3QqjdgIy90nkHKGDcyLu2Ar4GgjbaLeMAAAAASUVORK5CYII=" /> layer_ĐSQG_Thường 2050'
+            });
+var format_layer_Dduongsattocdocao_58 = new ol.format.GeoJSON();
+var features_layer_Dduongsattocdocao_58 = format_layer_Dduongsattocdocao_58.readFeatures(json_layer_Dduongsattocdocao_58, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_Dduongsattocdocao_58 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_Dduongsattocdocao_58.addFeatures(features_layer_Dduongsattocdocao_58);
+var lyr_layer_Dduongsattocdocao_58 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_Dduongsattocdocao_58, 
+                style: style_layer_Dduongsattocdocao_58,
+                popuplayertitle: 'layer_D- duong sat toc do cao',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAJklEQVQ4jWNgGAUDDxgZGP7bU2rAfwr0/2eixHaYCyjywigYDAAA8XcFf54TKcUAAAAASUVORK5CYII=" /> layer_D- duong sat toc do cao'
+            });
+var format_layer_02interCity_59 = new ol.format.GeoJSON();
+var features_layer_02interCity_59 = format_layer_02interCity_59.readFeatures(json_layer_02interCity_59, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_02interCity_59 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_02interCity_59.addFeatures(features_layer_02interCity_59);
+var lyr_layer_02interCity_59 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_02interCity_59, 
+                style: style_layer_02interCity_59,
+                popuplayertitle: 'layer_@@02-interCity',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVQ4jWNgGAUDDxgZ9v23p8QAFgZGhgMU6P/PRIntEBf8Z3Cg1JBRMNAAABDrBQe2rNv7AAAAAElFTkSuQmCC" /> layer_@@02-interCity'
+            });
+var format_layer_Monorail_60 = new ol.format.GeoJSON();
+var features_layer_Monorail_60 = format_layer_Monorail_60.readFeatures(json_layer_Monorail_60, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_Monorail_60 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_Monorail_60.addFeatures(features_layer_Monorail_60);
+var lyr_layer_Monorail_60 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_Monorail_60, 
+                style: style_layer_Monorail_60,
+                popuplayertitle: 'layer_Monorail',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALklEQVQ4jWNgGAUDDxj/OzLYU2aAPcN/CvT/Z6LEdgYGBgYWBiYGB0oNGQUDDQBx2gUGzJLqbQAAAABJRU5ErkJggg==" /> layer_Monorail'
+            });
+var format_layer_4BRTM18_61 = new ol.format.GeoJSON();
+var features_layer_4BRTM18_61 = format_layer_4BRTM18_61.readFeatures(json_layer_4BRTM18_61, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_4BRTM18_61 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_4BRTM18_61.addFeatures(features_layer_4BRTM18_61);
+var lyr_layer_4BRTM18_61 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_4BRTM18_61, 
+                style: style_layer_4BRTM18_61,
+                popuplayertitle: 'layer_4-BRT-M18',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAM0lEQVQ4jWNgGAUDDxhr7/+3p8QAFiYGhgNk287A8J+JEtsZGBgYWP4xMDhQasgoGGgAAKT1BaYpYlEVAAAAAElFTkSuQmCC" /> layer_4-BRT-M18'
+            });
+var format_layer_DSDT_17_62 = new ol.format.GeoJSON();
+var features_layer_DSDT_17_62 = format_layer_DSDT_17_62.readFeatures(json_layer_DSDT_17_62, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_DSDT_17_62 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_DSDT_17_62.addFeatures(features_layer_DSDT_17_62);
+var lyr_layer_DSDT_17_62 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_DSDT_17_62, 
+                style: style_layer_DSDT_17_62,
+                popuplayertitle: 'layer_DSDT_17',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAJklEQVQ4jWNgGAUDDxgZGBjsKTXgPwX6/zNRYjvMBRR5YRQMBgAAZq4CgtKmlJUAAAAASUVORK5CYII=" /> layer_DSDT_17'
+            });
+var format_layer_DSDT_16_63 = new ol.format.GeoJSON();
+var features_layer_DSDT_16_63 = format_layer_DSDT_16_63.readFeatures(json_layer_DSDT_16_63, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_DSDT_16_63 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_DSDT_16_63.addFeatures(features_layer_DSDT_16_63);
+var lyr_layer_DSDT_16_63 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_DSDT_16_63, 
+                style: style_layer_DSDT_16_63,
+                popuplayertitle: 'layer_DSDT_16',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAMUlEQVQ4jWNgGAUDDxhPMZyyp8QAFiYGpgMU6P/PRIntDAwMDCz/GP45UGrIKBhoAABwtwXe9oIGswAAAABJRU5ErkJggg==" /> layer_DSDT_16'
+            });
+var format_layer_DSDT_15_64 = new ol.format.GeoJSON();
+var features_layer_DSDT_15_64 = format_layer_DSDT_15_64.readFeatures(json_layer_DSDT_15_64, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_DSDT_15_64 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_DSDT_15_64.addFeatures(features_layer_DSDT_15_64);
+var lyr_layer_DSDT_15_64 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_DSDT_15_64, 
+                style: style_layer_DSDT_15_64,
+                popuplayertitle: 'layer_DSDT_15',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALklEQVQ4jWNgGAUDDxj/19baU2IACwMT0wHyrWf8z0SJ7RAX/PvnQKkho2CgAQB0BQZFezU9OQAAAABJRU5ErkJggg==" /> layer_DSDT_15'
+            });
+var format_layer_DSDT_13_65 = new ol.format.GeoJSON();
+var features_layer_DSDT_13_65 = format_layer_DSDT_13_65.readFeatures(json_layer_DSDT_13_65, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_DSDT_13_65 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_DSDT_13_65.addFeatures(features_layer_DSDT_13_65);
+var lyr_layer_DSDT_13_65 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_DSDT_13_65, 
+                style: style_layer_DSDT_13_65,
+                popuplayertitle: 'layer_DSDT_13',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAJklEQVQ4jWNgGAUDDxgZGBjsKTXgPwX6/zNRYjvMBRR5YRQMBgAAZq4CgtKmlJUAAAAASUVORK5CYII=" /> layer_DSDT_13'
+            });
+var format_layer_DSDT12_66 = new ol.format.GeoJSON();
+var features_layer_DSDT12_66 = format_layer_DSDT12_66.readFeatures(json_layer_DSDT12_66, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_DSDT12_66 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_DSDT12_66.addFeatures(features_layer_DSDT12_66);
+var lyr_layer_DSDT12_66 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_DSDT12_66, 
+                style: style_layer_DSDT12_66,
+                popuplayertitle: 'layer_DSDT 12',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVQ4jWNgGAUDDxgZYmvtKTGAhYGJ6QAF9v9nosR2iAv+/XOg1JBRMNAAAJpWBSX2gDrCAAAAAElFTkSuQmCC" /> layer_DSDT 12'
+            });
+var format_layer_DSDT_11_67 = new ol.format.GeoJSON();
+var features_layer_DSDT_11_67 = format_layer_DSDT_11_67.readFeatures(json_layer_DSDT_11_67, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_DSDT_11_67 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_DSDT_11_67.addFeatures(features_layer_DSDT_11_67);
+var lyr_layer_DSDT_11_67 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_DSDT_11_67, 
+                style: style_layer_DSDT_11_67,
+                popuplayertitle: 'layer_DSDT_11',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAJklEQVQ4jWNgGAUDDxgZGBjsKTXgPwX6/zNRYjvMBRR5YRQMBgAAZq4CgtKmlJUAAAAASUVORK5CYII=" /> layer_DSDT_11'
+            });
+var format_layer_DSDT10_68 = new ol.format.GeoJSON();
+var features_layer_DSDT10_68 = format_layer_DSDT10_68.readFeatures(json_layer_DSDT10_68, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_DSDT10_68 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_DSDT10_68.addFeatures(features_layer_DSDT10_68);
+var lyr_layer_DSDT10_68 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_DSDT10_68, 
+                style: style_layer_DSDT10_68,
+                popuplayertitle: 'layer_DSDT 10',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAMUlEQVQ4jWNgGAUDDxhPMaTaU2IACxMD4wEK9P9nosR2BgYGBpZ/DP8dKDVkFAw0AABw4wV5uGRURAAAAABJRU5ErkJggg==" /> layer_DSDT 10'
+            });
+var format_layer_DSDT9_69 = new ol.format.GeoJSON();
+var features_layer_DSDT9_69 = format_layer_DSDT9_69.readFeatures(json_layer_DSDT9_69, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_DSDT9_69 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_DSDT9_69.addFeatures(features_layer_DSDT9_69);
+var lyr_layer_DSDT9_69 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_DSDT9_69, 
+                style: style_layer_DSDT9_69,
+                popuplayertitle: 'layer_DSDT 9',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAMUlEQVQ4jWNgGAUDDxhnMRTaU2IAy38GxgMU6P/PRIntDAwMDCyMDP8dKDVkFAw0AACWAQVVePdDSQAAAABJRU5ErkJggg==" /> layer_DSDT 9'
+            });
+var format_layer_DSDT8_70 = new ol.format.GeoJSON();
+var features_layer_DSDT8_70 = format_layer_DSDT8_70.readFeatures(json_layer_DSDT8_70, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_DSDT8_70 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_DSDT8_70.addFeatures(features_layer_DSDT8_70);
+var lyr_layer_DSDT8_70 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_DSDT8_70, 
+                style: style_layer_DSDT8_70,
+                popuplayertitle: 'layer_DSDT 8',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALElEQVQ4je3NsREAAAjCwOi5l+6/FA5BYeP3BHj3QqjdgIy90nkHKGDcyLu2Ar4GgjbaLeMAAAAASUVORK5CYII=" /> layer_DSDT 8'
+            });
+var format_layer_DSDT7_71 = new ol.format.GeoJSON();
+var features_layer_DSDT7_71 = format_layer_DSDT7_71.readFeatures(json_layer_DSDT7_71, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_DSDT7_71 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_DSDT7_71.addFeatures(features_layer_DSDT7_71);
+var lyr_layer_DSDT7_71 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_DSDT7_71, 
+                style: style_layer_DSDT7_71,
+                popuplayertitle: 'layer_DSDT 7',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAMUlEQVQ4jWNgGAUDDxhn+TLYU2IAy///DAco0P+fiRLbGRgYGFgYGRkcKDVkFAw0AAC9TgUxA09I8wAAAABJRU5ErkJggg==" /> layer_DSDT 7'
+            });
+var format_layer_DSDT6_72 = new ol.format.GeoJSON();
+var features_layer_DSDT6_72 = format_layer_DSDT6_72.readFeatures(json_layer_DSDT6_72, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_DSDT6_72 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_DSDT6_72.addFeatures(features_layer_DSDT6_72);
+var lyr_layer_DSDT6_72 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_DSDT6_72, 
+                style: style_layer_DSDT6_72,
+                popuplayertitle: 'layer_DSDT 6',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAM0lEQVQ4jWNgGAUDDxhrGf7bU2IACxMDwwGybWdg+M9Eie0MDAwMLP8YGBwoNWQUDDQAAHBfBMfUo8xhAAAAAElFTkSuQmCC" /> layer_DSDT 6'
+            });
+var format_layer_DSDT5_73 = new ol.format.GeoJSON();
+var features_layer_DSDT5_73 = format_layer_DSDT5_73.readFeatures(json_layer_DSDT5_73, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_DSDT5_73 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_DSDT5_73.addFeatures(features_layer_DSDT5_73);
+var lyr_layer_DSDT5_73 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_DSDT5_73, 
+                style: style_layer_DSDT5_73,
+                popuplayertitle: 'layer_DSDT 5',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAJklEQVQ4jWNgGAUDDxj/MzDYU2rAfwr0/2eixHaYCyjywigYDAAA93EFf+pwVKQAAAAASUVORK5CYII=" /> layer_DSDT 5'
+            });
+var format_layer_DSDT4_74 = new ol.format.GeoJSON();
+var features_layer_DSDT4_74 = format_layer_DSDT4_74.readFeatures(json_layer_DSDT4_74, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_DSDT4_74 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_DSDT4_74.addFeatures(features_layer_DSDT4_74);
+var lyr_layer_DSDT4_74 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_DSDT4_74, 
+                style: style_layer_DSDT4_74,
+                popuplayertitle: 'layer_DSDT 4',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAMUlEQVQ4jWNgGAUDDxhnMajYU2IAy38GpgMU6P/PRIntDAwMDCyMDP8cKDVkFAw0AADT2QUI+NRBtAAAAABJRU5ErkJggg==" /> layer_DSDT 4'
+            });
+var format_layer_DSDT3_75 = new ol.format.GeoJSON();
+var features_layer_DSDT3_75 = format_layer_DSDT3_75.readFeatures(json_layer_DSDT3_75, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_DSDT3_75 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_DSDT3_75.addFeatures(features_layer_DSDT3_75);
+var lyr_layer_DSDT3_75 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_DSDT3_75, 
+                style: style_layer_DSDT3_75,
+                popuplayertitle: 'layer_DSDT 3',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALklEQVQ4jWNgGAUDDxj/1zLYU2IACwMTwwHyrWf4z0SJ7RAX/GNwoNSQUTDQAABw3wTHhixLnwAAAABJRU5ErkJggg==" /> layer_DSDT 3'
+            });
+var format_layer_DSDT2A_76 = new ol.format.GeoJSON();
+var features_layer_DSDT2A_76 = format_layer_DSDT2A_76.readFeatures(json_layer_DSDT2A_76, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_DSDT2A_76 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_DSDT2A_76.addFeatures(features_layer_DSDT2A_76);
+var lyr_layer_DSDT2A_76 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_DSDT2A_76, 
+                style: style_layer_DSDT2A_76,
+                popuplayertitle: 'layer_DSDT 2A',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVQ4jWNgGAUDDxgZZjHYU2IAC8N/hgMU6P/PRIntEBcwMjhQasgoGGgAALIhA+SwTbtGAAAAAElFTkSuQmCC" /> layer_DSDT 2A'
+            });
+var format_layer_DSDT2_77 = new ol.format.GeoJSON();
+var features_layer_DSDT2_77 = format_layer_DSDT2_77.readFeatures(json_layer_DSDT2_77, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_DSDT2_77 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_DSDT2_77.addFeatures(features_layer_DSDT2_77);
+var lyr_layer_DSDT2_77 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_DSDT2_77, 
+                style: style_layer_DSDT2_77,
+                popuplayertitle: 'layer_DSDT 2',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVQ4jWNgGAUDDxgZZjHYU2IAC8N/hgMU6P/PRIntEBcwMjhQasgoGGgAALIhA+SwTbtGAAAAAElFTkSuQmCC" /> layer_DSDT 2'
+            });
+var format_layer_DSDT1_78 = new ol.format.GeoJSON();
+var features_layer_DSDT1_78 = format_layer_DSDT1_78.readFeatures(json_layer_DSDT1_78, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_layer_DSDT1_78 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_layer_DSDT1_78.addFeatures(features_layer_DSDT1_78);
+var lyr_layer_DSDT1_78 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_layer_DSDT1_78, 
+                style: style_layer_DSDT1_78,
+                popuplayertitle: 'layer_DSDT 1',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAJklEQVQ4jWNgGAUDDxgZGP7bU2rAfwr0/2eixHaYCyjywigYDAAA8XcFf54TKcUAAAAASUVORK5CYII=" /> layer_DSDT 1'
+            });
+var format_nearbyProvince_79 = new ol.format.GeoJSON();
+var features_nearbyProvince_79 = format_nearbyProvince_79.readFeatures(json_nearbyProvince_79, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_nearbyProvince_79 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_nearbyProvince_79.addFeatures(features_nearbyProvince_79);
+var lyr_nearbyProvince_79 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_nearbyProvince_79, 
+                style: style_nearbyProvince_79,
+                popuplayertitle: '@nearbyProvince',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAIUlEQVQ4jWNgGAXDADD+n9dQQ4kBLAyM/xip5ZpRMGQBAP3YA5+sMiMWAAAAAElFTkSuQmCC" /> @nearbyProvince'
+            });
+var format_03commuterLine_80 = new ol.format.GeoJSON();
+var features_03commuterLine_80 = format_03commuterLine_80.readFeatures(json_03commuterLine_80, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_03commuterLine_80 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_03commuterLine_80.addFeatures(features_03commuterLine_80);
+var lyr_03commuterLine_80 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_03commuterLine_80, 
+                style: style_03commuterLine_80,
+                popuplayertitle: '@@03-commuterLine',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALklEQVQ4jWNgGAUDDxj/1zLYU2IACwMTwwHyrWf4z0SJ7RAX/GNwoNSQUTDQAABw3wTHhixLnwAAAABJRU5ErkJggg==" /> @@03-commuterLine'
+            });
+var format_02interCity_81 = new ol.format.GeoJSON();
+var features_02interCity_81 = format_02interCity_81.readFeatures(json_02interCity_81, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_02interCity_81 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_02interCity_81.addFeatures(features_02interCity_81);
+var lyr_02interCity_81 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_02interCity_81, 
+                style: style_02interCity_81,
+                popuplayertitle: '@@02-interCity',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVQ4jWNgGAUDDxgZ9v23p8QAFgZGhgMU6P/PRIntEBf8Z3Cg1JBRMNAAABDrBQe2rNv7AAAAAElFTkSuQmCC" /> @@02-interCity'
+            });
+var format_01highSpeed_82 = new ol.format.GeoJSON();
+var features_01highSpeed_82 = format_01highSpeed_82.readFeatures(json_01highSpeed_82, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_01highSpeed_82 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_01highSpeed_82.addFeatures(features_01highSpeed_82);
+var lyr_01highSpeed_82 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_01highSpeed_82, 
+                style: style_01highSpeed_82,
+                popuplayertitle: '@@01-highSpeed',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAMElEQVQ4jWNgGAUDDxhPMTDYU2TAGQaG/xTo/89Eie0MDAwMLP8YGBwoNWQUDDQAAAIOBRpwBjjjAAAAAElFTkSuQmCC" /> @@01-highSpeed'
+            });
+var format_7railwaystation2secondary_83 = new ol.format.GeoJSON();
+var features_7railwaystation2secondary_83 = format_7railwaystation2secondary_83.readFeatures(json_7railwaystation2secondary_83, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_7railwaystation2secondary_83 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_7railwaystation2secondary_83.addFeatures(features_7railwaystation2secondary_83);
+var lyr_7railwaystation2secondary_83 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_7railwaystation2secondary_83, 
+                style: style_7railwaystation2secondary_83,
+                popuplayertitle: '7-railway station-2-secondary',
+                interactive: false,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAFeElEQVRYha2WbYgVVRjHf+fMuXt3XXfVtWWzcCuEDaMoi16gshdCQQiLRIQKg6ioD4JIHyojKPJTWQgRSFRIFBIpGCmi+UZRkkppGYRvaVrqarqvc2fmnKcPM7OeO3euSvXAw5k5c+/5/8//Oc/zHMWlTTV5v9QIIN4ohTkAMf8DeLNn8cYyE0BdjIAqeW5GoOzd33UpOBdRoLjz4jcF8EWlsgDgsTj+vADuEyh6HQl9MfBT0FOycO56nDEvjAuC5wGdeeD7OVj8LLR734teR8CXEkB1wbIEVha+K0Atr1avFpEpwFVLq9WpHrD5AKZa+KEd5q+EKJsfA/Vde4s3qGBhUwDzHewfgLvynQO6Fx5S0KOg5wa4HzCA+QXmPAVfaeg7Dxuy+ZycpkBGNwMH1G7YKNCvoG88rA5hWf7nVqXmKWgFWjuUmgeYU7D0eng7gF4L/fvgmwKBohK6QfbimMBHATyRvdccHNoVBK+cqVTe0XBNNn/07jD8ox1uUTAOIIHjHXBPCEn6igWcNzrAFVOoOKoz8GAXfAJckbNM4OyxIBj/W6XS0iHCjCiSNpG6UPbD+m5YTD2BfBwjYzywBnBAT4btDgaVR8BAV6+1TBShVYQ2kbowCoS7UvnbgDjzJJPeHzFF8HXV6qwExIJymfdH0Z5ukWv9HQbAJOcosxBGfzWmdYlSMw0kLRAbsBVwL8fxVh+zQQGj1FtVpaZIVjQE1IFKJeiMY6kWdtrMIq07+4xZ3JcuPBabGP4ijr/1FK7LAgWoOWE4I4JPBRJEupTIpAGtO2uqtGiV2mmtAwMdBjoC6HRK2T9h/dwwXABUgRagApg8LeqKw2dJsnmO1gdalbpDwURI5e6QZqX9gglpXM9qTawUoVKnNsbxilejaG0BB0DluVlXYgG9xtpDFWNWT4cZt8Xx1G7n9OVIoIBWEXqck1GRk49H0dItzh0rAQdKCoPnwRtJct2sJHmmU2SivniDajAD6gqRygK4cS8cOAy1ZgT8MIw1lKOw4FZYYaC3+KfLtQDMBJj8CNx+EwRr4Cj1IUeRHgh/98EAvN0Oj2qY/G+AyyyC8AQcXgjv7YDjwDAwQkagCrS9Cz0x7BQIBeS/uAUXQRJCbQRGh2FoBAaH4dzN8CQwG7in7kKyCLYITHBwElACOIgt2Fipa61SlfyQVUsy4q8g4JzWDIuE65JkewJRBLUYwgSGBYYcDJ5NK6MDnMG7Hq2F2f2g90GyDezP6Xzl9UrlgduMeTcQmQRwb63WKLFSHAkCzmvNqIh8JzK4ydrfU/UJM7mHgMHs2eL1AgHUY3CW+puNAVyfUrNycIATWo9Ms3acfzItuPM6zdQ2pdpmBsG0TdYe4kLzyT3x3Pqp3ewOJx1a3wcgIiMDsPNja18ahTO+AvtE9v8ucihJ5eV6pa6jsRMmxTntAZWRcMtbWu4EWhOlTh6B9+eH4aI3Yd9oqhYAMUQbYO9ztdqqLdbuGIHBFjCzguDKDCwukMifXVGBBjV6jZmrINkcRU8/X6t9mEu5Cza7rKWOwNCXcBCoLY/jrcujaJWAPBAE00kLkN+S6+4FxV4Ahb5wp3MDC+P49e9F6s7HMAw+DDNboL0fTrwIX+eLHxX5e7W124zI0EGR06QHsUZ6GEezMQKiPAvwwOtCsMTanaSdyz9E8Vo48Tcca4fun2BPKgR+d2Wjc7+QpluSESiqkRT7Sx24NxZPcAxEO2BDBIPbYDcXUqzoQ6RVbzQjEHkkrMokLUpf15TIrtyZElXS23BbD3T+CMumwGvF3ZdsKlfBD0NNUX4GGpqTRyIv3bm3eGSbmWQKxh6JGulVbewHObiflq5kV/67yxYNSn7ng8OFMEZ4YfgHjo2NEcdEwr0AAAAASUVORK5CYII=" /> 7-railway station-2-secondary'
+            });
+var format_6airport_84 = new ol.format.GeoJSON();
+var features_6airport_84 = format_6airport_84.readFeatures(json_6airport_84, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_6airport_84 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_6airport_84.addFeatures(features_6airport_84);
+var lyr_6airport_84 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_6airport_84, 
+                style: style_6airport_84,
+                popuplayertitle: '6-airport',
+                interactive: false,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAAA2CAYAAACMRWrdAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAFPUlEQVRoge2ZWWxUZRiGn2+mLZR0hFLKtIi2LC10gQhhEyHRyKIVrCJq9EK80KsmIkZNVFQiGI011qCgUaMxitGIBhcKVQOu0cYYDIVqqQLSaqd16AKllC7zekEhotA5nZkDQee5nPMt7zvnS/7lQJw4ceLE+R9gZ6OJJAOygGRgj5n1no2+riJppKTPu3tCOtrVI0k/S7rkXOuKGkkbt+5qUP4jWzX2wc1av/0XSaqV5HWzr8fN4pI8wMKyz/ZwpKuH3pB4+tMajvWExgM5bvZ21RiQBKQE27tO/tAbEs1HugAy3GzstrFzRtzY+Ubc2PlG3Nj5RtzY+Ybbxub08+z2vi2XK7hSWFK6pFc7u3s/ffqTGlo6uk55/sSWn/jz8LFlwFdu7fRjeh7rewN3AE9u+7kp9dEPd1PX0nHa2JRBCdwzP5dll2aHvB5bBzxiZq2x0hIzY5KmAi/80Xp0xqqPqvmkOuAob2KGj8eKC5mRPbwJuA94w8wUrZ6ojUkaCqzu6VXJy1/v9Ty3rZaOroEfkK+fciEPFeUxImXQ10CJme2MRlfExvqO+7cAz1TuO+hfuWkXtU3t0WjBNziBFfNyWXZpdq/XY88Dj5pZWyS1IjImKQ9Yd7C964rHy6t5f8fvkZQ5IxMzLmB1cQHTs4c3cnw83xzoeA7ImKQhwMqQdO+GygOJpRU1HOrsHkgJ58IMlkwZzQNXT2REyqCvOD6eVY7znQZKuhZYu7O+LWvlB1XsrI9oQgaMb3AC98yfwG2zsnq9HnsOWOVkPMMak3QRsO5QZ/fi0ooaNlQeICRnU+ExY1pWKnUtHTS0dZ78/fIJ6fxY10prh/O3nZd5AauLC5mWlRoAVpjZ2/3FOzF2957Gw2W3vlJJsP1YWAFejzE9ezhFhZlcVZjBSN8gbn7pOyr3HTwZU37XXHL9Pr79NUh5VYCK6sCJe5B+MYOSy8dz74IJv5rZ+P5iE8JWA+pajvZrKsFjzBqbRlFhJgsLMkhLSWoGNgEbgdeB9NPk3D83J907Nyf9xjXXFU6t3NfM5qoGKnYHzthLgh0HnK3hjoydNtFrXDZuBEWTMlmQ7yd1SFIQeL/PzOdm1n1cjM70KmrNbBPwpKSxs8el3TB7XNrS1cUFM77f30x5VYCtuwM0Huo8Q3oYfQMJTvR6mJszgqLCTObn+xmanNj4NzNfmllPJCLMbC9QCpRKypo5Jm3JzDFpS1ctLpj9w4EWyqsa2LIrQEPb0RMpYS9bHRm7KDWZspsuYV6eH9/ghD+A9/rMfBPre3gz+w0oA8okjZ6WlbpkWlbq0oevyZ/zY12r7Q22A4Tt6chYrt9Xn+v3vQe8C3xrZqFoxDvFzOqBtcBaSZlTLh52/ZSLh90IXBgu14mx14C1UZiJyUbbzBqA9cB6ScPCxYc9j5lZW6SmJM0BRv1z3esNCeAJSUmR1HVyvHHroGmSSnpC2r5m8098v7/5lOfL39lBbVP7RGC7pFFuaIj5hz9JycCLwfZjt5W8teOUhfnvDEny8tQNk1k0eVQjcJOZfRlLHW4YW74veOTZW17+joCDNWj5lTmsmJcbNLN/LeLR4MYoWm3TYUemAL7Y8ye48AdHvPNw3MBjzBgznAX5GYxOTWZbTROfVTfSdPiUbVNizPvGuiBAcmICRYWZLCjwc8WEkQxNTgwCW4DB8/L8ox8vnjRrZ32rVVQ3ntgynZV1MSok3a3j1EoqlTTnn9+bJWVIulPSx5I6JQXPlV7HSJokqaDvTsRJvE/SIrd1xYkTJ06c/yR/Af8pKUG0OFrrAAAAAElFTkSuQmCC" /> 6-airport'
+            });
+var format_4Railway_85 = new ol.format.GeoJSON();
+var features_4Railway_85 = format_4Railway_85.readFeatures(json_4Railway_85, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_4Railway_85 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_4Railway_85.addFeatures(features_4Railway_85);
+var lyr_4Railway_85 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_4Railway_85, 
+                style: style_4Railway_85,
+                popuplayertitle: '4-Railway',
+                interactive: true,
+    title: '4-Railway<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAPUlEQVQ4jWNgGAUDDxgTU1PtKTJg/foN/2GcLVu3MTAwMDD4eHuhKMIj/p+FgZERi7FYxHCIU+yFUTAYAACM/w8N8DBjYQAAAABJRU5ErkJggg==" /> DS<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAL0lEQVQ4jWNgGAXDADAmp6TdxSn7n+Hm3LmzvFJS0hP/M/yvwaaEiWZOGwVDCQAAz/0KDh7P8GoAAAAASUVORK5CYII=" /> Nét đứt<br />' });
+var format_4BRTM18_86 = new ol.format.GeoJSON();
+var features_4BRTM18_86 = format_4BRTM18_86.readFeatures(json_4BRTM18_86, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_4BRTM18_86 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_4BRTM18_86.addFeatures(features_4BRTM18_86);
+var lyr_4BRTM18_86 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_4BRTM18_86, 
+                style: style_4BRTM18_86,
+                popuplayertitle: '4-BRT-M18',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAY0lEQVQ4je3OoRJAQBSF4X/v7OoeQhUFhcdSBG8lamYUSTZeQcTc1aUVjLJfPufMgeh/pl19FRqWi7nLzN5sPnVKDmAFhtABdZTAmCiFgR5A3l5+sgp1aFhOFoBDmJyG96Kv3dgqFHiDsQmoAAAAAElFTkSuQmCC" /> 4-BRT-M18'
+            });
+var format_4BRTM17_87 = new ol.format.GeoJSON();
+var features_4BRTM17_87 = format_4BRTM17_87.readFeatures(json_4BRTM17_87, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_4BRTM17_87 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_4BRTM17_87.addFeatures(features_4BRTM17_87);
+var lyr_4BRTM17_87 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_4BRTM17_87, 
+                style: style_4BRTM17_87,
+                popuplayertitle: '4-BRT-M17',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAW0lEQVQ4je3MIQ7CMACF4a/NOs9FkIgZdqyZCW6FxJFgUFxkEtFO7AJdFoLpp//3aP4vmMu1uo7ebmExlZPkDJ3oUX2QDXjqXQT37fOgTjZW19EHfL2kHbvmx1ZmdQ2bE5y0/AAAAABJRU5ErkJggg==" /> 4-BRT-M17'
+            });
+var format_2RegularLineM16_88 = new ol.format.GeoJSON();
+var features_2RegularLineM16_88 = format_2RegularLineM16_88.readFeatures(json_2RegularLineM16_88, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_2RegularLineM16_88 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_2RegularLineM16_88.addFeatures(features_2RegularLineM16_88);
+var lyr_2RegularLineM16_88 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_2RegularLineM16_88, 
+                style: style_2RegularLineM16_88,
+                popuplayertitle: '2-Regular Line-M16',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAMUlEQVQ4jWNgGAUDDxhn+TLYU2IAy///DAco0P+fiRLbGRgYGFgYGRkcKDVkFAw0AAC9TgUxA09I8wAAAABJRU5ErkJggg==" /> 2-Regular Line-M16'
+            });
+var format_3LRTM15_89 = new ol.format.GeoJSON();
+var features_3LRTM15_89 = format_3LRTM15_89.readFeatures(json_3LRTM15_89, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_3LRTM15_89 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_3LRTM15_89.addFeatures(features_3LRTM15_89);
+var lyr_3LRTM15_89 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_3LRTM15_89, 
+                style: style_3LRTM15_89,
+                popuplayertitle: '3-LRT-M15',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAANklEQVQ4jWNgGAUDDxgZGP7bk6D+PAMD4ycGhv+CDAwMelCx//9JwJZQPe4wMabB4IVRMOAAAIZ0JOX+9E1QAAAAAElFTkSuQmCC" /> 3-LRT-M15'
+            });
+var format_2RegularLineM14_90 = new ol.format.GeoJSON();
+var features_2RegularLineM14_90 = format_2RegularLineM14_90.readFeatures(json_2RegularLineM14_90, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_2RegularLineM14_90 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_2RegularLineM14_90.addFeatures(features_2RegularLineM14_90);
+var lyr_2RegularLineM14_90 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_2RegularLineM14_90, 
+                style: style_2RegularLineM14_90,
+                popuplayertitle: '2-Regular Line-M14',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALklEQVQ4jWNgGAUDDxj/186zp8QAFgYmxgPkW8/wn4kS2yEu+PffgVJDRsFAAwDE4AZl+wBtMQAAAABJRU5ErkJggg==" /> 2-Regular Line-M14'
+            });
+var format_3LRTM13_91 = new ol.format.GeoJSON();
+var features_3LRTM13_91 = format_3LRTM13_91.readFeatures(json_3LRTM13_91, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_3LRTM13_91 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_3LRTM13_91.addFeatures(features_3LRTM13_91);
+var lyr_3LRTM13_91 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_3LRTM13_91, 
+                style: style_3LRTM13_91,
+                popuplayertitle: '3-LRT-M13',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAaUlEQVQ4jWNgGAUDDxhn+RbaE6v4x58/5/O2T/40zbtCkIXppx4DAwMDy///jAeINYCNmdmKgYHhOAvDb7P//xl3MDAwMDCR6mR0wMLI+N+BWMU///y9ysDAwPCHgfUUC+NPovWNAloDALZIGmwOxNhFAAAAAElFTkSuQmCC" /> 3-LRT-M13'
+            });
+var format_4BRTM12_92 = new ol.format.GeoJSON();
+var features_4BRTM12_92 = format_4BRTM12_92.readFeatures(json_4BRTM12_92, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_4BRTM12_92 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_4BRTM12_92.addFeatures(features_4BRTM12_92);
+var lyr_4BRTM12_92 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_4BRTM12_92, 
+                style: style_4BRTM12_92,
+                popuplayertitle: '4-BRT-M12',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAZ0lEQVQ4jWNgGAUDDxhP1abaE6v4HxPHeYvGyZ8uVWQK/mD9o8fAwMDAwsTEeIBYA1j+/bJiYGA4/pvtjxkTI+MOBgYGBiZSnYxp6L//DsQq/sPEfpWBgYGB9RfLqR+sf4jWNwpoDQCnXxnDeOlcQQAAAABJRU5ErkJggg==" /> 4-BRT-M12'
+            });
+var format_2RegularLineM11_93 = new ol.format.GeoJSON();
+var features_2RegularLineM11_93 = format_2RegularLineM11_93.readFeatures(json_2RegularLineM11_93, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_2RegularLineM11_93 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_2RegularLineM11_93.addFeatures(features_2RegularLineM11_93);
+var lyr_2RegularLineM11_93 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_2RegularLineM11_93, 
+                style: style_2RegularLineM11_93,
+                popuplayertitle: '2-Regular Line-M11',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAMUlEQVQ4jWNgGAUDDxhPbUq1p8QAFiYGxgMU6P/PRIntDAwMDCz/GP47UGrIKBhoAAAzkQYrNXYc4AAAAABJRU5ErkJggg==" /> 2-Regular Line-M11'
+            });
+var format_2RegularLineM10_94 = new ol.format.GeoJSON();
+var features_2RegularLineM10_94 = format_2RegularLineM10_94.readFeatures(json_2RegularLineM10_94, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_2RegularLineM10_94 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_2RegularLineM10_94.addFeatures(features_2RegularLineM10_94);
+var lyr_2RegularLineM10_94 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_2RegularLineM10_94, 
+                style: style_2RegularLineM10_94,
+                popuplayertitle: '2-Regular Line-M10',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAMUlEQVQ4jWNgGAUDDxhTZ52yp8QAFsb/TAco0P+fiRLbGRgYGFj+M/5zoNSQUTDQAAA8owcTgPLruQAAAABJRU5ErkJggg==" /> 2-Regular Line-M10'
+            });
+var format_3LRTM9_95 = new ol.format.GeoJSON();
+var features_3LRTM9_95 = format_3LRTM9_95.readFeatures(json_3LRTM9_95, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_3LRTM9_95 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_3LRTM9_95.addFeatures(features_3LRTM9_95);
+var lyr_3LRTM9_95 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_3LRTM9_95, 
+                style: style_3LRTM9_95,
+                popuplayertitle: '3-LRT-M9',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAW0lEQVQ4je3MoQ2AQBBE0b+bOzyNIBEYKAuDoCskjgSDohEk4hZBA0sIwdzTfway/4kN1rprZZNRDuutJFIBBJTZfZBogIWCGmG6P18KJDp3rewAnKzEB7vsYxdCOw+aWOlOjwAAAABJRU5ErkJggg==" /> 3-LRT-M9'
+            });
+var format_1ExpressLineM8_96 = new ol.format.GeoJSON();
+var features_1ExpressLineM8_96 = format_1ExpressLineM8_96.readFeatures(json_1ExpressLineM8_96, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_1ExpressLineM8_96 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_1ExpressLineM8_96.addFeatures(features_1ExpressLineM8_96);
+var lyr_1ExpressLineM8_96 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_1ExpressLineM8_96, 
+                style: style_1ExpressLineM8_96,
+                popuplayertitle: '1-Express Line-M8',
+                interactive: true,
+    title: '1-Express Line-M8<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVQ4jWNgGAUDDxgZahnsKTGAhYGJ4QAF1v9nosR2iAv+MThQasgoGGgAAOo7A8h77dIIAAAAAElFTkSuQmCC" /> Nét liền<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALElEQVQ4jWNgGAXDADAy1DPcxSN/k6GRwYuhjiGRgZGhBpsCJho5bBQMLQAAjroEYN3d4OgAAAAASUVORK5CYII=" /> Nét đứt<br />' });
+var format_2RegularLineM7_97 = new ol.format.GeoJSON();
+var features_2RegularLineM7_97 = format_2RegularLineM7_97.readFeatures(json_2RegularLineM7_97, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_2RegularLineM7_97 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_2RegularLineM7_97.addFeatures(features_2RegularLineM7_97);
+var lyr_2RegularLineM7_97 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_2RegularLineM7_97, 
+                style: style_2RegularLineM7_97,
+                popuplayertitle: '2-Regular Line-M7',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAMUlEQVQ4jWNgGAUDDxhTT52yp8QAFkYmpgMU6P/PRIntDAwMDCz///1zoNSQUTDQAAA1qQdDfpLWWwAAAABJRU5ErkJggg==" /> 2-Regular Line-M7'
+            });
+var format_2RegularLineM6_98 = new ol.format.GeoJSON();
+var features_2RegularLineM6_98 = format_2RegularLineM6_98.readFeatures(json_2RegularLineM6_98, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_2RegularLineM6_98 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_2RegularLineM6_98.addFeatures(features_2RegularLineM6_98);
+var lyr_2RegularLineM6_98 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_2RegularLineM6_98, 
+                style: style_2RegularLineM6_98,
+                popuplayertitle: '2-Regular Line-M6',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAMUlEQVQ4jWNgGAUDDxhnpZ6yp8QAlv+MTAco0P+fiRLbGRgYGFgY//9zoNSQUTDQAAA82AcTRMoiGwAAAABJRU5ErkJggg==" /> 2-Regular Line-M6'
+            });
+var format_2RegularLineM5_99 = new ol.format.GeoJSON();
+var features_2RegularLineM5_99 = format_2RegularLineM5_99.readFeatures(json_2RegularLineM5_99, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_2RegularLineM5_99 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_2RegularLineM5_99.addFeatures(features_2RegularLineM5_99);
+var lyr_2RegularLineM5_99 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_2RegularLineM5_99, 
+                style: style_2RegularLineM5_99,
+                popuplayertitle: '2-Regular Line-M5',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALElEQVQ4jWNgGAUDDxj/z6u1p8QAFgZGpgOU2M9Eie0QF/z/50CpIaNgoAEAxQAGZXUAV5IAAAAASUVORK5CYII=" /> 2-Regular Line-M5'
+            });
+var format_2RegularLineM4_100 = new ol.format.GeoJSON();
+var features_2RegularLineM4_100 = format_2RegularLineM4_100.readFeatures(json_2RegularLineM4_100, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_2RegularLineM4_100 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_2RegularLineM4_100.addFeatures(features_2RegularLineM4_100);
+var lyr_2RegularLineM4_100 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_2RegularLineM4_100, 
+                style: style_2RegularLineM4_100,
+                popuplayertitle: '2-Regular Line-M4',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAJklEQVQ4jWNgGAUDDxj/MzDYU2rAfwr0/2eixHaYCyjywigYDAAA93EFf+pwVKQAAAAASUVORK5CYII=" /> 2-Regular Line-M4'
+            });
+var format_2RegularLineM3_101 = new ol.format.GeoJSON();
+var features_2RegularLineM3_101 = format_2RegularLineM3_101.readFeatures(json_2RegularLineM3_101, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_2RegularLineM3_101 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_2RegularLineM3_101.addFeatures(features_2RegularLineM3_101);
+var lyr_2RegularLineM3_101 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_2RegularLineM3_101, 
+                style: style_2RegularLineM3_101,
+                popuplayertitle: '2-Regular Line-M3',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALklEQVQ4jWNgGAUDDxj/1zLYU2IACwMTwwHyrWf4z0SJ7RAX/GNwoNSQUTDQAABw3wTHhixLnwAAAABJRU5ErkJggg==" /> 2-Regular Line-M3'
+            });
+var format_2RegularLineM2_102 = new ol.format.GeoJSON();
+var features_2RegularLineM2_102 = format_2RegularLineM2_102.readFeatures(json_2RegularLineM2_102, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_2RegularLineM2_102 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_2RegularLineM2_102.addFeatures(features_2RegularLineM2_102);
+var lyr_2RegularLineM2_102 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_2RegularLineM2_102, 
+                style: style_2RegularLineM2_102,
+                popuplayertitle: '2-Regular Line-M2',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAL0lEQVQ4jWNgGAUDDxgZTjHYU2bAGYb/FOj/z0SJ7QwMDAwsDP8YHCg1ZBQMNAAA/2sFGlM9mGUAAAAASUVORK5CYII=" /> 2-Regular Line-M2'
+            });
+var format_2RegularLine2A_103 = new ol.format.GeoJSON();
+var features_2RegularLine2A_103 = format_2RegularLine2A_103.readFeatures(json_2RegularLine2A_103, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_2RegularLine2A_103 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_2RegularLine2A_103.addFeatures(features_2RegularLine2A_103);
+var lyr_2RegularLine2A_103 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_2RegularLine2A_103, 
+                style: style_2RegularLine2A_103,
+                popuplayertitle: '2-Regular Line-2A',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAK0lEQVQ4jWNgGAUDDxj/36+1p8QAFgYGpgOU2M9Eie1QF/xzoNSQUTDQAACj9wWmXbo0LAAAAABJRU5ErkJggg==" /> 2-Regular Line-2A'
+            });
+var format_1ExpressLineM1_104 = new ol.format.GeoJSON();
+var features_1ExpressLineM1_104 = format_1ExpressLineM1_104.readFeatures(json_1ExpressLineM1_104, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_1ExpressLineM1_104 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_1ExpressLineM1_104.addFeatures(features_1ExpressLineM1_104);
+var lyr_1ExpressLineM1_104 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_1ExpressLineM1_104, 
+                style: style_1ExpressLineM1_104,
+                popuplayertitle: '1-Express Line-M1',
+                interactive: true,
+    title: '1-Express Line-M1<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAMUlEQVQ4jWNgGAUDDxh9Y2fZU2IAy3+m/wco0P+fiRLbGRgYGFgY/zE6UGrIKBhoAABtAAaObruBKwAAAABJRU5ErkJggg==" /> Nét liền<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALElEQVQ4jWNgGAXDADD6xM+8i0f+5paF6V4+8TMSGRgYa7ApYKKRw0bB0AIAmlYHJUD8sFoAAAAASUVORK5CYII=" /> Nét đứt<br />' });
+var format_Ga_105 = new ol.format.GeoJSON();
+var features_Ga_105 = format_Ga_105.readFeatures(json_Ga_105, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_Ga_105 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_Ga_105.addFeatures(features_Ga_105);
+var lyr_Ga_105 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_Ga_105, 
+                style: style_Ga_105,
+                popuplayertitle: 'Ga',
+                interactive: false,
+    title: 'Ga<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAABeUlEQVQokY2Su0oDURRF9zl3rqNOiIVGAoKClYUifoFdvsB3ZeUXpBRkwDI/oJ2NGvyDFIKVZRB8VOIDBHXUwkk04517j9XEd3BVp9iLfYpN+MTk7PqQ4rQMoARQAZAIQM06r3K0t3qT5Sg7pubCRVbYEEGg/YCV9mFNApM0HQmaDm6lXg1329LU/NoCgXb83IDkC8NEymu3O5sijq4laTyQQBbr1XCXJmfXhzy2Z125/lxfcbTd/J3nu3NJ4qeGIzfGitOyEIJ8YfhPAQByAyMkhIAcygygpP2AP7/0G6w8aL+XibjEABWU9jsKGUp3Q4BBBiSyJvmXZE0LBNwzgJpJms7ZtKPgbAqTvDgRV2PrvAoJmnF0LZ2kxsOVEKQhjIq6O92Pi+PTF/btdcaaluiePBHzl4Y4upBW/EgCWa5Xw8OPRcyvLTB4UwiB9ntZ6W5Y04JJXn4sQmXS7cnBcXFieoucKLFpPn17JUnNJcRtC8tSvRoeZtl3Ud+yB3ejSvkAAAAASUVORK5CYII=" /> 5-Station-transfer 2+<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAAA2CAYAAACMRWrdAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAFPUlEQVRoge2ZWWxUZRiGn2+mLZR0hFLKtIi2LC10gQhhEyHRyKIVrCJq9EK80KsmIkZNVFQiGI011qCgUaMxitGIBhcKVQOu0cYYDIVqqQLSaqd16AKllC7zekEhotA5nZkDQee5nPMt7zvnS/7lQJw4ceLE+R9gZ6OJJAOygGRgj5n1no2+riJppKTPu3tCOtrVI0k/S7rkXOuKGkkbt+5qUP4jWzX2wc1av/0XSaqV5HWzr8fN4pI8wMKyz/ZwpKuH3pB4+tMajvWExgM5bvZ21RiQBKQE27tO/tAbEs1HugAy3GzstrFzRtzY+Ubc2PlG3Nj5RtzY+Ybbxub08+z2vi2XK7hSWFK6pFc7u3s/ffqTGlo6uk55/sSWn/jz8LFlwFdu7fRjeh7rewN3AE9u+7kp9dEPd1PX0nHa2JRBCdwzP5dll2aHvB5bBzxiZq2x0hIzY5KmAi/80Xp0xqqPqvmkOuAob2KGj8eKC5mRPbwJuA94w8wUrZ6ojUkaCqzu6VXJy1/v9Ty3rZaOroEfkK+fciEPFeUxImXQ10CJme2MRlfExvqO+7cAz1TuO+hfuWkXtU3t0WjBNziBFfNyWXZpdq/XY88Dj5pZWyS1IjImKQ9Yd7C964rHy6t5f8fvkZQ5IxMzLmB1cQHTs4c3cnw83xzoeA7ImKQhwMqQdO+GygOJpRU1HOrsHkgJ58IMlkwZzQNXT2REyqCvOD6eVY7znQZKuhZYu7O+LWvlB1XsrI9oQgaMb3AC98yfwG2zsnq9HnsOWOVkPMMak3QRsO5QZ/fi0ooaNlQeICRnU+ExY1pWKnUtHTS0dZ78/fIJ6fxY10prh/O3nZd5AauLC5mWlRoAVpjZ2/3FOzF2957Gw2W3vlJJsP1YWAFejzE9ezhFhZlcVZjBSN8gbn7pOyr3HTwZU37XXHL9Pr79NUh5VYCK6sCJe5B+MYOSy8dz74IJv5rZ+P5iE8JWA+pajvZrKsFjzBqbRlFhJgsLMkhLSWoGNgEbgdeB9NPk3D83J907Nyf9xjXXFU6t3NfM5qoGKnYHzthLgh0HnK3hjoydNtFrXDZuBEWTMlmQ7yd1SFIQeL/PzOdm1n1cjM70KmrNbBPwpKSxs8el3TB7XNrS1cUFM77f30x5VYCtuwM0Huo8Q3oYfQMJTvR6mJszgqLCTObn+xmanNj4NzNfmllPJCLMbC9QCpRKypo5Jm3JzDFpS1ctLpj9w4EWyqsa2LIrQEPb0RMpYS9bHRm7KDWZspsuYV6eH9/ghD+A9/rMfBPre3gz+w0oA8okjZ6WlbpkWlbq0oevyZ/zY12r7Q22A4Tt6chYrt9Xn+v3vQe8C3xrZqFoxDvFzOqBtcBaSZlTLh52/ZSLh90IXBgu14mx14C1UZiJyUbbzBqA9cB6ScPCxYc9j5lZW6SmJM0BRv1z3esNCeAJSUmR1HVyvHHroGmSSnpC2r5m8098v7/5lOfL39lBbVP7RGC7pFFuaIj5hz9JycCLwfZjt5W8teOUhfnvDEny8tQNk1k0eVQjcJOZfRlLHW4YW74veOTZW17+joCDNWj5lTmsmJcbNLN/LeLR4MYoWm3TYUemAL7Y8ye48AdHvPNw3MBjzBgznAX5GYxOTWZbTROfVTfSdPiUbVNizPvGuiBAcmICRYWZLCjwc8WEkQxNTgwCW4DB8/L8ox8vnjRrZ32rVVQ3ntgynZV1MSok3a3j1EoqlTTnn9+bJWVIulPSx5I6JQXPlV7HSJokqaDvTsRJvE/SIrd1xYkTJ06c/yR/Af8pKUG0OFrrAAAAAElFTkSuQmCC" /> 6-airport<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAABW0lEQVQokY2SMU4jURBEq3o8a4HtiDEgyGEDzuEIRGokIGQv4GP4AhBCsE5ZiHwPhHwA2BEeIo9B9vfv2gAMCIG1L+qgnqrVauIDV8crm5J1TGqBbEIaOtknvbt3/ng3z3E+/DnMDow8JVBrVM2WUsNzcIwm7g6MCZ3sXhS9N+n6KGtL/L3eqGg7S5km7+0hAoMiKB/NSOpg96Lo8ep4ZROy2/V6pb6zlhLfcJNP9XccSw/6aZJ1DKhtZ98LALDV/EEDaknFOmZSq1E1+7jSV6QJUK/SIG8ZyOZSaouNV5bTBDCuGqThc/D/kp5CBFwP5mR/NHEPcbEQIlBO5KD1jfSuA+NBEbRIGgynElDGmXdt7/zxjtBJPprxJp/qc2OIL+fOy0hAv/Z7xf3bma+PsrbAMwNq9SptOU3wFCLKib7+iDmX7WwjqVgH8haMq3A9gNaPM+/u94r7ee4fzoqor7W2c4MAAAAASUVORK5CYII=" /> 7-railway station-1-primary<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAbUlEQVQYlZXQQQqCYBRF4e/9NnAlLa6iDSgOnDhw1tqCaisKvmaFJEJnei73wo3kijMWv1S4RfJS10d9T+ZXR9C2TNNT8shxzE2GIZN7AcvWkk9z2bZr/giV/ewBRdMwz2sTQddBFckFJzs/vQE30DVb7wU8nAAAAABJRU5ErkJggg==" /> Vuông<br />' });
+var format_Monorail_106 = new ol.format.GeoJSON();
+var features_Monorail_106 = format_Monorail_106.readFeatures(json_Monorail_106, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_Monorail_106 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_Monorail_106.addFeatures(features_Monorail_106);
+var lyr_Monorail_106 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_Monorail_106, 
+                style: style_Monorail_106,
+                popuplayertitle: 'Monorail',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALklEQVQ4jWNgGAUDDxj/OzLYU2aAPcN/CvT/Z6LEdgYGBgYWBiYGB0oNGQUDDQBx2gUGzJLqbQAAAABJRU5ErkJggg==" /> Monorail'
+            });
+var format_DSDT16_107 = new ol.format.GeoJSON();
+var features_DSDT16_107 = format_DSDT16_107.readFeatures(json_DSDT16_107, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_DSDT16_107 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_DSDT16_107.addFeatures(features_DSDT16_107);
+var lyr_DSDT16_107 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_DSDT16_107, 
+                style: style_DSDT16_107,
+                popuplayertitle: 'DSDT 16',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAMUlEQVQ4jWNgGAUDDxhPMZyyp8QAFiYGpgMU6P/PRIntDAwMDCz/GP45UGrIKBhoAABwtwXe9oIGswAAAABJRU5ErkJggg==" /> DSDT 16'
+            });
+var format_DSDT15_108 = new ol.format.GeoJSON();
+var features_DSDT15_108 = format_DSDT15_108.readFeatures(json_DSDT15_108, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_DSDT15_108 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_DSDT15_108.addFeatures(features_DSDT15_108);
+var lyr_DSDT15_108 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_DSDT15_108, 
+                style: style_DSDT15_108,
+                popuplayertitle: 'DSDT 15',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALklEQVQ4jWNgGAUDDxj/19baU2IACwMT0wHyrWf8z0SJ7RAX/PvnQKkho2CgAQB0BQZFezU9OQAAAABJRU5ErkJggg==" /> DSDT 15'
+            });
+var format_DSDT10_109 = new ol.format.GeoJSON();
+var features_DSDT10_109 = format_DSDT10_109.readFeatures(json_DSDT10_109, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_DSDT10_109 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_DSDT10_109.addFeatures(features_DSDT10_109);
+var lyr_DSDT10_109 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_DSDT10_109, 
+                style: style_DSDT10_109,
+                popuplayertitle: 'DSDT 10',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAMUlEQVQ4jWNgGAUDDxhPMaTaU2IACxMD4wEK9P9nosR2BgYGBpZ/DP8dKDVkFAw0AABw4wV5uGRURAAAAABJRU5ErkJggg==" /> DSDT 10'
+            });
+var format_DSDT9_110 = new ol.format.GeoJSON();
+var features_DSDT9_110 = format_DSDT9_110.readFeatures(json_DSDT9_110, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_DSDT9_110 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_DSDT9_110.addFeatures(features_DSDT9_110);
+var lyr_DSDT9_110 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_DSDT9_110, 
+                style: style_DSDT9_110,
+                popuplayertitle: 'DSDT 9',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAMUlEQVQ4jWNgGAUDDxhnMRTaU2IAy38GxgMU6P/PRIntDAwMDCyMDP8dKDVkFAw0AACWAQVVePdDSQAAAABJRU5ErkJggg==" /> DSDT 9'
+            });
+var format_DSDT8_111 = new ol.format.GeoJSON();
+var features_DSDT8_111 = format_DSDT8_111.readFeatures(json_DSDT8_111, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_DSDT8_111 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_DSDT8_111.addFeatures(features_DSDT8_111);
+var lyr_DSDT8_111 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_DSDT8_111, 
+                style: style_DSDT8_111,
+                popuplayertitle: 'DSDT 8',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALElEQVQ4je3NsREAAAjCwOi5l+6/FA5BYeP3BHj3QqjdgIy90nkHKGDcyLu2Ar4GgjbaLeMAAAAASUVORK5CYII=" /> DSDT 8'
+            });
+var format_DSDT7_112 = new ol.format.GeoJSON();
+var features_DSDT7_112 = format_DSDT7_112.readFeatures(json_DSDT7_112, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_DSDT7_112 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_DSDT7_112.addFeatures(features_DSDT7_112);
+var lyr_DSDT7_112 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_DSDT7_112, 
+                style: style_DSDT7_112,
+                popuplayertitle: 'DSDT 7',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAMUlEQVQ4jWNgGAUDDxhn+TLYU2IAy///DAco0P+fiRLbGRgYGFgYGRkcKDVkFAw0AAC9TgUxA09I8wAAAABJRU5ErkJggg==" /> DSDT 7'
+            });
+var format_DSDT6_113 = new ol.format.GeoJSON();
+var features_DSDT6_113 = format_DSDT6_113.readFeatures(json_DSDT6_113, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_DSDT6_113 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_DSDT6_113.addFeatures(features_DSDT6_113);
+var lyr_DSDT6_113 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_DSDT6_113, 
+                style: style_DSDT6_113,
+                popuplayertitle: 'DSDT 6',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAM0lEQVQ4jWNgGAUDDxhrGf7bU2IACxMDwwGybWdg+M9Eie0MDAwMLP8YGBwoNWQUDDQAAHBfBMfUo8xhAAAAAElFTkSuQmCC" /> DSDT 6'
+            });
+var format_DSDT5_114 = new ol.format.GeoJSON();
+var features_DSDT5_114 = format_DSDT5_114.readFeatures(json_DSDT5_114, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_DSDT5_114 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_DSDT5_114.addFeatures(features_DSDT5_114);
+var lyr_DSDT5_114 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_DSDT5_114, 
+                style: style_DSDT5_114,
+                popuplayertitle: 'DSDT 5',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAJklEQVQ4jWNgGAUDDxj/MzDYU2rAfwr0/2eixHaYCyjywigYDAAA93EFf+pwVKQAAAAASUVORK5CYII=" /> DSDT 5'
+            });
+var format_DSDT4_115 = new ol.format.GeoJSON();
+var features_DSDT4_115 = format_DSDT4_115.readFeatures(json_DSDT4_115, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_DSDT4_115 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_DSDT4_115.addFeatures(features_DSDT4_115);
+var lyr_DSDT4_115 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_DSDT4_115, 
+                style: style_DSDT4_115,
+                popuplayertitle: 'DSDT 4',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAMUlEQVQ4jWNgGAUDDxhnMajYU2IAy38GpgMU6P/PRIntDAwMDCyMDP8cKDVkFAw0AADT2QUI+NRBtAAAAABJRU5ErkJggg==" /> DSDT 4'
+            });
+var format_DSDT3_116 = new ol.format.GeoJSON();
+var features_DSDT3_116 = format_DSDT3_116.readFeatures(json_DSDT3_116, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_DSDT3_116 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_DSDT3_116.addFeatures(features_DSDT3_116);
+var lyr_DSDT3_116 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_DSDT3_116, 
+                style: style_DSDT3_116,
+                popuplayertitle: 'DSDT 3',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALklEQVQ4jWNgGAUDDxj/1zLYU2IACwMTwwHyrWf4z0SJ7RAX/GNwoNSQUTDQAABw3wTHhixLnwAAAABJRU5ErkJggg==" /> DSDT 3'
+            });
+var format_DSDT2A_117 = new ol.format.GeoJSON();
+var features_DSDT2A_117 = format_DSDT2A_117.readFeatures(json_DSDT2A_117, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_DSDT2A_117 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_DSDT2A_117.addFeatures(features_DSDT2A_117);
+var lyr_DSDT2A_117 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_DSDT2A_117, 
+                style: style_DSDT2A_117,
+                popuplayertitle: 'DSDT 2A',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVQ4jWNgGAUDDxgZZjHYU2IAC8N/hgMU6P/PRIntEBcwMjhQasgoGGgAALIhA+SwTbtGAAAAAElFTkSuQmCC" /> DSDT 2A'
+            });
+var format_DSDT2_118 = new ol.format.GeoJSON();
+var features_DSDT2_118 = format_DSDT2_118.readFeatures(json_DSDT2_118, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_DSDT2_118 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_DSDT2_118.addFeatures(features_DSDT2_118);
+var lyr_DSDT2_118 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_DSDT2_118, 
+                style: style_DSDT2_118,
+                popuplayertitle: 'DSDT 2',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVQ4jWNgGAUDDxgZZjHYU2IAC8N/hgMU6P/PRIntEBcwMjhQasgoGGgAALIhA+SwTbtGAAAAAElFTkSuQmCC" /> DSDT 2'
+            });
+var format_DSDT1_119 = new ol.format.GeoJSON();
+var features_DSDT1_119 = format_DSDT1_119.readFeatures(json_DSDT1_119, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_DSDT1_119 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_DSDT1_119.addFeatures(features_DSDT1_119);
+var lyr_DSDT1_119 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_DSDT1_119, 
+                style: style_DSDT1_119,
+                popuplayertitle: 'DSDT 1',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAJklEQVQ4jWNgGAUDDxgZGP7bU2rAfwr0/2eixHaYCyjywigYDAAA8XcFf54TKcUAAAAASUVORK5CYII=" /> DSDT 1'
+            });
+var format_4Railway_120 = new ol.format.GeoJSON();
+var features_4Railway_120 = format_4Railway_120.readFeatures(json_4Railway_120, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_4Railway_120 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_4Railway_120.addFeatures(features_4Railway_120);
+var lyr_4Railway_120 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_4Railway_120, 
+                style: style_4Railway_120,
+                popuplayertitle: '4-Railway',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAJklEQVQ4jWNgGAUDDxj/MzDYU2rAfwr0/2eixHaYCyjywigYDAAA93EFf+pwVKQAAAAASUVORK5CYII=" /> 4-Railway'
+            });
+var format_3LRTORBRTM17_121 = new ol.format.GeoJSON();
+var features_3LRTORBRTM17_121 = format_3LRTORBRTM17_121.readFeatures(json_3LRTORBRTM17_121, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_3LRTORBRTM17_121 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_3LRTORBRTM17_121.addFeatures(features_3LRTORBRTM17_121);
+var lyr_3LRTORBRTM17_121 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_3LRTORBRTM17_121, 
+                style: style_3LRTORBRTM17_121,
+                popuplayertitle: '3-LRT OR BRT-M17',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVQ4jWNgGAUDDxgZav/bU2IACwMTwwEKrP/PRIntEBf8Y3Cg1JBRMNAAAG7hBMdssCDPAAAAAElFTkSuQmCC" /> 3-LRT OR BRT-M17'
+            });
+var format_3LRTORBRTM13_122 = new ol.format.GeoJSON();
+var features_3LRTORBRTM13_122 = format_3LRTORBRTM13_122.readFeatures(json_3LRTORBRTM13_122, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_3LRTORBRTM13_122 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_3LRTORBRTM13_122.addFeatures(features_3LRTORBRTM13_122);
+var lyr_3LRTORBRTM13_122 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_3LRTORBRTM13_122, 
+                style: style_3LRTORBRTM13_122,
+                popuplayertitle: '3-LRT OR BRT-M13',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAMUlEQVQ4jWNgGAUDDxhn+RbaU2IAy///jAco0P+fiRLbGRgYGFgYGf87UGrIKBhoAACflAaiXHMKEwAAAABJRU5ErkJggg==" /> 3-LRT OR BRT-M13'
+            });
+var format_1ExpressLineM8_123 = new ol.format.GeoJSON();
+var features_1ExpressLineM8_123 = format_1ExpressLineM8_123.readFeatures(json_1ExpressLineM8_123, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_1ExpressLineM8_123 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_1ExpressLineM8_123.addFeatures(features_1ExpressLineM8_123);
+var lyr_1ExpressLineM8_123 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_1ExpressLineM8_123, 
+                style: style_1ExpressLineM8_123,
+                popuplayertitle: '1-Express Line-M8',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVQ4jWNgGAUDDxgZahnsKTGAhYGJ4QAF1v9nosR2iAv+MThQasgoGGgAAOo7A8h77dIIAAAAAElFTkSuQmCC" /> 1-Express Line-M8'
+            });
+var format_QH100Ga_124 = new ol.format.GeoJSON();
+var features_QH100Ga_124 = format_QH100Ga_124.readFeatures(json_QH100Ga_124, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_QH100Ga_124 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_QH100Ga_124.addFeatures(features_QH100Ga_124);
+var lyr_QH100Ga_124 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_QH100Ga_124, 
+                style: style_QH100Ga_124,
+                popuplayertitle: 'QH100-Ga',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAABTklEQVQokXWSP0vDYBjEf29tNiHN1AgKUnBtE7OIFFwU9GM4dC5+I1Pa7+AgpQXBtaST+IdIRTPaiC6tPYcmWko8eIYH7njfu+cMaxCcAQfADjABbg1crfNy8obgRpAItDKJYCgwOdfkAuAOqD1blgldl89Khc33d86ThO3ZTMATsGdA+Ss3gsWd4+goCNTtdhVFkXq9npq+rwfHkWAhGPx6ECSxZekoCFSE5v6+JuVy/tWTUma6eum6tC4uCv222m1C1wWoAgelLCW+KhXq9XqhqNFokNp2vu6WsljZnE4Zj8eFoiiKsNM0X2MEp4JkYllq+n6hp0PP0+ufp+M8jKFg8eA4avq+wjDUaDRSp9PRoecpXqb3Leiv3skA90DtpVw2l67Lh21jpynnb29szecCHg3srTfCCAb/NKK/yjWsQXCSnWEXiFl273qV8wP/EcYD4gK7BQAAAABJRU5ErkJggg==" /> QH100-Ga'
+            });
+var format_QH100Monorail_125 = new ol.format.GeoJSON();
+var features_QH100Monorail_125 = format_QH100Monorail_125.readFeatures(json_QH100Monorail_125, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_QH100Monorail_125 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_QH100Monorail_125.addFeatures(features_QH100Monorail_125);
+var lyr_QH100Monorail_125 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_QH100Monorail_125, 
+                style: style_QH100Monorail_125,
+                popuplayertitle: 'QH100-Monorail',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAW0lEQVQ4jWNgGAUDDxj/2zPMJ0H9NMaDDKcZGBgY/tsxaDIwM6ixMDAwJBCt/T/DdgYGiAEMDAySDP8Y9JlIsB0rYGFgYFhAtGpGhvtIvOcMTAwXKXXAKKAGAABHjQz8Vp7DzwAAAABJRU5ErkJggg==" /> QH100-Monorail'
+            });
+var format_QH100dsDT_126 = new ol.format.GeoJSON();
+var features_QH100dsDT_126 = format_QH100dsDT_126.readFeatures(json_QH100dsDT_126, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_QH100dsDT_126 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_QH100dsDT_126.addFeatures(features_QH100dsDT_126);
+var lyr_QH100dsDT_126 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_QH100dsDT_126, 
+                style: style_QH100dsDT_126,
+                popuplayertitle: 'QH100-dsDT',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAVUlEQVQ4jWNgGAUDDxgZ/v+fT4L6aQyMjKcZGBgYGP7/12RgYFBjYWBgSCDBgO0MDAynoWxJBgYGfSYSNGMFLAwMDAtIUH8fif2cgYHhIqUOGAXUAAD6VAu6rTLeegAAAABJRU5ErkJggg==" /> QH100-dsDT'
+            });
+var format_QH100DSDT17_127 = new ol.format.GeoJSON();
+var features_QH100DSDT17_127 = format_QH100DSDT17_127.readFeatures(json_QH100DSDT17_127, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_QH100DSDT17_127 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_QH100DSDT17_127.addFeatures(features_QH100DSDT17_127);
+var lyr_QH100DSDT17_127 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_QH100DSDT17_127, 
+                style: style_QH100DSDT17_127,
+                popuplayertitle: 'QH100-DSDT 17',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAS0lEQVQ4jWNgGAUDDxgZGBjmk6B+GgMDw2koW5OBgUGNgYGB4T8JOAzJMCcGBoY6JvIdDwEsDAwMC0hQfx+J/ZyBgeEipQ4YBdQAAPSkEZn/pzX/AAAAAElFTkSuQmCC" /> QH100-DSDT 17'
+            });
+var format_QH100DSDT16_128 = new ol.format.GeoJSON();
+var features_QH100DSDT16_128 = format_QH100DSDT16_128.readFeatures(json_QH100DSDT16_128, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_QH100DSDT16_128 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_QH100DSDT16_128.addFeatures(features_QH100DSDT16_128);
+var lyr_QH100DSDT16_128 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_QH100DSDT16_128, 
+                style: style_QH100DSDT16_128,
+                popuplayertitle: 'QH100-DSDT 16',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAYElEQVQ4jWNgGAUDDxjPMJyZT6zifwz/ppkxmJ1mYGBgOMtwVvMfwz81FgYGhgRiDWBmYN7OwMBwGsqVZGRg1GcixbnYAAsDA8MCYhX/Zfh7H4n7/D/D/4uUOmAUUAMAAJGkE1JcF5yhAAAAAElFTkSuQmCC" /> QH100-DSDT 16'
+            });
+var format_QH100DSDT15_129 = new ol.format.GeoJSON();
+var features_QH100DSDT15_129 = format_QH100DSDT15_129.readFeatures(json_QH100DSDT15_129, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_QH100DSDT15_129 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_QH100DSDT15_129.addFeatures(features_QH100DSDT15_129);
+var lyr_QH100DSDT15_129 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_QH100DSDT15_129, 
+                style: style_QH100DSDT15_129,
+                popuplayertitle: 'QH100-DSDT 15',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAY0lEQVQ4jWNgGAUDDxj/19fPJ1r1v3/TGJubTzMwMDD8r6nRZGBiUmNhYGBIINoAJqbtDAwMpxkYGBgYWFgkGf7/12cixbnYAAsDA8MColX/+3cfzv7z5zkDE9NFSh0wCqgBAGzHFLlJjJORAAAAAElFTkSuQmCC" /> QH100-DSDT 15'
+            });
+var format_QH100DSDT12_130 = new ol.format.GeoJSON();
+var features_QH100DSDT12_130 = format_QH100DSDT12_130.readFeatures(json_QH100DSDT12_130, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_QH100DSDT12_130 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_QH100DSDT12_130.addFeatures(features_QH100DSDT12_130);
+var lyr_QH100DSDT12_130 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_QH100DSDT12_130, 
+                style: style_QH100DSDT12_130,
+                popuplayertitle: 'QH100-DSDT 12',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAXklEQVQ4jWNgGAUDDxgZ4uvnE6/63zSGBc2nGRgYGBhiazQZGJnUWBgYGBKINuA/03YGBgaIASwskgz//uszkeBarICFgYFhAdGqGf/dh7P//HnOwMh0kVIHjAJqAABl1RGYQI7uVwAAAABJRU5ErkJggg==" /> QH100-DSDT 12'
+            });
+var format_QH100DSDT11_131 = new ol.format.GeoJSON();
+var features_QH100DSDT11_131 = format_QH100DSDT11_131.readFeatures(json_QH100DSDT11_131, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_QH100DSDT11_131 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_QH100DSDT11_131.addFeatures(features_QH100DSDT11_131);
+var lyr_QH100DSDT11_131 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_QH100DSDT11_131, 
+                style: style_QH100DSDT11_131,
+                popuplayertitle: 'QH100-DSDT 11',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAVUlEQVQ4je3OoQ2AQBAEwHnyTdAACYqWqAoLXVAEigqQlHEIDALzgQTDqBO7m+P3vRRhLMgPKVkgQosmoy8YmDkHUKOrCsq3MqaC/Ha5d6xPH/i94QD+Ugu6vbs+BQAAAABJRU5ErkJggg==" /> QH100-DSDT 11'
+            });
+var format_QH100DSDT10_132 = new ol.format.GeoJSON();
+var features_QH100DSDT10_132 = format_QH100DSDT10_132.readFeatures(json_QH100DSDT10_132, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_QH100DSDT10_132 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_QH100DSDT10_132.addFeatures(features_QH100DSDT10_132);
+var lyr_QH100DSDT10_132 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_QH100DSDT10_132, 
+                style: style_QH100DSDT10_132,
+                popuplayertitle: 'QH100-DSDT 10',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAX0lEQVQ4jWNgGAUDDxjPMKTPJ1bxP4Z/08wYZp9mYGBgOMuQovmPgVmNhYHhfwKxBjAzMGxnYGA4DeVKMjL802ciyb1YAAsDA+MCYhX/Zfh/H4n7/D8D00VKHTAKqAEAD54S7VImCRgAAAAASUVORK5CYII=" /> QH100-DSDT 10'
+            });
+var format_QH100DSDT9_133 = new ol.format.GeoJSON();
+var features_QH100DSDT9_133 = format_QH100DSDT9_133.readFeatures(json_QH100DSDT9_133, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_QH100DSDT9_133 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_QH100DSDT9_133.addFeatures(features_QH100DSDT9_133);
+var lyr_QH100DSDT9_133 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_QH100DSDT9_133, 
+                style: style_QH100DSDT9_133,
+                popuplayertitle: 'QH100-DSDT 9',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAX0lEQVQ4jWNgGAUDDxhnMBTNJ1YxEwPjtDSG3tMMDAwMsxkKNP8yMKqxMDIwJBBv37/tDAwMpyFsFkkmhr/6TKQ4Fxtg+c/AsIBYxYwMTPcRvD/P/zEwXqTUAaOAGgAA5VMQxIlx1rYAAAAASUVORK5CYII=" /> QH100-DSDT 9'
+            });
+var format_QH100DSDT8_134 = new ol.format.GeoJSON();
+var features_QH100DSDT8_134 = format_QH100DSDT8_134.readFeatures(json_QH100DSDT8_134, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_QH100DSDT8_134 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_QH100DSDT8_134.addFeatures(features_QH100DSDT8_134);
+var lyr_QH100DSDT8_134 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_QH100DSDT8_134, 
+                style: style_QH100DSDT8_134,
+                popuplayertitle: 'QH100-DSDT 8',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAVUlEQVQ4jWNgGAUDDxj/M/yfT4L6aYwMjKcZGBgY/jP812RgYFBjYWBgSCDBgO0MDAynoWxJBgYGfSYSNGMFLAwMDAtIUH8fif2cgYHhIqUOGAXUAAD8Uwu6XQ4DsQAAAABJRU5ErkJggg==" /> QH100-DSDT 8'
+            });
+var format_QH100DSDT7_135 = new ol.format.GeoJSON();
+var features_QH100DSDT7_135 = format_QH100DSDT7_135.readFeatures(json_QH100DSDT7_135, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_QH100DSDT7_135 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_QH100DSDT7_135.addFeatures(features_QH100DSDT7_135);
+var lyr_QH100DSDT7_135 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_QH100DSDT7_135, 
+                style: style_QH100DSDT7_135,
+                popuplayertitle: 'QH100-DSDT 7',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAX0lEQVQ4jWNgGAUDDxhneDPMJ1YxExPDtLTNDKcZGBgYZnszaP5lYlBjYWRkSCDBwu0MDBADGJgYJJkYGPSZSHEuNsDy/z/DAmIVMzIy3Idz/jE8/8fEcJFSB4wCagAAN9kPpR/nsAoAAAAASUVORK5CYII=" /> QH100-DSDT 7'
+            });
+var format_QH100DSDT6_136 = new ol.format.GeoJSON();
+var features_QH100DSDT6_136 = format_QH100DSDT6_136.readFeatures(json_QH100DSDT6_136, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_QH100DSDT6_136 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_QH100DSDT6_136.addFeatures(features_QH100DSDT6_136);
+var lyr_QH100DSDT6_136 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_QH100DSDT6_136, 
+                style: style_QH100DSDT6_136,
+                popuplayertitle: 'QH100-DSDT 6',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAYklEQVQ4je3OsQ3CMBQE0OcvL5EFIqViJQZBomAHWrJFhkjFBJQsgexUVDSOiJQmr7ridDoO+0tX9dFaLtxv0gwXdQj6jHPrQDBhhkxXOcXKxz8yxtZy4fXNH97B898Dhy0sTu8POmIYSHkAAAAASUVORK5CYII=" /> QH100-DSDT 6'
+            });
+var format_QH100DSDT5_137 = new ol.format.GeoJSON();
+var features_QH100DSDT5_137 = format_QH100DSDT5_137.readFeatures(json_QH100DSDT5_137, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_QH100DSDT5_137 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_QH100DSDT5_137.addFeatures(features_QH100DSDT5_137);
+var lyr_QH100DSDT5_137 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_QH100DSDT5_137, 
+                style: style_QH100DSDT5_137,
+                popuplayertitle: 'QH100-DSDT 5',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAU0lEQVQ4je3OoQ2AQBAEwHnyTdAACYqWqAoLXVAEigqQlPEYBAJzgQTDqBO7m+P3vVQYA/khsUChRZPRBwZm5wBqdFWgfCtjCuS3y71jffrA7w0HKJYJu8p1FgwAAAAASUVORK5CYII=" /> QH100-DSDT 5'
+            });
+var format_QH100DSDT4_138 = new ol.format.GeoJSON();
+var features_QH100DSDT4_138 = format_QH100DSDT4_138.readFeatures(json_QH100DSDT4_138, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_QH100DSDT4_138 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_QH100DSDT4_138.addFeatures(features_QH100DSDT4_138);
+var lyr_QH100DSDT4_138 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_QH100DSDT4_138, 
+                style: style_QH100DSDT4_138,
+                popuplayertitle: 'QH100-DSDT 4',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAXUlEQVQ4jWNgGAUDDxhnMKjNJ1YxEwPDtDSGW6cZGBgYZjOoav5lYFJjYWRgSCDBvu0MDAynocZJMjH812cixbnYAMt/BoYFRNvP8P8+gvfv+T8GpouUOmAUUAMAALBEEH0SZDj8AAAAAElFTkSuQmCC" /> QH100-DSDT 4'
+            });
+var format_QH100DSDT3_139 = new ol.format.GeoJSON();
+var features_QH100DSDT3_139 = format_QH100DSDT3_139.readFeatures(json_QH100DSDT3_139, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_QH100DSDT3_139 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_QH100DSDT3_139.addFeatures(features_QH100DSDT3_139);
+var lyr_QH100DSDT3_139 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_QH100DSDT3_139, 
+                style: style_QH100DSDT3_139,
+                popuplayertitle: 'QH100-DSDT 3',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAX0lEQVQ4jWNgGAUDDxj/1zPMJ1r1P4ZpjM0MpxkYGBj+1zBoMjAxqLEwMDAkEG0AE8N2BgaIAQwsDJIM/xn0mUhxLjbAwsDAsIBo1f8Y7sPZfxieMzAxXKTUAaOAGgAATW4POumGKHIAAAAASUVORK5CYII=" /> QH100-DSDT 3'
+            });
+var format_QH100DSDT2A_140 = new ol.format.GeoJSON();
+var features_QH100DSDT2A_140 = format_QH100DSDT2A_140.readFeatures(json_QH100DSDT2A_140, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_QH100DSDT2A_140 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_QH100DSDT2A_140.addFeatures(features_QH100DSDT2A_140);
+var lyr_QH100DSDT2A_140 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_QH100DSDT2A_140, 
+                style: style_QH100DSDT2A_140,
+                popuplayertitle: 'QH100-DSDT 2A',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAWklEQVQ4jWNgGAUDDxgZZjDMJ1o1E8M0hjSG0wwMDAwMsxk0Gf4yqLEwMDIkkGDhdgYGqAEMDJIMTAz6TCRoxgpYGP4zLCBaNSPDfSTec4Z/DBcpdcAooAYAAMKGDFXJZ3b6AAAAAElFTkSuQmCC" /> QH100-DSDT 2A'
+            });
+var format_QH100DSDT2_141 = new ol.format.GeoJSON();
+var features_QH100DSDT2_141 = format_QH100DSDT2_141.readFeatures(json_QH100DSDT2_141, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_QH100DSDT2_141 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_QH100DSDT2_141.addFeatures(features_QH100DSDT2_141);
+var lyr_QH100DSDT2_141 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_QH100DSDT2_141, 
+                style: style_QH100DSDT2_141,
+                popuplayertitle: 'QH100-DSDT 2',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAWklEQVQ4jWNgGAUDDxgZZjDMJ1o1E8M0hjSG0wwMDAwMsxk0Gf4yqLEwMDIkkGDhdgYGqAEMDJIMTAz6TCRoxgpYGP4zLCBaNSPDfSTec4Z/DBcpdcAooAYAAMKGDFXJZ3b6AAAAAElFTkSuQmCC" /> QH100-DSDT 2'
+            });
+var format_QH100DSDT1_142 = new ol.format.GeoJSON();
+var features_QH100DSDT1_142 = format_QH100DSDT1_142.readFeatures(json_QH100DSDT1_142, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_QH100DSDT1_142 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_QH100DSDT1_142.addFeatures(features_QH100DSDT1_142);
+var lyr_QH100DSDT1_142 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_QH100DSDT1_142, 
+                style: style_QH100DSDT1_142,
+                popuplayertitle: 'QH100-DSDT 1',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAUUlEQVQ4jWNgGAUDDxgZGP7PJ0H9NAYGxtMQ5n9NBgYGNRYGBoYEEgzYzsDAADWAQZKBgUGfiQTNWAELAwPDAhLU30diP2dgYLhIqQNGATUAACSYCbtcjYbJAAAAAElFTkSuQmCC" /> QH100-DSDT 1'
+            });
+var format_QH100Tuyen16_143 = new ol.format.GeoJSON();
+var features_QH100Tuyen16_143 = format_QH100Tuyen16_143.readFeatures(json_QH100Tuyen16_143, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_QH100Tuyen16_143 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_QH100Tuyen16_143.addFeatures(features_QH100Tuyen16_143);
+var lyr_QH100Tuyen16_143 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_QH100Tuyen16_143, 
+                style: style_QH100Tuyen16_143,
+                popuplayertitle: 'QH100 Tuyen-16',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAjElEQVQ4jWNgGAUDDxhnMqg9gTL//mdgWJXOcLOMkYHhP0zBDAYVLUYG5jkMDP/loEL//jMwbBZiuJUXxsDwl4mBgUEagv/LMTL8L5nNoOaBagfTZAaG/5YIdQyyjAwMWR8Y1EIZGBgYmCj1AgsDA8NTZC+kMdzckYai5F8uAxYvCDLcWk2p5aOAWgAA+3EkJrOF36QAAAAASUVORK5CYII=" /> QH100 Tuyen-16'
+            });
+var format_QH100Tuyen14_144 = new ol.format.GeoJSON();
+var features_QH100Tuyen14_144 = format_QH100Tuyen14_144.readFeatures(json_QH100Tuyen14_144, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_QH100Tuyen14_144 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_QH100Tuyen14_144.addFeatures(features_QH100Tuyen14_144);
+var lyr_QH100Tuyen14_144 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_QH100Tuyen14_144, 
+                style: style_QH100Tuyen14_144,
+                popuplayertitle: 'QH100 Tuyen-14',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAfUlEQVQ4je3PsQnCUBSF4e8FtxAzQDZwAxdwCUErsTToCrZOYEobJ3ECHSNemydowCqCTX64cDkcOPwM/J8Uddzy3+JkZ5OkeBWijkpyFMocPXB2tUpNaguM85VY25p1Rg7C9K03wUJlDkVfhRHuHwp7l05n+UWh6Ts+8Cuek0EdvqeVHtUAAAAASUVORK5CYII=" /> QH100 Tuyen-14'
+            });
+var format_QH100Tuyen9_145 = new ol.format.GeoJSON();
+var features_QH100Tuyen9_145 = format_QH100Tuyen9_145.readFeatures(json_QH100Tuyen9_145, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_QH100Tuyen9_145 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_QH100Tuyen9_145.addFeatures(features_QH100Tuyen9_145);
+var lyr_QH100Tuyen9_145 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_QH100Tuyen9_145, 
+                style: style_QH100Tuyen9_145,
+                popuplayertitle: 'QH100 Tuyen-9',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAjUlEQVQ4jWNgGAUDDxjPMMx8AmX/ZWD4v8qYIb2MkYHxP0zBOYYZWn8ZGOcwMjDIQYX+MTD833yPQSgvjCHsLwsDA4M0knklZxhm72NgYNjOgFA9mZGBwRLN3ixFhg+HGRgYVjBR6gUWBgaGp8heMGFI28HAkAZXwMTAkPuXgQHDC/cZBFdTavkooBYAAEeZI9+e5stvAAAAAElFTkSuQmCC" /> QH100 Tuyen-9'
+            });
+var format_QH100Tuyen8_146 = new ol.format.GeoJSON();
+var features_QH100Tuyen8_146 = format_QH100Tuyen8_146.readFeatures(json_QH100Tuyen8_146, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_QH100Tuyen8_146 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_QH100Tuyen8_146.addFeatures(features_QH100Tuyen8_146);
+var lyr_QH100Tuyen8_146 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_QH100Tuyen8_146, 
+                style: style_QH100Tuyen8_146,
+                popuplayertitle: 'QH100 Tuyen-8',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASElEQVQ4jWNgGAWDAzyB4ocMDAzdDAwMjGjyWgwMDMeQ1D1iYGCYysDAwAxT8B8Ne6IZsBeLmv8MDAwRDAwMDEyDwgujYKABAIc4GSaIq2hQAAAAAElFTkSuQmCC" /> QH100 Tuyen-8'
+            });
+var format_QH100Tuyen7_147 = new ol.format.GeoJSON();
+var features_QH100Tuyen7_147 = format_QH100Tuyen7_147.readFeatures(json_QH100Tuyen7_147, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_QH100Tuyen7_147 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_QH100Tuyen7_147.addFeatures(features_QH100Tuyen7_147);
+var lyr_QH100Tuyen7_147 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_QH100Tuyen7_147, 
+                style: style_QH100Tuyen7_147,
+                popuplayertitle: 'QH100 Tuyen-7',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAhElEQVQ4jWNgGAUDDxgZzpx5AmX/ZWBgWMVgbFzGwMj4H67i3Dkthr9/5zAwMspBRf4xMDBsZrh3L48hLOwvCwMDgzSSgSUMZ87sY2Bg2A4X+fdvMgMjoyWaxVkMioqHGRgYVjBR6gUWBgaGpyheMDHZgaKCiSkXqxfu319NqeWjgFoAAKbNI3YflKp4AAAAAElFTkSuQmCC" /> QH100 Tuyen-7'
+            });
+var format_QH100Tuyen6_148 = new ol.format.GeoJSON();
+var features_QH100Tuyen6_148 = format_QH100Tuyen6_148.readFeatures(json_QH100Tuyen6_148, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_QH100Tuyen6_148 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_QH100Tuyen6_148.addFeatures(features_QH100Tuyen6_148);
+var lyr_QH100Tuyen6_148 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_QH100Tuyen6_148, 
+                style: style_QH100Tuyen6_148,
+                popuplayertitle: 'QH100 Tuyen-6',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAiklEQVQ4jWNgGAUDDxg3pZ15AmX/ZWBkWOU707iMkYHxP0zBhvRzWkz//85hYGCUgwr9Y2Bk2Pzj3b28sNVhf5kYGBikoViO4T9DyebUMx7INjAx/JvMwMBoiaROluE/Qxa7gGIoRJ5CwMLAwPAUxQuzTHYgK/jHwJTLxIDphZ/v76+m1PJRQC0AALvEJ74aoC1yAAAAAElFTkSuQmCC" /> QH100 Tuyen-6'
+            });
+var format_QH100Tuyen5_149 = new ol.format.GeoJSON();
+var features_QH100Tuyen5_149 = format_QH100Tuyen5_149.readFeatures(json_QH100Tuyen5_149, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_QH100Tuyen5_149 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_QH100Tuyen5_149.addFeatures(features_QH100Tuyen5_149);
+var lyr_QH100Tuyen5_149 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_QH100Tuyen5_149, 
+                style: style_QH100Tuyen5_149,
+                popuplayertitle: 'QH100 Tuyen-5',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAfElEQVQ4je3PsQnCUBSF4e8FtxAzQDZwAxdwCUErsTToCrZOYEobJ3ECHSNemydowCqCTX64cDkcOPwM/J8UtVv+W5zsbBLxKkStkhyFMkcPnF2tUqMtMM5XYm1r1hk5CNO33gQLlTkUfRVGuH8o7F06neUXhabv+MCveAKlJhu+iZQMkAAAAABJRU5ErkJggg==" /> QH100 Tuyen-5'
+            });
+var format_QH100Tuyen4_150 = new ol.format.GeoJSON();
+var features_QH100Tuyen4_150 = format_QH100Tuyen4_150.readFeatures(json_QH100Tuyen4_150, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_QH100Tuyen4_150 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_QH100Tuyen4_150.addFeatures(features_QH100Tuyen4_150);
+var lyr_QH100Tuyen4_150 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_QH100Tuyen4_150, 
+                style: style_QH100Tuyen4_150,
+                popuplayertitle: 'QH100 Tuyen-4',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAgElEQVQ4jWNgGAUDDxj/6+k9gbL/MjAwrGK4dKmMkYHhP0zBf0NDLYa/f+cwMDDIQYX+MTAwbGZQV89jXL36L+N/Pb3/KEb+/+/FePnydjhXT28vAwODExbLIxkvXVrBRKkXWBgYGJ6ieOHy5R0oKpiZc3F4YTXDpUuU2j8KqAIA9NgoaGD1HqwAAAAASUVORK5CYII=" /> QH100 Tuyen-4'
+            });
+var format_QH100Tuyen3_151 = new ol.format.GeoJSON();
+var features_QH100Tuyen3_151 = format_QH100Tuyen3_151.readFeatures(json_QH100Tuyen3_151, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_QH100Tuyen3_151 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_QH100Tuyen3_151.addFeatures(features_QH100Tuyen3_151);
+var lyr_QH100Tuyen3_151 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_QH100Tuyen3_151, 
+                style: style_QH100Tuyen3_151,
+                popuplayertitle: 'QH100 Tuyen-3',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASElEQVQ4jWNgGAWDAzyB4ocMDAzdDAwMjGjyWgwMDMeQ1D1iYGCYysDAwAxT8B8Ne6IZsBeLmv8MDAwRDAwMDEyDwgujYKABAIc4GSaIq2hQAAAAAElFTkSuQmCC" /> QH100 Tuyen-3'
+            });
+var format_QH100Tuyen2A_152 = new ol.format.GeoJSON();
+var features_QH100Tuyen2A_152 = format_QH100Tuyen2A_152.readFeatures(json_QH100Tuyen2A_152, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_QH100Tuyen2A_152 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_QH100Tuyen2A_152.addFeatures(features_QH100Tuyen2A_152);
+var lyr_QH100Tuyen2A_152 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_QH100Tuyen2A_152, 
+                style: style_QH100Tuyen2A_152,
+                popuplayertitle: 'QH100 Tuyen-2A',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQ4jWNgGAUDDxj//69/RIkBLAwMDLKUGMBEiWaYCx5TasgoGGgAAHRuBGu78kHXAAAAAElFTkSuQmCC" /> QH100 Tuyen-2A'
+            });
+var format_QH100Tuyen2_153 = new ol.format.GeoJSON();
+var features_QH100Tuyen2_153 = format_QH100Tuyen2_153.readFeatures(json_QH100Tuyen2_153, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_QH100Tuyen2_153 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_QH100Tuyen2_153.addFeatures(features_QH100Tuyen2_153);
+var lyr_QH100Tuyen2_153 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_QH100Tuyen2_153, 
+                style: style_QH100Tuyen2_153,
+                popuplayertitle: 'QH100 Tuyen-2',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAjklEQVQ4jWNgGAUDDxjTzqQ9gbL/MjIwrpppPLOMgZHhP0xB+rl0rf9//89hYGSQgwr9Y2Rg3Pzu3ru81WGr/zIxMDBIQ7Hcf4b/JalnUj1QrPjHMJmBkcESSZ3sf4b/WQKKAqEMDAwMTJR6gYWBgeEpshdmmczagaKCiSGX4S8Dhhfe33+/mlLLRwG1AACSWim6nh5GIQAAAABJRU5ErkJggg==" /> QH100 Tuyen-2'
+            });
+var format_QH100Tuyen1_154 = new ol.format.GeoJSON();
+var features_QH100Tuyen1_154 = format_QH100Tuyen1_154.readFeatures(json_QH100Tuyen1_154, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_QH100Tuyen1_154 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_QH100Tuyen1_154.addFeatures(features_QH100Tuyen1_154);
+var lyr_QH100Tuyen1_154 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_QH100Tuyen1_154, 
+                style: style_QH100Tuyen1_154,
+                popuplayertitle: 'QH100 Tuyen-1',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAkUlEQVQ4jWNgGAUDDxh9fGY+gbL//v//f9XWrellDAyM/2EK/P1naP39yziHgYFBDir07////5u5uITyVq8O+8vEwMAgDcVyjIyMJb6+sz2Qbfj7l2EyAwODJZI6WUZGxqxv3z6EMjAwMDBR6gUWBgaGp8he2LIlbQcDQxpcATMzQ+7fvwxYvCC4mlLLRwG1AACA/zAjuWC7MQAAAABJRU5ErkJggg==" /> QH100 Tuyen-1'
+            });
+var format_DSQG_155 = new ol.format.GeoJSON();
+var features_DSQG_155 = format_DSQG_155.readFeatures(json_DSQG_155, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_DSQG_155 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_DSQG_155.addFeatures(features_DSQG_155);
+var lyr_DSQG_155 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_DSQG_155, 
+                style: style_DSQG_155,
+                popuplayertitle: 'DSQG',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAH0lEQVQ4jWNgGAUDDxgZGBjOUGIAE6UuGHgDRsFgAAAVsADUNA4a2AAAAABJRU5ErkJggg==" /> DSQG'
+            });
+var format_Duongsatvung_156 = new ol.format.GeoJSON();
+var features_Duongsatvung_156 = format_Duongsatvung_156.readFeatures(json_Duongsatvung_156, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_Duongsatvung_156 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_Duongsatvung_156.addFeatures(features_Duongsatvung_156);
+var lyr_Duongsatvung_156 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_Duongsatvung_156, 
+                style: style_Duongsatvung_156,
+                popuplayertitle: 'Duongsatvung',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAH0lEQVQ4jWNgGAUDDxgZGBjOUGIAE6UuGHgDRsFgAAAVsADUNA4a2AAAAABJRU5ErkJggg==" /> Duongsatvung'
+            });
+var format_Depot_157 = new ol.format.GeoJSON();
+var features_Depot_157 = format_Depot_157.readFeatures(json_Depot_157, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_Depot_157 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_Depot_157.addFeatures(features_Depot_157);
+var lyr_Depot_157 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_Depot_157, 
+                style: style_Depot_157,
+                popuplayertitle: 'Depot',
+                interactive: false,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADCklEQVQ4jY2UTWsbVxSGnxmNNHE0GnkkWfKX5LQpKbhgslCyCC7kf9S7kKSkLYTsQsDB0P6ALFKyyQeYQvIDkmUgQiZZKCjBGBqaLmJobFCw60iW9TXzduHYsjo2+OzuPec877n3nHvhGCYYF4wdJ/ZoiOP8osnJV3LdulKppjyvqWSyrnz+lRznp6PyjBAokxnHtktcvZrj7FmHYhHduweGgXHlClQqUK02uH9/nVbre6NWWz+6qmLxWyWTLS0t6aAFuZz80dGBPZVKkuu2df78mcNhmcy4ksmW/m/Ly+p5KfU8T1pZCbnlOG3lctk9jrlPtO0Sz57ZIaHHj2kCTcNET56EK3n6NEYsVh5MGhr6WQsL9bC85E9NaT2b0/pITv5XXx8WIs3PN+Q41wAsANLpOZpNR5kMDA31lXyfrhWla0UB6Ha7xCYmwOwfjJ0djMuX46RSP9Bo/G4AyHXrvH3raG6O9rt3/GtafWYkgozdYTAkIr6/7xv2e8S+m8Z88ADOnasbm5uuKRjHsiKcOoVRLmMvLJDd2QagZ1n7MAAZBj3LwkBkmw3s337FfPECTp8G348KsoZgDM/7m42N/llXVwkuXOBTJEqn1xu4b9uKkFaA+fIlTEz0Ha7bol4vmAasEQQ+Hz/2nYUC5vXrOJ+3Qk11trYwb9wYhK2ugmV1DKiZX+grVCoDicGjRzS+NMPudrC7HQAa0SjBw4eDKpUKJBLLsDeHm5uLvHmzvR+wtgYfPtCJxRj2e6QLedL5SYZ7XdoxG+P9e6jV+sBqdZuNjT8GRJTP/6VSaXeu7tzRdiqtbiql4Pbt/hOcn1c3lVYzlZbu3t3dfP5cmpr6M3Q3GhkZVSLRkqRgelrByZNStRoe4tevFZw4oWBmZncdj7c1NpYJAQE0O3tGjtPWrVuHv4iDdvOmFI93dPHiNwcZ4e8rl8sSi5W5dGmMmRmHYhHy+X43976vxcV/6HRmjbW1T4dWFwI7zjUVCkvyvM9y3R0lEjvyvC0VCmU5zo/HghwJh6xg5Dix/wEJ8PUqZIBwEQAAAABJRU5ErkJggg==" /> Depot'
+            });
+var format_PLine_17_158 = new ol.format.GeoJSON();
+var features_PLine_17_158 = format_PLine_17_158.readFeatures(json_PLine_17_158, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_PLine_17_158 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_PLine_17_158.addFeatures(features_PLine_17_158);
+var lyr_PLine_17_158 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_PLine_17_158, 
+                style: style_PLine_17_158,
+                popuplayertitle: 'PLine_17',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAH0lEQVQ4jWNgGAUDDxiNGc6cocQAJkpdMPAGjILBAACarQHTY7lD+AAAAABJRU5ErkJggg==" /> PLine_17'
+            });
+var format_PLine_16_159 = new ol.format.GeoJSON();
+var features_PLine_16_159 = format_PLine_16_159.readFeatures(json_PLine_16_159, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_PLine_16_159 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_PLine_16_159.addFeatures(features_PLine_16_159);
+var lyr_PLine_16_159 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_PLine_16_159, 
+                style: style_PLine_16_159,
+                popuplayertitle: 'PLine_16',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAH0lEQVQ4jWNgGAUDDxjr6xnOUGIAE6UuGHgDRsFgAACZPQHSBIgiNQAAAABJRU5ErkJggg==" /> PLine_16'
+            });
+var format_PLine_15_160 = new ol.format.GeoJSON();
+var features_PLine_15_160 = format_PLine_15_160.readFeatures(json_PLine_15_160, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_PLine_15_160 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_PLine_15_160.addFeatures(features_PLine_15_160);
+var lyr_PLine_15_160 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_PLine_15_160, 
+                style: style_PLine_15_160,
+                popuplayertitle: 'PLine_15',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAIElEQVQ4jWNgGAUDDxj31/8/Q4kBTJS6YOANGAWDAQAAwCMDETvQqPkAAAAASUVORK5CYII=" /> PLine_15'
+            });
+var format_PLine_14_161 = new ol.format.GeoJSON();
+var features_PLine_14_161 = format_PLine_14_161.readFeatures(json_PLine_14_161, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_PLine_14_161 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_PLine_14_161.addFeatures(features_PLine_14_161);
+var lyr_PLine_14_161 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_PLine_14_161, 
+                style: style_PLine_14_161,
+                popuplayertitle: 'PLine_14',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAIElEQVQ4jWNgGAUDDxj/M/w/Q4kBTJS6YOANGAWDAQAAIOsC0kNfLnwAAAAASUVORK5CYII=" /> PLine_14'
+            });
+var format_PLine_13_162 = new ol.format.GeoJSON();
+var features_PLine_13_162 = format_PLine_13_162.readFeatures(json_PLine_13_162, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_PLine_13_162 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_PLine_13_162.addFeatures(features_PLine_13_162);
+var lyr_PLine_13_162 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_PLine_13_162, 
+                style: style_PLine_13_162,
+                popuplayertitle: 'PLine_13',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAH0lEQVQ4jWNgGAUDDxjt6v3PUGIAE6UuGHgDRsFgAAC8HQHgUy9odwAAAABJRU5ErkJggg==" /> PLine_13'
+            });
+var format_PLine_12_163 = new ol.format.GeoJSON();
+var features_PLine_12_163 = format_PLine_12_163.readFeatures(json_PLine_12_163, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_PLine_12_163 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_PLine_12_163.addFeatures(features_PLine_12_163);
+var lyr_PLine_12_163 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_PLine_12_163, 
+                style: style_PLine_12_163,
+                popuplayertitle: 'PLine_12',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAIElEQVQ4jWNgGAUDDxgZ/v8/Q4kBTJS6YOANGAWDAQAAH+wC0gNetJcAAAAASUVORK5CYII=" /> PLine_12'
+            });
+var format_PLine_11_164 = new ol.format.GeoJSON();
+var features_PLine_11_164 = format_PLine_11_164.readFeatures(json_PLine_11_164, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_PLine_11_164 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_PLine_11_164.addFeatures(features_PLine_11_164);
+var lyr_PLine_11_164 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_PLine_11_164, 
+                style: style_PLine_11_164,
+                popuplayertitle: 'PLine_11',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAH0lEQVQ4jWNgGAUDDxgZ/jOcocQAJkpdMPAGjILBAACbRgHT7hbtOQAAAABJRU5ErkJggg==" /> PLine_11'
+            });
+var format_PLine_10_165 = new ol.format.GeoJSON();
+var features_PLine_10_165 = format_PLine_10_165.readFeatures(json_PLine_10_165, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_PLine_10_165 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_PLine_10_165.addFeatures(features_PLine_10_165);
+var lyr_PLine_10_165 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_PLine_10_165, 
+                style: style_PLine_10_165,
+                popuplayertitle: 'PLine_10',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAH0lEQVQ4jWNgGAUDDxgZ4uvPUGIAE6UuGHgDRsFgAABHPwGyBZlNiwAAAABJRU5ErkJggg==" /> PLine_10'
+            });
+var format_PLine_9_166 = new ol.format.GeoJSON();
+var features_PLine_9_166 = format_PLine_9_166.readFeatures(json_PLine_9_166, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_PLine_9_166 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_PLine_9_166.addFeatures(features_PLine_9_166);
+var lyr_PLine_9_166 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_PLine_9_166, 
+                style: style_PLine_9_166,
+                popuplayertitle: 'PLine_9',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAH0lEQVQ4jWNgGAUDDxjrGeLPUGIAE6UuGHgDRsFgAABH3gGymwwFEQAAAABJRU5ErkJggg==" /> PLine_9'
+            });
+var format_PLine_8_167 = new ol.format.GeoJSON();
+var features_PLine_8_167 = format_PLine_8_167.readFeatures(json_PLine_8_167, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_PLine_8_167 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_PLine_8_167.addFeatures(features_PLine_8_167);
+var lyr_PLine_8_167 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_PLine_8_167, 
+                style: style_PLine_8_167,
+                popuplayertitle: 'PLine_8',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAIElEQVQ4jWNgGAUDDxj//2c4Q4kBTJS6YOANGAWDAQAAIeoC0lyfVm8AAAAASUVORK5CYII=" /> PLine_8'
+            });
+var format_PLine_7_168 = new ol.format.GeoJSON();
+var features_PLine_7_168 = format_PLine_7_168.readFeatures(json_PLine_7_168, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_PLine_7_168 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_PLine_7_168.addFeatures(features_PLine_7_168);
+var lyr_PLine_7_168 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_PLine_7_168, 
+                style: style_PLine_7_168,
+                popuplayertitle: 'PLine_7',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAH0lEQVQ4jWNgGAUDDxjr7RjOUGIAE6UuGHgDRsFgAAD0pgGRQA10UAAAAABJRU5ErkJggg==" /> PLine_7'
+            });
+var format_PLine_6_169 = new ol.format.GeoJSON();
+var features_PLine_6_169 = format_PLine_6_169.readFeatures(json_PLine_6_169, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_PLine_6_169 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_PLine_6_169.addFeatures(features_PLine_6_169);
+var lyr_PLine_6_169 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_PLine_6_169, 
+                style: style_PLine_6_169,
+                popuplayertitle: 'PLine_6',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAH0lEQVQ4jWNgGAUDDxjrGf6focQAJkpdMPAGjILBAADcTQJSrPrizwAAAABJRU5ErkJggg==" /> PLine_6'
+            });
+var format_PLine_5_170 = new ol.format.GeoJSON();
+var features_PLine_5_170 = format_PLine_5_170.readFeatures(json_PLine_5_170, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_PLine_5_170 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_PLine_5_170.addFeatures(features_PLine_5_170);
+var lyr_PLine_5_170 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_PLine_5_170, 
+                style: style_PLine_5_170,
+                popuplayertitle: 'PLine_5',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAH0lEQVQ4jWNgGAUDDxj/MzCcocQAJkpdMPAGjILBAACcRQHTz2DSWQAAAABJRU5ErkJggg==" /> PLine_5'
+            });
+var format_PLine_4_171 = new ol.format.GeoJSON();
+var features_PLine_4_171 = format_PLine_4_171.readFeatures(json_PLine_4_171, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_PLine_4_171 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_PLine_4_171.addFeatures(features_PLine_4_171);
+var lyr_PLine_4_171 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_PLine_4_171, 
+                style: style_PLine_4_171,
+                popuplayertitle: 'PLine_4',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAH0lEQVQ4jWNgGAUDDxjrGeTPUGIAE6UuGHgDRsFgAACmDwFyZsMjLgAAAABJRU5ErkJggg==" /> PLine_4'
+            });
+var format_PLine_3_172 = new ol.format.GeoJSON();
+var features_PLine_3_172 = format_PLine_3_172.readFeatures(json_PLine_3_172, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_PLine_3_172 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_PLine_3_172.addFeatures(features_PLine_3_172);
+var lyr_PLine_3_172 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_PLine_3_172, 
+                style: style_PLine_3_172,
+                popuplayertitle: 'PLine_3',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAH0lEQVQ4jWNgGAUDDxj/1zOcocQAJkpdMPAGjILBAADdzAJSX3SRgAAAAABJRU5ErkJggg==" /> PLine_3'
+            });
+var format_PLine_2A_173 = new ol.format.GeoJSON();
+var features_PLine_2A_173 = format_PLine_2A_173.readFeatures(json_PLine_2A_173, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_PLine_2A_173 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_PLine_2A_173.addFeatures(features_PLine_2A_173);
+var lyr_PLine_2A_173 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_PLine_2A_173, 
+                style: style_PLine_2A_173,
+                popuplayertitle: 'PLine_2A',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAH0lEQVQ4jWNgGAUDDxjrGeLPUGIAE6UuGHgDRsFgAABH3gGymwwFEQAAAABJRU5ErkJggg==" /> PLine_2A'
+            });
+var format_PLine_2_174 = new ol.format.GeoJSON();
+var features_PLine_2_174 = format_PLine_2_174.readFeatures(json_PLine_2_174, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_PLine_2_174 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_PLine_2_174.addFeatures(features_PLine_2_174);
+var lyr_PLine_2_174 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_PLine_2_174, 
+                style: style_PLine_2_174,
+                popuplayertitle: 'PLine_2',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAH0lEQVQ4jWNgGAUDDxgZfBjOUGIAE6UuGHgDRsFgAADWEAEgW5VthgAAAABJRU5ErkJggg==" /> PLine_2'
+            });
+var format_PLine_1_175 = new ol.format.GeoJSON();
+var features_PLine_1_175 = format_PLine_1_175.readFeatures(json_PLine_1_175, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_PLine_1_175 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_PLine_1_175.addFeatures(features_PLine_1_175);
+var lyr_PLine_1_175 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_PLine_1_175, 
+                style: style_PLine_1_175,
+                popuplayertitle: 'PLine_1',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAH0lEQVQ4jWNgGAUDDxgZGP6focQAJkpdMPAGjILBAACaRwHTu8FwGQAAAABJRU5ErkJggg==" /> PLine_1'
+            });
+var format_Layer_CcTuynmi_176 = new ol.format.GeoJSON();
+var features_Layer_CcTuynmi_176 = format_Layer_CcTuynmi_176.readFeatures(json_Layer_CcTuynmi_176, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_Layer_CcTuynmi_176 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_Layer_CcTuynmi_176.addFeatures(features_Layer_CcTuynmi_176);
+var lyr_Layer_CcTuynmi_176 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_Layer_CcTuynmi_176, 
+                style: style_Layer_CcTuynmi_176,
+                popuplayertitle: 'Layer_Các Tuyến mới',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAXklEQVQ4jWNgGAUUA8b/DAxZlBjA8q+oyJokHX///mM4fPg107lznxgYGBgYf69adYBka//8+cuSmXmc4ePHP0wka4aCf1CahenEiack6YR54ePHPwwMVAjEUUAFAABtWyMz/DuIrgAAAABJRU5ErkJggg==" /> Layer_Các Tuyến mới'
+            });
+var format_Layer_Tuyn12_177 = new ol.format.GeoJSON();
+var features_Layer_Tuyn12_177 = format_Layer_Tuyn12_177.readFeatures(json_Layer_Tuyn12_177, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_Layer_Tuyn12_177 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_Layer_Tuyn12_177.addFeatures(features_Layer_Tuyn12_177);
+var lyr_Layer_Tuyn12_177 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_Layer_Tuyn12_177, 
+                style: style_Layer_Tuyn12_177,
+                popuplayertitle: 'Layer_Tuyến 12',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAH0lEQVQ4jWNgGAUDDxgZCiY3UGIAE6UuGHgDRsFgAADk/AGL4eUl+QAAAABJRU5ErkJggg==" /> Layer_Tuyến 12'
+            });
+var format_Layer_Tuyn11_178 = new ol.format.GeoJSON();
+var features_Layer_Tuyn11_178 = format_Layer_Tuyn11_178.readFeatures(json_Layer_Tuyn11_178, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_Layer_Tuyn11_178 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_Layer_Tuyn11_178.addFeatures(features_Layer_Tuyn11_178);
+var lyr_Layer_Tuyn11_178 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_Layer_Tuyn11_178, 
+                style: style_Layer_Tuyn11_178,
+                popuplayertitle: 'Layer_Tuyến 11',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAH0lEQVQ4jWNgGAUDDxjDGIoaKDGAiVIXDLwBo2AwAABQGwFQPDzOQAAAAABJRU5ErkJggg==" /> Layer_Tuyến 11'
+            });
+var format_Layer_Tuyn10_179 = new ol.format.GeoJSON();
+var features_Layer_Tuyn10_179 = format_Layer_Tuyn10_179.readFeatures(json_Layer_Tuyn10_179, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_Layer_Tuyn10_179 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_Layer_Tuyn10_179.addFeatures(features_Layer_Tuyn10_179);
+var lyr_Layer_Tuyn10_179 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_Layer_Tuyn10_179, 
+                style: style_Layer_Tuyn10_179,
+                popuplayertitle: 'Layer_Tuyến 10',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAH0lEQVQ4jWNgGAUDDxjvMuQ1UGIAE6UuGHgDRsFgAACcTQHTIdWuZAAAAABJRU5ErkJggg==" /> Layer_Tuyến 10'
+            });
+var format_Layer_Tuyn9_180 = new ol.format.GeoJSON();
+var features_Layer_Tuyn9_180 = format_Layer_Tuyn9_180.readFeatures(json_Layer_Tuyn9_180, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_Layer_Tuyn9_180 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_Layer_Tuyn9_180.addFeatures(features_Layer_Tuyn9_180);
+var lyr_Layer_Tuyn9_180 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_Layer_Tuyn9_180, 
+                style: style_Layer_Tuyn9_180,
+                popuplayertitle: 'Layer_Tuyến 9',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAH0lEQVQ4jWNgGAUDDxi3M3Q2UGIAE6UuGHgDRsFgAACANAHIhx59yAAAAABJRU5ErkJggg==" /> Layer_Tuyến 9'
+            });
+var format_Layer_Tuyn8_181 = new ol.format.GeoJSON();
+var features_Layer_Tuyn8_181 = format_Layer_Tuyn8_181.readFeatures(json_Layer_Tuyn8_181, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_Layer_Tuyn8_181 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_Layer_Tuyn8_181.addFeatures(features_Layer_Tuyn8_181);
+var lyr_Layer_Tuyn8_181 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_Layer_Tuyn8_181, 
+                style: style_Layer_Tuyn8_181,
+                popuplayertitle: 'Layer_Tuyến 8',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAH0lEQVQ4jWNgGAUDDxj/M/xvoMQAJkpdMPAGjILBAABhFAKGxdo64wAAAABJRU5ErkJggg==" /> Layer_Tuyến 8'
+            });
+var format_Layer_Tuyn7_182 = new ol.format.GeoJSON();
+var features_Layer_Tuyn7_182 = format_Layer_Tuyn7_182.readFeatures(json_Layer_Tuyn7_182, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_Layer_Tuyn7_182 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_Layer_Tuyn7_182.addFeatures(features_Layer_Tuyn7_182);
+var lyr_Layer_Tuyn7_182 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_Layer_Tuyn7_182, 
+                style: style_Layer_Tuyn7_182,
+                popuplayertitle: 'Layer_Tuyến 7',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAH0lEQVQ4jWNgGAUDDxi3xzA0UGIAE6UuGHgDRsFgAAAO1QGb1/yoegAAAABJRU5ErkJggg==" /> Layer_Tuyến 7'
+            });
+var format_Layer_Tuyn6_183 = new ol.format.GeoJSON();
+var features_Layer_Tuyn6_183 = format_Layer_Tuyn6_183.readFeatures(json_Layer_Tuyn6_183, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_Layer_Tuyn6_183 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_Layer_Tuyn6_183.addFeatures(features_Layer_Tuyn6_183);
+var lyr_Layer_Tuyn6_183 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_Layer_Tuyn6_183, 
+                style: style_Layer_Tuyn6_183,
+                popuplayertitle: 'Layer_Tuyến 6',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAH0lEQVQ4jWNgGAUDDxjrGf43UGIAE6UuGHgDRsFgAAAchQIG2EaamAAAAABJRU5ErkJggg==" /> Layer_Tuyến 6'
+            });
+var format_Layer_Tuyn5_184 = new ol.format.GeoJSON();
+var features_Layer_Tuyn5_184 = format_Layer_Tuyn5_184.readFeatures(json_Layer_Tuyn5_184, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_Layer_Tuyn5_184 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_Layer_Tuyn5_184.addFeatures(features_Layer_Tuyn5_184);
+var lyr_Layer_Tuyn5_184 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_Layer_Tuyn5_184, 
+                style: style_Layer_Tuyn5_184,
+                popuplayertitle: 'Layer_Tuyến 5',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAH0lEQVQ4jWNgGAUDDxj/MzA0UGIAE6UuGHgDRsFgAADcbgGH/SFyzAAAAABJRU5ErkJggg==" /> Layer_Tuyến 5'
+            });
+var format_Layer_Tuyn4_185 = new ol.format.GeoJSON();
+var features_Layer_Tuyn4_185 = format_Layer_Tuyn4_185.readFeatures(json_Layer_Tuyn4_185, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_Layer_Tuyn4_185 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_Layer_Tuyn4_185.addFeatures(features_Layer_Tuyn4_185);
+var lyr_Layer_Tuyn4_185 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_Layer_Tuyn4_185, 
+                style: style_Layer_Tuyn4_185,
+                popuplayertitle: 'Layer_Tuyến 4',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAH0lEQVQ4jWNgGAUDDxi3M+g1UGIAE6UuGHgDRsFgAACaKAFt8G2XCwAAAABJRU5ErkJggg==" /> Layer_Tuyến 4'
+            });
+var format_Layer_Tuyn3_186 = new ol.format.GeoJSON();
+var features_Layer_Tuyn3_186 = format_Layer_Tuyn3_186.readFeatures(json_Layer_Tuyn3_186, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_Layer_Tuyn3_186 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_Layer_Tuyn3_186.addFeatures(features_Layer_Tuyn3_186);
+var lyr_Layer_Tuyn3_186 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_Layer_Tuyn3_186, 
+                style: style_Layer_Tuyn3_186,
+                popuplayertitle: 'Layer_Tuyến 3',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAH0lEQVQ4jWNgGAUDDxj/1zM0UGIAE6UuGHgDRsFgAAAeBAIGOX1GOQAAAABJRU5ErkJggg==" /> Layer_Tuyến 3'
+            });
+var format_Layer_Tuyn2A_187 = new ol.format.GeoJSON();
+var features_Layer_Tuyn2A_187 = format_Layer_Tuyn2A_187.readFeatures(json_Layer_Tuyn2A_187, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_Layer_Tuyn2A_187 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_Layer_Tuyn2A_187.addFeatures(features_Layer_Tuyn2A_187);
+var lyr_Layer_Tuyn2A_187 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_Layer_Tuyn2A_187, 
+                style: style_Layer_Tuyn2A_187,
+                popuplayertitle: 'Layer_Tuyến 2A',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAH0lEQVQ4jWNgGAUDDxgZtjM0UGIAE6UuGHgDRsFgAAAlLwE/3VkKrwAAAABJRU5ErkJggg==" /> Layer_Tuyến 2A'
+            });
+var format_Layer_Tuyn2_188 = new ol.format.GeoJSON();
+var features_Layer_Tuyn2_188 = format_Layer_Tuyn2_188.readFeatures(json_Layer_Tuyn2_188, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_Layer_Tuyn2_188 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_Layer_Tuyn2_188.addFeatures(features_Layer_Tuyn2_188);
+var lyr_Layer_Tuyn2_188 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_Layer_Tuyn2_188, 
+                style: style_Layer_Tuyn2_188,
+                popuplayertitle: 'Layer_Tuyến 2',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAH0lEQVQ4jWNgGAUDDxgZtjM0UGIAE6UuGHgDRsFgAAAlLwE/3VkKrwAAAABJRU5ErkJggg==" /> Layer_Tuyến 2'
+            });
+var format_Layer_Tuyn1_189 = new ol.format.GeoJSON();
+var features_Layer_Tuyn1_189 = format_Layer_Tuyn1_189.readFeatures(json_Layer_Tuyn1_189, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_Layer_Tuyn1_189 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_Layer_Tuyn1_189.addFeatures(features_Layer_Tuyn1_189);
+var lyr_Layer_Tuyn1_189 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_Layer_Tuyn1_189, 
+                style: style_Layer_Tuyn1_189,
+                popuplayertitle: 'Layer_Tuyến 1',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAH0lEQVQ4jWNgGAUDDxgZGP43UGIAE6UuGHgDRsFgAADacAGHnLyKmAAAAABJRU5ErkJggg==" /> Layer_Tuyến 1'
+            });
+var format_T12_190 = new ol.format.GeoJSON();
+var features_T12_190 = format_T12_190.readFeatures(json_T12_190, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_T12_190 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_T12_190.addFeatures(features_T12_190);
+var lyr_T12_190 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_T12_190, 
+                style: style_T12_190,
+                popuplayertitle: 'T12',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVQ4jWNgGAUDDxgZCqfZU2IAC8P/fwco0P+fiRLbIS5gZHKg1JBRMNAAAAqrBVH4kwS4AAAAAElFTkSuQmCC" /> T12'
+            });
+var format_T11_191 = new ol.format.GeoJSON();
+var features_T11_191 = format_T11_191.readFeatures(json_T11_191, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_T11_191 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_T11_191.addFeatures(features_T11_191);
+var lyr_T11_191 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_T11_191, 
+                style: style_T11_191,
+                popuplayertitle: 'T11',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALElEQVQ4jWNgGAUDDxhDGQrtKTGAhYGB8QAF+v8zUWI71AX/HSg1ZBQMNAAAn2kEECTf240AAAAASUVORK5CYII=" /> T11'
+            });
+var format_T10_192 = new ol.format.GeoJSON();
+var features_T10_192 = format_T10_192.readFeatures(json_T10_192, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_T10_192 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_T10_192.addFeatures(features_T10_192);
+var lyr_T10_192 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_T10_192, 
+                style: style_T10_192,
+                popuplayertitle: 'T10',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAMUlEQVQ4jWNgGAUDDxjvM+TaU2IAyz8GhgMU6P/PRIntDAwMDCxMDAwOlBoyCgYaAAB1vwSW73WrowAAAABJRU5ErkJggg==" /> T10'
+            });
+var format_T9_193 = new ol.format.GeoJSON();
+var features_T9_193 = format_T9_193.readFeatures(json_T9_193, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_T9_193 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_T9_193.addFeatures(features_T9_193);
+var lyr_T9_193 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_T9_193, 
+                style: style_T9_193,
+                popuplayertitle: 'T9',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAMUlEQVQ4jWNgGAUDDxi3MXTZU2IACxMDwwEK9P9nosR2BgYGBpZ/DAwOlBoyCgYaAADXEgSKTDFu4gAAAABJRU5ErkJggg==" /> T9'
+            });
+var format_T8_194 = new ol.format.GeoJSON();
+var features_T8_194 = format_T8_194.readFeatures(json_T8_194, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_T8_194 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_T8_194.addFeatures(features_T8_194);
+var lyr_T8_194 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_T8_194, 
+                style: style_T8_194,
+                popuplayertitle: 'T8',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALElEQVQ4je3NsREAAAjCwOi5l+6/FA5BYeP3BHj3QqjdgIy90nkHKGDcyLu2Ar4GgjbaLeMAAAAASUVORK5CYII=" /> T8'
+            });
+var format_T7_195 = new ol.format.GeoJSON();
+var features_T7_195 = format_T7_195.readFeatures(json_T7_195, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_T7_195 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_T7_195.addFeatures(features_T7_195);
+var lyr_T7_195 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_T7_195, 
+                style: style_T7_195,
+                popuplayertitle: 'T7',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAMUlEQVQ4jWNgGAUDDxi3RTLYU2IACxMTwwEK9P9nosR2BgYGBpZ//xgcKDVkFAw0AAAhtgVZSvfmIgAAAABJRU5ErkJggg==" /> T7'
+            });
+var format_T6_196 = new ol.format.GeoJSON();
+var features_T6_196 = format_T6_196.readFeatures(json_T6_196, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_T6_196 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_T6_196.addFeatures(features_T6_196);
+var lyr_T6_196 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_T6_196, 
+                style: style_T6_196,
+                popuplayertitle: 'T6',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAM0lEQVQ4jWNgGAUDDxhrGf7bU2IACxMDwwGybWdg+M9Eie0MDAwMLP8YGBwoNWQUDDQAAHBfBMfUo8xhAAAAAElFTkSuQmCC" /> T6'
+            });
+var format_T5_197 = new ol.format.GeoJSON();
+var features_T5_197 = format_T5_197.readFeatures(json_T5_197, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_T5_197 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_T5_197.addFeatures(features_T5_197);
+var lyr_T5_197 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_T5_197, 
+                style: style_T5_197,
+                popuplayertitle: 'T5',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAJklEQVQ4jWNgGAUDDxj/MzDYU2rAfwr0/2eixHaYCyjywigYDAAA93EFf+pwVKQAAAAASUVORK5CYII=" /> T5'
+            });
+var format_T4_198 = new ol.format.GeoJSON();
+var features_T4_198 = format_T4_198.readFeatures(json_T4_198, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_T4_198 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_T4_198.addFeatures(features_T4_198);
+var lyr_T4_198 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_T4_198, 
+                style: style_T4_198,
+                popuplayertitle: 'T4',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAMUlEQVQ4jWNgGAUDDxi3MejaU2IACxMDwwEK9P9nosR2BgYGBpZ/DAwOlBoyCgYaAADr+AQttMkJuQAAAABJRU5ErkJggg==" /> T4'
+            });
+var format_T3_199 = new ol.format.GeoJSON();
+var features_T3_199 = format_T3_199.readFeatures(json_T3_199, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_T3_199 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_T3_199.addFeatures(features_T3_199);
+var lyr_T3_199 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_T3_199, 
+                style: style_T3_199,
+                popuplayertitle: 'T3',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALklEQVQ4jWNgGAUDDxj/1zLYU2IACwMTwwHyrWf4z0SJ7RAX/GNwoNSQUTDQAABw3wTHhixLnwAAAABJRU5ErkJggg==" /> T3'
+            });
+var format_T2A_200 = new ol.format.GeoJSON();
+var features_T2A_200 = format_T2A_200.readFeatures(json_T2A_200, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_T2A_200 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_T2A_200.addFeatures(features_T2A_200);
+var lyr_T2A_200 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_T2A_200, 
+                style: style_T2A_200,
+                popuplayertitle: 'T2A',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVQ4jWNgGAUDDxgZtjHYU2IACwMTwwEK9P9nosR2iAv+MThQasgoGGgAAHiHBADyeb18AAAAAElFTkSuQmCC" /> T2A'
+            });
+var format_T2_201 = new ol.format.GeoJSON();
+var features_T2_201 = format_T2_201.readFeatures(json_T2_201, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_T2_201 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_T2_201.addFeatures(features_T2_201);
+var lyr_T2_201 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_T2_201, 
+                style: style_T2_201,
+                popuplayertitle: 'T2',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVQ4jWNgGAUDDxgZtjHYU2IACwMTwwEK9P9nosR2iAv+MThQasgoGGgAAHiHBADyeb18AAAAAElFTkSuQmCC" /> T2'
+            });
+var format_T1A_202 = new ol.format.GeoJSON();
+var features_T1A_202 = format_T1A_202.readFeatures(json_T1A_202, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_T1A_202 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_T1A_202.addFeatures(features_T1A_202);
+var lyr_T1A_202 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_T1A_202, 
+                style: style_T1A_202,
+                popuplayertitle: 'T1A',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAJklEQVQ4jWNgGAUDDxgZGP7bU2rAfwr0/2eixHaYCyjywigYDAAA8XcFf54TKcUAAAAASUVORK5CYII=" /> T1A'
+            });
+var format_T1_203 = new ol.format.GeoJSON();
+var features_T1_203 = format_T1_203.readFeatures(json_T1_203, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_T1_203 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_T1_203.addFeatures(features_T1_203);
+var lyr_T1_203 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_T1_203, 
+                style: style_T1_203,
+                popuplayertitle: 'T1',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAJklEQVQ4jWNgGAUDDxgZGP7bU2rAfwr0/2eixHaYCyjywigYDAAA8XcFf54TKcUAAAAASUVORK5CYII=" /> T1'
+            });
+var format_QH519Depot_204 = new ol.format.GeoJSON();
+var features_QH519Depot_204 = format_QH519Depot_204.readFeatures(json_QH519Depot_204, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_QH519Depot_204 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_QH519Depot_204.addFeatures(features_QH519Depot_204);
+var lyr_QH519Depot_204 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_QH519Depot_204, 
+                style: style_QH519Depot_204,
+                popuplayertitle: 'QH519-Depot',
+                interactive: false,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABPElEQVQ4jbWSzWrCQBSFh0IQszONSfAVsvDd/FsUhe5Fi62t9cmEvEMWbjIVIV8XN5NMYlqzaC9cGJiZj3PPPUr9ZwEj4AgkwLXoBDgAYVfIM5BhKk2lq9LA6h7kUDyE6RQGA+j1pD0PZjMb9vqbEk2ew3AIrgtK1dt1IYogzw1s2eaJjBMEt4BmR5FR9gUENugIwGRyq2Q8lm4qm88N7N0GJYB4Yn/Y7SDLpDeb+p3vG9DJBl1JUzHVVpJVy0NriOPq3nHgfAa4KKXUQ6dMdK1yNM+ry99uRYnWsF53Gu0TkJw0zY7j+kjG7MXCgPY2KCyDGIb31z8aGcgFeGyOtyoDGUXtgez3BVIF8uknr96KkElOfF+24zhyrsbRwMs945clDGTFsmZ7nHYlLbAA+ABOxcdLcd7fePLX9Q1pGVPhtDM+xQAAAABJRU5ErkJggg==" /> QH519-Depot'
+            });
+var format_QH519Ga_205 = new ol.format.GeoJSON();
+var features_QH519Ga_205 = format_QH519Ga_205.readFeatures(json_QH519Ga_205, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_QH519Ga_205 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_QH519Ga_205.addFeatures(features_QH519Ga_205);
+var lyr_QH519Ga_205 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_QH519Ga_205, 
+                style: style_QH519Ga_205,
+                popuplayertitle: 'QH519-Ga',
+                interactive: false,
+    title: 'QH519-Ga<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAvUlEQVQYlV2QvWrCYBRAD+UbM2QvAeXrA9T8EEHfpxB8H4uKgh27CG19IgU7G+fTIQZiz3KHezkcLtwRXoSNcBRWwpghQi1cTyG4SlPPISi0QjE0XD9jdF5Vfux2zsrSQ4z94QhhfQrBeVU5ZJrnXjrj+xPwfEwS3prmIaFZLPhOEoAMYX0OwVlZPpjqPPe3My0RxkJ7iNFpUbjfbq0nE7+6ppuQ9fGF0F5CcJOmveEmvP5/w0hYCj/3mfW7P5zKdygdqmjtAAAAAElFTkSuQmCC" /> 1<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAbUlEQVQYlZXQQQqCYBRF4e/9NnAlLa6iDSgOnDhw1tqCaisKvmaFJEJnei73wo3kijMWv1S4RfJS10d9T+ZXR9C2TNNT8shxzE2GIZN7AcvWkk9z2bZr/giV/ewBRdMwz2sTQddBFckFJzs/vQE30DVb7wU8nAAAAABJRU5ErkJggg==" /> 2<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAvUlEQVQYlV2QvWrCYBRAD+UbM2QvAeXrA9T8EEHfpxB8H4uKgh27CG19IgU7G+fTIQZiz3KHezkcLtwRXoSNcBRWwpghQi1cTyG4SlPPISi0QjE0XD9jdF5Vfux2zsrSQ4z94QhhfQrBeVU5ZJrnXjrj+xPwfEwS3prmIaFZLPhOEoAMYX0OwVlZPpjqPPe3My0RxkJ7iNFpUbjfbq0nE7+6ppuQ9fGF0F5CcJOmveEmvP5/w0hYCj/3mfW7P5zKdygdqmjtAAAAAElFTkSuQmCC" /> 2A<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAvUlEQVQYlV2QvWrCYBRAD+UbM2QvAeXrA9T8EEHfpxB8H4uKgh27CG19IgU7G+fTIQZiz3KHezkcLtwRXoSNcBRWwpghQi1cTyG4SlPPISi0QjE0XD9jdF5Vfux2zsrSQ4z94QhhfQrBeVU5ZJrnXjrj+xPwfEwS3prmIaFZLPhOEoAMYX0OwVlZPpjqPPe3My0RxkJ7iNFpUbjfbq0nE7+6ppuQ9fGF0F5CcJOmveEmvP5/w0hYCj/3mfW7P5zKdygdqmjtAAAAAElFTkSuQmCC" /> 3<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAbUlEQVQYlZXQQQqCYBRF4e/9NnAlLa6iDSgOnDhw1tqCaisKvmaFJEJnei73wo3kijMWv1S4RfJS10d9T+ZXR9C2TNNT8shxzE2GIZN7AcvWkk9z2bZr/giV/ewBRdMwz2sTQddBFckFJzs/vQE30DVb7wU8nAAAAABJRU5ErkJggg==" /> 4<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAbUlEQVQYlZXQQQqCYBRF4e/9NnAlLa6iDSgOnDhw1tqCaisKvmaFJEJnei73wo3kijMWv1S4RfJS10d9T+ZXR9C2TNNT8shxzE2GIZN7AcvWkk9z2bZr/giV/ewBRdMwz2sTQddBFckFJzs/vQE30DVb7wU8nAAAAABJRU5ErkJggg==" /> 5<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAbUlEQVQYlZXQQQqCYBRF4e/9NnAlLa6iDSgOnDhw1tqCaisKvmaFJEJnei73wo3kijMWv1S4RfJS10d9T+ZXR9C2TNNT8shxzE2GIZN7AcvWkk9z2bZr/giV/ewBRdMwz2sTQddBFckFJzs/vQE30DVb7wU8nAAAAABJRU5ErkJggg==" /> 6<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAbUlEQVQYlZXQQQqCYBRF4e/9NnAlLa6iDSgOnDhw1tqCaisKvmaFJEJnei73wo3kijMWv1S4RfJS10d9T+ZXR9C2TNNT8shxzE2GIZN7AcvWkk9z2bZr/giV/ewBRdMwz2sTQddBFckFJzs/vQE30DVb7wU8nAAAAABJRU5ErkJggg==" /> 7<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAbUlEQVQYlZXQQQqCYBRF4e/9NnAlLa6iDSgOnDhw1tqCaisKvmaFJEJnei73wo3kijMWv1S4RfJS10d9T+ZXR9C2TNNT8shxzE2GIZN7AcvWkk9z2bZr/giV/ewBRdMwz2sTQddBFckFJzs/vQE30DVb7wU8nAAAAABJRU5ErkJggg==" /> 8<br />' });
+var format_tuyen_M3_206 = new ol.format.GeoJSON();
+var features_tuyen_M3_206 = format_tuyen_M3_206.readFeatures(json_tuyen_M3_206, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_tuyen_M3_206 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_tuyen_M3_206.addFeatures(features_tuyen_M3_206);
+var lyr_tuyen_M3_206 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_tuyen_M3_206, 
+                style: style_tuyen_M3_206,
+                popuplayertitle: 'tuyen_M3',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQ4jWNgGAUDDxg5OXY8osQAFgYGBllKDGCiRDPMBY8pNWQUDDQAACNjArdAA8yLAAAAAElFTkSuQmCC" /> tuyen_M3'
+            });
+var format_tuyen_M2_207 = new ol.format.GeoJSON();
+var features_tuyen_M2_207 = format_tuyen_M2_207.readFeatures(json_tuyen_M2_207, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_tuyen_M2_207 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_tuyen_M2_207.addFeatures(features_tuyen_M2_207);
+var lyr_tuyen_M2_207 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_tuyen_M2_207, 
+                style: style_tuyen_M2_207,
+                popuplayertitle: 'tuyen_M2',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQ4jWNgGAUDDxjVlRUeUWIACwMDgywlBjBRohnmgseUGjIKBhoAADOSAlj4X5KfAAAAAElFTkSuQmCC" /> tuyen_M2'
+            });
+var format_tuyen_M1_208 = new ol.format.GeoJSON();
+var features_tuyen_M1_208 = format_tuyen_M1_208.readFeatures(json_tuyen_M1_208, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_tuyen_M1_208 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_tuyen_M1_208.addFeatures(features_tuyen_M1_208);
+var lyr_tuyen_M1_208 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_tuyen_M1_208, 
+                style: style_tuyen_M1_208,
+                popuplayertitle: 'tuyen_M1',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQ4jWNgGAUDDxg5Nko+osQAFgYGBllKDGCiRDPMBY8pNWQUDDQAADrJAsDxjnzbAAAAAElFTkSuQmCC" /> tuyen_M1'
+            });
+var format_tuyen_VT_209 = new ol.format.GeoJSON();
+var features_tuyen_VT_209 = format_tuyen_VT_209.readFeatures(json_tuyen_VT_209, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_tuyen_VT_209 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_tuyen_VT_209.addFeatures(features_tuyen_VT_209);
+var lyr_tuyen_VT_209 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_tuyen_VT_209, 
+                style: style_tuyen_VT_209,
+                popuplayertitle: 'tuyen_VT',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQ4jWNgGAUDDxiDg4MfUWIACwMDgywlBjBRohnmgseUGjIKBhoAAJ2SAucOdyXKAAAAAElFTkSuQmCC" /> tuyen_VT'
+            });
+var format_tuyen_8_210 = new ol.format.GeoJSON();
+var features_tuyen_8_210 = format_tuyen_8_210.readFeatures(json_tuyen_8_210, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_tuyen_8_210 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_tuyen_8_210.addFeatures(features_tuyen_8_210);
+var lyr_tuyen_8_210 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_tuyen_8_210, 
+                style: style_tuyen_8_210,
+                popuplayertitle: 'tuyen_8',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALElEQVQ4jWNgGAUDDxj/Mf55RKkB/ykxgIkSzQwMDAwsDAwMjyk1ZBQMNAAAp9kGwxuCZS8AAAAASUVORK5CYII=" /> tuyen_8'
+            });
+var format_tuyen_7_211 = new ol.format.GeoJSON();
+var features_tuyen_7_211 = format_tuyen_7_211.readFeatures(json_tuyen_7_211, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_tuyen_7_211 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_tuyen_7_211.addFeatures(features_tuyen_7_211);
+var lyr_tuyen_7_211 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_tuyen_7_211, 
+                style: style_tuyen_7_211,
+                popuplayertitle: 'tuyen_7',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQ4jWNgGAUDDxjvduY+osQAFgYGBllKDGCiRDPMBY8pNWQUDDQAAMXwA8GMk/doAAAAAElFTkSuQmCC" /> tuyen_7'
+            });
+var format_tuyen_6_212 = new ol.format.GeoJSON();
+var features_tuyen_6_212 = format_tuyen_6_212.readFeatures(json_tuyen_6_212, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_tuyen_6_212 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_tuyen_6_212.addFeatures(features_tuyen_6_212);
+var lyr_tuyen_6_212 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_tuyen_6_212, 
+                style: style_tuyen_6_212,
+                popuplayertitle: 'tuyen_6',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQ4jWNgGAUDDxiXMt55RIkBLAwMDLKUGMBEiWaYCx5TasgoGGgAAPgyA3D0lq53AAAAAElFTkSuQmCC" /> tuyen_6'
+            });
+var format_tuyen_5_213 = new ol.format.GeoJSON();
+var features_tuyen_5_213 = format_tuyen_5_213.readFeatures(json_tuyen_5_213, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_tuyen_5_213 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_tuyen_5_213.addFeatures(features_tuyen_5_213);
+var lyr_tuyen_5_213 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_tuyen_5_213, 
+                style: style_tuyen_5_213,
+                popuplayertitle: 'tuyen_5',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALElEQVQ4jWNgGAUDDxj/MzA8otSA/5QYwESJZgYGBgYWBgaGx5QaMgoGGgAA7cQEy2H195wAAAAASUVORK5CYII=" /> tuyen_5'
+            });
+var format_tuyen_4_214 = new ol.format.GeoJSON();
+var features_tuyen_4_214 = format_tuyen_4_214.readFeatures(json_tuyen_4_214, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_tuyen_4_214 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_tuyen_4_214.addFeatures(features_tuyen_4_214);
+var lyr_tuyen_4_214 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_tuyen_4_214, 
+                style: style_tuyen_4_214,
+                popuplayertitle: 'tuyen_4',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQ4jWNgGAUDDxinMzA/osQAFgYGBllKDGCiRDPMBY8pNWQUDDQAAK2fAoiK6R7jAAAAAElFTkSuQmCC" /> tuyen_4'
+            });
+var format_tuyen_3_215 = new ol.format.GeoJSON();
+var features_tuyen_3_215 = format_tuyen_3_215.readFeatures(json_tuyen_3_215, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_tuyen_3_215 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_tuyen_3_215.addFeatures(features_tuyen_3_215);
+var lyr_tuyen_3_215 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_tuyen_3_215, 
+                style: style_tuyen_3_215,
+                popuplayertitle: 'tuyen_3',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQ4jWNgGAUDDxineHg8osQAFgYGBllKDGCiRDPMBY8pNWQUDDQAAArFAxJRVwM/AAAAAElFTkSuQmCC" /> tuyen_3'
+            });
+var format_tuyen_2A_216 = new ol.format.GeoJSON();
+var features_tuyen_2A_216 = format_tuyen_2A_216.readFeatures(json_tuyen_2A_216, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_tuyen_2A_216 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_tuyen_2A_216.addFeatures(features_tuyen_2A_216);
+var lyr_tuyen_2A_216 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_tuyen_2A_216, 
+                style: style_tuyen_2A_216,
+                popuplayertitle: 'tuyen_2A',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQ4jWNgGAUDDxh37mR+RIkBLAwMDLKUGMBEiWaYCx5TasgoGGgAANg3A2MvbNFaAAAAAElFTkSuQmCC" /> tuyen_2A'
+            });
+var format_tuyen_2_217 = new ol.format.GeoJSON();
+var features_tuyen_2_217 = format_tuyen_2_217.readFeatures(json_tuyen_2_217, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_tuyen_2_217 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_tuyen_2_217.addFeatures(features_tuyen_2_217);
+var lyr_tuyen_2_217 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_tuyen_2_217, 
+                style: style_tuyen_2_217,
+                popuplayertitle: 'tuyen_2',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALElEQVQ4jWNgGAUDDxgZGP4/otSA/5QYwESJZgYGBgYWBgaGx5QaMgoGGgAA6cgEyyEI8IIAAAAASUVORK5CYII=" /> tuyen_2'
+            });
+var format_tuyen_1_218 = new ol.format.GeoJSON();
+var features_tuyen_1_218 = format_tuyen_1_218.readFeatures(json_tuyen_1_218, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_tuyen_1_218 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_tuyen_1_218.addFeatures(features_tuyen_1_218);
+var lyr_tuyen_1_218 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_tuyen_1_218, 
+                style: style_tuyen_1_218,
+                popuplayertitle: 'tuyen_1',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQ4jWNgGAUDDxiVpzI8osQAFgYGBllKDGCiRDPMBY8pNWQUDDQAAPkeAqbxGC4uAAAAAElFTkSuQmCC" /> tuyen_1'
+            });
+var format_SDDHuyenChuongMy_219 = new ol.format.GeoJSON();
+var features_SDDHuyenChuongMy_219 = format_SDDHuyenChuongMy_219.readFeatures(json_SDDHuyenChuongMy_219, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_SDDHuyenChuongMy_219 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_SDDHuyenChuongMy_219.addFeatures(features_SDDHuyenChuongMy_219);
+var lyr_SDDHuyenChuongMy_219 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_SDDHuyenChuongMy_219, 
+                style: style_SDDHuyenChuongMy_219,
+                popuplayertitle: 'SDD Huyen Chuong My',
+                interactive: true,
+    title: 'SDD Huyen Chuong My<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARUlEQVQ4jWMMNtT5aMzP/YmBDHD241c+FmN+7k+VypJPyTGg4+5zBiZyNCKDUQNGDRg1AAJYzn78ytdx9zlZms9+/MoHAKrEEri0n1faAAAAAElFTkSuQmCC" /> Color_11<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARUlEQVQ4jWMM1tH6aMzN+YmBDHD263c+FmNuzk+VksJPyTGg4/lbBiZyNCKDUQNGDRg1AAJYzn79ztfx/C1Zms9+/c4HAHf6EsfcNBcFAAAAAElFTkSuQmCC" /> Color_13<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQElEQVQ4jWO0Dw7+qGBs/ImBDPDo7Fk+FgVj40/elZVPyTFga0cHAxM5GpHBqAGjBowaAAGM9sHBHxVMTMjOzgAgsxEyWoKCEwAAAABJRU5ErkJggg==" /> Color_131<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARUlEQVQ4jWPUlpH5yP39+ycGMsA3Tk4+Fu7v3z+JvX37lBwDXgkLMzCRoxEZjBowasCoARDA8pWTk++VsDBZmr9xcvIBALtoD4TN8Wc8AAAAAElFTkSuQmCC" /> Color_18<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAPklEQVQ4jWMMtLf9aKQg94mBDHDu0WM+FiMFuU/l3i5PyTGge+seBiZyNCKDUQNGDRg1AAIYA+1tP5pQkJ0BVHIQ7g7zOFIAAAAASUVORK5CYII=" /> Color_21<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQElEQVQ4jWMMtg3+aCxn/ImBDHD28Vk+FmM540+VLpVPyTGgY08HAxM5GpHBqAGjBowaAAGMwbbBH03kTMjOzgAKexEqV8lpQAAAAABJRU5ErkJggg==" /> Color_211<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARElEQVQ4jWMMdvH/aKxi8ImBDHD27gU+FmMVg0+V4UVPyTGgY3U/AxM5GpHBqAGjBowaAAGMwa7+H01UDcnLzrcv8AEALloRNQy1bJYAAAAASUVORK5CYII=" /> Color_254<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAPklEQVQ4jWMMtlf7aKzA8omBDHD20R8+FmMFlk+V3hxPyTGgY+sPBiZyNCKDUQNGDRg1AAIYg+3VPppQkJ0BfBkQp0OuDo8AAAAASUVORK5CYII=" /> Color_40<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQ0lEQVQ4jWMM9rD9aKwp94mBDHD2xmM+FmNNuU+ViS5PyTGgY+EeBiZyNCKDUQNGDRg1AAIYgz1tP5pokZmdrz3mAwCzWxEM65OPXwAAAABJRU5ErkJggg==" /> Color_41<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQ0lEQVQ4jWMMDrT8aGwi+YmBDHD23As+FmMTyU+V5VZPyTGgo+s4AxM5GpHBqAGjBowaAAGMwcFWH02MyczOZ5/zAQDo0xEeDI8kAAAAAABJRU5ErkJggg==" /> Color_51<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARElEQVQ4jWN0CVb6qGL8/xMDGeDuWUY+FhXj/5/CKv89JceANR1MDEzkaEQGowaMGjBqAAQwugYrfVQ1IS873z7LyAcA9EARqPyxNkoAAAAASUVORK5CYII=" /> Color_60<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQUlEQVQ4jWN0dXX9qKqq+omBDHD79m0+FlVV1U/h4eFPyTFg1apVDEzkaEQGowaMGjBqAAQwurq6flRTUyM7OwMAUKYQ7X6lU20AAAAASUVORK5CYII=" /> Color_7<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAP0lEQVQ4jWN0Cnb6qGSs9ImBDHD/7H0+FiVjpU8BlQFPyTFgQ8cGBiZyNCKDUQNGDRg1AAIYnYKdPiqZkJ+dAZloEQXkw+X0AAAAAElFTkSuQmCC" /> Color_71<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQUlEQVQ4jWN0t3f/qKGg8YmBDHDz0U0+Fg0FjU9x3nFPyTFg8dbFDEzkaEQGowaMGjBqAAQweth7kJ2dbzy6wQcAWEMQ7nOBvEsAAAAASUVORK5CYII=" /> Color_9<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARUlEQVQ4jWM0Djb8KGTM/4mBDPDu7Ec+FiFj/k+alcpPyTHgesddBiZyNCKDUQNGDRg1AAJY3p39yHe94y5Zmt+d/cgHAOGjEqgIk4DQAAAAAElFTkSuQmCC" /> Color_91<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQ0lEQVQ4jWO01/H/L8OhzUAOePrjGgOLDIc2g7lgCFkGnHq/loGJLJ1IYNSAUQNGDYAAlqc/rjGcer+WLM1PflxlAAAgXw/69oz+VAAAAABJRU5ErkJggg==" /> <br />' });
+var format_SDD3phankhu_220 = new ol.format.GeoJSON();
+var features_SDD3phankhu_220 = format_SDD3phankhu_220.readFeatures(json_SDD3phankhu_220, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_SDD3phankhu_220 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_SDD3phankhu_220.addFeatures(features_SDD3phankhu_220);
+var lyr_SDD3phankhu_220 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_SDD3phankhu_220, 
+                style: style_SDD3phankhu_220,
+                popuplayertitle: 'SDD 3 phan khu',
+                interactive: true,
+    title: 'SDD 3 phan khu<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQElEQVQ4jWMMDg7+aGxs/ImBDHD27Fk+FmNj40+VlZVPyTGgo6ODgYkcjchg1IBRA0YNgADG4ODgjyYmJmRnZwDNqRFrYOwQywAAAABJRU5ErkJggg==" /> 0<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARUlEQVQ4jWM0l9H4KPqd/RMDGeA15y8+FtHv7J9M3vI/JceAM8IfGZjI0YgMRg0YNWDUAAhgec35k++M8EeyNL/m/MUHALufEUK43UuYAAAAAElFTkSuQmCC" /> 1_cau vuot<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQElEQVQ4jWOUsXH/+F1G4xMDGYDzyU0+lu8yGp/eOsY+JccA4QOLGZjI0YgMRg0YNWDUAAhglLFx//hdlvzsDAD89BFX/uwyBgAAAABJRU5ErkJggg==" /> D_mat nuoc<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARUlEQVQ4jWM0l5H5KPr9+ycGMsBrTk4+FtHv3z+ZvH37lBwDzggLMzCRoxEZjBowasCoARDA8pqTk++MsDBZml9zcvIBAA1wD2YvHuYmAAAAAElFTkSuQmCC" /> Dat cong cong<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARUlEQVQ4jWM0N9f4KCrK/omBDPD69S8+FlFR9k8mJvxPyTHgzJmPDEzkaEQGowaMGjBqAASwvH79k+/MmY9kaX79+hcfANjxEvhLj18OAAAAAElFTkSuQmCC" /> dat o hien trang<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQUlEQVQ4jWMMlgn+aPzd+BMDGeAs51k+FuPvxp8q31Y+JceADuEOBiZyNCKDUQNGDRg1AAIYg2WCP5p8NyE7OwMANZMRvwcwLOsAAAAASUVORK5CYII=" /> DAT TRUONG DAO TAO<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARUlEQVQ4jWO00Zb5KMP9/RMDGeDJN04+Fhnu758cxd4+JceAA6+EGZjI0YgMRg0YNWDUAAhgefKVk+/AK2GyND/5xskHAAreES3mfa12AAAAAElFTkSuQmCC" /> DATCOQUAN<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARUlEQVQ4jWOU0db++J2b+xMDGYDz2zc+lu/c3J/eiok9JccA4VevGJjI0YgMRg0YNWDUAAhg4fz6lU/41SuyNHN++8YHAIL7EViVL8MrAAAAAElFTkSuQmCC" /> DATLAMNGHIEP<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARUlEQVQ4jWM0MJf5yCf6/RMDGeDTa04+Fj7R75+UTN4+JceA+2eEGZjI0YgMRg0YNWDUAAhg+fyak+/+GWGyNH96zckHAPhSETFZhN0QAAAAAElFTkSuQmCC" /> DATQUANSU<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARUlEQVQ4jWPUMJf5yC76/RMDGeDXa04+FnbR75/4Td4+JceAj2eEGZjI0YgMRg0YNWDUAAhg+fmak+/jGWGyNP96zckHAL2hEULEFf8CAAAAAElFTkSuQmCC" /> GT_duog_sat_dthi<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQElEQVQ4jWMMDg7+aGxs/ImBDHD27Fk+FmNj40+VlZVPyTGgo6ODgYkcjchg1IBRA0YNgADG4ODgjyYmJmRnZwDNqRFrYOwQywAAAABJRU5ErkJggg==" /> Level 1<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQElEQVQ4jWMMDg7+aGxs/ImBDHD27Fk+FmNj40+VlZVPyTGgo6ODgYkcjchg1IBRA0YNgADG4ODgjyYmJmRnZwDNqRFrYOwQywAAAABJRU5ErkJggg==" /> Level 50<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQElEQVQ4jWMMDg7+aGxs/ImBDHD27Fk+FmNj40+VlZVPyTGgo6ODgYkcjchg1IBRA0YNgADG4ODgjyYmJmRnZwDNqRFrYOwQywAAAABJRU5ErkJggg==" /> Level 56<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQElEQVQ4jWMMDg7+aGxs/ImBDHD27Fk+FmNj40+VlZVPyTGgo6ODgYkcjchg1IBRA0YNgADG4ODgjyYmJmRnZwDNqRFrYOwQywAAAABJRU5ErkJggg==" /> Level 6<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQElEQVQ4jWMMDg7+aGxs/ImBDHD27Fk+FmNj40+VlZVPyTGgo6ODgYkcjchg1IBRA0YNgADG4ODgjyYmJmRnZwDNqRFrYOwQywAAAABJRU5ErkJggg==" /> Level 63<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQElEQVQ4jWMMDg7+aGxs/ImBDHD27Fk+FmNj40+VlZVPyTGgo6ODgYkcjchg1IBRA0YNgADG4ODgjyYmJmRnZwDNqRFrYOwQywAAAABJRU5ErkJggg==" /> MocDinhThua<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARUlEQVQ4jWOUMTf4+F2U7xMDGYDz9Sc+lu+ifJ/emig9JccA4TP3GZjI0YgMRg0YNWDUAAhg4Xz9mU/4zH2yNHO+/sQHAPS8ETH8Y87QAAAAAElFTkSuQmCC" /> qh_cay xanh cach ly<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARUlEQVQ4jWOUsZH5+F3m+ycGMgDnE04+lu8y3z+9dXz7lBwDhA8IMzCRoxEZjBowasCoARDAwvmEk0/4gDBZmjmfcPIBAD36D1lHwdFfAAAAAElFTkSuQmCC" /> qh_Dat cay xanh chuyen de<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARUlEQVQ4jWM0knH/yP9d4xMDGeAj500+Fv7vGp9U38Y+JceA28KLGZjI0YgMRg0YNWDUAAhg+ch5g++28GKyNH/kvMkHAIpOEQJmv6aIAAAAAElFTkSuQmCC" /> qh_Dat cong nghiep<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARUlEQVQ4jWOUsZH5+F3m+ycGMgDnE04+lu8y3z+9dXz7lBwDhA8IMzCRoxEZjBowasCoARDAwvmEk0/4gDBZmjmfcPIBAD36D1lHwdFfAAAAAElFTkSuQmCC" /> qh_dat cx TDTT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARUlEQVQ4jWOUsVH++F2G8RMDGYDzyX8+lu8yjJ/eOjI9JccA4QP/GJjI0YgMRg0YNWDUAAhg4Xzyn0/4wD+yNHM++c8HAL2XEUFGkg2/AAAAAElFTkSuQmCC" /> qh-dat cay xanh do thi<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARUlEQVQ4jWPUtpH5yC3z/RMDGeDbE04+Fm6Z75/EHN8+JceAVweEGZjI0YgMRg0YNWDUAAhg+fqEk+/VAWGyNH97wskHAAsJES3W4StQAAAAAElFTkSuQmCC" /> qh-dat cay xanh dvo<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAP0lEQVQ4jWMMlpH5aPz9+ycGMsBZTk4+FuPv3z9Vvn37lBwDOoSFGZjI0YgMRg0YNWDUAAhgDJaR+WhCQXYGAJ0aEhPr9QyWAAAAAElFTkSuQmCC" /> qh-dat cong cong dvo<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARUlEQVQ4jWM00bb5KMQt84mBDPDu2xM+FiFumU/aYo5PyTHg2qsDDEzkaEQGowaMGjBqAASwvPv6hO/aqwNkaX777QkfABMPEu3NQfPqAAAAAElFTkSuQmCC" /> qh-dat cong tinh dau moi HTKT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARUlEQVQ4jWM0l5H5KPr9+ycGMsBrTk4+FtHv3z+ZvH37lBwDzggLMzCRoxEZjBowasCoARDA8pqTk++MsDBZml9zcvIBAA1wD2YvHuYmAAAAAElFTkSuQmCC" /> qh-dat ton giao<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARUlEQVQ4jWOUMXL/+J1f4xMDGYDz400+lu/8Gp/eqsY+JccA4duLGZjI0YgMRg0YNWDUAAhg4fx4g0/49mKyNHN+vMkHAIiIEQK8fvHbAAAAAElFTkSuQmCC" /> qh-mat nuoc<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQElEQVQ4jWN0t5H5qCHz/RMDGeDmE04+Fg2Z759iHd8+JceAxQeEGZjI0YgMRg0YNWDUAAhgdLeR+aghS352BgD8BhFXWmA5lgAAAABJRU5ErkJggg==" /> qh-nhom nha o<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARUlEQVQ4jWO00db+KMPN/YmBDPDk2zc+Fhlu7k+OYmJPyTHgwKtXDEzkaEQGowaMGjBqAASwPPn6le/Aq1dkaX7y7RsfANQ2EwFswgv/AAAAAElFTkSuQmCC" /> qh-truong THCS TH mam non<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAARUlEQVQ4jWO0UZb5KMP4/RMDGeDJf04+FhnG758cmd4+JceAA/+EGZjI0YgMRg0YNWDUAAhgefKfk+/AP2GyND/5z8kHAMEoEUGq5otoAAAAAElFTkSuQmCC" /> qh-truong THPT<br />\
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQ0lEQVQ4jWMMs9T/byTKw0AOOP/6CwOLkSgPQ5KWBFkGzL/+koGJLJ1IYNSAUQNGDYAAlvOvvzLMv/6SLM3nXn9hAAA/IQ/zK6xQzgAAAABJRU5ErkJggg==" /> <br />' });
+var format_QHGT_221 = new ol.format.GeoJSON();
+var features_QHGT_221 = format_QHGT_221.readFeatures(json_QHGT_221, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_QHGT_221 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_QHGT_221.addFeatures(features_QHGT_221);
+var lyr_QHGT_221 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_QHGT_221, 
+                style: style_QHGT_221,
+                popuplayertitle: 'QH GT',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAIUlEQVQ4jWNgGAXDADDu3TythhIDWBj/MTJSyzWjYMgCAMwjA4myaDbxAAAAAElFTkSuQmCC" /> QH GT'
+            });
+var format_PhngnVQHXDdexuat_222 = new ol.format.GeoJSON();
+var features_PhngnVQHXDdexuat_222 = format_PhngnVQHXDdexuat_222.readFeatures(json_PhngnVQHXDdexuat_222, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_PhngnVQHXDdexuat_222 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_PhngnVQHXDdexuat_222.addFeatures(features_PhngnVQHXDdexuat_222);
+var lyr_PhngnVQHXDdexuat_222 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_PhngnVQHXDdexuat_222, 
+                style: style_PhngnVQHXDdexuat_222,
+                popuplayertitle: 'Phương án VQHXD de xuat',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKklEQVQ4jWNgGAUDDxh37mR+RIkBLAwMDLKUGMBEiWaYCx5TasgoGGgAANg3A2MvbNFaAAAAAElFTkSuQmCC" /> Phương án VQHXD de xuat'
+            });
+var format_Phngn3_223 = new ol.format.GeoJSON();
+var features_Phngn3_223 = format_Phngn3_223.readFeatures(json_Phngn3_223, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_Phngn3_223 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_Phngn3_223.addFeatures(features_Phngn3_223);
+var lyr_Phngn3_223 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_Phngn3_223, 
+                style: style_Phngn3_223,
+                popuplayertitle: 'Phương án 3',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAMElEQVQ4jWNgGAUDDxhnMBTNp8QAFkYGhgRKDGCiRDMDAwMDy38GhgWUGjIKBhoAAAhUA7V8mznbAAAAAElFTkSuQmCC" /> Phương án 3'
+            });
+var format_Phngn2_224 = new ol.format.GeoJSON();
+var features_Phngn2_224 = format_Phngn2_224.readFeatures(json_Phngn2_224, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_Phngn2_224 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_Phngn2_224.addFeatures(features_Phngn2_224);
+var lyr_Phngn2_224 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_Phngn2_224, 
+                style: style_Phngn2_224,
+                popuplayertitle: 'Phương án 2',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALElEQVQ4jWNgGAUDDxgZGP7Pp9SA/5QYwESJZgYGBgYWBgaGBZQaMgoGGgAAyp4ERQE4OcIAAAAASUVORK5CYII=" /> Phương án 2'
+            });
+var format_Phngn1_225 = new ol.format.GeoJSON();
+var features_Phngn1_225 = format_Phngn1_225.readFeatures(json_Phngn1_225, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_Phngn1_225 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_Phngn1_225.addFeatures(features_Phngn1_225);
+var lyr_Phngn1_225 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_Phngn1_225, 
+                style: style_Phngn1_225,
+                popuplayertitle: 'Phương án 1',
+                interactive: true,
+                title: '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALElEQVQ4jWNgGAUDDxj/MzDMp9SA/5QYwESJZgYGBgYWBgaGBZQaMgoGGgAAzpoERU/Wb2QAAAAASUVORK5CYII=" /> Phương án 1'
+            });
+var group_Nghincu2Ae = new ol.layer.Group({
+                                layers: [lyr_SDDHuyenChuongMy_219,lyr_SDD3phankhu_220,lyr_QHGT_221,lyr_PhngnVQHXDdexuat_222,lyr_Phngn3_223,lyr_Phngn2_224,lyr_Phngn1_225,],
+                                fold: 'open',
+                                title: 'Nghiên cứu 2Ae'});
+var group_QH519 = new ol.layer.Group({
+                                layers: [lyr_QH519Depot_204,lyr_QH519Ga_205,lyr_tuyen_M3_206,lyr_tuyen_M2_207,lyr_tuyen_M1_208,lyr_tuyen_VT_209,lyr_tuyen_8_210,lyr_tuyen_7_211,lyr_tuyen_6_212,lyr_tuyen_5_213,lyr_tuyen_4_214,lyr_tuyen_3_215,lyr_tuyen_2A_216,lyr_tuyen_2_217,lyr_tuyen_1_218,],
+                                fold: 'close',
+                                title: 'QH 519'});
+var group_QH1668 = new ol.layer.Group({
+                                layers: [lyr_T12_190,lyr_T11_191,lyr_T10_192,lyr_T9_193,lyr_T8_194,lyr_T7_195,lyr_T6_196,lyr_T5_197,lyr_T4_198,lyr_T3_199,lyr_T2A_200,lyr_T2_201,lyr_T1A_202,lyr_T1_203,],
+                                fold: 'close',
+                                title: 'QH1668'});
+var group_RasoatSXD03022026 = new ol.layer.Group({
+                                layers: [lyr_Layer_CcTuynmi_176,lyr_Layer_Tuyn12_177,lyr_Layer_Tuyn11_178,lyr_Layer_Tuyn10_179,lyr_Layer_Tuyn9_180,lyr_Layer_Tuyn8_181,lyr_Layer_Tuyn7_182,lyr_Layer_Tuyn6_183,lyr_Layer_Tuyn5_184,lyr_Layer_Tuyn4_185,lyr_Layer_Tuyn3_186,lyr_Layer_Tuyn2A_187,lyr_Layer_Tuyn2_188,lyr_Layer_Tuyn1_189,],
+                                fold: 'close',
+                                title: 'Ra soat SXD (03-02-2026)'});
+var group_RasoatSXD04032026 = new ol.layer.Group({
+                                layers: [lyr_DSQG_155,lyr_Duongsatvung_156,lyr_Depot_157,lyr_PLine_17_158,lyr_PLine_16_159,lyr_PLine_15_160,lyr_PLine_14_161,lyr_PLine_13_162,lyr_PLine_12_163,lyr_PLine_11_164,lyr_PLine_10_165,lyr_PLine_9_166,lyr_PLine_8_167,lyr_PLine_7_168,lyr_PLine_6_169,lyr_PLine_5_170,lyr_PLine_4_171,lyr_PLine_3_172,lyr_PLine_2A_173,lyr_PLine_2_174,lyr_PLine_1_175,],
+                                fold: 'close',
+                                title: 'Ra soat SXD (04-03-2026)'});
+var group_QH100nam07022026 = new ol.layer.Group({
+                                layers: [lyr_QH100Tuyen16_143,lyr_QH100Tuyen14_144,lyr_QH100Tuyen9_145,lyr_QH100Tuyen8_146,lyr_QH100Tuyen7_147,lyr_QH100Tuyen6_148,lyr_QH100Tuyen5_149,lyr_QH100Tuyen4_150,lyr_QH100Tuyen3_151,lyr_QH100Tuyen2A_152,lyr_QH100Tuyen2_153,lyr_QH100Tuyen1_154,],
+                                fold: 'close',
+                                title: 'QH 100nam (07-02-2026)'});
+var group_QH100nam10022026 = new ol.layer.Group({
+                                layers: [lyr_QH100Ga_124,lyr_QH100Monorail_125,lyr_QH100dsDT_126,lyr_QH100DSDT17_127,lyr_QH100DSDT16_128,lyr_QH100DSDT15_129,lyr_QH100DSDT12_130,lyr_QH100DSDT11_131,lyr_QH100DSDT10_132,lyr_QH100DSDT9_133,lyr_QH100DSDT8_134,lyr_QH100DSDT7_135,lyr_QH100DSDT6_136,lyr_QH100DSDT5_137,lyr_QH100DSDT4_138,lyr_QH100DSDT3_139,lyr_QH100DSDT2A_140,lyr_QH100DSDT2_141,lyr_QH100DSDT1_142,],
+                                fold: 'close',
+                                title: 'QH 100nam (10-02-2026)'});
+var group_QH100namxcangT12032026 = new ol.layer.Group({
+                                layers: [lyr_Ga_105,lyr_Monorail_106,lyr_DSDT16_107,lyr_DSDT15_108,lyr_DSDT10_109,lyr_DSDT9_110,lyr_DSDT8_111,lyr_DSDT7_112,lyr_DSDT6_113,lyr_DSDT5_114,lyr_DSDT4_115,lyr_DSDT3_116,lyr_DSDT2A_117,lyr_DSDT2_118,lyr_DSDT1_119,lyr_4Railway_120,lyr_3LRTORBRTM17_121,lyr_3LRTORBRTM13_122,lyr_1ExpressLineM8_123,],
+                                fold: 'close',
+                                title: 'QH 100nam - Đx của Đồng Tế (12-03-2026)'});
+var group_QH100sauhpChnhph13032026 = new ol.layer.Group({
+                                layers: [lyr_nearbyProvince_79,lyr_03commuterLine_80,lyr_02interCity_81,lyr_01highSpeed_82,lyr_7railwaystation2secondary_83,lyr_6airport_84,lyr_4Railway_85,lyr_4BRTM18_86,lyr_4BRTM17_87,lyr_2RegularLineM16_88,lyr_3LRTM15_89,lyr_2RegularLineM14_90,lyr_3LRTM13_91,lyr_4BRTM12_92,lyr_2RegularLineM11_93,lyr_2RegularLineM10_94,lyr_3LRTM9_95,lyr_1ExpressLineM8_96,lyr_2RegularLineM7_97,lyr_2RegularLineM6_98,lyr_2RegularLineM5_99,lyr_2RegularLineM4_100,lyr_2RegularLineM3_101,lyr_2RegularLineM2_102,lyr_2RegularLine2A_103,lyr_1ExpressLineM1_104,],
+                                fold: 'close',
+                                title: 'QH100 sau họp Chính phủ (13-03-2026)'});
+var group_QH100HUPI260406 = new ol.layer.Group({
+                                layers: [lyr_Ga_51,lyr_layer_DCaotoc_52,lyr_layer_DPcCaotoc_53,lyr_layer_ketnoidsdt_54,lyr_layer_4Railwaywhite_55,lyr_layer_4Railway_56,lyr_layer_SQG_Thng2050_57,lyr_layer_Dduongsattocdocao_58,lyr_layer_02interCity_59,lyr_layer_Monorail_60,lyr_layer_4BRTM18_61,lyr_layer_DSDT_17_62,lyr_layer_DSDT_16_63,lyr_layer_DSDT_15_64,lyr_layer_DSDT_13_65,lyr_layer_DSDT12_66,lyr_layer_DSDT_11_67,lyr_layer_DSDT10_68,lyr_layer_DSDT9_69,lyr_layer_DSDT8_70,lyr_layer_DSDT7_71,lyr_layer_DSDT6_72,lyr_layer_DSDT5_73,lyr_layer_DSDT4_74,lyr_layer_DSDT3_75,lyr_layer_DSDT2A_76,lyr_layer_DSDT2_77,lyr_layer_DSDT1_78,],
+                                fold: 'open',
+                                title: 'QH100 - HUPI 260406'});
+var group_260406AREP_Proposallines_v2 = new ol.layer.Group({
+                                layers: [lyr_layer_M16_34,lyr_layer_M15_35,lyr_layer_M14_36,lyr_layer_M13_37,lyr_layer_M12_38,lyr_layer_M11_39,lyr_layer_M10_40,lyr_layer_M09_41,lyr_layer_M08_42,lyr_layer_M07_43,lyr_layer_M06_44,lyr_layer_M05_45,lyr_layer_M04_46,lyr_layer_M03_47,lyr_layer_M02A_48,lyr_layer_M02_49,lyr_layer_M01_50,],
+                                fold: 'close',
+                                title: '260406 AREP_Proposal lines_v2'});
+var group_QHPKSDD = new ol.layer.Group({
+                                layers: [lyr_SDDSonTay_7,lyr_SDDS5_8,lyr_SDDS4_9,lyr_SDDS3_10,lyr_SDDS2_11,lyr_SDDS1_12,lyr_SDDPKR_13,lyr_SDDPhuctho_14,lyr_SDDN11_15,lyr_SDDN10_16,lyr_SDDN9_17,lyr_SDDN8_18,lyr_SDDN7_19,lyr_SDDN6_20,lyr_SDDN5_21,lyr_SDDN4_22,lyr_SDDN3_23,lyr_SDDN2_24,lyr_SDDN1_25,lyr_SDDH24_26,lyr_SDDH23_27,lyr_SDDH22_28,lyr_SDDH21_29,lyr_SDDH14_30,lyr_SDDH13_31,lyr_SDDH12_32,lyr_SDDA6_33,],
+                                fold: 'close',
+                                title: 'QH PK-SDD'});
+
+lyr_OSMStandard_0.setVisible(false);lyr_GoogleTraffic_1.setVisible(false);lyr_GoogleTerrain_2.setVisible(false);lyr_GoogleSatellite_3.setVisible(false);lyr_GoogleRoad_4.setVisible(true);lyr_GoogleLabels_5.setVisible(false);lyr_GoogleHybrid_6.setVisible(false);lyr_SDDSonTay_7.setVisible(false);lyr_SDDS5_8.setVisible(false);lyr_SDDS4_9.setVisible(false);lyr_SDDS3_10.setVisible(false);lyr_SDDS2_11.setVisible(false);lyr_SDDS1_12.setVisible(false);lyr_SDDPKR_13.setVisible(false);lyr_SDDPhuctho_14.setVisible(false);lyr_SDDN11_15.setVisible(false);lyr_SDDN10_16.setVisible(false);lyr_SDDN9_17.setVisible(false);lyr_SDDN8_18.setVisible(false);lyr_SDDN7_19.setVisible(false);lyr_SDDN6_20.setVisible(false);lyr_SDDN5_21.setVisible(false);lyr_SDDN4_22.setVisible(false);lyr_SDDN3_23.setVisible(false);lyr_SDDN2_24.setVisible(false);lyr_SDDN1_25.setVisible(false);lyr_SDDH24_26.setVisible(false);lyr_SDDH23_27.setVisible(false);lyr_SDDH22_28.setVisible(false);lyr_SDDH21_29.setVisible(false);lyr_SDDH14_30.setVisible(false);lyr_SDDH13_31.setVisible(false);lyr_SDDH12_32.setVisible(false);lyr_SDDA6_33.setVisible(false);lyr_layer_M16_34.setVisible(false);lyr_layer_M15_35.setVisible(false);lyr_layer_M14_36.setVisible(false);lyr_layer_M13_37.setVisible(false);lyr_layer_M12_38.setVisible(false);lyr_layer_M11_39.setVisible(false);lyr_layer_M10_40.setVisible(false);lyr_layer_M09_41.setVisible(false);lyr_layer_M08_42.setVisible(false);lyr_layer_M07_43.setVisible(false);lyr_layer_M06_44.setVisible(false);lyr_layer_M05_45.setVisible(false);lyr_layer_M04_46.setVisible(false);lyr_layer_M03_47.setVisible(false);lyr_layer_M02A_48.setVisible(false);lyr_layer_M02_49.setVisible(false);lyr_layer_M01_50.setVisible(false);lyr_Ga_51.setVisible(false);lyr_layer_DCaotoc_52.setVisible(false);lyr_layer_DPcCaotoc_53.setVisible(false);lyr_layer_ketnoidsdt_54.setVisible(false);lyr_layer_4Railwaywhite_55.setVisible(false);lyr_layer_4Railway_56.setVisible(false);lyr_layer_SQG_Thng2050_57.setVisible(false);lyr_layer_Dduongsattocdocao_58.setVisible(false);lyr_layer_02interCity_59.setVisible(false);lyr_layer_Monorail_60.setVisible(false);lyr_layer_4BRTM18_61.setVisible(false);lyr_layer_DSDT_17_62.setVisible(false);lyr_layer_DSDT_16_63.setVisible(false);lyr_layer_DSDT_15_64.setVisible(false);lyr_layer_DSDT_13_65.setVisible(false);lyr_layer_DSDT12_66.setVisible(false);lyr_layer_DSDT_11_67.setVisible(false);lyr_layer_DSDT10_68.setVisible(false);lyr_layer_DSDT9_69.setVisible(false);lyr_layer_DSDT8_70.setVisible(false);lyr_layer_DSDT7_71.setVisible(false);lyr_layer_DSDT6_72.setVisible(false);lyr_layer_DSDT5_73.setVisible(false);lyr_layer_DSDT4_74.setVisible(false);lyr_layer_DSDT3_75.setVisible(false);lyr_layer_DSDT2A_76.setVisible(false);lyr_layer_DSDT2_77.setVisible(false);lyr_layer_DSDT1_78.setVisible(false);lyr_nearbyProvince_79.setVisible(false);lyr_03commuterLine_80.setVisible(false);lyr_02interCity_81.setVisible(false);lyr_01highSpeed_82.setVisible(false);lyr_7railwaystation2secondary_83.setVisible(false);lyr_6airport_84.setVisible(false);lyr_4Railway_85.setVisible(false);lyr_4BRTM18_86.setVisible(false);lyr_4BRTM17_87.setVisible(false);lyr_2RegularLineM16_88.setVisible(false);lyr_3LRTM15_89.setVisible(false);lyr_2RegularLineM14_90.setVisible(false);lyr_3LRTM13_91.setVisible(false);lyr_4BRTM12_92.setVisible(false);lyr_2RegularLineM11_93.setVisible(false);lyr_2RegularLineM10_94.setVisible(false);lyr_3LRTM9_95.setVisible(false);lyr_1ExpressLineM8_96.setVisible(false);lyr_2RegularLineM7_97.setVisible(false);lyr_2RegularLineM6_98.setVisible(false);lyr_2RegularLineM5_99.setVisible(false);lyr_2RegularLineM4_100.setVisible(false);lyr_2RegularLineM3_101.setVisible(false);lyr_2RegularLineM2_102.setVisible(false);lyr_2RegularLine2A_103.setVisible(false);lyr_1ExpressLineM1_104.setVisible(false);lyr_Ga_105.setVisible(false);lyr_Monorail_106.setVisible(false);lyr_DSDT16_107.setVisible(false);lyr_DSDT15_108.setVisible(false);lyr_DSDT10_109.setVisible(false);lyr_DSDT9_110.setVisible(false);lyr_DSDT8_111.setVisible(false);lyr_DSDT7_112.setVisible(false);lyr_DSDT6_113.setVisible(false);lyr_DSDT5_114.setVisible(false);lyr_DSDT4_115.setVisible(false);lyr_DSDT3_116.setVisible(false);lyr_DSDT2A_117.setVisible(false);lyr_DSDT2_118.setVisible(false);lyr_DSDT1_119.setVisible(false);lyr_4Railway_120.setVisible(false);lyr_3LRTORBRTM17_121.setVisible(false);lyr_3LRTORBRTM13_122.setVisible(false);lyr_1ExpressLineM8_123.setVisible(false);lyr_QH100Ga_124.setVisible(false);lyr_QH100Monorail_125.setVisible(false);lyr_QH100dsDT_126.setVisible(false);lyr_QH100DSDT17_127.setVisible(false);lyr_QH100DSDT16_128.setVisible(false);lyr_QH100DSDT15_129.setVisible(false);lyr_QH100DSDT12_130.setVisible(false);lyr_QH100DSDT11_131.setVisible(false);lyr_QH100DSDT10_132.setVisible(false);lyr_QH100DSDT9_133.setVisible(false);lyr_QH100DSDT8_134.setVisible(false);lyr_QH100DSDT7_135.setVisible(false);lyr_QH100DSDT6_136.setVisible(false);lyr_QH100DSDT5_137.setVisible(false);lyr_QH100DSDT4_138.setVisible(false);lyr_QH100DSDT3_139.setVisible(false);lyr_QH100DSDT2A_140.setVisible(false);lyr_QH100DSDT2_141.setVisible(false);lyr_QH100DSDT1_142.setVisible(false);lyr_QH100Tuyen16_143.setVisible(false);lyr_QH100Tuyen14_144.setVisible(false);lyr_QH100Tuyen9_145.setVisible(false);lyr_QH100Tuyen8_146.setVisible(false);lyr_QH100Tuyen7_147.setVisible(false);lyr_QH100Tuyen6_148.setVisible(false);lyr_QH100Tuyen5_149.setVisible(false);lyr_QH100Tuyen4_150.setVisible(false);lyr_QH100Tuyen3_151.setVisible(false);lyr_QH100Tuyen2A_152.setVisible(false);lyr_QH100Tuyen2_153.setVisible(false);lyr_QH100Tuyen1_154.setVisible(false);lyr_DSQG_155.setVisible(false);lyr_Duongsatvung_156.setVisible(false);lyr_Depot_157.setVisible(false);lyr_PLine_17_158.setVisible(false);lyr_PLine_16_159.setVisible(false);lyr_PLine_15_160.setVisible(false);lyr_PLine_14_161.setVisible(false);lyr_PLine_13_162.setVisible(false);lyr_PLine_12_163.setVisible(false);lyr_PLine_11_164.setVisible(false);lyr_PLine_10_165.setVisible(false);lyr_PLine_9_166.setVisible(false);lyr_PLine_8_167.setVisible(false);lyr_PLine_7_168.setVisible(false);lyr_PLine_6_169.setVisible(false);lyr_PLine_5_170.setVisible(false);lyr_PLine_4_171.setVisible(false);lyr_PLine_3_172.setVisible(false);lyr_PLine_2A_173.setVisible(false);lyr_PLine_2_174.setVisible(false);lyr_PLine_1_175.setVisible(false);lyr_Layer_CcTuynmi_176.setVisible(false);lyr_Layer_Tuyn12_177.setVisible(false);lyr_Layer_Tuyn11_178.setVisible(false);lyr_Layer_Tuyn10_179.setVisible(false);lyr_Layer_Tuyn9_180.setVisible(false);lyr_Layer_Tuyn8_181.setVisible(false);lyr_Layer_Tuyn7_182.setVisible(false);lyr_Layer_Tuyn6_183.setVisible(false);lyr_Layer_Tuyn5_184.setVisible(false);lyr_Layer_Tuyn4_185.setVisible(false);lyr_Layer_Tuyn3_186.setVisible(false);lyr_Layer_Tuyn2A_187.setVisible(false);lyr_Layer_Tuyn2_188.setVisible(false);lyr_Layer_Tuyn1_189.setVisible(false);lyr_T12_190.setVisible(false);lyr_T11_191.setVisible(false);lyr_T10_192.setVisible(false);lyr_T9_193.setVisible(false);lyr_T8_194.setVisible(false);lyr_T7_195.setVisible(false);lyr_T6_196.setVisible(false);lyr_T5_197.setVisible(false);lyr_T4_198.setVisible(false);lyr_T3_199.setVisible(false);lyr_T2A_200.setVisible(false);lyr_T2_201.setVisible(false);lyr_T1A_202.setVisible(false);lyr_T1_203.setVisible(false);lyr_QH519Depot_204.setVisible(false);lyr_QH519Ga_205.setVisible(false);lyr_tuyen_M3_206.setVisible(false);lyr_tuyen_M2_207.setVisible(false);lyr_tuyen_M1_208.setVisible(false);lyr_tuyen_VT_209.setVisible(false);lyr_tuyen_8_210.setVisible(false);lyr_tuyen_7_211.setVisible(false);lyr_tuyen_6_212.setVisible(false);lyr_tuyen_5_213.setVisible(false);lyr_tuyen_4_214.setVisible(false);lyr_tuyen_3_215.setVisible(false);lyr_tuyen_2A_216.setVisible(false);lyr_tuyen_2_217.setVisible(false);lyr_tuyen_1_218.setVisible(false);lyr_SDDHuyenChuongMy_219.setVisible(true);lyr_SDD3phankhu_220.setVisible(true);lyr_QHGT_221.setVisible(true);lyr_PhngnVQHXDdexuat_222.setVisible(true);lyr_Phngn3_223.setVisible(true);lyr_Phngn2_224.setVisible(true);lyr_Phngn1_225.setVisible(true);
+var layersList = [lyr_OSMStandard_0,lyr_GoogleTraffic_1,lyr_GoogleTerrain_2,lyr_GoogleSatellite_3,lyr_GoogleRoad_4,lyr_GoogleLabels_5,lyr_GoogleHybrid_6,group_QHPKSDD,group_260406AREP_Proposallines_v2,group_QH100HUPI260406,group_QH100sauhpChnhph13032026,group_QH100namxcangT12032026,group_QH100nam10022026,group_QH100nam07022026,group_RasoatSXD04032026,group_RasoatSXD03022026,group_QH1668,group_QH519,group_Nghincu2Ae];
+lyr_SDDSonTay_7.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_SDDS5_8.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_SDDS4_9.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_SDDS3_10.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_SDDS2_11.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_SDDS1_12.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_SDDPKR_13.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_SDDPhuctho_14.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_SDDN11_15.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_SDDN10_16.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_SDDN9_17.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_SDDN8_18.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_SDDN7_19.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_SDDN6_20.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_SDDN5_21.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_SDDN4_22.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_SDDN3_23.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_SDDN2_24.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_SDDN1_25.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_SDDH24_26.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_SDDH23_27.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_SDDH22_28.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_SDDH21_29.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_SDDH14_30.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_SDDH13_31.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_SDDH12_32.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_SDDA6_33.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_layer_M16_34.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_M15_35.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_M14_36.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_M13_37.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_M12_38.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_M11_39.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_M10_40.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_M09_41.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_M08_42.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_M07_43.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_M06_44.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_M05_45.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_M04_46.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_M03_47.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_M02A_48.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_M02_49.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_M01_50.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_Ga_51.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_layer_DCaotoc_52.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_DPcCaotoc_53.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_ketnoidsdt_54.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_4Railwaywhite_55.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_4Railway_56.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_SQG_Thng2050_57.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_Dduongsattocdocao_58.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_02interCity_59.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_Monorail_60.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_4BRTM18_61.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_DSDT_17_62.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_DSDT_16_63.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_DSDT_15_64.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_DSDT_13_65.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_DSDT12_66.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_DSDT_11_67.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_DSDT10_68.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_DSDT9_69.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_DSDT8_70.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_DSDT7_71.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_DSDT6_72.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_DSDT5_73.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_DSDT4_74.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_DSDT3_75.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_DSDT2A_76.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_DSDT2_77.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_layer_DSDT1_78.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'layer': 'layer', });
+lyr_nearbyProvince_79.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', 'line_section': 'line_section', });
+lyr_03commuterLine_80.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_02interCity_81.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', 'line_section': 'line_section', });
+lyr_01highSpeed_82.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', 'line_section': 'line_section', 'name_1': 'name_1', });
+lyr_7railwaystation2secondary_83.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'name_1': 'name_1', });
+lyr_6airport_84.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'name_1': 'name_1', });
+lyr_4Railway_85.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', 'line_section': 'line_section', 'attrib_1': 'attrib_1', });
+lyr_4BRTM18_86.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', 'line_section': 'line_section', 'attrib_1': 'attrib_1', });
+lyr_4BRTM17_87.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', 'line_section': 'line_section', 'attrib_1': 'attrib_1', });
+lyr_2RegularLineM16_88.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', 'attrib_1': 'attrib_1', });
+lyr_3LRTM15_89.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', 'attrib_1': 'attrib_1', });
+lyr_2RegularLineM14_90.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', 'attrib_1': 'attrib_1', });
+lyr_3LRTM13_91.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', 'attrib_1': 'attrib_1', });
+lyr_4BRTM12_92.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', 'line_section': 'line_section', 'attrib_1': 'attrib_1', });
+lyr_2RegularLineM11_93.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', 'attrib_1': 'attrib_1', });
+lyr_2RegularLineM10_94.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', 'attrib_1': 'attrib_1', });
+lyr_3LRTM9_95.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', 'attrib_1': 'attrib_1', });
+lyr_1ExpressLineM8_96.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', 'line_section': 'line_section', 'attrib_1': 'attrib_1', });
+lyr_2RegularLineM7_97.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'attrib_1': 'attrib_1', });
+lyr_2RegularLineM6_98.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', 'attrib_1': 'attrib_1', });
+lyr_2RegularLineM5_99.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'attrib_1': 'attrib_1', });
+lyr_2RegularLineM4_100.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', 'attrib_1': 'attrib_1', });
+lyr_2RegularLineM3_101.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', 'attrib_1': 'attrib_1', });
+lyr_2RegularLineM2_102.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', 'line_section': 'line_section', 'attrib_1': 'attrib_1', });
+lyr_2RegularLine2A_103.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', 'line_section': 'line_section', 'attrib_1': 'attrib_1', });
+lyr_1ExpressLineM1_104.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', 'line_section': 'line_section', 'attrib_1': 'attrib_1', });
+lyr_Ga_105.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_Monorail_106.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_DSDT16_107.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_DSDT15_108.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_DSDT10_109.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_DSDT9_110.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_DSDT8_111.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_DSDT7_112.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_DSDT6_113.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_DSDT5_114.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_DSDT4_115.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_DSDT3_116.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_DSDT2A_117.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_DSDT2_118.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_DSDT1_119.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_4Railway_120.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_3LRTORBRTM17_121.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_3LRTORBRTM13_122.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_1ExpressLineM8_123.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_QH100Ga_124.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'Layer': 'Layer', 'SubClasses': 'SubClasses', 'ExtendedEntity': 'ExtendedEntity', 'Linetype': 'Linetype', 'EntityHandle': 'EntityHandle', 'Text': 'Text', });
+lyr_QH100Monorail_125.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'Layer': 'Layer', 'SubClasses': 'SubClasses', 'ExtendedEntity': 'ExtendedEntity', 'Linetype': 'Linetype', 'EntityHandle': 'EntityHandle', 'Text': 'Text', });
+lyr_QH100dsDT_126.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'Layer': 'Layer', 'SubClasses': 'SubClasses', 'ExtendedEntity': 'ExtendedEntity', 'Linetype': 'Linetype', 'EntityHandle': 'EntityHandle', 'Text': 'Text', });
+lyr_QH100DSDT17_127.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'Layer': 'Layer', 'SubClasses': 'SubClasses', 'ExtendedEntity': 'ExtendedEntity', 'Linetype': 'Linetype', 'EntityHandle': 'EntityHandle', 'Text': 'Text', });
+lyr_QH100DSDT16_128.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'Layer': 'Layer', 'SubClasses': 'SubClasses', 'ExtendedEntity': 'ExtendedEntity', 'Linetype': 'Linetype', 'EntityHandle': 'EntityHandle', 'Text': 'Text', });
+lyr_QH100DSDT15_129.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'Layer': 'Layer', 'SubClasses': 'SubClasses', 'ExtendedEntity': 'ExtendedEntity', 'Linetype': 'Linetype', 'EntityHandle': 'EntityHandle', 'Text': 'Text', });
+lyr_QH100DSDT12_130.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'Layer': 'Layer', 'SubClasses': 'SubClasses', 'ExtendedEntity': 'ExtendedEntity', 'Linetype': 'Linetype', 'EntityHandle': 'EntityHandle', 'Text': 'Text', });
+lyr_QH100DSDT11_131.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'Layer': 'Layer', 'SubClasses': 'SubClasses', 'ExtendedEntity': 'ExtendedEntity', 'Linetype': 'Linetype', 'EntityHandle': 'EntityHandle', 'Text': 'Text', });
+lyr_QH100DSDT10_132.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'Layer': 'Layer', 'SubClasses': 'SubClasses', 'ExtendedEntity': 'ExtendedEntity', 'Linetype': 'Linetype', 'EntityHandle': 'EntityHandle', 'Text': 'Text', });
+lyr_QH100DSDT9_133.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'Layer': 'Layer', 'SubClasses': 'SubClasses', 'ExtendedEntity': 'ExtendedEntity', 'Linetype': 'Linetype', 'EntityHandle': 'EntityHandle', 'Text': 'Text', });
+lyr_QH100DSDT8_134.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'Layer': 'Layer', 'SubClasses': 'SubClasses', 'ExtendedEntity': 'ExtendedEntity', 'Linetype': 'Linetype', 'EntityHandle': 'EntityHandle', 'Text': 'Text', });
+lyr_QH100DSDT7_135.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'Layer': 'Layer', 'SubClasses': 'SubClasses', 'ExtendedEntity': 'ExtendedEntity', 'Linetype': 'Linetype', 'EntityHandle': 'EntityHandle', 'Text': 'Text', });
+lyr_QH100DSDT6_136.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'Layer': 'Layer', 'SubClasses': 'SubClasses', 'ExtendedEntity': 'ExtendedEntity', 'Linetype': 'Linetype', 'EntityHandle': 'EntityHandle', 'Text': 'Text', });
+lyr_QH100DSDT5_137.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'Layer': 'Layer', 'SubClasses': 'SubClasses', 'ExtendedEntity': 'ExtendedEntity', 'Linetype': 'Linetype', 'EntityHandle': 'EntityHandle', 'Text': 'Text', });
+lyr_QH100DSDT4_138.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'Layer': 'Layer', 'SubClasses': 'SubClasses', 'ExtendedEntity': 'ExtendedEntity', 'Linetype': 'Linetype', 'EntityHandle': 'EntityHandle', 'Text': 'Text', });
+lyr_QH100DSDT3_139.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'Layer': 'Layer', 'SubClasses': 'SubClasses', 'ExtendedEntity': 'ExtendedEntity', 'Linetype': 'Linetype', 'EntityHandle': 'EntityHandle', 'Text': 'Text', });
+lyr_QH100DSDT2A_140.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'Layer': 'Layer', 'SubClasses': 'SubClasses', 'ExtendedEntity': 'ExtendedEntity', 'Linetype': 'Linetype', 'EntityHandle': 'EntityHandle', 'Text': 'Text', });
+lyr_QH100DSDT2_141.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'Layer': 'Layer', 'SubClasses': 'SubClasses', 'ExtendedEntity': 'ExtendedEntity', 'Linetype': 'Linetype', 'EntityHandle': 'EntityHandle', 'Text': 'Text', });
+lyr_QH100DSDT1_142.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'Layer': 'Layer', 'SubClasses': 'SubClasses', 'ExtendedEntity': 'ExtendedEntity', 'Linetype': 'Linetype', 'EntityHandle': 'EntityHandle', 'Text': 'Text', });
+lyr_QH100Tuyen16_143.set('fieldAliases', {'fid': 'fid', 'handle': 'handle', 'block': 'block', 'etype': 'etype', 'space': 'space', 'layer': 'layer', 'olinetype': 'olinetype', 'linetype': 'linetype', 'color': 'color', 'ocolor': 'ocolor', 'color24': 'color24', 'transparency': 'transparency', 'lweight': 'lweight', 'linewidth': 'linewidth', 'ltscale': 'ltscale', 'visible': 'visible', 'width': 'width', 'thickness': 'thickness', 'ext': 'ext', });
+lyr_QH100Tuyen14_144.set('fieldAliases', {'fid': 'fid', 'handle': 'handle', 'block': 'block', 'etype': 'etype', 'space': 'space', 'layer': 'layer', 'olinetype': 'olinetype', 'linetype': 'linetype', 'color': 'color', 'ocolor': 'ocolor', 'color24': 'color24', 'transparency': 'transparency', 'lweight': 'lweight', 'linewidth': 'linewidth', 'ltscale': 'ltscale', 'visible': 'visible', 'width': 'width', 'thickness': 'thickness', 'ext': 'ext', });
+lyr_QH100Tuyen9_145.set('fieldAliases', {'fid': 'fid', 'handle': 'handle', 'block': 'block', 'etype': 'etype', 'space': 'space', 'layer': 'layer', 'olinetype': 'olinetype', 'linetype': 'linetype', 'color': 'color', 'ocolor': 'ocolor', 'color24': 'color24', 'transparency': 'transparency', 'lweight': 'lweight', 'linewidth': 'linewidth', 'ltscale': 'ltscale', 'visible': 'visible', 'width': 'width', 'thickness': 'thickness', 'ext': 'ext', });
+lyr_QH100Tuyen8_146.set('fieldAliases', {'fid': 'fid', 'handle': 'handle', 'block': 'block', 'etype': 'etype', 'space': 'space', 'layer': 'layer', 'olinetype': 'olinetype', 'linetype': 'linetype', 'color': 'color', 'ocolor': 'ocolor', 'color24': 'color24', 'transparency': 'transparency', 'lweight': 'lweight', 'linewidth': 'linewidth', 'ltscale': 'ltscale', 'visible': 'visible', 'width': 'width', 'thickness': 'thickness', 'ext': 'ext', });
+lyr_QH100Tuyen7_147.set('fieldAliases', {'fid': 'fid', 'handle': 'handle', 'block': 'block', 'etype': 'etype', 'space': 'space', 'layer': 'layer', 'olinetype': 'olinetype', 'linetype': 'linetype', 'color': 'color', 'ocolor': 'ocolor', 'color24': 'color24', 'transparency': 'transparency', 'lweight': 'lweight', 'linewidth': 'linewidth', 'ltscale': 'ltscale', 'visible': 'visible', 'width': 'width', 'thickness': 'thickness', 'ext': 'ext', });
+lyr_QH100Tuyen6_148.set('fieldAliases', {'fid': 'fid', 'handle': 'handle', 'block': 'block', 'etype': 'etype', 'space': 'space', 'layer': 'layer', 'olinetype': 'olinetype', 'linetype': 'linetype', 'color': 'color', 'ocolor': 'ocolor', 'color24': 'color24', 'transparency': 'transparency', 'lweight': 'lweight', 'linewidth': 'linewidth', 'ltscale': 'ltscale', 'visible': 'visible', 'width': 'width', 'thickness': 'thickness', 'ext': 'ext', });
+lyr_QH100Tuyen5_149.set('fieldAliases', {'fid': 'fid', 'handle': 'handle', 'block': 'block', 'etype': 'etype', 'space': 'space', 'layer': 'layer', 'olinetype': 'olinetype', 'linetype': 'linetype', 'color': 'color', 'ocolor': 'ocolor', 'color24': 'color24', 'transparency': 'transparency', 'lweight': 'lweight', 'linewidth': 'linewidth', 'ltscale': 'ltscale', 'visible': 'visible', 'width': 'width', 'thickness': 'thickness', 'ext': 'ext', });
+lyr_QH100Tuyen4_150.set('fieldAliases', {'fid': 'fid', 'handle': 'handle', 'block': 'block', 'etype': 'etype', 'space': 'space', 'layer': 'layer', 'olinetype': 'olinetype', 'linetype': 'linetype', 'color': 'color', 'ocolor': 'ocolor', 'color24': 'color24', 'transparency': 'transparency', 'lweight': 'lweight', 'linewidth': 'linewidth', 'ltscale': 'ltscale', 'visible': 'visible', 'width': 'width', 'thickness': 'thickness', 'ext': 'ext', });
+lyr_QH100Tuyen3_151.set('fieldAliases', {'fid': 'fid', 'handle': 'handle', 'block': 'block', 'etype': 'etype', 'space': 'space', 'layer': 'layer', 'olinetype': 'olinetype', 'linetype': 'linetype', 'color': 'color', 'ocolor': 'ocolor', 'color24': 'color24', 'transparency': 'transparency', 'lweight': 'lweight', 'linewidth': 'linewidth', 'ltscale': 'ltscale', 'visible': 'visible', 'width': 'width', 'thickness': 'thickness', 'ext': 'ext', });
+lyr_QH100Tuyen2A_152.set('fieldAliases', {'fid': 'fid', 'handle': 'handle', 'block': 'block', 'etype': 'etype', 'space': 'space', 'layer': 'layer', 'olinetype': 'olinetype', 'linetype': 'linetype', 'color': 'color', 'ocolor': 'ocolor', 'color24': 'color24', 'transparency': 'transparency', 'lweight': 'lweight', 'linewidth': 'linewidth', 'ltscale': 'ltscale', 'visible': 'visible', 'width': 'width', 'thickness': 'thickness', 'ext': 'ext', });
+lyr_QH100Tuyen2_153.set('fieldAliases', {'fid': 'fid', 'handle': 'handle', 'block': 'block', 'etype': 'etype', 'space': 'space', 'layer': 'layer', 'olinetype': 'olinetype', 'linetype': 'linetype', 'color': 'color', 'ocolor': 'ocolor', 'color24': 'color24', 'transparency': 'transparency', 'lweight': 'lweight', 'linewidth': 'linewidth', 'ltscale': 'ltscale', 'visible': 'visible', 'width': 'width', 'thickness': 'thickness', 'ext': 'ext', });
+lyr_QH100Tuyen1_154.set('fieldAliases', {'fid': 'fid', 'handle': 'handle', 'block': 'block', 'etype': 'etype', 'space': 'space', 'layer': 'layer', 'olinetype': 'olinetype', 'linetype': 'linetype', 'color': 'color', 'ocolor': 'ocolor', 'color24': 'color24', 'transparency': 'transparency', 'lweight': 'lweight', 'linewidth': 'linewidth', 'ltscale': 'ltscale', 'visible': 'visible', 'width': 'width', 'thickness': 'thickness', 'ext': 'ext', });
+lyr_DSQG_155.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', });
+lyr_Duongsatvung_156.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', });
+lyr_Depot_157.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_PLine_17_158.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', });
+lyr_PLine_16_159.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', });
+lyr_PLine_15_160.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', });
+lyr_PLine_14_161.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', });
+lyr_PLine_13_162.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', });
+lyr_PLine_12_163.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', });
+lyr_PLine_11_164.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', });
+lyr_PLine_10_165.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', });
+lyr_PLine_9_166.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', });
+lyr_PLine_8_167.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', });
+lyr_PLine_7_168.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', });
+lyr_PLine_6_169.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', });
+lyr_PLine_5_170.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', });
+lyr_PLine_4_171.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', });
+lyr_PLine_3_172.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', });
+lyr_PLine_2A_173.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', });
+lyr_PLine_2_174.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', });
+lyr_PLine_1_175.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'line': 'line', });
+lyr_Layer_CcTuynmi_176.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'Layer': 'Layer', 'SubClasses': 'SubClasses', 'ExtendedEntity': 'ExtendedEntity', 'Linetype': 'Linetype', 'EntityHandle': 'EntityHandle', 'Text': 'Text', });
+lyr_Layer_Tuyn12_177.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'Layer': 'Layer', 'SubClasses': 'SubClasses', 'ExtendedEntity': 'ExtendedEntity', 'Linetype': 'Linetype', 'EntityHandle': 'EntityHandle', 'Text': 'Text', });
+lyr_Layer_Tuyn11_178.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'Layer': 'Layer', 'SubClasses': 'SubClasses', 'ExtendedEntity': 'ExtendedEntity', 'Linetype': 'Linetype', 'EntityHandle': 'EntityHandle', 'Text': 'Text', });
+lyr_Layer_Tuyn10_179.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'Layer': 'Layer', 'SubClasses': 'SubClasses', 'ExtendedEntity': 'ExtendedEntity', 'Linetype': 'Linetype', 'EntityHandle': 'EntityHandle', 'Text': 'Text', });
+lyr_Layer_Tuyn9_180.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'Layer': 'Layer', 'SubClasses': 'SubClasses', 'ExtendedEntity': 'ExtendedEntity', 'Linetype': 'Linetype', 'EntityHandle': 'EntityHandle', 'Text': 'Text', });
+lyr_Layer_Tuyn8_181.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'Layer': 'Layer', 'SubClasses': 'SubClasses', 'ExtendedEntity': 'ExtendedEntity', 'Linetype': 'Linetype', 'EntityHandle': 'EntityHandle', 'Text': 'Text', });
+lyr_Layer_Tuyn7_182.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'Layer': 'Layer', 'SubClasses': 'SubClasses', 'ExtendedEntity': 'ExtendedEntity', 'Linetype': 'Linetype', 'EntityHandle': 'EntityHandle', 'Text': 'Text', });
+lyr_Layer_Tuyn6_183.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'Layer': 'Layer', 'SubClasses': 'SubClasses', 'ExtendedEntity': 'ExtendedEntity', 'Linetype': 'Linetype', 'EntityHandle': 'EntityHandle', 'Text': 'Text', });
+lyr_Layer_Tuyn5_184.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'Layer': 'Layer', 'SubClasses': 'SubClasses', 'ExtendedEntity': 'ExtendedEntity', 'Linetype': 'Linetype', 'EntityHandle': 'EntityHandle', 'Text': 'Text', });
+lyr_Layer_Tuyn4_185.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'Layer': 'Layer', 'SubClasses': 'SubClasses', 'ExtendedEntity': 'ExtendedEntity', 'Linetype': 'Linetype', 'EntityHandle': 'EntityHandle', 'Text': 'Text', });
+lyr_Layer_Tuyn3_186.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'Layer': 'Layer', 'SubClasses': 'SubClasses', 'ExtendedEntity': 'ExtendedEntity', 'Linetype': 'Linetype', 'EntityHandle': 'EntityHandle', 'Text': 'Text', });
+lyr_Layer_Tuyn2A_187.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'Layer': 'Layer', 'SubClasses': 'SubClasses', 'ExtendedEntity': 'ExtendedEntity', 'Linetype': 'Linetype', 'EntityHandle': 'EntityHandle', 'Text': 'Text', });
+lyr_Layer_Tuyn2_188.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'Layer': 'Layer', 'SubClasses': 'SubClasses', 'ExtendedEntity': 'ExtendedEntity', 'Linetype': 'Linetype', 'EntityHandle': 'EntityHandle', 'Text': 'Text', });
+lyr_Layer_Tuyn1_189.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'Layer': 'Layer', 'SubClasses': 'SubClasses', 'ExtendedEntity': 'ExtendedEntity', 'Linetype': 'Linetype', 'EntityHandle': 'EntityHandle', 'Text': 'Text', });
+lyr_T12_190.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'fid': 'fid', 'handle': 'handle', 'block': 'block', 'etype': 'etype', 'space': 'space', 'layer': 'layer', 'Thông tin': 'Thông tin', });
+lyr_T11_191.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'fid': 'fid', 'handle': 'handle', 'block': 'block', 'etype': 'etype', 'space': 'space', 'layer': 'layer', 'Thông tin': 'Thông tin', });
+lyr_T10_192.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'fid': 'fid', 'handle': 'handle', 'block': 'block', 'etype': 'etype', 'space': 'space', 'layer': 'layer', 'Thông tin': 'Thông tin', });
+lyr_T9_193.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'fid': 'fid', 'handle': 'handle', 'block': 'block', 'etype': 'etype', 'space': 'space', 'layer': 'layer', 'Thông tin': 'Thông tin', });
+lyr_T8_194.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'fid': 'fid', 'handle': 'handle', 'block': 'block', 'etype': 'etype', 'space': 'space', 'layer': 'layer', 'Thông tin': 'Thông tin', });
+lyr_T7_195.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'fid': 'fid', 'handle': 'handle', 'block': 'block', 'etype': 'etype', 'space': 'space', 'layer': 'layer', 'Thông tin': 'Thông tin', });
+lyr_T6_196.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'fid': 'fid', 'handle': 'handle', 'block': 'block', 'etype': 'etype', 'space': 'space', 'layer': 'layer', 'Thông tin': 'Thông tin', });
+lyr_T5_197.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'fid': 'fid', 'handle': 'handle', 'block': 'block', 'etype': 'etype', 'space': 'space', 'layer': 'layer', 'Thông tin': 'Thông tin', });
+lyr_T4_198.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'fid': 'fid', 'handle': 'handle', 'block': 'block', 'etype': 'etype', 'space': 'space', 'layer': 'layer', 'Thông tin': 'Thông tin', });
+lyr_T3_199.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'fid': 'fid', 'handle': 'handle', 'block': 'block', 'etype': 'etype', 'space': 'space', 'layer': 'layer', 'Thông tin': 'Thông tin', });
+lyr_T2A_200.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'fid': 'fid', 'handle': 'handle', 'block': 'block', 'etype': 'etype', 'space': 'space', 'layer': 'layer', 'Thông tin': 'Thông tin', });
+lyr_T2_201.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'fid': 'fid', 'handle': 'handle', 'block': 'block', 'etype': 'etype', 'space': 'space', 'layer': 'layer', 'Thông tin': 'Thông tin', });
+lyr_T1A_202.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'fid': 'fid', 'handle': 'handle', 'block': 'block', 'etype': 'etype', 'space': 'space', 'layer': 'layer', 'Thông tin': 'Thông tin', });
+lyr_T1_203.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'fid': 'fid', 'handle': 'handle', 'block': 'block', 'etype': 'etype', 'space': 'space', 'layer': 'layer', 'Thông tin': 'Thông tin', });
+lyr_QH519Depot_204.set('fieldAliases', {'fid': 'fid', });
+lyr_QH519Ga_205.set('fieldAliases', {'fid': 'fid', 'tenga': 'tenga', 'tuyen': 'tuyen', 'doantuyen': 'doantuyen', 'quanhuyen': 'quanhuyen', 'phuongxa': 'phuongxa', });
+lyr_tuyen_M3_206.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'fid': 'fid', 'tuyen': 'tuyen', 'doantuyen': 'doantuyen', 'huongtuyen': 'huongtuyen', 'quanhuyen': 'quanhuyen', 'phuongxa': 'phuongxa', 'tmdt': 'tmdt', 'nguonvon': 'nguonvon', 'chudautu': 'chudautu', 'thoigianth': 'thoigianth', 'chieudai': 'chieudai', 'cao': 'cao', 'matdat': 'matdat', 'ngam': 'ngam', 'soga': 'soga', 'gacao': 'gacao', 'gamatdat': 'gamatdat', 'gangam': 'gangam', 'sodepot': 'sodepot', 'sodoantau': 'sodoantau', 'capdien': 'capdien', 'tocdotk': 'tocdotk', 'tocdovanha': 'tocdovanha', 'tggiancach': 'tggiancach', 'giomo': 'giomo', 'giodong': 'giodong', 'luotkhach': 'luotkhach', 'giaveluot': 'giaveluot', 'giavethang': 'giavethang', 'thcbdt': 'thcbdt', 'ththdt': 'ththdt', });
+lyr_tuyen_M2_207.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'fid': 'fid', 'tuyen': 'tuyen', 'doantuyen': 'doantuyen', 'huongtuyen': 'huongtuyen', 'quanhuyen': 'quanhuyen', 'phuongxa': 'phuongxa', 'tmdt': 'tmdt', 'nguonvon': 'nguonvon', 'chudautu': 'chudautu', 'thoigianth': 'thoigianth', 'chieudai': 'chieudai', 'cao': 'cao', 'matdat': 'matdat', 'ngam': 'ngam', 'soga': 'soga', 'gacao': 'gacao', 'gamatdat': 'gamatdat', 'gangam': 'gangam', 'sodepot': 'sodepot', 'sodoantau': 'sodoantau', 'capdien': 'capdien', 'tocdotk': 'tocdotk', 'tocdovanha': 'tocdovanha', 'tggiancach': 'tggiancach', 'giomo': 'giomo', 'giodong': 'giodong', 'luotkhach': 'luotkhach', 'giaveluot': 'giaveluot', 'giavethang': 'giavethang', 'thcbdt': 'thcbdt', 'ththdt': 'ththdt', });
+lyr_tuyen_M1_208.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'fid': 'fid', 'tuyen': 'tuyen', 'doantuyen': 'doantuyen', 'huongtuyen': 'huongtuyen', 'quanhuyen': 'quanhuyen', 'phuongxa': 'phuongxa', 'tmdt': 'tmdt', 'nguonvon': 'nguonvon', 'chudautu': 'chudautu', 'thoigianth': 'thoigianth', 'chieudai': 'chieudai', 'cao': 'cao', 'matdat': 'matdat', 'ngam': 'ngam', 'soga': 'soga', 'gacao': 'gacao', 'gamatdat': 'gamatdat', 'gangam': 'gangam', 'sodepot': 'sodepot', 'sodoantau': 'sodoantau', 'capdien': 'capdien', 'tocdotk': 'tocdotk', 'tocdovanha': 'tocdovanha', 'tggiancach': 'tggiancach', 'giomo': 'giomo', 'giodong': 'giodong', 'luotkhach': 'luotkhach', 'giaveluot': 'giaveluot', 'giavethang': 'giavethang', 'thcbdt': 'thcbdt', 'ththdt': 'ththdt', });
+lyr_tuyen_VT_209.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'fid': 'fid', 'tuyen': 'tuyen', 'doantuyen': 'doantuyen', 'huongtuyen': 'huongtuyen', 'quanhuyen': 'quanhuyen', 'phuongxa': 'phuongxa', 'tmdt': 'tmdt', 'nguonvon': 'nguonvon', 'chudautu': 'chudautu', 'thoigianth': 'thoigianth', 'chieudai': 'chieudai', 'cao': 'cao', 'matdat': 'matdat', 'ngam': 'ngam', 'soga': 'soga', 'gacao': 'gacao', 'gamatdat': 'gamatdat', 'gangam': 'gangam', 'sodepot': 'sodepot', 'sodoantau': 'sodoantau', 'capdien': 'capdien', 'tocdotk': 'tocdotk', 'tocdovanha': 'tocdovanha', 'tggiancach': 'tggiancach', 'giomo': 'giomo', 'giodong': 'giodong', 'luotkhach': 'luotkhach', 'giaveluot': 'giaveluot', 'giavethang': 'giavethang', 'thcbdt': 'thcbdt', 'ththdt': 'ththdt', });
+lyr_tuyen_8_210.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'fid': 'fid', 'tuyen': 'tuyen', 'doantuyen': 'doantuyen', 'huongtuyen': 'huongtuyen', 'quanhuyen': 'quanhuyen', 'phuongxa': 'phuongxa', 'tmdt': 'tmdt', 'nguonvon': 'nguonvon', 'chudautu': 'chudautu', 'thoigianth': 'thoigianth', 'chieudai': 'chieudai', 'cao': 'cao', 'matdat': 'matdat', 'ngam': 'ngam', 'soga': 'soga', 'gacao': 'gacao', 'gamatdat': 'gamatdat', 'gangam': 'gangam', 'sodepot': 'sodepot', 'sodoantau': 'sodoantau', 'capdien': 'capdien', 'tocdotk': 'tocdotk', 'tocdovanha': 'tocdovanha', 'tggiancach': 'tggiancach', 'giomo': 'giomo', 'giodong': 'giodong', 'luotkhach': 'luotkhach', 'giaveluot': 'giaveluot', 'giavethang': 'giavethang', 'thcbdt': 'thcbdt', 'ththdt': 'ththdt', });
+lyr_tuyen_7_211.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'fid': 'fid', 'tuyen': 'tuyen', 'doantuyen': 'doantuyen', 'huongtuyen': 'huongtuyen', 'quanhuyen': 'quanhuyen', 'phuongxa': 'phuongxa', 'tmdt': 'tmdt', 'nguonvon': 'nguonvon', 'chudautu': 'chudautu', 'thoigianth': 'thoigianth', 'chieudai': 'chieudai', 'cao': 'cao', 'matdat': 'matdat', 'ngam': 'ngam', 'soga': 'soga', 'gacao': 'gacao', 'gamatdat': 'gamatdat', 'gangam': 'gangam', 'sodepot': 'sodepot', 'sodoantau': 'sodoantau', 'capdien': 'capdien', 'tocdotk': 'tocdotk', 'tocdovanha': 'tocdovanha', 'tggiancach': 'tggiancach', 'giomo': 'giomo', 'giodong': 'giodong', 'luotkhach': 'luotkhach', 'giaveluot': 'giaveluot', 'giavethang': 'giavethang', 'thcbdt': 'thcbdt', 'ththdt': 'ththdt', });
+lyr_tuyen_6_212.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'fid': 'fid', 'tuyen': 'tuyen', 'doantuyen': 'doantuyen', 'huongtuyen': 'huongtuyen', 'quanhuyen': 'quanhuyen', 'phuongxa': 'phuongxa', 'tmdt': 'tmdt', 'nguonvon': 'nguonvon', 'chudautu': 'chudautu', 'thoigianth': 'thoigianth', 'chieudai': 'chieudai', 'cao': 'cao', 'matdat': 'matdat', 'ngam': 'ngam', 'soga': 'soga', 'gacao': 'gacao', 'gamatdat': 'gamatdat', 'gangam': 'gangam', 'sodepot': 'sodepot', 'sodoantau': 'sodoantau', 'capdien': 'capdien', 'tocdotk': 'tocdotk', 'tocdovanha': 'tocdovanha', 'tggiancach': 'tggiancach', 'giomo': 'giomo', 'giodong': 'giodong', 'luotkhach': 'luotkhach', 'giaveluot': 'giaveluot', 'giavethang': 'giavethang', 'thcbdt': 'thcbdt', 'ththdt': 'ththdt', });
+lyr_tuyen_5_213.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'fid': 'fid', 'tuyen': 'tuyen', 'doantuyen': 'doantuyen', 'huongtuyen': 'huongtuyen', 'quanhuyen': 'quanhuyen', 'phuongxa': 'phuongxa', 'tmdt': 'tmdt', 'nguonvon': 'nguonvon', 'chudautu': 'chudautu', 'thoigianth': 'thoigianth', 'chieudai': 'chieudai', 'cao': 'cao', 'matdat': 'matdat', 'ngam': 'ngam', 'soga': 'soga', 'gacao': 'gacao', 'gamatdat': 'gamatdat', 'gangam': 'gangam', 'sodepot': 'sodepot', 'sodoantau': 'sodoantau', 'capdien': 'capdien', 'tocdotk': 'tocdotk', 'tocdovanha': 'tocdovanha', 'tggiancach': 'tggiancach', 'giomo': 'giomo', 'giodong': 'giodong', 'luotkhach': 'luotkhach', 'giaveluot': 'giaveluot', 'giavethang': 'giavethang', 'thcbdt': 'thcbdt', 'ththdt': 'ththdt', });
+lyr_tuyen_4_214.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'fid': 'fid', 'tuyen': 'tuyen', 'doantuyen': 'doantuyen', 'huongtuyen': 'huongtuyen', 'quanhuyen': 'quanhuyen', 'phuongxa': 'phuongxa', 'tmdt': 'tmdt', 'nguonvon': 'nguonvon', 'chudautu': 'chudautu', 'thoigianth': 'thoigianth', 'chieudai': 'chieudai', 'cao': 'cao', 'matdat': 'matdat', 'ngam': 'ngam', 'soga': 'soga', 'gacao': 'gacao', 'gamatdat': 'gamatdat', 'gangam': 'gangam', 'sodepot': 'sodepot', 'sodoantau': 'sodoantau', 'capdien': 'capdien', 'tocdotk': 'tocdotk', 'tocdovanha': 'tocdovanha', 'tggiancach': 'tggiancach', 'giomo': 'giomo', 'giodong': 'giodong', 'luotkhach': 'luotkhach', 'giaveluot': 'giaveluot', 'giavethang': 'giavethang', 'thcbdt': 'thcbdt', 'ththdt': 'ththdt', });
+lyr_tuyen_3_215.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'fid': 'fid', 'tuyen': 'tuyen', 'doantuyen': 'doantuyen', 'huongtuyen': 'huongtuyen', 'quanhuyen': 'quanhuyen', 'phuongxa': 'phuongxa', 'tmdt': 'tmdt', 'nguonvon': 'nguonvon', 'chudautu': 'chudautu', 'thoigianth': 'thoigianth', 'chieudai': 'chieudai', 'cao': 'cao', 'matdat': 'matdat', 'ngam': 'ngam', 'soga': 'soga', 'gacao': 'gacao', 'gamatdat': 'gamatdat', 'gangam': 'gangam', 'sodepot': 'sodepot', 'sodoantau': 'sodoantau', 'capdien': 'capdien', 'tocdotk': 'tocdotk', 'tocdovanha': 'tocdovanha', 'tggiancach': 'tggiancach', 'giomo': 'giomo', 'giodong': 'giodong', 'luotkhach': 'luotkhach', 'giaveluot': 'giaveluot', 'giavethang': 'giavethang', 'thcbdt': 'thcbdt', 'ththdt': 'ththdt', });
+lyr_tuyen_2A_216.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'fid': 'fid', 'tuyen': 'tuyen', 'doantuyen': 'doantuyen', 'huongtuyen': 'huongtuyen', 'quanhuyen': 'quanhuyen', 'phuongxa': 'phuongxa', 'tmdt': 'tmdt', 'nguonvon': 'nguonvon', 'chudautu': 'chudautu', 'thoigianth': 'thoigianth', 'chieudai': 'chieudai', 'cao': 'cao', 'matdat': 'matdat', 'ngam': 'ngam', 'soga': 'soga', 'gacao': 'gacao', 'gamatdat': 'gamatdat', 'gangam': 'gangam', 'sodepot': 'sodepot', 'sodoantau': 'sodoantau', 'capdien': 'capdien', 'tocdotk': 'tocdotk', 'tocdovanha': 'tocdovanha', 'tggiancach': 'tggiancach', 'giomo': 'giomo', 'giodong': 'giodong', 'luotkhach': 'luotkhach', 'giaveluot': 'giaveluot', 'giavethang': 'giavethang', 'thcbdt': 'thcbdt', 'ththdt': 'ththdt', });
+lyr_tuyen_2_217.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'fid': 'fid', 'tuyen': 'tuyen', 'doantuyen': 'doantuyen', 'huongtuyen': 'huongtuyen', 'quanhuyen': 'quanhuyen', 'phuongxa': 'phuongxa', 'tmdt': 'tmdt', 'nguonvon': 'nguonvon', 'chudautu': 'chudautu', 'thoigianth': 'thoigianth', 'chieudai': 'chieudai', 'cao': 'cao', 'matdat': 'matdat', 'ngam': 'ngam', 'soga': 'soga', 'gacao': 'gacao', 'gamatdat': 'gamatdat', 'gangam': 'gangam', 'sodepot': 'sodepot', 'sodoantau': 'sodoantau', 'capdien': 'capdien', 'tocdotk': 'tocdotk', 'tocdovanha': 'tocdovanha', 'tggiancach': 'tggiancach', 'giomo': 'giomo', 'giodong': 'giodong', 'luotkhach': 'luotkhach', 'giaveluot': 'giaveluot', 'giavethang': 'giavethang', 'thcbdt': 'thcbdt', 'ththdt': 'ththdt', });
+lyr_tuyen_1_218.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'fid': 'fid', 'tuyen': 'tuyen', 'doantuyen': 'doantuyen', 'huongtuyen': 'huongtuyen', 'quanhuyen': 'quanhuyen', 'phuongxa': 'phuongxa', 'tmdt': 'tmdt', 'nguonvon': 'nguonvon', 'chudautu': 'chudautu', 'thoigianth': 'thoigianth', 'chieudai': 'chieudai', 'cao': 'cao', 'matdat': 'matdat', 'ngam': 'ngam', 'soga': 'soga', 'gacao': 'gacao', 'gamatdat': 'gamatdat', 'gangam': 'gangam', 'sodepot': 'sodepot', 'sodoantau': 'sodoantau', 'capdien': 'capdien', 'tocdotk': 'tocdotk', 'tocdovanha': 'tocdovanha', 'tggiancach': 'tggiancach', 'giomo': 'giomo', 'giodong': 'giodong', 'luotkhach': 'luotkhach', 'giaveluot': 'giaveluot', 'giavethang': 'giavethang', 'thcbdt': 'thcbdt', 'ththdt': 'ththdt', });
+lyr_SDDHuyenChuongMy_219.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_SDD3phankhu_220.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_QHGT_221.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'Layer': 'Layer', 'SubClasses': 'SubClasses', 'ExtendedEntity': 'ExtendedEntity', 'Linetype': 'Linetype', 'EntityHandle': 'EntityHandle', 'Text': 'Text', });
+lyr_PhngnVQHXDdexuat_222.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_Phngn3_223.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_Phngn2_224.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_Phngn1_225.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_SDDSonTay_7.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_SDDS5_8.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_SDDS4_9.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_SDDS3_10.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_SDDS2_11.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_SDDS1_12.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_SDDPKR_13.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_SDDPhuctho_14.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_SDDN11_15.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_SDDN10_16.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_SDDN9_17.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_SDDN8_18.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_SDDN7_19.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_SDDN6_20.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_SDDN5_21.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_SDDN4_22.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_SDDN3_23.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_SDDN2_24.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_SDDN1_25.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_SDDH24_26.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_SDDH23_27.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_SDDH22_28.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_SDDH21_29.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_SDDH14_30.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_SDDH13_31.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_SDDH12_32.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_SDDA6_33.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_layer_M16_34.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_M15_35.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_M14_36.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_M13_37.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_M12_38.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_M11_39.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_M10_40.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_M09_41.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_M08_42.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_M07_43.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_M06_44.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_M05_45.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_M04_46.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_M03_47.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_M02A_48.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_M02_49.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_M01_50.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_Ga_51.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_layer_DCaotoc_52.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_DPcCaotoc_53.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_ketnoidsdt_54.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_4Railwaywhite_55.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_4Railway_56.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_SQG_Thng2050_57.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_Dduongsattocdocao_58.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_02interCity_59.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_Monorail_60.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_4BRTM18_61.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_DSDT_17_62.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_DSDT_16_63.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_DSDT_15_64.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_DSDT_13_65.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_DSDT12_66.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_DSDT_11_67.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_DSDT10_68.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_DSDT9_69.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_DSDT8_70.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_DSDT7_71.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_DSDT6_72.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_DSDT5_73.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_DSDT4_74.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_DSDT3_75.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_DSDT2A_76.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_DSDT2_77.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_layer_DSDT1_78.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'layer': 'TextEdit', });
+lyr_nearbyProvince_79.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', 'line_section': 'TextEdit', });
+lyr_03commuterLine_80.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_02interCity_81.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', 'line_section': 'TextEdit', });
+lyr_01highSpeed_82.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', 'line_section': 'TextEdit', 'name_1': 'TextEdit', });
+lyr_7railwaystation2secondary_83.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'name_1': 'TextEdit', });
+lyr_6airport_84.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'name_1': 'TextEdit', });
+lyr_4Railway_85.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', 'line_section': 'TextEdit', 'attrib_1': 'TextEdit', });
+lyr_4BRTM18_86.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', 'line_section': 'TextEdit', 'attrib_1': 'TextEdit', });
+lyr_4BRTM17_87.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', 'line_section': 'TextEdit', 'attrib_1': 'TextEdit', });
+lyr_2RegularLineM16_88.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', 'attrib_1': 'TextEdit', });
+lyr_3LRTM15_89.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', 'attrib_1': 'TextEdit', });
+lyr_2RegularLineM14_90.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', 'attrib_1': 'TextEdit', });
+lyr_3LRTM13_91.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', 'attrib_1': 'TextEdit', });
+lyr_4BRTM12_92.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', 'line_section': 'TextEdit', 'attrib_1': 'TextEdit', });
+lyr_2RegularLineM11_93.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', 'attrib_1': 'TextEdit', });
+lyr_2RegularLineM10_94.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', 'attrib_1': 'TextEdit', });
+lyr_3LRTM9_95.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', 'attrib_1': 'TextEdit', });
+lyr_1ExpressLineM8_96.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', 'line_section': 'TextEdit', 'attrib_1': 'TextEdit', });
+lyr_2RegularLineM7_97.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'attrib_1': 'TextEdit', });
+lyr_2RegularLineM6_98.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', 'attrib_1': 'TextEdit', });
+lyr_2RegularLineM5_99.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'attrib_1': 'TextEdit', });
+lyr_2RegularLineM4_100.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', 'attrib_1': 'TextEdit', });
+lyr_2RegularLineM3_101.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', 'attrib_1': 'TextEdit', });
+lyr_2RegularLineM2_102.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', 'line_section': 'TextEdit', 'attrib_1': 'TextEdit', });
+lyr_2RegularLine2A_103.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', 'line_section': 'TextEdit', 'attrib_1': 'TextEdit', });
+lyr_1ExpressLineM1_104.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', 'line_section': 'TextEdit', 'attrib_1': 'TextEdit', });
+lyr_Ga_105.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_Monorail_106.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_DSDT16_107.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_DSDT15_108.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_DSDT10_109.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_DSDT9_110.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_DSDT8_111.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_DSDT7_112.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_DSDT6_113.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_DSDT5_114.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_DSDT4_115.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_DSDT3_116.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_DSDT2A_117.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_DSDT2_118.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_DSDT1_119.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_4Railway_120.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_3LRTORBRTM17_121.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_3LRTORBRTM13_122.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_1ExpressLineM8_123.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_QH100Ga_124.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'Layer': 'TextEdit', 'SubClasses': 'TextEdit', 'ExtendedEntity': 'TextEdit', 'Linetype': 'TextEdit', 'EntityHandle': 'TextEdit', 'Text': 'TextEdit', });
+lyr_QH100Monorail_125.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'Layer': 'TextEdit', 'SubClasses': 'TextEdit', 'ExtendedEntity': 'TextEdit', 'Linetype': 'TextEdit', 'EntityHandle': 'TextEdit', 'Text': 'TextEdit', });
+lyr_QH100dsDT_126.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'Layer': 'TextEdit', 'SubClasses': 'TextEdit', 'ExtendedEntity': 'TextEdit', 'Linetype': 'TextEdit', 'EntityHandle': 'TextEdit', 'Text': 'TextEdit', });
+lyr_QH100DSDT17_127.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'Layer': 'TextEdit', 'SubClasses': 'TextEdit', 'ExtendedEntity': 'TextEdit', 'Linetype': 'TextEdit', 'EntityHandle': 'TextEdit', 'Text': 'TextEdit', });
+lyr_QH100DSDT16_128.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'Layer': 'TextEdit', 'SubClasses': 'TextEdit', 'ExtendedEntity': 'TextEdit', 'Linetype': 'TextEdit', 'EntityHandle': 'TextEdit', 'Text': 'TextEdit', });
+lyr_QH100DSDT15_129.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'Layer': 'TextEdit', 'SubClasses': 'TextEdit', 'ExtendedEntity': 'TextEdit', 'Linetype': 'TextEdit', 'EntityHandle': 'TextEdit', 'Text': 'TextEdit', });
+lyr_QH100DSDT12_130.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'Layer': 'TextEdit', 'SubClasses': 'TextEdit', 'ExtendedEntity': 'TextEdit', 'Linetype': 'TextEdit', 'EntityHandle': 'TextEdit', 'Text': 'TextEdit', });
+lyr_QH100DSDT11_131.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'Layer': 'TextEdit', 'SubClasses': 'TextEdit', 'ExtendedEntity': 'TextEdit', 'Linetype': 'TextEdit', 'EntityHandle': 'TextEdit', 'Text': 'TextEdit', });
+lyr_QH100DSDT10_132.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'Layer': 'TextEdit', 'SubClasses': 'TextEdit', 'ExtendedEntity': 'TextEdit', 'Linetype': 'TextEdit', 'EntityHandle': 'TextEdit', 'Text': 'TextEdit', });
+lyr_QH100DSDT9_133.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'Layer': 'TextEdit', 'SubClasses': 'TextEdit', 'ExtendedEntity': 'TextEdit', 'Linetype': 'TextEdit', 'EntityHandle': 'TextEdit', 'Text': 'TextEdit', });
+lyr_QH100DSDT8_134.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'Layer': 'TextEdit', 'SubClasses': 'TextEdit', 'ExtendedEntity': 'TextEdit', 'Linetype': 'TextEdit', 'EntityHandle': 'TextEdit', 'Text': 'TextEdit', });
+lyr_QH100DSDT7_135.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'Layer': 'TextEdit', 'SubClasses': 'TextEdit', 'ExtendedEntity': 'TextEdit', 'Linetype': 'TextEdit', 'EntityHandle': 'TextEdit', 'Text': 'TextEdit', });
+lyr_QH100DSDT6_136.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'Layer': 'TextEdit', 'SubClasses': 'TextEdit', 'ExtendedEntity': 'TextEdit', 'Linetype': 'TextEdit', 'EntityHandle': 'TextEdit', 'Text': 'TextEdit', });
+lyr_QH100DSDT5_137.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'Layer': 'TextEdit', 'SubClasses': 'TextEdit', 'ExtendedEntity': 'TextEdit', 'Linetype': 'TextEdit', 'EntityHandle': 'TextEdit', 'Text': 'TextEdit', });
+lyr_QH100DSDT4_138.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'Layer': 'TextEdit', 'SubClasses': 'TextEdit', 'ExtendedEntity': 'TextEdit', 'Linetype': 'TextEdit', 'EntityHandle': 'TextEdit', 'Text': 'TextEdit', });
+lyr_QH100DSDT3_139.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'Layer': 'TextEdit', 'SubClasses': 'TextEdit', 'ExtendedEntity': 'TextEdit', 'Linetype': 'TextEdit', 'EntityHandle': 'TextEdit', 'Text': 'TextEdit', });
+lyr_QH100DSDT2A_140.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'Layer': 'TextEdit', 'SubClasses': 'TextEdit', 'ExtendedEntity': 'TextEdit', 'Linetype': 'TextEdit', 'EntityHandle': 'TextEdit', 'Text': 'TextEdit', });
+lyr_QH100DSDT2_141.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'Layer': 'TextEdit', 'SubClasses': 'TextEdit', 'ExtendedEntity': 'TextEdit', 'Linetype': 'TextEdit', 'EntityHandle': 'TextEdit', 'Text': 'TextEdit', });
+lyr_QH100DSDT1_142.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'Layer': 'TextEdit', 'SubClasses': 'TextEdit', 'ExtendedEntity': 'TextEdit', 'Linetype': 'TextEdit', 'EntityHandle': 'TextEdit', 'Text': 'TextEdit', });
+lyr_QH100Tuyen16_143.set('fieldImages', {'fid': 'TextEdit', 'handle': 'Range', 'block': 'Range', 'etype': 'Range', 'space': 'Range', 'layer': 'TextEdit', 'olinetype': 'TextEdit', 'linetype': 'TextEdit', 'color': 'TextEdit', 'ocolor': 'Range', 'color24': 'Range', 'transparency': 'Range', 'lweight': 'Range', 'linewidth': 'TextEdit', 'ltscale': 'TextEdit', 'visible': 'Range', 'width': 'TextEdit', 'thickness': 'TextEdit', 'ext': 'TextEdit', });
+lyr_QH100Tuyen14_144.set('fieldImages', {'fid': 'TextEdit', 'handle': 'Range', 'block': 'Range', 'etype': 'Range', 'space': 'Range', 'layer': 'TextEdit', 'olinetype': 'TextEdit', 'linetype': 'TextEdit', 'color': 'TextEdit', 'ocolor': 'Range', 'color24': 'Range', 'transparency': 'Range', 'lweight': 'Range', 'linewidth': 'TextEdit', 'ltscale': 'TextEdit', 'visible': 'Range', 'width': 'TextEdit', 'thickness': 'TextEdit', 'ext': 'TextEdit', });
+lyr_QH100Tuyen9_145.set('fieldImages', {'fid': 'TextEdit', 'handle': 'Range', 'block': 'Range', 'etype': 'Range', 'space': 'Range', 'layer': 'TextEdit', 'olinetype': 'TextEdit', 'linetype': 'TextEdit', 'color': 'TextEdit', 'ocolor': 'Range', 'color24': 'Range', 'transparency': 'Range', 'lweight': 'Range', 'linewidth': 'TextEdit', 'ltscale': 'TextEdit', 'visible': 'Range', 'width': 'TextEdit', 'thickness': 'TextEdit', 'ext': 'TextEdit', });
+lyr_QH100Tuyen8_146.set('fieldImages', {'fid': 'TextEdit', 'handle': 'Range', 'block': 'Range', 'etype': 'Range', 'space': 'Range', 'layer': 'TextEdit', 'olinetype': 'TextEdit', 'linetype': 'TextEdit', 'color': 'TextEdit', 'ocolor': 'Range', 'color24': 'Range', 'transparency': 'Range', 'lweight': 'Range', 'linewidth': 'TextEdit', 'ltscale': 'TextEdit', 'visible': 'Range', 'width': 'TextEdit', 'thickness': 'TextEdit', 'ext': 'TextEdit', });
+lyr_QH100Tuyen7_147.set('fieldImages', {'fid': 'TextEdit', 'handle': 'Range', 'block': 'Range', 'etype': 'Range', 'space': 'Range', 'layer': 'TextEdit', 'olinetype': 'TextEdit', 'linetype': 'TextEdit', 'color': 'TextEdit', 'ocolor': 'Range', 'color24': 'Range', 'transparency': 'Range', 'lweight': 'Range', 'linewidth': 'TextEdit', 'ltscale': 'TextEdit', 'visible': 'Range', 'width': 'TextEdit', 'thickness': 'TextEdit', 'ext': 'TextEdit', });
+lyr_QH100Tuyen6_148.set('fieldImages', {'fid': 'TextEdit', 'handle': 'Range', 'block': 'Range', 'etype': 'Range', 'space': 'Range', 'layer': 'TextEdit', 'olinetype': 'TextEdit', 'linetype': 'TextEdit', 'color': 'TextEdit', 'ocolor': 'Range', 'color24': 'Range', 'transparency': 'Range', 'lweight': 'Range', 'linewidth': 'TextEdit', 'ltscale': 'TextEdit', 'visible': 'Range', 'width': 'TextEdit', 'thickness': 'TextEdit', 'ext': 'TextEdit', });
+lyr_QH100Tuyen5_149.set('fieldImages', {'fid': 'TextEdit', 'handle': 'Range', 'block': 'Range', 'etype': 'Range', 'space': 'Range', 'layer': 'TextEdit', 'olinetype': 'TextEdit', 'linetype': 'TextEdit', 'color': 'TextEdit', 'ocolor': 'Range', 'color24': 'Range', 'transparency': 'Range', 'lweight': 'Range', 'linewidth': 'TextEdit', 'ltscale': 'TextEdit', 'visible': 'Range', 'width': 'TextEdit', 'thickness': 'TextEdit', 'ext': 'TextEdit', });
+lyr_QH100Tuyen4_150.set('fieldImages', {'fid': 'TextEdit', 'handle': 'Range', 'block': 'Range', 'etype': 'Range', 'space': 'Range', 'layer': 'TextEdit', 'olinetype': 'TextEdit', 'linetype': 'TextEdit', 'color': 'TextEdit', 'ocolor': 'Range', 'color24': 'Range', 'transparency': 'Range', 'lweight': 'Range', 'linewidth': 'TextEdit', 'ltscale': 'TextEdit', 'visible': 'Range', 'width': 'TextEdit', 'thickness': 'TextEdit', 'ext': 'TextEdit', });
+lyr_QH100Tuyen3_151.set('fieldImages', {'fid': 'TextEdit', 'handle': 'Range', 'block': 'Range', 'etype': 'Range', 'space': 'Range', 'layer': 'TextEdit', 'olinetype': 'TextEdit', 'linetype': 'TextEdit', 'color': 'TextEdit', 'ocolor': 'Range', 'color24': 'Range', 'transparency': 'Range', 'lweight': 'Range', 'linewidth': 'TextEdit', 'ltscale': 'TextEdit', 'visible': 'Range', 'width': 'TextEdit', 'thickness': 'TextEdit', 'ext': 'TextEdit', });
+lyr_QH100Tuyen2A_152.set('fieldImages', {'fid': 'TextEdit', 'handle': 'Range', 'block': 'Range', 'etype': 'Range', 'space': 'Range', 'layer': 'TextEdit', 'olinetype': 'TextEdit', 'linetype': 'TextEdit', 'color': 'TextEdit', 'ocolor': 'Range', 'color24': 'Range', 'transparency': 'Range', 'lweight': 'Range', 'linewidth': 'TextEdit', 'ltscale': 'TextEdit', 'visible': 'Range', 'width': 'TextEdit', 'thickness': 'TextEdit', 'ext': 'TextEdit', });
+lyr_QH100Tuyen2_153.set('fieldImages', {'fid': 'TextEdit', 'handle': 'Range', 'block': 'Range', 'etype': 'Range', 'space': 'Range', 'layer': 'TextEdit', 'olinetype': 'TextEdit', 'linetype': 'TextEdit', 'color': 'TextEdit', 'ocolor': 'Range', 'color24': 'Range', 'transparency': 'Range', 'lweight': 'Range', 'linewidth': 'TextEdit', 'ltscale': 'TextEdit', 'visible': 'Range', 'width': 'TextEdit', 'thickness': 'TextEdit', 'ext': 'TextEdit', });
+lyr_QH100Tuyen1_154.set('fieldImages', {'fid': 'TextEdit', 'handle': 'Range', 'block': 'Range', 'etype': 'Range', 'space': 'Range', 'layer': 'TextEdit', 'olinetype': 'TextEdit', 'linetype': 'TextEdit', 'color': 'TextEdit', 'ocolor': 'Range', 'color24': 'Range', 'transparency': 'Range', 'lweight': 'Range', 'linewidth': 'TextEdit', 'ltscale': 'TextEdit', 'visible': 'Range', 'width': 'TextEdit', 'thickness': 'TextEdit', 'ext': 'TextEdit', });
+lyr_DSQG_155.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', });
+lyr_Duongsatvung_156.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', });
+lyr_Depot_157.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_PLine_17_158.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', });
+lyr_PLine_16_159.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', });
+lyr_PLine_15_160.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', });
+lyr_PLine_14_161.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', });
+lyr_PLine_13_162.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', });
+lyr_PLine_12_163.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', });
+lyr_PLine_11_164.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', });
+lyr_PLine_10_165.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', });
+lyr_PLine_9_166.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', });
+lyr_PLine_8_167.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', });
+lyr_PLine_7_168.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', });
+lyr_PLine_6_169.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', });
+lyr_PLine_5_170.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', });
+lyr_PLine_4_171.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', });
+lyr_PLine_3_172.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', });
+lyr_PLine_2A_173.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', });
+lyr_PLine_2_174.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', });
+lyr_PLine_1_175.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'line': 'TextEdit', });
+lyr_Layer_CcTuynmi_176.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'Layer': 'TextEdit', 'SubClasses': 'TextEdit', 'ExtendedEntity': 'TextEdit', 'Linetype': 'TextEdit', 'EntityHandle': 'TextEdit', 'Text': 'TextEdit', });
+lyr_Layer_Tuyn12_177.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'Layer': 'TextEdit', 'SubClasses': 'TextEdit', 'ExtendedEntity': 'TextEdit', 'Linetype': 'TextEdit', 'EntityHandle': 'TextEdit', 'Text': 'TextEdit', });
+lyr_Layer_Tuyn11_178.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'Layer': 'TextEdit', 'SubClasses': 'TextEdit', 'ExtendedEntity': 'TextEdit', 'Linetype': 'TextEdit', 'EntityHandle': 'TextEdit', 'Text': 'TextEdit', });
+lyr_Layer_Tuyn10_179.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'Layer': 'TextEdit', 'SubClasses': 'TextEdit', 'ExtendedEntity': 'TextEdit', 'Linetype': 'TextEdit', 'EntityHandle': 'TextEdit', 'Text': 'TextEdit', });
+lyr_Layer_Tuyn9_180.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'Layer': 'TextEdit', 'SubClasses': 'TextEdit', 'ExtendedEntity': 'TextEdit', 'Linetype': 'TextEdit', 'EntityHandle': 'TextEdit', 'Text': 'TextEdit', });
+lyr_Layer_Tuyn8_181.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'Layer': 'TextEdit', 'SubClasses': 'TextEdit', 'ExtendedEntity': 'TextEdit', 'Linetype': 'TextEdit', 'EntityHandle': 'TextEdit', 'Text': 'TextEdit', });
+lyr_Layer_Tuyn7_182.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'Layer': 'TextEdit', 'SubClasses': 'TextEdit', 'ExtendedEntity': 'TextEdit', 'Linetype': 'TextEdit', 'EntityHandle': 'TextEdit', 'Text': 'TextEdit', });
+lyr_Layer_Tuyn6_183.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'Layer': 'TextEdit', 'SubClasses': 'TextEdit', 'ExtendedEntity': 'TextEdit', 'Linetype': 'TextEdit', 'EntityHandle': 'TextEdit', 'Text': 'TextEdit', });
+lyr_Layer_Tuyn5_184.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'Layer': 'TextEdit', 'SubClasses': 'TextEdit', 'ExtendedEntity': 'TextEdit', 'Linetype': 'TextEdit', 'EntityHandle': 'TextEdit', 'Text': 'TextEdit', });
+lyr_Layer_Tuyn4_185.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'Layer': 'TextEdit', 'SubClasses': 'TextEdit', 'ExtendedEntity': 'TextEdit', 'Linetype': 'TextEdit', 'EntityHandle': 'TextEdit', 'Text': 'TextEdit', });
+lyr_Layer_Tuyn3_186.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'Layer': 'TextEdit', 'SubClasses': 'TextEdit', 'ExtendedEntity': 'TextEdit', 'Linetype': 'TextEdit', 'EntityHandle': 'TextEdit', 'Text': 'TextEdit', });
+lyr_Layer_Tuyn2A_187.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'Layer': 'TextEdit', 'SubClasses': 'TextEdit', 'ExtendedEntity': 'TextEdit', 'Linetype': 'TextEdit', 'EntityHandle': 'TextEdit', 'Text': 'TextEdit', });
+lyr_Layer_Tuyn2_188.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'Layer': 'TextEdit', 'SubClasses': 'TextEdit', 'ExtendedEntity': 'TextEdit', 'Linetype': 'TextEdit', 'EntityHandle': 'TextEdit', 'Text': 'TextEdit', });
+lyr_Layer_Tuyn1_189.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'Layer': 'TextEdit', 'SubClasses': 'TextEdit', 'ExtendedEntity': 'TextEdit', 'Linetype': 'TextEdit', 'EntityHandle': 'TextEdit', 'Text': 'TextEdit', });
+lyr_T12_190.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'fid': 'TextEdit', 'handle': 'Range', 'block': 'Range', 'etype': 'Range', 'space': 'Range', 'layer': 'TextEdit', 'Thông tin': 'TextEdit', });
+lyr_T11_191.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'fid': 'TextEdit', 'handle': 'Range', 'block': 'Range', 'etype': 'Range', 'space': 'Range', 'layer': 'TextEdit', 'Thông tin': 'TextEdit', });
+lyr_T10_192.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'fid': 'TextEdit', 'handle': 'Range', 'block': 'Range', 'etype': 'Range', 'space': 'Range', 'layer': 'TextEdit', 'Thông tin': 'TextEdit', });
+lyr_T9_193.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'fid': 'TextEdit', 'handle': 'Range', 'block': 'Range', 'etype': 'Range', 'space': 'Range', 'layer': 'TextEdit', 'Thông tin': 'TextEdit', });
+lyr_T8_194.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'fid': 'TextEdit', 'handle': 'Range', 'block': 'Range', 'etype': 'Range', 'space': 'Range', 'layer': 'TextEdit', 'Thông tin': 'TextEdit', });
+lyr_T7_195.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'fid': 'TextEdit', 'handle': 'Range', 'block': 'Range', 'etype': 'Range', 'space': 'Range', 'layer': 'TextEdit', 'Thông tin': 'TextEdit', });
+lyr_T6_196.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'fid': 'TextEdit', 'handle': 'Range', 'block': 'Range', 'etype': 'Range', 'space': 'Range', 'layer': 'TextEdit', 'Thông tin': 'TextEdit', });
+lyr_T5_197.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'fid': 'TextEdit', 'handle': 'Range', 'block': 'Range', 'etype': 'Range', 'space': 'Range', 'layer': 'TextEdit', 'Thông tin': 'TextEdit', });
+lyr_T4_198.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'fid': 'TextEdit', 'handle': 'Range', 'block': 'Range', 'etype': 'Range', 'space': 'Range', 'layer': 'TextEdit', 'Thông tin': 'TextEdit', });
+lyr_T3_199.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'fid': 'TextEdit', 'handle': 'Range', 'block': 'Range', 'etype': 'Range', 'space': 'Range', 'layer': 'TextEdit', 'Thông tin': 'TextEdit', });
+lyr_T2A_200.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'fid': 'TextEdit', 'handle': 'Range', 'block': 'Range', 'etype': 'Range', 'space': 'Range', 'layer': 'TextEdit', 'Thông tin': 'TextEdit', });
+lyr_T2_201.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'fid': 'TextEdit', 'handle': 'Range', 'block': 'Range', 'etype': 'Range', 'space': 'Range', 'layer': 'TextEdit', 'Thông tin': 'TextEdit', });
+lyr_T1A_202.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'fid': 'TextEdit', 'handle': 'Range', 'block': 'Range', 'etype': 'Range', 'space': 'Range', 'layer': 'TextEdit', 'Thông tin': 'TextEdit', });
+lyr_T1_203.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'fid': 'TextEdit', 'handle': 'Range', 'block': 'Range', 'etype': 'Range', 'space': 'Range', 'layer': 'TextEdit', 'Thông tin': 'TextEdit', });
+lyr_QH519Depot_204.set('fieldImages', {'fid': '', });
+lyr_QH519Ga_205.set('fieldImages', {'fid': '', 'tenga': '', 'tuyen': '', 'doantuyen': '', 'quanhuyen': '', 'phuongxa': '', });
+lyr_tuyen_M3_206.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'fid': 'TextEdit', 'tuyen': 'TextEdit', 'doantuyen': 'TextEdit', 'huongtuyen': 'TextEdit', 'quanhuyen': 'TextEdit', 'phuongxa': 'TextEdit', 'tmdt': 'TextEdit', 'nguonvon': 'TextEdit', 'chudautu': 'TextEdit', 'thoigianth': 'TextEdit', 'chieudai': 'TextEdit', 'cao': 'TextEdit', 'matdat': 'TextEdit', 'ngam': 'TextEdit', 'soga': 'TextEdit', 'gacao': 'TextEdit', 'gamatdat': 'TextEdit', 'gangam': 'TextEdit', 'sodepot': 'TextEdit', 'sodoantau': 'TextEdit', 'capdien': 'TextEdit', 'tocdotk': 'TextEdit', 'tocdovanha': 'TextEdit', 'tggiancach': 'TextEdit', 'giomo': 'TextEdit', 'giodong': 'TextEdit', 'luotkhach': 'TextEdit', 'giaveluot': 'TextEdit', 'giavethang': 'TextEdit', 'thcbdt': 'TextEdit', 'ththdt': 'TextEdit', });
+lyr_tuyen_M2_207.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'fid': 'TextEdit', 'tuyen': 'TextEdit', 'doantuyen': 'TextEdit', 'huongtuyen': 'TextEdit', 'quanhuyen': 'TextEdit', 'phuongxa': 'TextEdit', 'tmdt': 'TextEdit', 'nguonvon': 'TextEdit', 'chudautu': 'TextEdit', 'thoigianth': 'TextEdit', 'chieudai': 'TextEdit', 'cao': 'TextEdit', 'matdat': 'TextEdit', 'ngam': 'TextEdit', 'soga': 'TextEdit', 'gacao': 'TextEdit', 'gamatdat': 'TextEdit', 'gangam': 'TextEdit', 'sodepot': 'TextEdit', 'sodoantau': 'TextEdit', 'capdien': 'TextEdit', 'tocdotk': 'TextEdit', 'tocdovanha': 'TextEdit', 'tggiancach': 'TextEdit', 'giomo': 'TextEdit', 'giodong': 'TextEdit', 'luotkhach': 'TextEdit', 'giaveluot': 'TextEdit', 'giavethang': 'TextEdit', 'thcbdt': 'TextEdit', 'ththdt': 'TextEdit', });
+lyr_tuyen_M1_208.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'fid': 'TextEdit', 'tuyen': 'TextEdit', 'doantuyen': 'TextEdit', 'huongtuyen': 'TextEdit', 'quanhuyen': 'TextEdit', 'phuongxa': 'TextEdit', 'tmdt': 'TextEdit', 'nguonvon': 'TextEdit', 'chudautu': 'TextEdit', 'thoigianth': 'TextEdit', 'chieudai': 'TextEdit', 'cao': 'TextEdit', 'matdat': 'TextEdit', 'ngam': 'TextEdit', 'soga': 'TextEdit', 'gacao': 'TextEdit', 'gamatdat': 'TextEdit', 'gangam': 'TextEdit', 'sodepot': 'TextEdit', 'sodoantau': 'TextEdit', 'capdien': 'TextEdit', 'tocdotk': 'TextEdit', 'tocdovanha': 'TextEdit', 'tggiancach': 'TextEdit', 'giomo': 'TextEdit', 'giodong': 'TextEdit', 'luotkhach': 'TextEdit', 'giaveluot': 'TextEdit', 'giavethang': 'TextEdit', 'thcbdt': 'TextEdit', 'ththdt': 'TextEdit', });
+lyr_tuyen_VT_209.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'fid': 'TextEdit', 'tuyen': 'TextEdit', 'doantuyen': 'TextEdit', 'huongtuyen': 'TextEdit', 'quanhuyen': 'TextEdit', 'phuongxa': 'TextEdit', 'tmdt': 'TextEdit', 'nguonvon': 'TextEdit', 'chudautu': 'TextEdit', 'thoigianth': 'TextEdit', 'chieudai': 'TextEdit', 'cao': 'TextEdit', 'matdat': 'TextEdit', 'ngam': 'TextEdit', 'soga': 'TextEdit', 'gacao': 'TextEdit', 'gamatdat': 'TextEdit', 'gangam': 'TextEdit', 'sodepot': 'TextEdit', 'sodoantau': 'TextEdit', 'capdien': 'TextEdit', 'tocdotk': 'TextEdit', 'tocdovanha': 'TextEdit', 'tggiancach': 'TextEdit', 'giomo': 'TextEdit', 'giodong': 'TextEdit', 'luotkhach': 'TextEdit', 'giaveluot': 'TextEdit', 'giavethang': 'TextEdit', 'thcbdt': 'TextEdit', 'ththdt': 'TextEdit', });
+lyr_tuyen_8_210.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'fid': 'TextEdit', 'tuyen': 'TextEdit', 'doantuyen': 'TextEdit', 'huongtuyen': 'TextEdit', 'quanhuyen': 'TextEdit', 'phuongxa': 'TextEdit', 'tmdt': 'TextEdit', 'nguonvon': 'TextEdit', 'chudautu': 'TextEdit', 'thoigianth': 'TextEdit', 'chieudai': 'TextEdit', 'cao': 'TextEdit', 'matdat': 'TextEdit', 'ngam': 'TextEdit', 'soga': 'TextEdit', 'gacao': 'TextEdit', 'gamatdat': 'TextEdit', 'gangam': 'TextEdit', 'sodepot': 'TextEdit', 'sodoantau': 'TextEdit', 'capdien': 'TextEdit', 'tocdotk': 'TextEdit', 'tocdovanha': 'TextEdit', 'tggiancach': 'TextEdit', 'giomo': 'TextEdit', 'giodong': 'TextEdit', 'luotkhach': 'TextEdit', 'giaveluot': 'TextEdit', 'giavethang': 'TextEdit', 'thcbdt': 'TextEdit', 'ththdt': 'TextEdit', });
+lyr_tuyen_7_211.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'fid': 'TextEdit', 'tuyen': 'TextEdit', 'doantuyen': 'TextEdit', 'huongtuyen': 'TextEdit', 'quanhuyen': 'TextEdit', 'phuongxa': 'TextEdit', 'tmdt': 'TextEdit', 'nguonvon': 'TextEdit', 'chudautu': 'TextEdit', 'thoigianth': 'TextEdit', 'chieudai': 'TextEdit', 'cao': 'TextEdit', 'matdat': 'TextEdit', 'ngam': 'TextEdit', 'soga': 'TextEdit', 'gacao': 'TextEdit', 'gamatdat': 'TextEdit', 'gangam': 'TextEdit', 'sodepot': 'TextEdit', 'sodoantau': 'TextEdit', 'capdien': 'TextEdit', 'tocdotk': 'TextEdit', 'tocdovanha': 'TextEdit', 'tggiancach': 'TextEdit', 'giomo': 'TextEdit', 'giodong': 'TextEdit', 'luotkhach': 'TextEdit', 'giaveluot': 'TextEdit', 'giavethang': 'TextEdit', 'thcbdt': 'TextEdit', 'ththdt': 'TextEdit', });
+lyr_tuyen_6_212.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'fid': 'TextEdit', 'tuyen': 'TextEdit', 'doantuyen': 'TextEdit', 'huongtuyen': 'TextEdit', 'quanhuyen': 'TextEdit', 'phuongxa': 'TextEdit', 'tmdt': 'TextEdit', 'nguonvon': 'TextEdit', 'chudautu': 'TextEdit', 'thoigianth': 'TextEdit', 'chieudai': 'TextEdit', 'cao': 'TextEdit', 'matdat': 'TextEdit', 'ngam': 'TextEdit', 'soga': 'TextEdit', 'gacao': 'TextEdit', 'gamatdat': 'TextEdit', 'gangam': 'TextEdit', 'sodepot': 'TextEdit', 'sodoantau': 'TextEdit', 'capdien': 'TextEdit', 'tocdotk': 'TextEdit', 'tocdovanha': 'TextEdit', 'tggiancach': 'TextEdit', 'giomo': 'TextEdit', 'giodong': 'TextEdit', 'luotkhach': 'TextEdit', 'giaveluot': 'TextEdit', 'giavethang': 'TextEdit', 'thcbdt': 'TextEdit', 'ththdt': 'TextEdit', });
+lyr_tuyen_5_213.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'fid': 'TextEdit', 'tuyen': 'TextEdit', 'doantuyen': 'TextEdit', 'huongtuyen': 'TextEdit', 'quanhuyen': 'TextEdit', 'phuongxa': 'TextEdit', 'tmdt': 'TextEdit', 'nguonvon': 'TextEdit', 'chudautu': 'TextEdit', 'thoigianth': 'TextEdit', 'chieudai': 'TextEdit', 'cao': 'TextEdit', 'matdat': 'TextEdit', 'ngam': 'TextEdit', 'soga': 'TextEdit', 'gacao': 'TextEdit', 'gamatdat': 'TextEdit', 'gangam': 'TextEdit', 'sodepot': 'TextEdit', 'sodoantau': 'TextEdit', 'capdien': 'TextEdit', 'tocdotk': 'TextEdit', 'tocdovanha': 'TextEdit', 'tggiancach': 'TextEdit', 'giomo': 'TextEdit', 'giodong': 'TextEdit', 'luotkhach': 'TextEdit', 'giaveluot': 'TextEdit', 'giavethang': 'TextEdit', 'thcbdt': 'TextEdit', 'ththdt': 'TextEdit', });
+lyr_tuyen_4_214.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'fid': 'TextEdit', 'tuyen': 'TextEdit', 'doantuyen': 'TextEdit', 'huongtuyen': 'TextEdit', 'quanhuyen': 'TextEdit', 'phuongxa': 'TextEdit', 'tmdt': 'TextEdit', 'nguonvon': 'TextEdit', 'chudautu': 'TextEdit', 'thoigianth': 'TextEdit', 'chieudai': 'TextEdit', 'cao': 'TextEdit', 'matdat': 'TextEdit', 'ngam': 'TextEdit', 'soga': 'TextEdit', 'gacao': 'TextEdit', 'gamatdat': 'TextEdit', 'gangam': 'TextEdit', 'sodepot': 'TextEdit', 'sodoantau': 'TextEdit', 'capdien': 'TextEdit', 'tocdotk': 'TextEdit', 'tocdovanha': 'TextEdit', 'tggiancach': 'TextEdit', 'giomo': 'TextEdit', 'giodong': 'TextEdit', 'luotkhach': 'TextEdit', 'giaveluot': 'TextEdit', 'giavethang': 'TextEdit', 'thcbdt': 'TextEdit', 'ththdt': 'TextEdit', });
+lyr_tuyen_3_215.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'fid': 'TextEdit', 'tuyen': 'TextEdit', 'doantuyen': 'TextEdit', 'huongtuyen': 'TextEdit', 'quanhuyen': 'TextEdit', 'phuongxa': 'TextEdit', 'tmdt': 'TextEdit', 'nguonvon': 'TextEdit', 'chudautu': 'TextEdit', 'thoigianth': 'TextEdit', 'chieudai': 'TextEdit', 'cao': 'TextEdit', 'matdat': 'TextEdit', 'ngam': 'TextEdit', 'soga': 'TextEdit', 'gacao': 'TextEdit', 'gamatdat': 'TextEdit', 'gangam': 'TextEdit', 'sodepot': 'TextEdit', 'sodoantau': 'TextEdit', 'capdien': 'TextEdit', 'tocdotk': 'TextEdit', 'tocdovanha': 'TextEdit', 'tggiancach': 'TextEdit', 'giomo': 'TextEdit', 'giodong': 'TextEdit', 'luotkhach': 'TextEdit', 'giaveluot': 'TextEdit', 'giavethang': 'TextEdit', 'thcbdt': 'TextEdit', 'ththdt': 'TextEdit', });
+lyr_tuyen_2A_216.set('fieldImages', {'id': '', 'Name': '', 'description': '', 'timestamp': '', 'begin': '', 'end': '', 'altitudeMode': '', 'tessellate': '', 'extrude': '', 'visibility': '', 'drawOrder': '', 'icon': '', 'fid': '', 'tuyen': '', 'doantuyen': '', 'huongtuyen': '', 'quanhuyen': '', 'phuongxa': '', 'tmdt': '', 'nguonvon': '', 'chudautu': '', 'thoigianth': '', 'chieudai': '', 'cao': '', 'matdat': '', 'ngam': '', 'soga': '', 'gacao': '', 'gamatdat': '', 'gangam': '', 'sodepot': '', 'sodoantau': '', 'capdien': '', 'tocdotk': '', 'tocdovanha': '', 'tggiancach': '', 'giomo': '', 'giodong': '', 'luotkhach': '', 'giaveluot': '', 'giavethang': '', 'thcbdt': '', 'ththdt': '', });
+lyr_tuyen_2_217.set('fieldImages', {'id': '', 'Name': '', 'description': '', 'timestamp': '', 'begin': '', 'end': '', 'altitudeMode': '', 'tessellate': '', 'extrude': '', 'visibility': '', 'drawOrder': '', 'icon': '', 'fid': '', 'tuyen': '', 'doantuyen': '', 'huongtuyen': '', 'quanhuyen': '', 'phuongxa': '', 'tmdt': '', 'nguonvon': '', 'chudautu': '', 'thoigianth': '', 'chieudai': '', 'cao': '', 'matdat': '', 'ngam': '', 'soga': '', 'gacao': '', 'gamatdat': '', 'gangam': '', 'sodepot': '', 'sodoantau': '', 'capdien': '', 'tocdotk': '', 'tocdovanha': '', 'tggiancach': '', 'giomo': '', 'giodong': '', 'luotkhach': '', 'giaveluot': '', 'giavethang': '', 'thcbdt': '', 'ththdt': '', });
+lyr_tuyen_1_218.set('fieldImages', {'id': '', 'Name': '', 'description': '', 'timestamp': '', 'begin': '', 'end': '', 'altitudeMode': '', 'tessellate': '', 'extrude': '', 'visibility': '', 'drawOrder': '', 'icon': '', 'fid': '', 'tuyen': '', 'doantuyen': '', 'huongtuyen': '', 'quanhuyen': '', 'phuongxa': '', 'tmdt': '', 'nguonvon': '', 'chudautu': '', 'thoigianth': '', 'chieudai': '', 'cao': '', 'matdat': '', 'ngam': '', 'soga': '', 'gacao': '', 'gamatdat': '', 'gangam': '', 'sodepot': '', 'sodoantau': '', 'capdien': '', 'tocdotk': '', 'tocdovanha': '', 'tggiancach': '', 'giomo': '', 'giodong': '', 'luotkhach': '', 'giaveluot': '', 'giavethang': '', 'thcbdt': '', 'ththdt': '', });
+lyr_SDDHuyenChuongMy_219.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_SDD3phankhu_220.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_QHGT_221.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'Layer': '', 'SubClasses': '', 'ExtendedEntity': '', 'Linetype': '', 'EntityHandle': '', 'Text': '', });
+lyr_PhngnVQHXDdexuat_222.set('fieldImages', {'id': '', 'Name': '', 'description': '', 'timestamp': '', 'begin': '', 'end': '', 'altitudeMode': '', 'tessellate': '', 'extrude': '', 'visibility': '', 'drawOrder': '', 'icon': '', });
+lyr_Phngn3_223.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_Phngn2_224.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_Phngn1_225.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_SDDSonTay_7.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_SDDS5_8.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_SDDS4_9.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_SDDS3_10.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_SDDS2_11.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_SDDS1_12.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_SDDPKR_13.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_SDDPhuctho_14.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_SDDN11_15.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_SDDN10_16.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_SDDN9_17.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_SDDN8_18.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_SDDN7_19.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_SDDN6_20.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_SDDN5_21.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_SDDN4_22.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_SDDN3_23.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_SDDN2_24.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_SDDN1_25.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_SDDH24_26.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_SDDH23_27.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_SDDH22_28.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_SDDH21_29.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_SDDH14_30.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_SDDH13_31.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_SDDH12_32.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_SDDA6_33.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_layer_M16_34.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'no label', });
+lyr_layer_M15_35.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'no label', });
+lyr_layer_M14_36.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'no label', });
+lyr_layer_M13_37.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'no label', });
+lyr_layer_M12_38.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'no label', });
+lyr_layer_M11_39.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'no label', });
+lyr_layer_M10_40.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'no label', });
+lyr_layer_M09_41.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'no label', });
+lyr_layer_M08_42.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'no label', });
+lyr_layer_M07_43.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'no label', });
+lyr_layer_M06_44.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'no label', });
+lyr_layer_M05_45.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'no label', });
+lyr_layer_M04_46.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'no label', });
+lyr_layer_M03_47.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'no label', });
+lyr_layer_M02A_48.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'no label', });
+lyr_layer_M02_49.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'no label', });
+lyr_layer_M01_50.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'no label', });
+lyr_Ga_51.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_layer_DCaotoc_52.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'header label - always visible', });
+lyr_layer_DPcCaotoc_53.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'header label - always visible', });
+lyr_layer_ketnoidsdt_54.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'header label - always visible', });
+lyr_layer_4Railwaywhite_55.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'header label - always visible', });
+lyr_layer_4Railway_56.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'header label - always visible', });
+lyr_layer_SQG_Thng2050_57.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'header label - always visible', });
+lyr_layer_Dduongsattocdocao_58.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'header label - always visible', });
+lyr_layer_02interCity_59.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'header label - always visible', });
+lyr_layer_Monorail_60.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'header label - always visible', });
+lyr_layer_4BRTM18_61.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'header label - always visible', });
+lyr_layer_DSDT_17_62.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'header label - always visible', });
+lyr_layer_DSDT_16_63.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'header label - always visible', });
+lyr_layer_DSDT_15_64.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'header label - always visible', });
+lyr_layer_DSDT_13_65.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'header label - always visible', });
+lyr_layer_DSDT12_66.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'header label - always visible', });
+lyr_layer_DSDT_11_67.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'header label - always visible', });
+lyr_layer_DSDT10_68.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'header label - always visible', });
+lyr_layer_DSDT9_69.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'header label - always visible', });
+lyr_layer_DSDT8_70.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'header label - always visible', });
+lyr_layer_DSDT7_71.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'header label - always visible', });
+lyr_layer_DSDT6_72.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'header label - always visible', });
+lyr_layer_DSDT5_73.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'header label - always visible', });
+lyr_layer_DSDT4_74.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'header label - always visible', });
+lyr_layer_DSDT3_75.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'header label - always visible', });
+lyr_layer_DSDT2A_76.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'header label - always visible', });
+lyr_layer_DSDT2_77.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'header label - always visible', });
+lyr_layer_DSDT1_78.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'layer': 'header label - always visible', });
+lyr_nearbyProvince_79.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', 'line_section': 'hidden field', });
+lyr_03commuterLine_80.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_02interCity_81.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', 'line_section': 'hidden field', });
+lyr_01highSpeed_82.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', 'line_section': 'hidden field', 'name_1': 'hidden field', });
+lyr_7railwaystation2secondary_83.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'name_1': 'hidden field', });
+lyr_6airport_84.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'name_1': 'hidden field', });
+lyr_4Railway_85.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', 'line_section': 'hidden field', 'attrib_1': 'hidden field', });
+lyr_4BRTM18_86.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', 'line_section': 'hidden field', 'attrib_1': 'hidden field', });
+lyr_4BRTM17_87.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', 'line_section': 'hidden field', 'attrib_1': 'hidden field', });
+lyr_2RegularLineM16_88.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', 'attrib_1': 'hidden field', });
+lyr_3LRTM15_89.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', 'attrib_1': 'hidden field', });
+lyr_2RegularLineM14_90.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', 'attrib_1': 'hidden field', });
+lyr_3LRTM13_91.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', 'attrib_1': 'hidden field', });
+lyr_4BRTM12_92.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', 'line_section': 'hidden field', 'attrib_1': 'hidden field', });
+lyr_2RegularLineM11_93.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', 'attrib_1': 'hidden field', });
+lyr_2RegularLineM10_94.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', 'attrib_1': 'hidden field', });
+lyr_3LRTM9_95.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', 'attrib_1': 'hidden field', });
+lyr_1ExpressLineM8_96.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', 'line_section': 'hidden field', 'attrib_1': 'hidden field', });
+lyr_2RegularLineM7_97.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'attrib_1': 'hidden field', });
+lyr_2RegularLineM6_98.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', 'attrib_1': 'hidden field', });
+lyr_2RegularLineM5_99.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'attrib_1': 'hidden field', });
+lyr_2RegularLineM4_100.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', 'attrib_1': 'hidden field', });
+lyr_2RegularLineM3_101.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', 'attrib_1': 'hidden field', });
+lyr_2RegularLineM2_102.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', 'line_section': 'hidden field', 'attrib_1': 'hidden field', });
+lyr_2RegularLine2A_103.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', 'line_section': 'hidden field', 'attrib_1': 'hidden field', });
+lyr_1ExpressLineM1_104.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', 'line_section': 'hidden field', 'attrib_1': 'hidden field', });
+lyr_Ga_105.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_Monorail_106.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_DSDT16_107.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_DSDT15_108.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_DSDT10_109.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_DSDT9_110.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_DSDT8_111.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_DSDT7_112.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_DSDT6_113.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_DSDT5_114.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_DSDT4_115.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_DSDT3_116.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_DSDT2A_117.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_DSDT2_118.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_DSDT1_119.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_4Railway_120.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_3LRTORBRTM17_121.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_3LRTORBRTM13_122.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_1ExpressLineM8_123.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_QH100Ga_124.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'Layer': 'hidden field', 'SubClasses': 'hidden field', 'ExtendedEntity': 'hidden field', 'Linetype': 'hidden field', 'EntityHandle': 'hidden field', 'Text': 'hidden field', });
+lyr_QH100Monorail_125.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'Layer': 'hidden field', 'SubClasses': 'hidden field', 'ExtendedEntity': 'hidden field', 'Linetype': 'hidden field', 'EntityHandle': 'hidden field', 'Text': 'hidden field', });
+lyr_QH100dsDT_126.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'Layer': 'hidden field', 'SubClasses': 'hidden field', 'ExtendedEntity': 'hidden field', 'Linetype': 'hidden field', 'EntityHandle': 'hidden field', 'Text': 'hidden field', });
+lyr_QH100DSDT17_127.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'Layer': 'hidden field', 'SubClasses': 'hidden field', 'ExtendedEntity': 'hidden field', 'Linetype': 'hidden field', 'EntityHandle': 'hidden field', 'Text': 'hidden field', });
+lyr_QH100DSDT16_128.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'Layer': 'hidden field', 'SubClasses': 'hidden field', 'ExtendedEntity': 'hidden field', 'Linetype': 'hidden field', 'EntityHandle': 'hidden field', 'Text': 'hidden field', });
+lyr_QH100DSDT15_129.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'Layer': 'hidden field', 'SubClasses': 'hidden field', 'ExtendedEntity': 'hidden field', 'Linetype': 'hidden field', 'EntityHandle': 'hidden field', 'Text': 'hidden field', });
+lyr_QH100DSDT12_130.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'Layer': 'hidden field', 'SubClasses': 'hidden field', 'ExtendedEntity': 'hidden field', 'Linetype': 'hidden field', 'EntityHandle': 'hidden field', 'Text': 'hidden field', });
+lyr_QH100DSDT11_131.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'Layer': 'hidden field', 'SubClasses': 'hidden field', 'ExtendedEntity': 'hidden field', 'Linetype': 'hidden field', 'EntityHandle': 'hidden field', 'Text': 'hidden field', });
+lyr_QH100DSDT10_132.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'Layer': 'hidden field', 'SubClasses': 'hidden field', 'ExtendedEntity': 'hidden field', 'Linetype': 'hidden field', 'EntityHandle': 'hidden field', 'Text': 'hidden field', });
+lyr_QH100DSDT9_133.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'Layer': 'hidden field', 'SubClasses': 'hidden field', 'ExtendedEntity': 'hidden field', 'Linetype': 'hidden field', 'EntityHandle': 'hidden field', 'Text': 'hidden field', });
+lyr_QH100DSDT8_134.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'Layer': 'hidden field', 'SubClasses': 'hidden field', 'ExtendedEntity': 'hidden field', 'Linetype': 'hidden field', 'EntityHandle': 'hidden field', 'Text': 'hidden field', });
+lyr_QH100DSDT7_135.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'Layer': 'hidden field', 'SubClasses': 'hidden field', 'ExtendedEntity': 'hidden field', 'Linetype': 'hidden field', 'EntityHandle': 'hidden field', 'Text': 'hidden field', });
+lyr_QH100DSDT6_136.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'Layer': 'hidden field', 'SubClasses': 'hidden field', 'ExtendedEntity': 'hidden field', 'Linetype': 'hidden field', 'EntityHandle': 'hidden field', 'Text': 'hidden field', });
+lyr_QH100DSDT5_137.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'Layer': 'hidden field', 'SubClasses': 'hidden field', 'ExtendedEntity': 'hidden field', 'Linetype': 'hidden field', 'EntityHandle': 'hidden field', 'Text': 'hidden field', });
+lyr_QH100DSDT4_138.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'Layer': 'hidden field', 'SubClasses': 'hidden field', 'ExtendedEntity': 'hidden field', 'Linetype': 'hidden field', 'EntityHandle': 'hidden field', 'Text': 'hidden field', });
+lyr_QH100DSDT3_139.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'Layer': 'hidden field', 'SubClasses': 'hidden field', 'ExtendedEntity': 'hidden field', 'Linetype': 'hidden field', 'EntityHandle': 'hidden field', 'Text': 'hidden field', });
+lyr_QH100DSDT2A_140.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'Layer': 'hidden field', 'SubClasses': 'hidden field', 'ExtendedEntity': 'hidden field', 'Linetype': 'hidden field', 'EntityHandle': 'hidden field', 'Text': 'hidden field', });
+lyr_QH100DSDT2_141.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'Layer': 'hidden field', 'SubClasses': 'hidden field', 'ExtendedEntity': 'hidden field', 'Linetype': 'hidden field', 'EntityHandle': 'hidden field', 'Text': 'hidden field', });
+lyr_QH100DSDT1_142.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'Layer': 'hidden field', 'SubClasses': 'hidden field', 'ExtendedEntity': 'hidden field', 'Linetype': 'hidden field', 'EntityHandle': 'hidden field', 'Text': 'hidden field', });
+lyr_QH100Tuyen16_143.set('fieldLabels', {'fid': 'hidden field', 'handle': 'hidden field', 'block': 'hidden field', 'etype': 'hidden field', 'space': 'hidden field', 'layer': 'no label', 'olinetype': 'hidden field', 'linetype': 'hidden field', 'color': 'hidden field', 'ocolor': 'hidden field', 'color24': 'hidden field', 'transparency': 'hidden field', 'lweight': 'hidden field', 'linewidth': 'hidden field', 'ltscale': 'hidden field', 'visible': 'hidden field', 'width': 'hidden field', 'thickness': 'hidden field', 'ext': 'hidden field', });
+lyr_QH100Tuyen14_144.set('fieldLabels', {'fid': 'hidden field', 'handle': 'hidden field', 'block': 'hidden field', 'etype': 'hidden field', 'space': 'hidden field', 'layer': 'no label', 'olinetype': 'hidden field', 'linetype': 'hidden field', 'color': 'hidden field', 'ocolor': 'hidden field', 'color24': 'hidden field', 'transparency': 'hidden field', 'lweight': 'hidden field', 'linewidth': 'hidden field', 'ltscale': 'hidden field', 'visible': 'hidden field', 'width': 'hidden field', 'thickness': 'hidden field', 'ext': 'hidden field', });
+lyr_QH100Tuyen9_145.set('fieldLabels', {'fid': 'hidden field', 'handle': 'hidden field', 'block': 'hidden field', 'etype': 'hidden field', 'space': 'hidden field', 'layer': 'no label', 'olinetype': 'hidden field', 'linetype': 'hidden field', 'color': 'hidden field', 'ocolor': 'hidden field', 'color24': 'hidden field', 'transparency': 'hidden field', 'lweight': 'hidden field', 'linewidth': 'hidden field', 'ltscale': 'hidden field', 'visible': 'hidden field', 'width': 'hidden field', 'thickness': 'hidden field', 'ext': 'hidden field', });
+lyr_QH100Tuyen8_146.set('fieldLabels', {'fid': 'hidden field', 'handle': 'hidden field', 'block': 'hidden field', 'etype': 'hidden field', 'space': 'hidden field', 'layer': 'no label', 'olinetype': 'hidden field', 'linetype': 'hidden field', 'color': 'hidden field', 'ocolor': 'hidden field', 'color24': 'hidden field', 'transparency': 'hidden field', 'lweight': 'hidden field', 'linewidth': 'hidden field', 'ltscale': 'hidden field', 'visible': 'hidden field', 'width': 'hidden field', 'thickness': 'hidden field', 'ext': 'hidden field', });
+lyr_QH100Tuyen7_147.set('fieldLabels', {'fid': 'hidden field', 'handle': 'hidden field', 'block': 'hidden field', 'etype': 'hidden field', 'space': 'hidden field', 'layer': 'no label', 'olinetype': 'hidden field', 'linetype': 'hidden field', 'color': 'hidden field', 'ocolor': 'hidden field', 'color24': 'hidden field', 'transparency': 'hidden field', 'lweight': 'hidden field', 'linewidth': 'hidden field', 'ltscale': 'hidden field', 'visible': 'hidden field', 'width': 'hidden field', 'thickness': 'hidden field', 'ext': 'hidden field', });
+lyr_QH100Tuyen6_148.set('fieldLabels', {'fid': 'hidden field', 'handle': 'hidden field', 'block': 'hidden field', 'etype': 'hidden field', 'space': 'hidden field', 'layer': 'no label', 'olinetype': 'hidden field', 'linetype': 'hidden field', 'color': 'hidden field', 'ocolor': 'hidden field', 'color24': 'hidden field', 'transparency': 'hidden field', 'lweight': 'hidden field', 'linewidth': 'hidden field', 'ltscale': 'hidden field', 'visible': 'hidden field', 'width': 'hidden field', 'thickness': 'hidden field', 'ext': 'hidden field', });
+lyr_QH100Tuyen5_149.set('fieldLabels', {'fid': 'hidden field', 'handle': 'hidden field', 'block': 'hidden field', 'etype': 'hidden field', 'space': 'hidden field', 'layer': 'no label', 'olinetype': 'hidden field', 'linetype': 'hidden field', 'color': 'hidden field', 'ocolor': 'hidden field', 'color24': 'hidden field', 'transparency': 'hidden field', 'lweight': 'hidden field', 'linewidth': 'hidden field', 'ltscale': 'hidden field', 'visible': 'hidden field', 'width': 'hidden field', 'thickness': 'hidden field', 'ext': 'hidden field', });
+lyr_QH100Tuyen4_150.set('fieldLabels', {'fid': 'hidden field', 'handle': 'hidden field', 'block': 'hidden field', 'etype': 'hidden field', 'space': 'hidden field', 'layer': 'no label', 'olinetype': 'hidden field', 'linetype': 'hidden field', 'color': 'hidden field', 'ocolor': 'hidden field', 'color24': 'hidden field', 'transparency': 'hidden field', 'lweight': 'hidden field', 'linewidth': 'hidden field', 'ltscale': 'hidden field', 'visible': 'hidden field', 'width': 'hidden field', 'thickness': 'hidden field', 'ext': 'hidden field', });
+lyr_QH100Tuyen3_151.set('fieldLabels', {'fid': 'hidden field', 'handle': 'hidden field', 'block': 'hidden field', 'etype': 'hidden field', 'space': 'hidden field', 'layer': 'no label', 'olinetype': 'hidden field', 'linetype': 'hidden field', 'color': 'hidden field', 'ocolor': 'hidden field', 'color24': 'hidden field', 'transparency': 'hidden field', 'lweight': 'hidden field', 'linewidth': 'hidden field', 'ltscale': 'hidden field', 'visible': 'hidden field', 'width': 'hidden field', 'thickness': 'hidden field', 'ext': 'hidden field', });
+lyr_QH100Tuyen2A_152.set('fieldLabels', {'fid': 'hidden field', 'handle': 'hidden field', 'block': 'hidden field', 'etype': 'hidden field', 'space': 'hidden field', 'layer': 'no label', 'olinetype': 'hidden field', 'linetype': 'hidden field', 'color': 'hidden field', 'ocolor': 'hidden field', 'color24': 'hidden field', 'transparency': 'hidden field', 'lweight': 'hidden field', 'linewidth': 'hidden field', 'ltscale': 'hidden field', 'visible': 'hidden field', 'width': 'hidden field', 'thickness': 'hidden field', 'ext': 'hidden field', });
+lyr_QH100Tuyen2_153.set('fieldLabels', {'fid': 'hidden field', 'handle': 'hidden field', 'block': 'hidden field', 'etype': 'hidden field', 'space': 'hidden field', 'layer': 'no label', 'olinetype': 'hidden field', 'linetype': 'hidden field', 'color': 'hidden field', 'ocolor': 'hidden field', 'color24': 'hidden field', 'transparency': 'hidden field', 'lweight': 'hidden field', 'linewidth': 'hidden field', 'ltscale': 'hidden field', 'visible': 'hidden field', 'width': 'hidden field', 'thickness': 'hidden field', 'ext': 'hidden field', });
+lyr_QH100Tuyen1_154.set('fieldLabels', {'fid': 'hidden field', 'handle': 'hidden field', 'block': 'hidden field', 'etype': 'hidden field', 'space': 'hidden field', 'layer': 'no label', 'olinetype': 'hidden field', 'linetype': 'hidden field', 'color': 'hidden field', 'ocolor': 'hidden field', 'color24': 'hidden field', 'transparency': 'hidden field', 'lweight': 'hidden field', 'linewidth': 'hidden field', 'ltscale': 'hidden field', 'visible': 'hidden field', 'width': 'hidden field', 'thickness': 'hidden field', 'ext': 'hidden field', });
+lyr_DSQG_155.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', });
+lyr_Duongsatvung_156.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', });
+lyr_Depot_157.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_PLine_17_158.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', });
+lyr_PLine_16_159.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', });
+lyr_PLine_15_160.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', });
+lyr_PLine_14_161.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', });
+lyr_PLine_13_162.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', });
+lyr_PLine_12_163.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', });
+lyr_PLine_11_164.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', });
+lyr_PLine_10_165.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', });
+lyr_PLine_9_166.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', });
+lyr_PLine_8_167.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', });
+lyr_PLine_7_168.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', });
+lyr_PLine_6_169.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', });
+lyr_PLine_5_170.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', });
+lyr_PLine_4_171.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', });
+lyr_PLine_3_172.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', });
+lyr_PLine_2A_173.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', });
+lyr_PLine_2_174.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', });
+lyr_PLine_1_175.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'line': 'hidden field', });
+lyr_Layer_CcTuynmi_176.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'Layer': 'hidden field', 'SubClasses': 'hidden field', 'ExtendedEntity': 'hidden field', 'Linetype': 'hidden field', 'EntityHandle': 'hidden field', 'Text': 'hidden field', });
+lyr_Layer_Tuyn12_177.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'Layer': 'hidden field', 'SubClasses': 'hidden field', 'ExtendedEntity': 'hidden field', 'Linetype': 'hidden field', 'EntityHandle': 'hidden field', 'Text': 'hidden field', });
+lyr_Layer_Tuyn11_178.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'Layer': 'hidden field', 'SubClasses': 'hidden field', 'ExtendedEntity': 'hidden field', 'Linetype': 'hidden field', 'EntityHandle': 'hidden field', 'Text': 'hidden field', });
+lyr_Layer_Tuyn10_179.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'Layer': 'hidden field', 'SubClasses': 'hidden field', 'ExtendedEntity': 'hidden field', 'Linetype': 'hidden field', 'EntityHandle': 'hidden field', 'Text': 'hidden field', });
+lyr_Layer_Tuyn9_180.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'Layer': 'hidden field', 'SubClasses': 'hidden field', 'ExtendedEntity': 'hidden field', 'Linetype': 'hidden field', 'EntityHandle': 'hidden field', 'Text': 'hidden field', });
+lyr_Layer_Tuyn8_181.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'Layer': 'hidden field', 'SubClasses': 'hidden field', 'ExtendedEntity': 'hidden field', 'Linetype': 'hidden field', 'EntityHandle': 'hidden field', 'Text': 'hidden field', });
+lyr_Layer_Tuyn7_182.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'Layer': 'hidden field', 'SubClasses': 'hidden field', 'ExtendedEntity': 'hidden field', 'Linetype': 'hidden field', 'EntityHandle': 'hidden field', 'Text': 'hidden field', });
+lyr_Layer_Tuyn6_183.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'Layer': 'hidden field', 'SubClasses': 'hidden field', 'ExtendedEntity': 'hidden field', 'Linetype': 'hidden field', 'EntityHandle': 'hidden field', 'Text': 'hidden field', });
+lyr_Layer_Tuyn5_184.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'Layer': 'hidden field', 'SubClasses': 'hidden field', 'ExtendedEntity': 'hidden field', 'Linetype': 'hidden field', 'EntityHandle': 'hidden field', 'Text': 'hidden field', });
+lyr_Layer_Tuyn4_185.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'Layer': 'hidden field', 'SubClasses': 'hidden field', 'ExtendedEntity': 'hidden field', 'Linetype': 'hidden field', 'EntityHandle': 'hidden field', 'Text': 'hidden field', });
+lyr_Layer_Tuyn3_186.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'Layer': 'hidden field', 'SubClasses': 'hidden field', 'ExtendedEntity': 'hidden field', 'Linetype': 'hidden field', 'EntityHandle': 'hidden field', 'Text': 'hidden field', });
+lyr_Layer_Tuyn2A_187.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'Layer': 'hidden field', 'SubClasses': 'hidden field', 'ExtendedEntity': 'hidden field', 'Linetype': 'hidden field', 'EntityHandle': 'hidden field', 'Text': 'hidden field', });
+lyr_Layer_Tuyn2_188.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'Layer': 'hidden field', 'SubClasses': 'hidden field', 'ExtendedEntity': 'hidden field', 'Linetype': 'hidden field', 'EntityHandle': 'hidden field', 'Text': 'hidden field', });
+lyr_Layer_Tuyn1_189.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'Layer': 'hidden field', 'SubClasses': 'hidden field', 'ExtendedEntity': 'hidden field', 'Linetype': 'hidden field', 'EntityHandle': 'hidden field', 'Text': 'hidden field', });
+lyr_T12_190.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'fid': 'hidden field', 'handle': 'hidden field', 'block': 'hidden field', 'etype': 'hidden field', 'space': 'hidden field', 'layer': 'hidden field', 'Thông tin': 'hidden field', });
+lyr_T11_191.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'fid': 'hidden field', 'handle': 'hidden field', 'block': 'hidden field', 'etype': 'hidden field', 'space': 'hidden field', 'layer': 'hidden field', 'Thông tin': 'hidden field', });
+lyr_T10_192.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'fid': 'hidden field', 'handle': 'hidden field', 'block': 'hidden field', 'etype': 'hidden field', 'space': 'hidden field', 'layer': 'hidden field', 'Thông tin': 'hidden field', });
+lyr_T9_193.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'fid': 'hidden field', 'handle': 'hidden field', 'block': 'hidden field', 'etype': 'hidden field', 'space': 'hidden field', 'layer': 'hidden field', 'Thông tin': 'hidden field', });
+lyr_T8_194.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'fid': 'hidden field', 'handle': 'hidden field', 'block': 'hidden field', 'etype': 'hidden field', 'space': 'hidden field', 'layer': 'hidden field', 'Thông tin': 'hidden field', });
+lyr_T7_195.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'fid': 'hidden field', 'handle': 'hidden field', 'block': 'hidden field', 'etype': 'hidden field', 'space': 'hidden field', 'layer': 'hidden field', 'Thông tin': 'hidden field', });
+lyr_T6_196.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'fid': 'hidden field', 'handle': 'hidden field', 'block': 'hidden field', 'etype': 'hidden field', 'space': 'hidden field', 'layer': 'hidden field', 'Thông tin': 'hidden field', });
+lyr_T5_197.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'fid': 'hidden field', 'handle': 'hidden field', 'block': 'hidden field', 'etype': 'hidden field', 'space': 'hidden field', 'layer': 'hidden field', 'Thông tin': 'hidden field', });
+lyr_T4_198.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'fid': 'hidden field', 'handle': 'hidden field', 'block': 'hidden field', 'etype': 'hidden field', 'space': 'hidden field', 'layer': 'hidden field', 'Thông tin': 'hidden field', });
+lyr_T3_199.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'fid': 'hidden field', 'handle': 'hidden field', 'block': 'hidden field', 'etype': 'hidden field', 'space': 'hidden field', 'layer': 'hidden field', 'Thông tin': 'hidden field', });
+lyr_T2A_200.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'fid': 'hidden field', 'handle': 'hidden field', 'block': 'hidden field', 'etype': 'hidden field', 'space': 'hidden field', 'layer': 'hidden field', 'Thông tin': 'hidden field', });
+lyr_T2_201.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'fid': 'hidden field', 'handle': 'hidden field', 'block': 'hidden field', 'etype': 'hidden field', 'space': 'hidden field', 'layer': 'hidden field', 'Thông tin': 'hidden field', });
+lyr_T1A_202.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'fid': 'hidden field', 'handle': 'hidden field', 'block': 'hidden field', 'etype': 'hidden field', 'space': 'hidden field', 'layer': 'hidden field', 'Thông tin': 'hidden field', });
+lyr_T1_203.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'fid': 'hidden field', 'handle': 'hidden field', 'block': 'hidden field', 'etype': 'hidden field', 'space': 'hidden field', 'layer': 'hidden field', 'Thông tin': 'hidden field', });
+lyr_QH519Depot_204.set('fieldLabels', {'fid': 'hidden field', });
+lyr_QH519Ga_205.set('fieldLabels', {'fid': 'hidden field', 'tenga': 'hidden field', 'tuyen': 'hidden field', 'doantuyen': 'hidden field', 'quanhuyen': 'hidden field', 'phuongxa': 'hidden field', });
+lyr_tuyen_M3_206.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'fid': 'hidden field', 'tuyen': 'hidden field', 'doantuyen': 'hidden field', 'huongtuyen': 'hidden field', 'quanhuyen': 'hidden field', 'phuongxa': 'hidden field', 'tmdt': 'hidden field', 'nguonvon': 'hidden field', 'chudautu': 'hidden field', 'thoigianth': 'hidden field', 'chieudai': 'hidden field', 'cao': 'hidden field', 'matdat': 'hidden field', 'ngam': 'hidden field', 'soga': 'hidden field', 'gacao': 'hidden field', 'gamatdat': 'hidden field', 'gangam': 'hidden field', 'sodepot': 'hidden field', 'sodoantau': 'hidden field', 'capdien': 'hidden field', 'tocdotk': 'hidden field', 'tocdovanha': 'hidden field', 'tggiancach': 'hidden field', 'giomo': 'hidden field', 'giodong': 'hidden field', 'luotkhach': 'hidden field', 'giaveluot': 'hidden field', 'giavethang': 'hidden field', 'thcbdt': 'hidden field', 'ththdt': 'hidden field', });
+lyr_tuyen_M2_207.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'fid': 'hidden field', 'tuyen': 'hidden field', 'doantuyen': 'hidden field', 'huongtuyen': 'hidden field', 'quanhuyen': 'hidden field', 'phuongxa': 'hidden field', 'tmdt': 'hidden field', 'nguonvon': 'hidden field', 'chudautu': 'hidden field', 'thoigianth': 'hidden field', 'chieudai': 'hidden field', 'cao': 'hidden field', 'matdat': 'hidden field', 'ngam': 'hidden field', 'soga': 'hidden field', 'gacao': 'hidden field', 'gamatdat': 'hidden field', 'gangam': 'hidden field', 'sodepot': 'hidden field', 'sodoantau': 'hidden field', 'capdien': 'hidden field', 'tocdotk': 'hidden field', 'tocdovanha': 'hidden field', 'tggiancach': 'hidden field', 'giomo': 'hidden field', 'giodong': 'hidden field', 'luotkhach': 'hidden field', 'giaveluot': 'hidden field', 'giavethang': 'hidden field', 'thcbdt': 'hidden field', 'ththdt': 'hidden field', });
+lyr_tuyen_M1_208.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'fid': 'hidden field', 'tuyen': 'hidden field', 'doantuyen': 'hidden field', 'huongtuyen': 'hidden field', 'quanhuyen': 'hidden field', 'phuongxa': 'hidden field', 'tmdt': 'hidden field', 'nguonvon': 'hidden field', 'chudautu': 'hidden field', 'thoigianth': 'hidden field', 'chieudai': 'hidden field', 'cao': 'hidden field', 'matdat': 'hidden field', 'ngam': 'hidden field', 'soga': 'hidden field', 'gacao': 'hidden field', 'gamatdat': 'hidden field', 'gangam': 'hidden field', 'sodepot': 'hidden field', 'sodoantau': 'hidden field', 'capdien': 'hidden field', 'tocdotk': 'hidden field', 'tocdovanha': 'hidden field', 'tggiancach': 'hidden field', 'giomo': 'hidden field', 'giodong': 'hidden field', 'luotkhach': 'hidden field', 'giaveluot': 'hidden field', 'giavethang': 'hidden field', 'thcbdt': 'hidden field', 'ththdt': 'hidden field', });
+lyr_tuyen_VT_209.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'fid': 'hidden field', 'tuyen': 'hidden field', 'doantuyen': 'hidden field', 'huongtuyen': 'hidden field', 'quanhuyen': 'hidden field', 'phuongxa': 'hidden field', 'tmdt': 'hidden field', 'nguonvon': 'hidden field', 'chudautu': 'hidden field', 'thoigianth': 'hidden field', 'chieudai': 'hidden field', 'cao': 'hidden field', 'matdat': 'hidden field', 'ngam': 'hidden field', 'soga': 'hidden field', 'gacao': 'hidden field', 'gamatdat': 'hidden field', 'gangam': 'hidden field', 'sodepot': 'hidden field', 'sodoantau': 'hidden field', 'capdien': 'hidden field', 'tocdotk': 'hidden field', 'tocdovanha': 'hidden field', 'tggiancach': 'hidden field', 'giomo': 'hidden field', 'giodong': 'hidden field', 'luotkhach': 'hidden field', 'giaveluot': 'hidden field', 'giavethang': 'hidden field', 'thcbdt': 'hidden field', 'ththdt': 'hidden field', });
+lyr_tuyen_8_210.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'fid': 'hidden field', 'tuyen': 'hidden field', 'doantuyen': 'hidden field', 'huongtuyen': 'hidden field', 'quanhuyen': 'hidden field', 'phuongxa': 'hidden field', 'tmdt': 'hidden field', 'nguonvon': 'hidden field', 'chudautu': 'hidden field', 'thoigianth': 'hidden field', 'chieudai': 'hidden field', 'cao': 'hidden field', 'matdat': 'hidden field', 'ngam': 'hidden field', 'soga': 'hidden field', 'gacao': 'hidden field', 'gamatdat': 'hidden field', 'gangam': 'hidden field', 'sodepot': 'hidden field', 'sodoantau': 'hidden field', 'capdien': 'hidden field', 'tocdotk': 'hidden field', 'tocdovanha': 'hidden field', 'tggiancach': 'hidden field', 'giomo': 'hidden field', 'giodong': 'hidden field', 'luotkhach': 'hidden field', 'giaveluot': 'hidden field', 'giavethang': 'hidden field', 'thcbdt': 'hidden field', 'ththdt': 'hidden field', });
+lyr_tuyen_7_211.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'fid': 'hidden field', 'tuyen': 'hidden field', 'doantuyen': 'hidden field', 'huongtuyen': 'hidden field', 'quanhuyen': 'hidden field', 'phuongxa': 'hidden field', 'tmdt': 'hidden field', 'nguonvon': 'hidden field', 'chudautu': 'hidden field', 'thoigianth': 'hidden field', 'chieudai': 'hidden field', 'cao': 'hidden field', 'matdat': 'hidden field', 'ngam': 'hidden field', 'soga': 'hidden field', 'gacao': 'hidden field', 'gamatdat': 'hidden field', 'gangam': 'hidden field', 'sodepot': 'hidden field', 'sodoantau': 'hidden field', 'capdien': 'hidden field', 'tocdotk': 'hidden field', 'tocdovanha': 'hidden field', 'tggiancach': 'hidden field', 'giomo': 'hidden field', 'giodong': 'hidden field', 'luotkhach': 'hidden field', 'giaveluot': 'hidden field', 'giavethang': 'hidden field', 'thcbdt': 'hidden field', 'ththdt': 'hidden field', });
+lyr_tuyen_6_212.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'fid': 'hidden field', 'tuyen': 'hidden field', 'doantuyen': 'hidden field', 'huongtuyen': 'hidden field', 'quanhuyen': 'hidden field', 'phuongxa': 'hidden field', 'tmdt': 'hidden field', 'nguonvon': 'hidden field', 'chudautu': 'hidden field', 'thoigianth': 'hidden field', 'chieudai': 'hidden field', 'cao': 'hidden field', 'matdat': 'hidden field', 'ngam': 'hidden field', 'soga': 'hidden field', 'gacao': 'hidden field', 'gamatdat': 'hidden field', 'gangam': 'hidden field', 'sodepot': 'hidden field', 'sodoantau': 'hidden field', 'capdien': 'hidden field', 'tocdotk': 'hidden field', 'tocdovanha': 'hidden field', 'tggiancach': 'hidden field', 'giomo': 'hidden field', 'giodong': 'hidden field', 'luotkhach': 'hidden field', 'giaveluot': 'hidden field', 'giavethang': 'hidden field', 'thcbdt': 'hidden field', 'ththdt': 'hidden field', });
+lyr_tuyen_5_213.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'fid': 'hidden field', 'tuyen': 'hidden field', 'doantuyen': 'hidden field', 'huongtuyen': 'hidden field', 'quanhuyen': 'hidden field', 'phuongxa': 'hidden field', 'tmdt': 'hidden field', 'nguonvon': 'hidden field', 'chudautu': 'hidden field', 'thoigianth': 'hidden field', 'chieudai': 'hidden field', 'cao': 'hidden field', 'matdat': 'hidden field', 'ngam': 'hidden field', 'soga': 'hidden field', 'gacao': 'hidden field', 'gamatdat': 'hidden field', 'gangam': 'hidden field', 'sodepot': 'hidden field', 'sodoantau': 'hidden field', 'capdien': 'hidden field', 'tocdotk': 'hidden field', 'tocdovanha': 'hidden field', 'tggiancach': 'hidden field', 'giomo': 'hidden field', 'giodong': 'hidden field', 'luotkhach': 'hidden field', 'giaveluot': 'hidden field', 'giavethang': 'hidden field', 'thcbdt': 'hidden field', 'ththdt': 'hidden field', });
+lyr_tuyen_4_214.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'fid': 'hidden field', 'tuyen': 'hidden field', 'doantuyen': 'hidden field', 'huongtuyen': 'hidden field', 'quanhuyen': 'hidden field', 'phuongxa': 'hidden field', 'tmdt': 'hidden field', 'nguonvon': 'hidden field', 'chudautu': 'hidden field', 'thoigianth': 'hidden field', 'chieudai': 'hidden field', 'cao': 'hidden field', 'matdat': 'hidden field', 'ngam': 'hidden field', 'soga': 'hidden field', 'gacao': 'hidden field', 'gamatdat': 'hidden field', 'gangam': 'hidden field', 'sodepot': 'hidden field', 'sodoantau': 'hidden field', 'capdien': 'hidden field', 'tocdotk': 'hidden field', 'tocdovanha': 'hidden field', 'tggiancach': 'hidden field', 'giomo': 'hidden field', 'giodong': 'hidden field', 'luotkhach': 'hidden field', 'giaveluot': 'hidden field', 'giavethang': 'hidden field', 'thcbdt': 'hidden field', 'ththdt': 'hidden field', });
+lyr_tuyen_3_215.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'fid': 'hidden field', 'tuyen': 'hidden field', 'doantuyen': 'hidden field', 'huongtuyen': 'hidden field', 'quanhuyen': 'hidden field', 'phuongxa': 'hidden field', 'tmdt': 'hidden field', 'nguonvon': 'hidden field', 'chudautu': 'hidden field', 'thoigianth': 'hidden field', 'chieudai': 'hidden field', 'cao': 'hidden field', 'matdat': 'hidden field', 'ngam': 'hidden field', 'soga': 'hidden field', 'gacao': 'hidden field', 'gamatdat': 'hidden field', 'gangam': 'hidden field', 'sodepot': 'hidden field', 'sodoantau': 'hidden field', 'capdien': 'hidden field', 'tocdotk': 'hidden field', 'tocdovanha': 'hidden field', 'tggiancach': 'hidden field', 'giomo': 'hidden field', 'giodong': 'hidden field', 'luotkhach': 'hidden field', 'giaveluot': 'hidden field', 'giavethang': 'hidden field', 'thcbdt': 'hidden field', 'ththdt': 'hidden field', });
+lyr_tuyen_2A_216.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'fid': 'hidden field', 'tuyen': 'hidden field', 'doantuyen': 'hidden field', 'huongtuyen': 'hidden field', 'quanhuyen': 'hidden field', 'phuongxa': 'hidden field', 'tmdt': 'hidden field', 'nguonvon': 'hidden field', 'chudautu': 'hidden field', 'thoigianth': 'hidden field', 'chieudai': 'hidden field', 'cao': 'hidden field', 'matdat': 'hidden field', 'ngam': 'hidden field', 'soga': 'hidden field', 'gacao': 'hidden field', 'gamatdat': 'hidden field', 'gangam': 'hidden field', 'sodepot': 'hidden field', 'sodoantau': 'hidden field', 'capdien': 'hidden field', 'tocdotk': 'hidden field', 'tocdovanha': 'hidden field', 'tggiancach': 'hidden field', 'giomo': 'hidden field', 'giodong': 'hidden field', 'luotkhach': 'hidden field', 'giaveluot': 'hidden field', 'giavethang': 'hidden field', 'thcbdt': 'hidden field', 'ththdt': 'hidden field', });
+lyr_tuyen_2_217.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'fid': 'hidden field', 'tuyen': 'hidden field', 'doantuyen': 'hidden field', 'huongtuyen': 'hidden field', 'quanhuyen': 'hidden field', 'phuongxa': 'hidden field', 'tmdt': 'hidden field', 'nguonvon': 'hidden field', 'chudautu': 'hidden field', 'thoigianth': 'hidden field', 'chieudai': 'hidden field', 'cao': 'hidden field', 'matdat': 'hidden field', 'ngam': 'hidden field', 'soga': 'hidden field', 'gacao': 'hidden field', 'gamatdat': 'hidden field', 'gangam': 'hidden field', 'sodepot': 'hidden field', 'sodoantau': 'hidden field', 'capdien': 'hidden field', 'tocdotk': 'hidden field', 'tocdovanha': 'hidden field', 'tggiancach': 'hidden field', 'giomo': 'hidden field', 'giodong': 'hidden field', 'luotkhach': 'hidden field', 'giaveluot': 'hidden field', 'giavethang': 'hidden field', 'thcbdt': 'hidden field', 'ththdt': 'hidden field', });
+lyr_tuyen_1_218.set('fieldLabels', {'id': 'hidden field', 'Name': 'header label - visible with data', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'fid': 'hidden field', 'tuyen': 'hidden field', 'doantuyen': 'hidden field', 'huongtuyen': 'hidden field', 'quanhuyen': 'hidden field', 'phuongxa': 'hidden field', 'tmdt': 'hidden field', 'nguonvon': 'hidden field', 'chudautu': 'hidden field', 'thoigianth': 'hidden field', 'chieudai': 'hidden field', 'cao': 'hidden field', 'matdat': 'hidden field', 'ngam': 'hidden field', 'soga': 'hidden field', 'gacao': 'hidden field', 'gamatdat': 'hidden field', 'gangam': 'hidden field', 'sodepot': 'hidden field', 'sodoantau': 'hidden field', 'capdien': 'hidden field', 'tocdotk': 'hidden field', 'tocdovanha': 'hidden field', 'tggiancach': 'hidden field', 'giomo': 'hidden field', 'giodong': 'hidden field', 'luotkhach': 'hidden field', 'giaveluot': 'hidden field', 'giavethang': 'hidden field', 'thcbdt': 'hidden field', 'ththdt': 'hidden field', });
+lyr_SDDHuyenChuongMy_219.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_SDD3phankhu_220.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_QHGT_221.set('fieldLabels', {'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', 'Layer': 'hidden field', 'SubClasses': 'hidden field', 'ExtendedEntity': 'hidden field', 'Linetype': 'hidden field', 'EntityHandle': 'hidden field', 'Text': 'hidden field', });
+lyr_PhngnVQHXDdexuat_222.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_Phngn3_223.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_Phngn2_224.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_Phngn1_225.set('fieldLabels', {'id': 'hidden field', 'Name': 'no label', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_Phngn1_225.on('precompose', function(evt) {
+    evt.context.globalCompositeOperation = 'normal';
+});
