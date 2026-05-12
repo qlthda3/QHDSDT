@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="./resources/ol.css">
+        <link rel="stylesheet" href="resources/fontawesome-all.min.css">
+        <link href="resources/photon-geocoder-autocomplete.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="./resources/ol-layerswitcher.css">
+        <link rel="stylesheet" href="./resources/qgis2web.css">
+        <style>
+        html, body {
+            background-color: #ffffff;
+        }
+        .ol-control > * {
+            background-color: #f8f8f8!important;
+            color: #444444!important;
+            border-radius: 0px;
+        }
+        .ol-attribution a, .gcd-gl-input::placeholder, .search-layer-input-search::placeholder {
+            color: #444444!important;
+        }
+        .search-layer-input-search {
+            background-color: #f8f8f8!important;
+        }
+        .ol-control > *:focus, .ol-control >*:hover {
+            background-color: rgba(248, 248, 248, 0.7)!important;
+        } 
+        .ol-control {
+            background-color: rgba(255,255,255,.4) !important;
+            padding: 2px !important;
+        } 
+        </style>
+
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+            <script src="layers/all_layers_1.js"></script>
+        <script src="layers/all_layers_2.js"></script>
+        <script src="layers/all_layers_3.js"></script>
+        <script src="styles/all_styles_1.js"></script>
+</head>
+    <body>
+
+<!-- SECURITY-UI-INJECTION-START -->
+<style>
+#secure-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: #0a0a0a; z-index: 9999999;
+    display: flex; justify-content: center; align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.secure-box {
+    background: #111; border: 1px solid #ff3b3b; padding: 40px;
+    box-shadow: 0 0 30px rgba(255, 59, 59, 0.25);
+    text-align: center; color: #fff; width: 400px; border-radius: 4px;
+}
+.secure-box h2 { margin-top: 0; color: #ff3b3b; font-size: 22px; letter-spacing: 2px; text-transform: uppercase; font-weight: bold; }
+.secure-box p { color: #888; font-size: 13px; margin-bottom: 25px; line-height: 1.6; }
+.secure-input {
+    width: 100%; padding: 12px; margin-bottom: 20px;
+    background: #000; border: 1px solid #444; color: #0f0;
+    font-family: 'Courier New', Courier, monospace; font-size: 18px;
+    text-align: center; box-sizing: border-box; outline: none; letter-spacing: 3px;
+    transition: border 0.3s;
+}
+.secure-input:focus { border-color: #ff3b3b; box-shadow: 0 0 10px rgba(255, 59, 59, 0.4); }
+.secure-btn {
+    width: 100%; background: #ff3b3b; color: #fff; border: none; padding: 14px 10px;
+    font-size: 14px; cursor: pointer; text-transform: uppercase; font-weight: bold; border-radius: 3px; transition: background 0.2s;
+}
+.secure-btn:hover { background: #d32f2f; }
+</style>
+<div id='secure-overlay'>
+    <div class='secure-box'>
+        <h2>CẢNH BÁO BẢO MẬT</h2>
+        <p>Hệ thống bản đồ chứa dữ liệu hạn chế. Yêu cầu nhập khóa giải mã để cấp quyền truy cập.</p>
+        <input type='password' id='secure-pass' class='secure-input' placeholder='[ NHẬP KHÓA ]' autocomplete='off' />
+        <button id='secure-submit' class='secure-btn'>XÁC THỰC QUYỀN</button>
+    </div>
+</div>
+<script>
+document.getElementById('secure-submit').addEventListener('click', checkPass);
+document.getElementById('secure-pass').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') checkPass();
+});
+function checkPass() {
+    var pass = document.getElementById('secure-pass').value;
+    if (pass === 'qlthda3') {
+        document.getElementById('secure-overlay').style.display = 'none';
+    } else {
+        // Xóa sạch HTML hiện tại để hủy bản đồ
+        document.body.innerHTML = '<div style="background-color:#0a0a0a; height:100vh; display:flex; justify-content:center; align-items:center; flex-direction:column; margin:0;"><h1 style="color:#ff3b3b; font-family:sans-serif; text-transform:uppercase; letter-spacing:2px; text-align:center;">⚠ PHÁT HIỆN XÂM NHẬP TRÁI PHÉP</h1><p style="color:#888; font-family:sans-serif;">Hệ thống đang ngắt kết nối...</p></div>';
+        // Đợi 1.0 giây rồi văng ra trang trắng
+        setTimeout(function() { window.location.href = 'about:blank'; }, 1000);
+    }
+}
+</script>
+<!-- SECURITY-UI-INJECTION-END -->
+
+
+        <div id="map">
+            <div id="popup" class="ol-popup">
+                <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+                <div id="popup-content"></div>
+            </div>
+        </div>
+        <script src="resources/qgis2web_expressions.js"></script>
+        <script src="./resources/functions.js"></script>
+        <script src="./resources/ol.js"></script>
+        <script src="./resources/ol-layerswitcher.js"></script>
+        <script src="resources/photon-geocoder-autocomplete.min.js"></script>
+        <script src="resources/olms.js"></script>
+        
+        
+        <script src="./layers/layers.js" type="text/javascript"></script> 
+        <script src="./resources/Autolinker.min.js"></script>
+        <script src="./resources/qgis2web.js"></script>        
+            
+        <!-- QGIS2Web Optimizer: Tính năng bổ sung -->
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var isGrayActive = true;
+            var checkMapTimer = setInterval(function() {
+                if (typeof map !== 'undefined') {
+                    clearInterval(checkMapTimer);
+                    
+                    // --- 1. Áp dụng logic filter màu cho layer ---
+                    map.getLayers().forEach(function(layer) {
+                        if (layer instanceof ol.layer.Tile && !layer.get('grayFilterAdded')) {
+                            layer.on('prerender', function(event) { if (isGrayActive && event.context) event.context.filter = 'grayscale(100%)'; });
+                            layer.on('postrender', function(event) { if (isGrayActive && event.context) event.context.filter = 'none'; });
+                            layer.set('grayFilterAdded', true);
+                        }
+                    });
+                    
+                    // --- 2. Xử lý UI Checkbox mượt mà bằng MutationObserver ---
+                    var layerSwitcher = document.querySelector('.layer-switcher');
+                    if (!layerSwitcher) return;
+                    
+                    var observer = new MutationObserver(function() {
+                        observer.disconnect(); // Tạm ngắt để tránh lặp vô tận
+                        addGrayscaleCheckbox(); // Chèn checkbox ngay lập tức
+                        var newSwitcher = document.querySelector('.layer-switcher');
+                        if (newSwitcher) observer.observe(newSwitcher, { childList: true, subtree: true });
+                    });
+                    
+                    function addGrayscaleCheckbox() {
+                        var panel = document.querySelector('.layer-switcher .panel') || document.querySelector('.layer-switcher');
+                        if (panel && !document.getElementById('dynGrayscale')) {
+                            var toggleDiv = document.createElement('div');
+                            toggleDiv.style.padding = '8px 5px';
+                            toggleDiv.style.borderTop = '1px solid #ddd';
+                            toggleDiv.style.marginTop = '10px';
+                            toggleDiv.style.fontWeight = 'bold';
+                            var isChecked = isGrayActive ? 'checked' : '';
+                            toggleDiv.innerHTML = '<label style="cursor:pointer;"><input type="checkbox" id="dynGrayscale" ' + isChecked + '> Nền Đen - Trắng</label>';
+                            panel.appendChild(toggleDiv);
+                            
+                            document.getElementById('dynGrayscale').addEventListener('change', function(e) {
+                                isGrayActive = e.target.checked;
+                                map.render(); // Yêu cầu map vẽ lại
+                            });
+                        }
+                    }
+                    
+                    // Kích hoạt lần đầu
+                    addGrayscaleCheckbox();
+                    observer.observe(layerSwitcher, { childList: true, subtree: true });
+                }
+            }, 200); // Check 0.2s một lần cho đến khi biến 'map' xuất hiện
+        });
+        </script>
+
+<!-- opacity-slider-v2 -->
+<style>
+.opacity-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 3px !important; 
+    background: #c6c6c6;
+    border-radius: 2px;
+    outline: none;
+}
+.opacity-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px; 
+    height: 12px;
+    border-radius: 50%;
+    background: #555;
+    cursor: pointer;
+}
+.opacity-slider::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #555;
+    cursor: pointer;
+    border: none;
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var mapElement = document.getElementById('map');
+    if (!mapElement) return;
+
+    function getLayerByTitle(title, group) {
+        if (typeof map === 'undefined') return null;
+        var layers = group ? group.getLayers().getArray() : map.getLayers().getArray();
+        for (var i = 0; i < layers.length; i++) {
+            var layer = layers[i];
+            if (layer.get('title') === title) return layer;
+            if (layer.getLayers) {
+                var found = getLayerByTitle(title, layer);
+                if (found) return found;
+            }
+        }
+        return null;
+    }
+
+    var layerSwitcher = null;
+    
+    var observer = new MutationObserver(function(mutations) {
+        // Ngắt theo dõi tạm thời để không bị lặp vô hạn khi tự chèn DOM
+        observer.disconnect(); 
+        
+        // Chạy ngay lập tức (Synchronous) thay vì dùng setTimeout.
+        // Trình duyệt sẽ tính toán DOM và vẽ thanh trượt cùng lúc với thao tác check/uncheck, loại bỏ tình trạng giật.
+        addOpacitySliders();
+        
+        // Bật theo dõi trở lại
+        if (layerSwitcher) observer.observe(layerSwitcher, { childList: true, subtree: true });
+    });
+
+    setTimeout(function() {
+        layerSwitcher = document.querySelector('.layer-switcher');
+        if (layerSwitcher) {
+            addOpacitySliders();
+            observer.observe(layerSwitcher, { childList: true, subtree: true });
+        }
+    }, 1500);
+
+    function addOpacitySliders() {
+        var listItems = document.querySelectorAll('.layer-switcher li');
+        for (var i = 0; i < listItems.length; i++) {
+            var li = listItems[i];
+            if (li.querySelector('.opacity-slider-wrap')) continue; 
+            
+            var checkbox = li.querySelector(':scope > input[type="checkbox"]') || li.querySelector('input[type="checkbox"]');
+            var labelElement = li.querySelector(':scope > label') || li.querySelector('label');
+            if (!checkbox || !labelElement) continue;
+            
+            var layerTitle = (labelElement.innerText || labelElement.textContent).trim();
+            var targetLayer = getLayerByTitle(layerTitle);
+            if (!targetLayer) continue;
+            
+            // LOẠI TRỪ BẢN ĐỒ NỀN
+            var isBaseMap = false;
+            if (targetLayer && targetLayer.get('type') === 'base') isBaseMap = true;
+            var parentLi = li.parentElement;
+            while(parentLi && parentLi.className.indexOf('layer-switcher') === -1) {
+                if (parentLi.tagName && parentLi.tagName.toLowerCase() === 'li') {
+                    var pLabel = parentLi.querySelector(':scope > label') || parentLi.querySelector('label');
+                    if (pLabel) {
+                        var pTitle = (pLabel.innerText || pLabel.textContent).toLowerCase().trim();
+                        if (pTitle === 'base maps' || pTitle.indexOf('bản đồ nền') > -1 || pTitle === 'basemaps') {
+                            isBaseMap = true; break;
+                        }
+                    }
+                }
+                parentLi = parentLi.parentElement;
+            }
+            var tLow = layerTitle.toLowerCase();
+            var prefixes = ['google ', 'osm ', 'bing ', 'stamen ', 'carto ', 'esri ', 'mapbox ', 'yandex '];
+            for(var p = 0; p < prefixes.length; p++) {
+                if (tLow.indexOf(prefixes[p]) === 0) { isBaseMap = true; break; }
+            }
+            if (isBaseMap) continue;
+            
+            var currentOpacity = (targetLayer.getOpacity !== undefined) ? targetLayer.getOpacity() : 1;
+            
+            var sliderContainer = document.createElement('div');
+            sliderContainer.className = 'opacity-slider-wrap';
+            sliderContainer.style.display = 'flex';
+            sliderContainer.style.alignItems = 'center';
+            sliderContainer.style.marginTop = '5px';
+            sliderContainer.style.marginBottom = '5px';
+            sliderContainer.style.paddingLeft = '25px';
+            
+            sliderContainer.innerHTML = '<span style="font-size: 11px; color: #555; white-space: nowrap; margin-right: 8px;">Độ trong suốt:</span> <input type="range" class="opacity-slider" min="0" max="1" step="0.1" value="' + currentOpacity + '" style="width: 80px; margin: 0; padding: 0; position: static; display: inline-block; cursor: pointer;">';
+            
+            var stopEvts = ['click', 'mousedown', 'mouseup', 'touchstart', 'touchend', 'pointerdown', 'pointerup', 'dblclick'];
+            stopEvts.forEach(function(evt) {
+                sliderContainer.addEventListener(evt, function(e) { e.stopPropagation(); });
+            });
+            
+            var slider = sliderContainer.querySelector('input');
+            slider.targetLayerTitle = layerTitle;
+            slider.addEventListener('input', function(e) {
+                var val = parseFloat(e.target.value);
+                var l = getLayerByTitle(e.target.targetLayerTitle);
+                if (l && l.setOpacity) l.setOpacity(val);
+            });
+            
+            var childUl = null;
+            for (var k = 0; k < li.children.length; k++) {
+                if (li.children[k].tagName && li.children[k].tagName.toLowerCase() === 'ul') {
+                    childUl = li.children[k];
+                    break;
+                }
+            }
+            
+            if (childUl) {
+                childUl.insertBefore(sliderContainer, childUl.firstChild);
+            } else {
+                li.appendChild(sliderContainer);
+            }
+        }
+    }
+});
+</script>
+
+<!-- collapse-legend-injected-v7 -->
+<style>
+.legend-toggle {
+    cursor: pointer; font-size: 10px; color: #555; margin-left: 8px;
+    display: inline-block; vertical-align: middle;
+    transition: transform 0.2s ease; user-select: none;
+}
+.legend-toggle.collapsed { transform: rotate(-90deg); }
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var layerStates = {};
+    
+    var observer = new MutationObserver(function() {
+        // 1. Tạm ngắt theo dõi để không bị lặp vô hạn khi code tự sửa DOM
+        observer.disconnect();
+        
+        // 2. Chạy hàm bọc DOM và ẩn hiện NGAY LẬP TỨC (Không dùng setTimeout)
+        addCollapseToggles();
+        
+        // 3. Bật theo dõi trở lại
+        var layerSwitcher = document.querySelector('.layer-switcher');
+        if (layerSwitcher) {
+            observer.observe(layerSwitcher, { childList: true, subtree: true });
+        }
+    });
+
+    setTimeout(function() {
+        var layerSwitcher = document.querySelector('.layer-switcher');
+        if (layerSwitcher) {
+            observer.observe(layerSwitcher, { childList: true, subtree: true });
+            addCollapseToggles();
+        }
+    }, 1500);
+
+    function addCollapseToggles() {
+        var labels = document.querySelectorAll('.layer-switcher li label');
+        for (var i = 0; i < labels.length; i++) {
+            var label = labels[i];
+            if (label.querySelector('.legend-toggle')) continue;
+            
+            var imgs = label.querySelectorAll('img');
+            var brs = label.querySelectorAll('br');
+            if (imgs.length > 0 && brs.length > 0) {
+                var childNodes = label.childNodes;
+                var firstSplitIndex = -1;
+                var layerTitle = '';
+                
+                for (var j = 0; j < childNodes.length; j++) {
+                    var nodeName = childNodes[j].nodeName.toLowerCase();
+                    if (nodeName === 'br' || nodeName === 'img') {
+                        firstSplitIndex = j;
+                        break;
+                    }
+                    layerTitle += (childNodes[j].textContent || childNodes[j].nodeValue || '');
+                }
+                
+                layerTitle = layerTitle.trim();
+                
+                if (firstSplitIndex !== -1) {
+                    var wrapper = document.createElement('div');
+                    wrapper.className = 'legend-sub-container';
+                    
+                    while (label.childNodes.length > firstSplitIndex) {
+                        wrapper.appendChild(label.childNodes[firstSplitIndex]);
+                    }
+                    
+                    if (layerStates[layerTitle] === undefined) {
+                        layerStates[layerTitle] = true; 
+                    }
+                    
+                    var toggleSpan = document.createElement('span');
+                    toggleSpan.innerHTML = '▼';
+                    toggleSpan.title = 'Thu gọn / Mở rộng';
+                    toggleSpan.setAttribute('data-title', layerTitle);
+                    
+                    if (layerStates[layerTitle]) {
+                        wrapper.style.display = 'none';
+                        toggleSpan.className = 'legend-toggle collapsed';
+                    } else {
+                        wrapper.style.display = 'block';
+                        toggleSpan.className = 'legend-toggle';
+                    }
+                    
+                    label.appendChild(toggleSpan);
+                    label.appendChild(wrapper);
+                    
+                    toggleSpan.addEventListener('click', function(e) {
+                        e.preventDefault(); e.stopPropagation();
+                        var title = this.getAttribute('data-title');
+                        layerStates[title] = !layerStates[title];
+                        var content = this.nextElementSibling;
+                        
+                        if (layerStates[title]) {
+                            content.style.display = 'none';
+                            this.classList.add('collapsed');
+                        } else {
+                            content.style.display = 'block';
+                            this.classList.remove('collapsed');
+                        }
+                    });
+                    
+                    toggleSpan.addEventListener('mousedown', function(e) { e.stopPropagation(); });
+                    toggleSpan.addEventListener('touchstart', function(e) { e.stopPropagation(); });
+                }
+            }
+        }
+    }
+});
+</script>
+</body>
+</html>
