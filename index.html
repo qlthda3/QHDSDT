@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -48,23 +48,7 @@
         <script src="layers/all_layers_2.js"></script>
         <script src="layers/all_layers_3.js"></script>
         <script src="styles/all_styles_1.js"></script>
-<style>
-/* Vô hiệu hóa chặn click của popup qgis2web mặc định */
-.ol-popup, #popup { pointer-events: none !important; }
-.info-panel { position: absolute; top: 20px; right: 20px; width: 320px; min-width: 250px; min-height: 180px; background-color: white; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 1000; font-family: Arial, sans-serif; resize: both; overflow: auto; transition: opacity 0.2s ease; }
-.panel-header { background-color: #0056b3; color: white; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; cursor: move; user-select: none; -webkit-user-select: none; }
-.panel-header h3 { margin: 0; font-size: 16px; pointer-events: none; }
-#close-panel-btn { background: none; border: none; color: white; font-size: 20px; font-weight: bold; cursor: pointer; }
-#close-panel-btn:hover { color: #ffcccc; }
-.panel-content { padding: 15px; font-size: 14px; color: #333; }
-.panel-content p { margin: 8px 0; border-bottom: 1px dashed #eee; padding-bottom: 5px; }
-.panel-content p:last-child { border-bottom: none; }
-/* Hiệu ứng chớp sáng và nảy khi update dữ liệu */
-@keyframes flashData { 0% { background-color: #e6f2ff; transform: scale(0.95); opacity: 0.5; } 100% { background-color: transparent; transform: scale(1); opacity: 1; } }
-.update-anim { animation: flashData 0.4s ease-out; }
-</style>
 </head>
-
     <body>
 
 <!-- SECURITY-UI-INJECTION-START -->
@@ -381,7 +365,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <!-- QGIS2Web Optimizer: Tính năng bổ sung -->
         <script>
         document.addEventListener('DOMContentLoaded', function() {
-            var isGrayActive = true;
+            var isGrayActive = false;
             var checkMapTimer = setInterval(function() {
                 if (typeof map !== 'undefined') {
                     clearInterval(checkMapTimer);
@@ -432,27 +416,35 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 200); // Check 0.2s một lần cho đến khi biến 'map' xuất hiện
         });
         </script>
-
-<div id="dsdt-info-panel" class="info-panel" style="display: none;">
-    <div id="dsdt-panel-header" class="panel-header">
-        <h3>Thông tin tuyến</h3>
-        <button id="close-panel-btn" onclick="closeInfoPanel()">×</button>
+<!-- start_aTu_Info_panel -->
+<style>
+/* Vô hiệu hóa chặn click của popup qgis2web mặc định */
+.ol-popup, #popup { pointer-events: none !important; }
+#myqgis-info-panel { position: absolute; top: 20px; right: 20px; width: 320px; min-width: 250px; min-height: 180px; background-color: white; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 1000; font-family: Arial, sans-serif; resize: both; overflow: auto; transition: opacity 0.2s ease; }
+#myqgis-panel-header { background-color: #0056b3; color: white; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; cursor: move; user-select: none; -webkit-user-select: none; }
+#myqgis-panel-header h3 { margin: 0; font-size: 16px; pointer-events: none; }
+#myqgis-close-btn { background: none; border: none; color: white; font-size: 20px; font-weight: bold; cursor: pointer; }
+#myqgis-close-btn:hover { color: #ffcccc; }
+#myqgis-panel-content { padding: 15px; font-size: 14px; color: #333; }
+#myqgis-panel-content p { margin: 8px 0; border-bottom: 1px dashed #eee; padding-bottom: 5px; }
+#myqgis-panel-content p:last-child { border-bottom: none; }
+@keyframes flashData { 0% { background-color: #e6f2ff; transform: scale(0.95); opacity: 0.5; } 100% { background-color: transparent; transform: scale(1); opacity: 1; } }
+.update-anim { animation: flashData 0.4s ease-out; }
+</style>
+<div id="myqgis-info-panel" style="display: none;">
+    <div id="myqgis-panel-header">
+        <h3>Thông tin chi tiết</h3>
+        <button id="myqgis-close-btn" onclick="document.getElementById('myqgis-info-panel').style.display='none';">×</button>
     </div>
-    <div id="dsdt-panel-content" class="panel-content">
-        <p><strong>Tên tuyến:</strong> <span id="info-tentuyen">...</span></p>
-        <p><strong>Độ dài:</strong> <span id="info-dodai">...</span></p>
-        <p><strong>Số lượng nhà ga:</strong> <span id="info-soga">...</span></p>
-        <p style="white-space: normal; word-break: break-all;"><strong>Ghi chú:</strong> <span id="info-ghichu">...</span></p>
-    </div>
+    <div id="myqgis-panel-content"></div>
 </div>
 <script>
-    function closeInfoPanel() { document.getElementById('dsdt-info-panel').style.display = 'none'; }
     function makeElementDraggable(elmnt, header) {
         var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
         if (header) { header.onmousedown = dragMouseDown; }
         function dragMouseDown(e) {
             e = e || window.event;
-            if (e.target.id === 'close-panel-btn') return;
+            if (e.target.id === 'myqgis-close-btn') return;
             e.preventDefault();
             pos3 = e.clientX;
             pos4 = e.clientY;
@@ -476,44 +468,53 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     setTimeout(function() {
-        var panel = document.getElementById('dsdt-info-panel');
-        var pHeader = document.getElementById('dsdt-panel-header');
-        var pContent = document.getElementById('dsdt-panel-content');
+        var panel = document.getElementById('myqgis-info-panel');
+        var pHeader = document.getElementById('myqgis-panel-header');
+        var pContent = document.getElementById('myqgis-panel-content');
         if (panel && pHeader) { makeElementDraggable(panel, pHeader); }
+        var fieldsConfig = [
+            { mainField: 'TenTuyen', fallbackFields: ['Name', 'layer', 'Layer'], label: 'Tên tuyến' },
+            { mainField: 'DoDai', fallbackFields: [], label: 'Độ dài' },
+            { mainField: 'SoGa', fallbackFields: [], label: 'Số lượng nhà ga' },
+            { mainField: 'GhiChu', fallbackFields: [], label: 'Ghi chú' },
+        ];
         if (typeof map !== 'undefined') {
             map.on('pointermove', function(e) {
                 if (e.dragging) return;
-                var hit = map.hasFeatureAtPixel(e.pixel, { hitTolerance: 10 });
+                var hit = map.hasFeatureAtPixel(e.pixel);
                 map.getTargetElement().style.cursor = hit ? 'pointer' : '';
             });
             map.on('singleclick', function(evt) {
+                var featureFound = false;
                 map.forEachFeatureAtPixel(evt.pixel, function(feature) {
-                    var tenTuyen = feature.get('TenTuyen');
-                    if (tenTuyen == null || tenTuyen === '') {
-                        tenTuyen = feature.get('Name');
+                    featureFound = true;
+                    var htmlString = '';
+                    for (var i = 0; i < fieldsConfig.length; i++) {
+                        var cfg = fieldsConfig[i];
+                        var val = feature.get(cfg.mainField);
+                        if ((val == null || val === '') && cfg.fallbackFields.length > 0) {
+                            for (var j = 0; j < cfg.fallbackFields.length; j++) {
+                                val = feature.get(cfg.fallbackFields[j]);
+                                if (val != null && val !== '') break;
+                            }
+                        }
+                        if (val == null || val === '') val = 'Chưa cập nhật';
+                        htmlString += '<p style="white-space: normal; word-break: break-all;"><strong>' + cfg.label + ':</strong> ' + val + '</p>';
                     }
-                    if (tenTuyen == null || tenTuyen === '') {
-                        tenTuyen = feature.get('layer');
-                    }
-                    if (tenTuyen == null || tenTuyen === '') {
-                        tenTuyen = feature.get('Layer');
-                    }
-                    var doDai = feature.get('ChieuDaiTuyen');
-                    var soGa = feature.get('SoLuongGa');
-                    var ghiChu = feature.get('HuongTuyen');
-                    document.getElementById('info-tentuyen').innerText = (tenTuyen != null) ? tenTuyen : 'Chưa cập nhật';
-                    document.getElementById('info-dodai').innerText = (doDai != null) ? doDai : 'Chưa cập nhật';
-                    document.getElementById('info-soga').innerText = (soGa != null) ? soGa : 'Chưa cập nhật';
-                    document.getElementById('info-ghichu').innerText = (ghiChu != null) ? ghiChu : 'Không có';
+                    pContent.innerHTML = htmlString;
                     panel.style.display = 'block';
                     pContent.classList.remove('update-anim');
                     void pContent.offsetWidth;
                     pContent.classList.add('update-anim');
-                }, { hitTolerance: 10 });
+                    return true;
+                });
             });
+        } else {
+            console.error('Lỗi: Đối tượng Bản đồ chưa sẵn sàng.');
         }
-    }, 1500);
+    }, 2000);
 </script>
+<!-- end_aTu_Info_panel -->
 </body>
 
 </html>

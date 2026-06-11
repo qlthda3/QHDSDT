@@ -1,6 +1,6 @@
 var size = 0;
 var placement = 'point';
-var style_01HighSpeedRailway_115 = function(feature, resolution){
+var style_01HighSpeedRailway_121 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -33,7 +33,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_01HighSpeedRailway_63 = function(feature, resolution){
+var style_01HighSpeedRailway_144 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -99,7 +99,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_01highSpeed_188 = function(feature, resolution){
+var style_01highSpeed_217 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -127,7 +127,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_01RailwayLoop_114 = function(feature, resolution){
+var style_01RailwayLoop_120 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -160,7 +160,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_01RailwayLoop_62 = function(feature, resolution){
+var style_01RailwayLoop_143 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -226,7 +226,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_01RegionalRailway_113 = function(feature, resolution){
+var style_01RegionalRailway_119 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -259,7 +259,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_01RegionalRailway_61 = function(feature, resolution){
+var style_01RegionalRailway_142 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -325,7 +325,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_02interCity_187 = function(feature, resolution){
+var style_02interCity_216 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -353,7 +353,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_03commuterLine_186 = function(feature, resolution){
+var style_03commuterLine_215 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -381,7 +381,79 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_04RailwayStationsIII_68 = function(feature, resolution){
+var style_04RailwayStations1_41 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("");
+var labelFont = "10px, sans-serif";
+var labelFill = "#000000";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'point';
+if ("" !== null) {
+labelText = String("");
+}
+var style = [ new ol.style.Style({
+image: new ol.style.Circle({radius: 10.0 + size,
+displacement: [0, 0], stroke: new ol.style.Stroke({color: 'rgba(35,35,35,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0.0}), fill: new ol.style.Fill({color: 'rgba(192,192,192,1.0)'})}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+}),new ol.style.Style({
+text: new ol.style.Text({
+text: 'Ga1',
+fill: new ol.style.Fill({color: 'rgba(0,0,0,1.0)'})}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+return style;
+};
+var size = 0;
+var placement = 'point';
+var style_04RailwayStations3_40 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("");
+var labelFont = "10px, sans-serif";
+var labelFill = "#000000";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'point';
+if ("" !== null) {
+labelText = String("");
+}
+var style = [ new ol.style.Style({
+image: new ol.style.Circle({radius: 8.0 + size,
+displacement: [0, 0], stroke: new ol.style.Stroke({color: 'rgba(35,35,35,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0.0}), fill: new ol.style.Fill({color: 'rgba(153,76,114,1.0)'})}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+}),new ol.style.Style({
+text: new ol.style.Text({
+text: 'Ga3',
+fill: new ol.style.Fill({color: 'rgba(0,0,0,1.0)'})}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+return style;
+};
+var size = 0;
+var placement = 'point';
+var style_04RailwayStationsIII_97 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -417,7 +489,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_04RailwayStationsII_69 = function(feature, resolution){
+var style_04RailwayStationsII_98 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -453,7 +525,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_04RailwayStationsI_70 = function(feature, resolution){
+var style_04RailwayStationsI_99 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -489,7 +561,35 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_0_116 = function(feature, resolution){
+var style_0_122 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("");
+var labelFont = "10px, sans-serif";
+var labelFill = "#000000";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'line';
+if ("" !== null) {
+labelText = String("");
+}
+var style = [ new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(0,0,0,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 0.988}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+return style;
+};
+var size = 0;
+var placement = 'point';
+var style_0_145 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -517,7 +617,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_0_65 = function(feature, resolution){
+var style_0_94 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -545,7 +645,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_0_93 = function(feature, resolution){
+var style_0_polylines_65 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -573,7 +673,33 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-function categories_1ExpressLineM1_210(feature, value, size, resolution, labelText,
+var style_0_texts_66 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("''");
+var labelFont = "13.0px \'Open Sans\', sans-serif";
+var labelFill = "#323232";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'point';
+if (feature.get("text") !== null) {
+labelText = String(feature.get("text"));
+}
+var style = [ new ol.style.Style({
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor, bufferWidth)
+})];;
+return style;
+};
+var size = 0;
+var placement = 'point';
+function categories_1ExpressLineM1_239(feature, value, size, resolution, labelText,
 labelFont, labelFill, bufferColor, bufferWidth,
 placement) {
 var valueStr = (value !== null && value !== undefined) ? value.toString() : 'default';
@@ -593,7 +719,7 @@ labelFill, placement, bufferColor,
 bufferWidth)
 })];
 break;}};
-var style_1ExpressLineM1_210 = function(feature, resolution){
+var style_1ExpressLineM1_239 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -611,14 +737,14 @@ var placement = 'line';
 if ("" !== null) {
 labelText = String("");
 }
-var style = categories_1ExpressLineM1_210(feature, value, size, resolution, labelText,
+var style = categories_1ExpressLineM1_239(feature, value, size, resolution, labelText,
 labelFont, labelFill, bufferColor,
 bufferWidth, placement);
 return style;
 };
 var size = 0;
 var placement = 'point';
-function categories_1ExpressLineM8_202(feature, value, size, resolution, labelText,
+function categories_1ExpressLineM8_231(feature, value, size, resolution, labelText,
 labelFont, labelFill, bufferColor, bufferWidth,
 placement) {
 var valueStr = (value !== null && value !== undefined) ? value.toString() : 'default';
@@ -638,7 +764,7 @@ labelFill, placement, bufferColor,
 bufferWidth)
 })];
 break;}};
-var style_1ExpressLineM8_202 = function(feature, resolution){
+var style_1ExpressLineM8_231 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -656,14 +782,14 @@ var placement = 'line';
 if ("" !== null) {
 labelText = String("");
 }
-var style = categories_1ExpressLineM8_202(feature, value, size, resolution, labelText,
+var style = categories_1ExpressLineM8_231(feature, value, size, resolution, labelText,
 labelFont, labelFill, bufferColor,
 bufferWidth, placement);
 return style;
 };
 var size = 0;
 var placement = 'point';
-var style_1ExpressLineM8_229 = function(feature, resolution){
+var style_1ExpressLineM8_258 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -691,7 +817,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_1EXPRESS_LINEM1_112 = function(feature, resolution){
+var style_1EXPRESS_LINEM1_118 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -719,7 +845,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_1EXPRESS_LINEM1_60 = function(feature, resolution){
+var style_1EXPRESS_LINEM1_141 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -739,6 +865,34 @@ labelText = String("");
 }
 var style = [ new ol.style.Style({
 stroke: new ol.style.Stroke({color: 'rgba(76,95,153,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2.508}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+return style;
+};
+var size = 0;
+var placement = 'point';
+var style_1EXPRESS_LINEM1_64 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("");
+var labelFont = "10px, sans-serif";
+var labelFill = "#000000";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'line';
+if ("" !== null) {
+labelText = String("");
+}
+var style = [ new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(76,95,153,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 3.268}),
 text: createTextStyle(feature, resolution, labelText, labelFont,
 labelFill, placement, bufferColor,
 bufferWidth)
@@ -775,33 +929,13 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-function categories_1EXPRESS_LINEM2_111(feature, value, size, resolution, labelText,
-labelFont, labelFill, bufferColor, bufferWidth,
-placement) {
-var valueStr = (value !== null && value !== undefined) ? value.toString() : 'default';
-switch(valueStr) {case '0,204,0':
-return [ new ol.style.Style({
-stroke: new ol.style.Stroke({color: 'rgba(0,204,0,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2.508}),
-text: createTextStyle(feature, resolution, labelText, labelFont,
-labelFill, placement, bufferColor,
-bufferWidth)
-})];
-break;
-case '255,0,255':
-return [ new ol.style.Style({
-stroke: new ol.style.Stroke({color: 'rgba(255,0,255,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2.508}),
-text: createTextStyle(feature, resolution, labelText, labelFont,
-labelFill, placement, bufferColor,
-bufferWidth)
-})];
-break;}};
-var style_1EXPRESS_LINEM2_111 = function(feature, resolution){
+var style_1EXPRESS_LINEM2A_61 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
 };
 var labelText = "";
-var value = feature.get("ColorRGB");
+var value = feature.get("");
 var labelFont = "10px, sans-serif";
 var labelFill = "#000000";
 var bufferColor = "";
@@ -813,14 +947,45 @@ var placement = 'line';
 if ("" !== null) {
 labelText = String("");
 }
-var style = categories_1EXPRESS_LINEM2_111(feature, value, size, resolution, labelText,
-labelFont, labelFill, bufferColor,
-bufferWidth, placement);
+var style = [ new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(0,204,0,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 3.268}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
 return style;
 };
 var size = 0;
 var placement = 'point';
-var style_1EXPRESS_LINEM2_59 = function(feature, resolution){
+var style_1EXPRESS_LINEM2PA2_62 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("");
+var labelFont = "10px, sans-serif";
+var labelFill = "#000000";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'line';
+if ("" !== null) {
+labelText = String("");
+}
+var style = [ new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(0,0,255,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 3.268}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+return style;
+};
+var size = 0;
+var placement = 'point';
+var style_1EXPRESS_LINEM2_117 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -840,6 +1005,79 @@ labelText = String("");
 }
 var style = [ new ol.style.Style({
 stroke: new ol.style.Stroke({color: 'rgba(0,204,0,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2.508}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+return style;
+};
+var size = 0;
+var placement = 'point';
+function categories_1EXPRESS_LINEM2_140(feature, value, size, resolution, labelText,
+labelFont, labelFill, bufferColor, bufferWidth,
+placement) {
+var valueStr = (value !== null && value !== undefined) ? value.toString() : 'default';
+switch(valueStr) {case '0,204,0':
+return [ new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(0,204,0,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2.508}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+break;
+case '255,0,255':
+return [ new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(255,0,255,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2.508}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+break;}};
+var style_1EXPRESS_LINEM2_140 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("ColorRGB");
+var labelFont = "10px, sans-serif";
+var labelFill = "#000000";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'line';
+if ("" !== null) {
+labelText = String("");
+}
+var style = categories_1EXPRESS_LINEM2_140(feature, value, size, resolution, labelText,
+labelFont, labelFill, bufferColor,
+bufferWidth, placement);
+return style;
+};
+var size = 0;
+var placement = 'point';
+var style_1EXPRESS_LINEM2_63 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("");
+var labelFont = "10px, sans-serif";
+var labelFill = "#000000";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'line';
+if ("" !== null) {
+labelText = String("");
+}
+var style = [ new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(26,157,79,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 3.268}),
 text: createTextStyle(feature, resolution, labelText, labelFont,
 labelFill, placement, bufferColor,
 bufferWidth)
@@ -876,7 +1114,35 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_1EXPRESS_LINEM8_110 = function(feature, resolution){
+var style_1EXPRESS_LINEM8_116 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("");
+var labelFont = "10px, sans-serif";
+var labelFill = "#000000";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'line';
+if ("" !== null) {
+labelText = String("");
+}
+var style = [ new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(191,127,255,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2.508}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+return style;
+};
+var size = 0;
+var placement = 'point';
+var style_1EXPRESS_LINEM8_139 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -904,7 +1170,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_1EXPRESS_LINEM8_58 = function(feature, resolution){
+var style_1EXPRESS_LINEM8_60 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -923,7 +1189,7 @@ if ("" !== null) {
 labelText = String("");
 }
 var style = [ new ol.style.Style({
-stroke: new ol.style.Stroke({color: 'rgba(191,127,255,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2.508}),
+stroke: new ol.style.Stroke({color: 'rgba(191,127,255,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 3.268}),
 text: createTextStyle(feature, resolution, labelText, labelFont,
 labelFill, placement, bufferColor,
 bufferWidth)
@@ -960,7 +1226,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_2RegularLine2A_209 = function(feature, resolution){
+var style_2RegularLine2A_238 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -988,7 +1254,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_2RegularLineM10_200 = function(feature, resolution){
+var style_2RegularLineM10_229 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -1016,7 +1282,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_2RegularLineM11_199 = function(feature, resolution){
+var style_2RegularLineM11_228 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -1044,7 +1310,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_2RegularLineM14_196 = function(feature, resolution){
+var style_2RegularLineM14_225 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -1072,7 +1338,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_2RegularLineM16_194 = function(feature, resolution){
+var style_2RegularLineM16_223 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -1100,7 +1366,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_2RegularLineM2_208 = function(feature, resolution){
+var style_2RegularLineM2_237 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -1128,7 +1394,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_2RegularLineM3_207 = function(feature, resolution){
+var style_2RegularLineM3_236 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -1156,7 +1422,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_2RegularLineM4_206 = function(feature, resolution){
+var style_2RegularLineM4_235 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -1184,7 +1450,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_2RegularLineM5_205 = function(feature, resolution){
+var style_2RegularLineM5_234 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -1212,7 +1478,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_2RegularLineM6_204 = function(feature, resolution){
+var style_2RegularLineM6_233 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -1240,7 +1506,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_2RegularLineM7_203 = function(feature, resolution){
+var style_2RegularLineM7_232 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -1268,7 +1534,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_2REGULAR_LINEM11_104 = function(feature, resolution){
+var style_2REGULAR_LINEM11_110 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -1296,7 +1562,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_2REGULAR_LINEM11_52 = function(feature, resolution){
+var style_2REGULAR_LINEM11_133 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -1316,6 +1582,34 @@ labelText = String("");
 }
 var style = [ new ol.style.Style({
 stroke: new ol.style.Stroke({color: 'rgba(204,178,102,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2.508}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+return style;
+};
+var size = 0;
+var placement = 'point';
+var style_2REGULAR_LINEM11_54 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("");
+var labelFont = "10px, sans-serif";
+var labelFill = "#000000";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'line';
+if ("" !== null) {
+labelText = String("");
+}
+var style = [ new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(204,178,102,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 3.268}),
 text: createTextStyle(feature, resolution, labelText, labelFont,
 labelFill, placement, bufferColor,
 bufferWidth)
@@ -1352,7 +1646,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_2REGULAR_LINEM14_103 = function(feature, resolution){
+var style_2REGULAR_LINEM14_109 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -1380,7 +1674,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_2REGULAR_LINEM14_51 = function(feature, resolution){
+var style_2REGULAR_LINEM14_132 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -1400,6 +1694,34 @@ labelText = String("");
 }
 var style = [ new ol.style.Style({
 stroke: new ol.style.Stroke({color: 'rgba(255,127,159,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2.508}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+return style;
+};
+var size = 0;
+var placement = 'point';
+var style_2REGULAR_LINEM14_53 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("");
+var labelFont = "10px, sans-serif";
+var labelFill = "#000000";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'line';
+if ("" !== null) {
+labelText = String("");
+}
+var style = [ new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(255,127,159,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 3.268}),
 text: createTextStyle(feature, resolution, labelText, labelFont,
 labelFill, placement, bufferColor,
 bufferWidth)
@@ -1436,35 +1758,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_2REGULAR_LINEM16_102 = function(feature, resolution){
-var context = {
-feature: feature,
-variables: {}
-};
-var labelText = "";
-var value = feature.get("");
-var labelFont = "10px, sans-serif";
-var labelFill = "#000000";
-var bufferColor = "";
-var bufferWidth = 0;
-var textAlign = "left";
-var offsetX = 0;
-var offsetY = 0;
-var placement = 'line';
-if ("" !== null) {
-labelText = String("");
-}
-var style = [ new ol.style.Style({
-stroke: new ol.style.Stroke({color: 'rgba(0,255,0,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2.508}),
-text: createTextStyle(feature, resolution, labelText, labelFont,
-labelFill, placement, bufferColor,
-bufferWidth)
-})];
-return style;
-};
-var size = 0;
-var placement = 'point';
-var style_2REGULAR_LINEM16_79 = function(feature, resolution){
+var style_2REGULAR_LINEM16_108 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -1492,7 +1786,35 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_2REGULAR_LINEM3_109 = function(feature, resolution){
+var style_2REGULAR_LINEM16_131 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("");
+var labelFont = "10px, sans-serif";
+var labelFill = "#000000";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'line';
+if ("" !== null) {
+labelText = String("");
+}
+var style = [ new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(0,255,0,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2.508}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+return style;
+};
+var size = 0;
+var placement = 'point';
+var style_2REGULAR_LINEM3_115 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -1520,7 +1842,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_2REGULAR_LINEM3_57 = function(feature, resolution){
+var style_2REGULAR_LINEM3_138 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -1540,6 +1862,34 @@ labelText = String("");
 }
 var style = [ new ol.style.Style({
 stroke: new ol.style.Stroke({color: 'rgba(255,127,0,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2.508}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+return style;
+};
+var size = 0;
+var placement = 'point';
+var style_2REGULAR_LINEM3_59 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("");
+var labelFont = "10px, sans-serif";
+var labelFill = "#000000";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'line';
+if ("" !== null) {
+labelText = String("");
+}
+var style = [ new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(255,127,0,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 3.268}),
 text: createTextStyle(feature, resolution, labelText, labelFont,
 labelFill, placement, bufferColor,
 bufferWidth)
@@ -1576,7 +1926,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_2REGULAR_LINEM4_108 = function(feature, resolution){
+var style_2REGULAR_LINEM4_114 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -1604,7 +1954,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_2REGULAR_LINEM4_56 = function(feature, resolution){
+var style_2REGULAR_LINEM4_137 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -1624,6 +1974,34 @@ labelText = String("");
 }
 var style = [ new ol.style.Style({
 stroke: new ol.style.Stroke({color: 'rgba(255,0,0,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2.508}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+return style;
+};
+var size = 0;
+var placement = 'point';
+var style_2REGULAR_LINEM4_58 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("");
+var labelFont = "10px, sans-serif";
+var labelFill = "#000000";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'line';
+if ("" !== null) {
+labelText = String("");
+}
+var style = [ new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(255,0,0,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 3.268}),
 text: createTextStyle(feature, resolution, labelText, labelFont,
 labelFill, placement, bufferColor,
 bufferWidth)
@@ -1660,7 +2038,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_2REGULAR_LINEM5_107 = function(feature, resolution){
+var style_2REGULAR_LINEM5_113 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -1688,7 +2066,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_2REGULAR_LINEM5_55 = function(feature, resolution){
+var style_2REGULAR_LINEM5_136 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -1708,6 +2086,34 @@ labelText = String("");
 }
 var style = [ new ol.style.Style({
 stroke: new ol.style.Stroke({color: 'rgba(255,159,127,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2.508}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+return style;
+};
+var size = 0;
+var placement = 'point';
+var style_2REGULAR_LINEM5_57 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("");
+var labelFont = "10px, sans-serif";
+var labelFill = "#000000";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'line';
+if ("" !== null) {
+labelText = String("");
+}
+var style = [ new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(255,159,127,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 3.268}),
 text: createTextStyle(feature, resolution, labelText, labelFont,
 labelFill, placement, bufferColor,
 bufferWidth)
@@ -1744,7 +2150,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_2REGULAR_LINEM6_106 = function(feature, resolution){
+var style_2REGULAR_LINEM6_112 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -1772,7 +2178,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_2REGULAR_LINEM6_54 = function(feature, resolution){
+var style_2REGULAR_LINEM6_135 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -1792,6 +2198,34 @@ labelText = String("");
 }
 var style = [ new ol.style.Style({
 stroke: new ol.style.Stroke({color: 'rgba(153,102,204,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2.508}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+return style;
+};
+var size = 0;
+var placement = 'point';
+var style_2REGULAR_LINEM6_56 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("");
+var labelFont = "10px, sans-serif";
+var labelFill = "#000000";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'line';
+if ("" !== null) {
+labelText = String("");
+}
+var style = [ new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(153,102,204,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 3.268}),
 text: createTextStyle(feature, resolution, labelText, labelFont,
 labelFill, placement, bufferColor,
 bufferWidth)
@@ -1828,7 +2262,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_2REGULAR_LINEM7_105 = function(feature, resolution){
+var style_2REGULAR_LINEM7_111 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -1856,7 +2290,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_2REGULAR_LINEM7_53 = function(feature, resolution){
+var style_2REGULAR_LINEM7_134 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -1876,6 +2310,34 @@ labelText = String("");
 }
 var style = [ new ol.style.Style({
 stroke: new ol.style.Stroke({color: 'rgba(102,204,204,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2.508}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+return style;
+};
+var size = 0;
+var placement = 'point';
+var style_2REGULAR_LINEM7_55 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("");
+var labelFont = "10px, sans-serif";
+var labelFill = "#000000";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'line';
+if ("" !== null) {
+labelText = String("");
+}
+var style = [ new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(0,0,255,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 3.268}),
 text: createTextStyle(feature, resolution, labelText, labelFont,
 labelFill, placement, bufferColor,
 bufferWidth)
@@ -1912,7 +2374,35 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_3LRTM12_49 = function(feature, resolution){
+var style_3LRTM12_51 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("");
+var labelFont = "10px, sans-serif";
+var labelFill = "#000000";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'line';
+if ("" !== null) {
+labelText = String("");
+}
+var style = [ new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(204,127,102,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 3.268}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+return style;
+};
+var size = 0;
+var placement = 'point';
+var style_3LRTM12_78 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -1940,7 +2430,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_3LRTM13_100 = function(feature, resolution){
+var style_3LRTM13_106 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -1968,7 +2458,35 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_3LRTM13_197 = function(feature, resolution){
+var style_3LRTM13_129 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("");
+var labelFont = "10px, sans-serif";
+var labelFill = "#000000";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'line';
+if ("" !== null) {
+labelText = String("");
+}
+var style = [ new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(153,76,114,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2.508}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+return style;
+};
+var size = 0;
+var placement = 'point';
+var style_3LRTM13_226 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -1996,7 +2514,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_3LRTM13_48 = function(feature, resolution){
+var style_3LRTM13_50 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -2015,7 +2533,7 @@ if ("" !== null) {
 labelText = String("");
 }
 var style = [ new ol.style.Style({
-stroke: new ol.style.Stroke({color: 'rgba(153,76,114,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2.508}),
+stroke: new ol.style.Stroke({color: 'rgba(153,76,114,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 3.268}),
 text: createTextStyle(feature, resolution, labelText, labelFont,
 labelFill, placement, bufferColor,
 bufferWidth)
@@ -2052,7 +2570,63 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_3LRTM15_195 = function(feature, resolution){
+var style_3LRTM15_105 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("");
+var labelFont = "10px, sans-serif";
+var labelFill = "#000000";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'line';
+if ("" !== null) {
+labelText = String("");
+}
+var style = [ new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(0,0,255,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2.508}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+return style;
+};
+var size = 0;
+var placement = 'point';
+var style_3LRTM15_128 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("");
+var labelFont = "10px, sans-serif";
+var labelFill = "#000000";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'line';
+if ("" !== null) {
+labelText = String("");
+}
+var style = [ new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(0,0,255,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2.508}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+return style;
+};
+var size = 0;
+var placement = 'point';
+var style_3LRTM15_224 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -2080,7 +2654,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_3LRTM15_47 = function(feature, resolution){
+var style_3LRTM15_49 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -2099,7 +2673,7 @@ if ("" !== null) {
 labelText = String("");
 }
 var style = [ new ol.style.Style({
-stroke: new ol.style.Stroke({color: 'rgba(0,0,255,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2.508}),
+stroke: new ol.style.Stroke({color: 'rgba(102,204,204,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 3.268}),
 text: createTextStyle(feature, resolution, labelText, labelFont,
 labelFill, placement, bufferColor,
 bufferWidth)
@@ -2136,7 +2710,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_3LRTM15_99 = function(feature, resolution){
+var style_3LRTM16_48 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -2155,7 +2729,7 @@ if ("" !== null) {
 labelText = String("");
 }
 var style = [ new ol.style.Style({
-stroke: new ol.style.Stroke({color: 'rgba(0,0,255,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2.508}),
+stroke: new ol.style.Stroke({color: 'rgba(127,223,255,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 3.268}),
 text: createTextStyle(feature, resolution, labelText, labelFont,
 labelFill, placement, bufferColor,
 bufferWidth)
@@ -2164,7 +2738,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_3LRTM17_46 = function(feature, resolution){
+var style_3LRTM17_104 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -2184,6 +2758,62 @@ labelText = String("");
 }
 var style = [ new ol.style.Style({
 stroke: new ol.style.Stroke({color: 'rgba(0,127,255,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2.508}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+return style;
+};
+var size = 0;
+var placement = 'point';
+var style_3LRTM17_127 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("");
+var labelFont = "10px, sans-serif";
+var labelFill = "#000000";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'line';
+if ("" !== null) {
+labelText = String("");
+}
+var style = [ new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(0,127,255,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2.508}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+return style;
+};
+var size = 0;
+var placement = 'point';
+var style_3LRTM17_47 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("");
+var labelFont = "10px, sans-serif";
+var labelFill = "#000000";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'line';
+if ("" !== null) {
+labelText = String("");
+}
+var style = [ new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(0,127,255,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 3.268}),
 text: createTextStyle(feature, resolution, labelText, labelFont,
 labelFill, placement, bufferColor,
 bufferWidth)
@@ -2220,7 +2850,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_3LRTM17_98 = function(feature, resolution){
+var style_3LRTM18_103 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -2239,7 +2869,7 @@ if ("" !== null) {
 labelText = String("");
 }
 var style = [ new ol.style.Style({
-stroke: new ol.style.Stroke({color: 'rgba(0,127,255,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2.508}),
+stroke: new ol.style.Stroke({color: 'rgba(127,223,255,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2.508}),
 text: createTextStyle(feature, resolution, labelText, labelFont,
 labelFill, placement, bufferColor,
 bufferWidth)
@@ -2248,7 +2878,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_3LRTM18_45 = function(feature, resolution){
+var style_3LRTM18_126 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -2304,35 +2934,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_3LRTM18_97 = function(feature, resolution){
-var context = {
-feature: feature,
-variables: {}
-};
-var labelText = "";
-var value = feature.get("");
-var labelFont = "10px, sans-serif";
-var labelFill = "#000000";
-var bufferColor = "";
-var bufferWidth = 0;
-var textAlign = "left";
-var offsetX = 0;
-var offsetY = 0;
-var placement = 'line';
-if ("" !== null) {
-labelText = String("");
-}
-var style = [ new ol.style.Style({
-stroke: new ol.style.Stroke({color: 'rgba(127,223,255,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2.508}),
-text: createTextStyle(feature, resolution, labelText, labelFont,
-labelFill, placement, bufferColor,
-bufferWidth)
-})];
-return style;
-};
-var size = 0;
-var placement = 'point';
-var style_3LRTM9_101 = function(feature, resolution){
+var style_3LRTM9_107 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -2360,7 +2962,35 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_3LRTM9_201 = function(feature, resolution){
+var style_3LRTM9_130 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("");
+var labelFont = "10px, sans-serif";
+var labelFill = "#000000";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'line';
+if ("" !== null) {
+labelText = String("");
+}
+var style = [ new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(255,127,255,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2.508}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+return style;
+};
+var size = 0;
+var placement = 'point';
+var style_3LRTM9_230 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -2388,7 +3018,35 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_3LRTM9_50 = function(feature, resolution){
+var style_3LRTM9_52 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("");
+var labelFont = "10px, sans-serif";
+var labelFill = "#000000";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'line';
+if ("" !== null) {
+labelText = String("");
+}
+var style = [ new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(255,127,255,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 3.268}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+return style;
+};
+var size = 0;
+var placement = 'point';
+var style_3LRTM9_79 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -2416,35 +3074,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_3LRTM9_78 = function(feature, resolution){
-var context = {
-feature: feature,
-variables: {}
-};
-var labelText = "";
-var value = feature.get("");
-var labelFont = "10px, sans-serif";
-var labelFill = "#000000";
-var bufferColor = "";
-var bufferWidth = 0;
-var textAlign = "left";
-var offsetX = 0;
-var offsetY = 0;
-var placement = 'line';
-if ("" !== null) {
-labelText = String("");
-}
-var style = [ new ol.style.Style({
-stroke: new ol.style.Stroke({color: 'rgba(255,127,255,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2.508}),
-text: createTextStyle(feature, resolution, labelText, labelFont,
-labelFill, placement, bufferColor,
-bufferWidth)
-})];
-return style;
-};
-var size = 0;
-var placement = 'point';
-var style_3LRTORBRTM13_228 = function(feature, resolution){
+var style_3LRTORBRTM13_257 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -2472,7 +3102,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_3LRTORBRTM17_227 = function(feature, resolution){
+var style_3LRTORBRTM17_256 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -2500,7 +3130,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_4BRTM12_198 = function(feature, resolution){
+var style_4BRTM12_227 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -2528,7 +3158,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_4BRTM17_193 = function(feature, resolution){
+var style_4BRTM17_222 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -2556,7 +3186,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_4BRTM18_192 = function(feature, resolution){
+var style_4BRTM18_221 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -2584,7 +3214,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_4NORMAL_STA_2_43 = function(feature, resolution){
+var style_4NORMAL_STA_102 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -2612,7 +3242,63 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_4NORMAL_STA_44 = function(feature, resolution){
+var style_4NORMAL_STA_125 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("");
+var labelFont = "10px, sans-serif";
+var labelFill = "#000000";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'line';
+if ("" !== null) {
+labelText = String("");
+}
+var style = [ new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(196,60,57,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 0.988}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+return style;
+};
+var size = 0;
+var placement = 'point';
+var style_4NORMAL_STA_2_72 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("");
+var labelFont = "10px, sans-serif";
+var labelFill = "#000000";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'line';
+if ("" !== null) {
+labelText = String("");
+}
+var style = [ new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(0,0,0,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 0.988}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+return style;
+};
+var size = 0;
+var placement = 'point';
+var style_4NORMAL_STA_43 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -2668,35 +3354,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_4NORMAL_STA_96 = function(feature, resolution){
-var context = {
-feature: feature,
-variables: {}
-};
-var labelText = "";
-var value = feature.get("");
-var labelFont = "10px, sans-serif";
-var labelFill = "#000000";
-var bufferColor = "";
-var bufferWidth = 0;
-var textAlign = "left";
-var offsetX = 0;
-var offsetY = 0;
-var placement = 'line';
-if ("" !== null) {
-labelText = String("");
-}
-var style = [ new ol.style.Style({
-stroke: new ol.style.Stroke({color: 'rgba(196,60,57,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 0.988}),
-text: createTextStyle(feature, resolution, labelText, labelFont,
-labelFill, placement, bufferColor,
-bufferWidth)
-})];
-return style;
-};
-var size = 0;
-var placement = 'point';
-function categories_4Railway_191(feature, value, size, resolution, labelText,
+function categories_4Railway_220(feature, value, size, resolution, labelText,
 labelFont, labelFill, bufferColor, bufferWidth,
 placement) {
 var valueStr = (value !== null && value !== undefined) ? value.toString() : 'default';
@@ -2721,7 +3379,7 @@ labelFill, placement, bufferColor,
 bufferWidth)
 })];
 break;}};
-var style_4Railway_191 = function(feature, resolution){
+var style_4Railway_220 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -2739,14 +3397,14 @@ var placement = 'line';
 if ("" !== null) {
 labelText = String("");
 }
-var style = categories_4Railway_191(feature, value, size, resolution, labelText,
+var style = categories_4Railway_220(feature, value, size, resolution, labelText,
 labelFont, labelFill, bufferColor,
 bufferWidth, placement);
 return style;
 };
 var size = 0;
 var placement = 'point';
-var style_4Railway_226 = function(feature, resolution){
+var style_4Railway_255 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -2766,6 +3424,62 @@ labelText = String("");
 }
 var style = [ new ol.style.Style({
 stroke: new ol.style.Stroke({color: 'rgba(255,0,0,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2.508}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+return style;
+};
+var size = 0;
+var placement = 'point';
+var style_4TRANSFER_STA_101 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("");
+var labelFont = "10px, sans-serif";
+var labelFill = "#000000";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'line';
+if ("" !== null) {
+labelText = String("");
+}
+var style = [ new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(0,0,0,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 0.988}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+return style;
+};
+var size = 0;
+var placement = 'point';
+var style_4TRANSFER_STA_124 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("");
+var labelFont = "10px, sans-serif";
+var labelFill = "#000000";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'line';
+if ("" !== null) {
+labelText = String("");
+}
+var style = [ new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(196,60,57,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 0.988}),
 text: createTextStyle(feature, resolution, labelText, labelFont,
 labelFill, placement, bufferColor,
 bufferWidth)
@@ -2802,7 +3516,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_4TRANSFER_STA_72 = function(feature, resolution){
+var style_4TRANSFER_STA_71 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -2830,7 +3544,35 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_4TRANSFER_STA_95 = function(feature, resolution){
+var style_6airport_100 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("");
+var labelFont = "10px, sans-serif";
+var labelFill = "#000000";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'line';
+if ("" !== null) {
+labelText = String("");
+}
+var style = [ new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(0,0,0,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 0.988}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+return style;
+};
+var size = 0;
+var placement = 'point';
+var style_6airport_123 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -2858,7 +3600,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_6airport_190 = function(feature, resolution){
+var style_6airport_219 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -2907,7 +3649,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_6airport_40 = function(feature, resolution){
+var style_6airport_69 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -2935,63 +3677,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_6airport_71 = function(feature, resolution){
-var context = {
-feature: feature,
-variables: {}
-};
-var labelText = "";
-var value = feature.get("");
-var labelFont = "10px, sans-serif";
-var labelFill = "#000000";
-var bufferColor = "";
-var bufferWidth = 0;
-var textAlign = "left";
-var offsetX = 0;
-var offsetY = 0;
-var placement = 'line';
-if ("" !== null) {
-labelText = String("");
-}
-var style = [ new ol.style.Style({
-stroke: new ol.style.Stroke({color: 'rgba(0,0,0,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 0.988}),
-text: createTextStyle(feature, resolution, labelText, labelFont,
-labelFill, placement, bufferColor,
-bufferWidth)
-})];
-return style;
-};
-var size = 0;
-var placement = 'point';
-var style_6airport_94 = function(feature, resolution){
-var context = {
-feature: feature,
-variables: {}
-};
-var labelText = "";
-var value = feature.get("");
-var labelFont = "10px, sans-serif";
-var labelFill = "#000000";
-var bufferColor = "";
-var bufferWidth = 0;
-var textAlign = "left";
-var offsetX = 0;
-var offsetY = 0;
-var placement = 'line';
-if ("" !== null) {
-labelText = String("");
-}
-var style = [ new ol.style.Style({
-stroke: new ol.style.Stroke({color: 'rgba(196,60,57,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 0.988}),
-text: createTextStyle(feature, resolution, labelText, labelFont,
-labelFill, placement, bufferColor,
-bufferWidth)
-})];
-return style;
-};
-var size = 0;
-var placement = 'point';
-var style_7railwaystation2secondary_189 = function(feature, resolution){
+var style_7railwaystation2secondary_218 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -3026,7 +3712,35 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_Depot_261 = function(feature, resolution){
+var style_Dduongsattocdocao_45 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("");
+var labelFont = "10px, sans-serif";
+var labelFill = "#000000";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'line';
+if ("" !== null) {
+labelText = String("");
+}
+var style = [ new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(0,0,255,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 3.268}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+return style;
+};
+var size = 0;
+var placement = 'point';
+var style_Depot_293 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -3061,7 +3775,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_DSDT10_215 = function(feature, resolution){
+var style_DSDT10_244 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -3089,7 +3803,35 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_DSDT10_41 = function(feature, resolution){
+var style_DSDT10_46 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("");
+var labelFont = "10px, sans-serif";
+var labelFill = "#000000";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'line';
+if ("" !== null) {
+labelText = String("");
+}
+var style = [ new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(204,0,102,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 3.268}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+return style;
+};
+var size = 0;
+var placement = 'point';
+var style_DSDT10_70 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -3117,7 +3859,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_DSDT15_214 = function(feature, resolution){
+var style_DSDT15_243 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -3145,7 +3887,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_DSDT16_213 = function(feature, resolution){
+var style_DSDT16_242 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -3173,7 +3915,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_DSDT1_225 = function(feature, resolution){
+var style_DSDT1_254 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -3201,7 +3943,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_DSDT2A_223 = function(feature, resolution){
+var style_DSDT2A_252 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -3229,7 +3971,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_DSDT2_224 = function(feature, resolution){
+var style_DSDT2_253 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -3257,7 +3999,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_DSDT3_222 = function(feature, resolution){
+var style_DSDT3_251 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -3285,7 +4027,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_DSDT4_221 = function(feature, resolution){
+var style_DSDT4_250 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -3313,7 +4055,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_DSDT5_220 = function(feature, resolution){
+var style_DSDT5_249 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -3341,7 +4083,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_DSDT6_219 = function(feature, resolution){
+var style_DSDT6_248 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -3369,7 +4111,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_DSDT7_218 = function(feature, resolution){
+var style_DSDT7_247 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -3397,7 +4139,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_DSDT8_217 = function(feature, resolution){
+var style_DSDT8_246 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -3425,7 +4167,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_DSDT9_216 = function(feature, resolution){
+var style_DSDT9_245 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -3761,7 +4503,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_Ga_158 = function(feature, resolution){
+var style_DSQG_291 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -3775,9 +4517,111 @@ var bufferWidth = 0;
 var textAlign = "left";
 var offsetX = 0;
 var offsetY = 0;
-var placement = 'point';
+var placement = 'line';
 if ("" !== null) {
 labelText = String("");
+}
+var style = [ new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(0,0,0,1.0)', lineDash: [16.112,8.056], lineCap: 'square', lineJoin: 'bevel', width: 4.028}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+return style;
+};
+var size = 0;
+var placement = 'point';
+var style_Duongsatvung_292 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("");
+var labelFont = "10px, sans-serif";
+var labelFill = "#000000";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'line';
+if ("" !== null) {
+labelText = String("");
+}
+var style = [ new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(0,0,0,1.0)', lineDash: [16.112,8.056], lineCap: 'square', lineJoin: 'bevel', width: 4.028}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+return style;
+};
+var size = 0;
+var placement = 'point';
+var style_Ga_187 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var labelFont = "10px, sans-serif";
+var labelFill = "#000000";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "center";
+var offsetX = 15;
+var offsetY = 10;
+var feature
+var value
+var clusteredFeatures = feature.get("features");
+size = clusteredFeatures.length;
+if (size == 1) { // If cluster has one feature
+var feature = clusteredFeatures[0];
+value = clusteredFeatures[0].get("");
+if ("" !== null) {
+labelText = String("");
+}
+} else { // If cluster has more than one feature
+labelText = size.toString();
+var radius = 6 + Math.log(size) * 3;
+var maxClusterSize = 80;
+var relativeSize = Math.min(size / maxClusterSize, 1);
+var redComponent, greenComponent, blueComponent = 0;
+if (relativeSize < 0.5) {
+redComponent = Math.floor(210 * (relativeSize / 0.5));
+greenComponent = 210;
+} else {
+redComponent = 210;
+greenComponent = Math.floor(210 * (1 - (relativeSize - 0.5) / 0.5));
+}
+var color = `rgba(${redComponent}, ${greenComponent}, ${blueComponent}, 0.75)`;
+return [
+new ol.style.Style({
+image: new ol.style.Circle({
+radius: radius + 4,
+fill: new ol.style.Fill({
+color: `rgba(${redComponent}, ${greenComponent}, ${blueComponent}, 0.3)`
+})
+})
+}),
+new ol.style.Style({
+image: new ol.style.Circle({
+radius: radius,
+fill: new ol.style.Fill({
+color: color
+})
+}),
+text: new ol.style.Text({
+font: labelFont,
+text: labelText,
+fill: new ol.style.Fill({
+color: labelFill
+}),
+placement: placement
+})
+})
+];
 }
 var style = [ new ol.style.Style({
 image: new ol.style.Circle({radius: 6.0 + size,
@@ -3797,7 +4641,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-function categories_Ga_211(feature, value, size, resolution, labelText,
+function categories_Ga_240(feature, value, size, resolution, labelText,
 labelFont, labelFill, bufferColor, bufferWidth,
 placement) {
 var valueStr = (value !== null && value !== undefined) ? value.toString() : 'default';
@@ -3863,7 +4707,7 @@ labelFill, placement, bufferColor,
 bufferWidth)
 })];
 break;}};
-var style_Ga_211 = function(feature, resolution){
+var style_Ga_240 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -3881,14 +4725,14 @@ var placement = 'point';
 if ("" !== null) {
 labelText = String("");
 }
-var style = categories_Ga_211(feature, value, size, resolution, labelText,
+var style = categories_Ga_240(feature, value, size, resolution, labelText,
 labelFont, labelFill, bufferColor,
 bufferWidth, placement);
 return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_02interCity_119 = function(feature, resolution){
+var style_layer_02interCity_148 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -3916,7 +4760,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_02interCity_165 = function(feature, resolution){
+var style_layer_02interCity_194 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -3944,7 +4788,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_4BRTM18_120 = function(feature, resolution){
+var style_layer_4BRTM18_149 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -3972,7 +4816,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_4BRTM18_167 = function(feature, resolution){
+var style_layer_4BRTM18_196 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -4000,7 +4844,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_4Railway_118 = function(feature, resolution){
+var style_layer_4Railway_147 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -4028,7 +4872,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_4Railway_162 = function(feature, resolution){
+var style_layer_4Railway_191 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -4056,7 +4900,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_Layer_CcTuynmi_280 = function(feature, resolution){
+var style_Layer_CcTuynmi_312 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -4089,7 +4933,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DCaotoc_159 = function(feature, resolution){
+var style_layer_DCaotoc_188 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -4117,7 +4961,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_Dduongsattocdocao_164 = function(feature, resolution){
+var style_layer_Dduongsattocdocao_193 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -4145,7 +4989,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DPcCaotoc_160 = function(feature, resolution){
+var style_layer_DPcCaotoc_189 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -4173,7 +5017,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DSDT10_130 = function(feature, resolution){
+var style_layer_DSDT10_159 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -4201,7 +5045,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DSDT10_174 = function(feature, resolution){
+var style_layer_DSDT10_203 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -4229,7 +5073,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DSDT12_128 = function(feature, resolution){
+var style_layer_DSDT12_157 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -4257,7 +5101,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DSDT12_172 = function(feature, resolution){
+var style_layer_DSDT12_201 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -4285,7 +5129,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DSDT14_125 = function(feature, resolution){
+var style_layer_DSDT14_154 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -4313,7 +5157,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DSDT1_140 = function(feature, resolution){
+var style_layer_DSDT1_169 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -4341,7 +5185,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DSDT1_184 = function(feature, resolution){
+var style_layer_DSDT1_213 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -4369,7 +5213,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DSDT2A_138 = function(feature, resolution){
+var style_layer_DSDT2A_167 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -4397,7 +5241,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DSDT2A_182 = function(feature, resolution){
+var style_layer_DSDT2A_211 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -4425,7 +5269,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DSDT2_139 = function(feature, resolution){
+var style_layer_DSDT2_168 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -4453,7 +5297,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DSDT2_183 = function(feature, resolution){
+var style_layer_DSDT2_212 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -4481,7 +5325,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DSDT3_137 = function(feature, resolution){
+var style_layer_DSDT3_166 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -4509,7 +5353,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DSDT3_181 = function(feature, resolution){
+var style_layer_DSDT3_210 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -4537,7 +5381,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DSDT4_136 = function(feature, resolution){
+var style_layer_DSDT4_165 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -4565,7 +5409,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DSDT4_180 = function(feature, resolution){
+var style_layer_DSDT4_209 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -4593,7 +5437,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DSDT5_135 = function(feature, resolution){
+var style_layer_DSDT5_164 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -4621,7 +5465,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DSDT5_179 = function(feature, resolution){
+var style_layer_DSDT5_208 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -4649,7 +5493,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DSDT6_134 = function(feature, resolution){
+var style_layer_DSDT6_163 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -4677,7 +5521,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DSDT6_178 = function(feature, resolution){
+var style_layer_DSDT6_207 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -4705,7 +5549,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DSDT7_133 = function(feature, resolution){
+var style_layer_DSDT7_162 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -4733,7 +5577,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DSDT7_177 = function(feature, resolution){
+var style_layer_DSDT7_206 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -4761,7 +5605,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DSDT8_176 = function(feature, resolution){
+var style_layer_DSDT8_205 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -4789,7 +5633,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DSDT9_131 = function(feature, resolution){
+var style_layer_DSDT9_160 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -4817,7 +5661,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DSDT9_175 = function(feature, resolution){
+var style_layer_DSDT9_204 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -4845,7 +5689,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DSDT_11_129 = function(feature, resolution){
+var style_layer_DSDT_11_158 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -4873,7 +5717,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DSDT_11_173 = function(feature, resolution){
+var style_layer_DSDT_11_202 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -4901,7 +5745,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DSDT_13_127 = function(feature, resolution){
+var style_layer_DSDT_13_156 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -4929,7 +5773,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DSDT_13_171 = function(feature, resolution){
+var style_layer_DSDT_13_200 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -4957,7 +5801,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DSDT_14_PA2_124 = function(feature, resolution){
+var style_layer_DSDT_14_PA2_153 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -4985,7 +5829,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DSDT_15_123 = function(feature, resolution){
+var style_layer_DSDT_15_152 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -5013,7 +5857,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DSDT_15_170 = function(feature, resolution){
+var style_layer_DSDT_15_199 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -5041,7 +5885,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DSDT_16_122 = function(feature, resolution){
+var style_layer_DSDT_16_151 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -5069,7 +5913,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DSDT_16_169 = function(feature, resolution){
+var style_layer_DSDT_16_198 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -5097,7 +5941,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DSDT_17_121 = function(feature, resolution){
+var style_layer_DSDT_17_150 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -5125,7 +5969,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DSDT_17_168 = function(feature, resolution){
+var style_layer_DSDT_17_197 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -5153,7 +5997,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_DSDT_8_132 = function(feature, resolution){
+var style_layer_DSDT_8_161 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -5181,7 +6025,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_ketnoidsdt_161 = function(feature, resolution){
+var style_layer_ketnoidsdt_190 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -5209,7 +6053,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_M01_157 = function(feature, resolution){
+var style_layer_M01_186 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -5237,7 +6081,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_M02A_155 = function(feature, resolution){
+var style_layer_M02A_184 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -5265,7 +6109,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_M02_156 = function(feature, resolution){
+var style_layer_M02_185 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -5293,7 +6137,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_M03_154 = function(feature, resolution){
+var style_layer_M03_183 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -5321,7 +6165,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_M04_153 = function(feature, resolution){
+var style_layer_M04_182 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -5349,7 +6193,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_M05_152 = function(feature, resolution){
+var style_layer_M05_181 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -5377,7 +6221,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_M06_151 = function(feature, resolution){
+var style_layer_M06_180 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -5405,7 +6249,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_M07_150 = function(feature, resolution){
+var style_layer_M07_179 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -5433,7 +6277,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_M08_149 = function(feature, resolution){
+var style_layer_M08_178 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -5461,7 +6305,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_M09_148 = function(feature, resolution){
+var style_layer_M09_177 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -5489,7 +6333,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_M10_147 = function(feature, resolution){
+var style_layer_M10_176 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -5517,7 +6361,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_M11_146 = function(feature, resolution){
+var style_layer_M11_175 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -5545,7 +6389,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_M12_145 = function(feature, resolution){
+var style_layer_M12_174 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -5573,7 +6417,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_M13_144 = function(feature, resolution){
+var style_layer_M13_173 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -5601,7 +6445,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_M14_143 = function(feature, resolution){
+var style_layer_M14_172 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -5629,7 +6473,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_M15_142 = function(feature, resolution){
+var style_layer_M15_171 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -5657,7 +6501,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_M16_141 = function(feature, resolution){
+var style_layer_M16_170 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -5685,7 +6529,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_Monorail_166 = function(feature, resolution){
+var style_layer_Monorail_195 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -5713,7 +6557,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_SQG_Thng2050_163 = function(feature, resolution){
+var style_layer_SQG_Thng2050_192 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -5741,7 +6585,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_transfer_sta_117 = function(feature, resolution){
+var style_layer_transfer_sta_146 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -5769,7 +6613,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_Layer_Tuyn10_283 = function(feature, resolution){
+var style_Layer_Tuyn10_315 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -5797,7 +6641,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_Layer_Tuyn11_282 = function(feature, resolution){
+var style_Layer_Tuyn11_314 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -5825,7 +6669,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_Layer_Tuyn12_281 = function(feature, resolution){
+var style_Layer_Tuyn12_313 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -5853,7 +6697,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_Layer_Tuyn1_293 = function(feature, resolution){
+var style_Layer_Tuyn1_325 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -5881,7 +6725,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_Layer_Tuyn2A_291 = function(feature, resolution){
+var style_Layer_Tuyn2A_323 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -5909,7 +6753,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_Layer_Tuyn2_292 = function(feature, resolution){
+var style_Layer_Tuyn2_324 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -5937,7 +6781,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_Layer_Tuyn3_290 = function(feature, resolution){
+var style_Layer_Tuyn3_322 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -5965,7 +6809,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_Layer_Tuyn4_289 = function(feature, resolution){
+var style_Layer_Tuyn4_321 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -5993,7 +6837,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_Layer_Tuyn5_288 = function(feature, resolution){
+var style_Layer_Tuyn5_320 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -6021,7 +6865,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_Layer_Tuyn6_287 = function(feature, resolution){
+var style_Layer_Tuyn6_319 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -6049,7 +6893,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_Layer_Tuyn7_286 = function(feature, resolution){
+var style_Layer_Tuyn7_318 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -6077,7 +6921,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_Layer_Tuyn8_285 = function(feature, resolution){
+var style_Layer_Tuyn8_317 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -6105,7 +6949,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_Layer_Tuyn9_284 = function(feature, resolution){
+var style_Layer_Tuyn9_316 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -6133,7 +6977,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_layer_vin_13_126 = function(feature, resolution){
+var style_layer_vin_13_155 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -6161,7 +7005,33 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_linename_64 = function(feature, resolution){
+var style_linename_68 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("''");
+var labelFont = "13.0px \'Open Sans\', sans-serif";
+var labelFill = "#cc0066";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'point';
+if (feature.get("text") !== null) {
+labelText = String(feature.get("text"));
+}
+var style = [ new ol.style.Style({
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor, bufferWidth)
+})];;
+return style;
+};
+var size = 0;
+var placement = 'point';
+var style_linename_93 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -6189,7 +7059,35 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_Monorail_212 = function(feature, resolution){
+var style_linename_hatch_67 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("");
+var labelFont = "10px, sans-serif";
+var labelFill = "#000000";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'point';
+if ("" !== null) {
+labelText = String("");
+}
+var style = [ new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(0,0,0,1.0)', lineDash: [0.76,0.38], lineCap: 'butt', lineJoin: 'miter', width: 0.38}),fill: new ol.style.Fill({color: 'rgba(255,232,208,1.0)'}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+return style;
+};
+var size = 0;
+var placement = 'point';
+var style_Monorail_241 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -6217,7 +7115,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_nearbyProvince_185 = function(feature, resolution){
+var style_nearbyProvince_214 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -6245,7 +7143,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_NULL_66 = function(feature, resolution){
+var style_NULL_95 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -6274,7 +7172,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_PLine_10_269 = function(feature, resolution){
+var style_PLine_10_301 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -6302,7 +7200,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_PLine_11_268 = function(feature, resolution){
+var style_PLine_11_300 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -6330,7 +7228,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_PLine_12_267 = function(feature, resolution){
+var style_PLine_12_299 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -6358,7 +7256,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_PLine_13_266 = function(feature, resolution){
+var style_PLine_13_298 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -6386,7 +7284,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_PLine_14_265 = function(feature, resolution){
+var style_PLine_14_297 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -6414,7 +7312,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_PLine_15_264 = function(feature, resolution){
+var style_PLine_15_296 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -6442,7 +7340,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_PLine_16_263 = function(feature, resolution){
+var style_PLine_16_295 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -6470,7 +7368,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_PLine_17_262 = function(feature, resolution){
+var style_PLine_17_294 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -6498,7 +7396,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_PLine_1_279 = function(feature, resolution){
+var style_PLine_1_311 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -6526,7 +7424,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_PLine_2A_277 = function(feature, resolution){
+var style_PLine_2A_309 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -6554,7 +7452,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_PLine_2_278 = function(feature, resolution){
+var style_PLine_2_310 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -6582,7 +7480,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_PLine_3_276 = function(feature, resolution){
+var style_PLine_3_308 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -6610,7 +7508,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_PLine_4_275 = function(feature, resolution){
+var style_PLine_4_307 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -6638,7 +7536,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_PLine_5_274 = function(feature, resolution){
+var style_PLine_5_306 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -6666,7 +7564,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_PLine_6_273 = function(feature, resolution){
+var style_PLine_6_305 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -6694,7 +7592,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_PLine_7_272 = function(feature, resolution){
+var style_PLine_7_304 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -6722,7 +7620,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_PLine_8_271 = function(feature, resolution){
+var style_PLine_8_303 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -6750,7 +7648,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_PLine_9_270 = function(feature, resolution){
+var style_PLine_9_302 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -6778,7 +7676,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_QH100DSDT10_238 = function(feature, resolution){
+var style_QH100DSDT10_267 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -6806,7 +7704,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_QH100DSDT11_237 = function(feature, resolution){
+var style_QH100DSDT11_266 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -6834,7 +7732,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_QH100DSDT12_236 = function(feature, resolution){
+var style_QH100DSDT12_265 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -6862,7 +7760,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_QH100DSDT15_235 = function(feature, resolution){
+var style_QH100DSDT15_264 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -6890,7 +7788,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_QH100DSDT16_234 = function(feature, resolution){
+var style_QH100DSDT16_263 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -6918,7 +7816,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_QH100DSDT17_233 = function(feature, resolution){
+var style_QH100DSDT17_262 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -6946,7 +7844,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_QH100DSDT1_248 = function(feature, resolution){
+var style_QH100DSDT1_277 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -6974,7 +7872,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_QH100DSDT2A_246 = function(feature, resolution){
+var style_QH100DSDT2A_275 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -7002,7 +7900,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_QH100DSDT2_247 = function(feature, resolution){
+var style_QH100DSDT2_276 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -7030,7 +7928,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_QH100DSDT3_245 = function(feature, resolution){
+var style_QH100DSDT3_274 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -7058,7 +7956,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_QH100DSDT4_244 = function(feature, resolution){
+var style_QH100DSDT4_273 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -7086,7 +7984,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_QH100DSDT5_243 = function(feature, resolution){
+var style_QH100DSDT5_272 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -7114,7 +8012,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_QH100DSDT6_242 = function(feature, resolution){
+var style_QH100DSDT6_271 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -7142,7 +8040,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_QH100DSDT7_241 = function(feature, resolution){
+var style_QH100DSDT7_270 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -7170,7 +8068,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_QH100DSDT8_240 = function(feature, resolution){
+var style_QH100DSDT8_269 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -7198,7 +8096,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_QH100DSDT9_239 = function(feature, resolution){
+var style_QH100DSDT9_268 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -7226,7 +8124,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_QH100dsDT_232 = function(feature, resolution){
+var style_QH100dsDT_261 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -7254,7 +8152,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_QH100Ga_230 = function(feature, resolution){
+var style_QH100Ga_259 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -7289,7 +8187,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_QH100Monorail_231 = function(feature, resolution){
+var style_QH100Monorail_260 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -7317,7 +8215,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_QH100Tuyen14_250 = function(feature, resolution){
+var style_QH100Tuyen14_279 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -7345,7 +8243,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_QH100Tuyen16_249 = function(feature, resolution){
+var style_QH100Tuyen16_278 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -7373,7 +8271,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_QH100Tuyen1_260 = function(feature, resolution){
+var style_QH100Tuyen1_289 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -7401,7 +8299,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_QH100Tuyen2A_258 = function(feature, resolution){
+var style_QH100Tuyen2A_287 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -7429,7 +8327,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_QH100Tuyen2_259 = function(feature, resolution){
+var style_QH100Tuyen2_288 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -7457,7 +8355,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_QH100Tuyen3_257 = function(feature, resolution){
+var style_QH100Tuyen3_286 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -7485,7 +8383,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_QH100Tuyen4_256 = function(feature, resolution){
+var style_QH100Tuyen4_285 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -7513,7 +8411,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_QH100Tuyen5_255 = function(feature, resolution){
+var style_QH100Tuyen5_284 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -7541,7 +8439,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_QH100Tuyen6_254 = function(feature, resolution){
+var style_QH100Tuyen6_283 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -7569,7 +8467,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_QH100Tuyen7_253 = function(feature, resolution){
+var style_QH100Tuyen7_282 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -7597,7 +8495,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_QH100Tuyen8_252 = function(feature, resolution){
+var style_QH100Tuyen8_281 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -7625,7 +8523,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_QH100Tuyen9_251 = function(feature, resolution){
+var style_QH100Tuyen9_280 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -7653,7 +8551,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_QH519Depot_308 = function(feature, resolution){
+var style_QH519Depot_340 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -7694,7 +8592,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-function categories_QH519Ga_309(feature, value, size, resolution, labelText,
+function categories_QH519Ga_341(feature, value, size, resolution, labelText,
 labelFont, labelFill, bufferColor, bufferWidth,
 placement) {
 var valueStr = (value !== null && value !== undefined) ? value.toString() : 'default';
@@ -7833,32 +8731,78 @@ labelFill, placement, bufferColor,
 bufferWidth)
 })];
 break;}};
-var style_QH519Ga_309 = function(feature, resolution){
+var style_QH519Ga_341 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
 };
 var labelText = "";
-var value = feature.get("tuyen");
 var labelFont = "13.0px \'Open Sans\', sans-serif";
 var labelFill = "#323232";
 var bufferColor = "";
 var bufferWidth = 0;
-var textAlign = "left";
-var offsetX = 0;
-var offsetY = 0;
-var placement = 'point';
+var textAlign = "center";
+var offsetX = 15;
+var offsetY = 10;
+var feature
+var value
+var clusteredFeatures = feature.get("features");
+size = clusteredFeatures.length;
+if (size == 1) { // If cluster has one feature
+var feature = clusteredFeatures[0];
+value = clusteredFeatures[0].get("tuyen");
 if ("" !== null) {
 labelText = String("");
 }
-var style = categories_QH519Ga_309(feature, value, size, resolution, labelText,
+} else { // If cluster has more than one feature
+labelText = size.toString();
+var radius = 6 + Math.log(size) * 3;
+var maxClusterSize = 80;
+var relativeSize = Math.min(size / maxClusterSize, 1);
+var redComponent, greenComponent, blueComponent = 0;
+if (relativeSize < 0.5) {
+redComponent = Math.floor(210 * (relativeSize / 0.5));
+greenComponent = 210;
+} else {
+redComponent = 210;
+greenComponent = Math.floor(210 * (1 - (relativeSize - 0.5) / 0.5));
+}
+var color = `rgba(${redComponent}, ${greenComponent}, ${blueComponent}, 0.75)`;
+return [
+new ol.style.Style({
+image: new ol.style.Circle({
+radius: radius + 4,
+fill: new ol.style.Fill({
+color: `rgba(${redComponent}, ${greenComponent}, ${blueComponent}, 0.3)`
+})
+})
+}),
+new ol.style.Style({
+image: new ol.style.Circle({
+radius: radius,
+fill: new ol.style.Fill({
+color: color
+})
+}),
+text: new ol.style.Text({
+font: labelFont,
+text: labelText,
+fill: new ol.style.Fill({
+color: labelFill
+}),
+placement: placement
+})
+})
+];
+}
+var style = categories_QH519Ga_341(feature, value, size, resolution, labelText,
 labelFont, labelFill, bufferColor,
 bufferWidth, placement);
 return style;
 };
 var size = 0;
 var placement = 'point';
-var style_sb_67 = function(feature, resolution){
+var style_sb_96 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -13533,7 +14477,40 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_T10_296 = function(feature, resolution){
+var style_SQG_Thng2050_44 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("");
+var labelFont = "10px, sans-serif";
+var labelFill = "#000000";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'line';
+if ("" !== null) {
+labelText = String("");
+}
+var style = [ new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(255,0,255,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 3.268}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+}),new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(255,255,255,1.0)', lineDash: [3.952,1.976], lineCap: 'square', lineJoin: 'bevel', width: 0.988}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+return style;
+};
+var size = 0;
+var placement = 'point';
+var style_T10_328 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -13561,7 +14538,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_T11_295 = function(feature, resolution){
+var style_T11_327 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -13589,7 +14566,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_T12_294 = function(feature, resolution){
+var style_T12_326 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -13617,7 +14594,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_T1A_306 = function(feature, resolution){
+var style_T1A_338 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -13645,7 +14622,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_T1_307 = function(feature, resolution){
+var style_T1_339 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -13673,7 +14650,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_T2A_304 = function(feature, resolution){
+var style_T2A_336 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -13701,7 +14678,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_T2_305 = function(feature, resolution){
+var style_T2_337 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -13729,7 +14706,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_T3_303 = function(feature, resolution){
+var style_T3_335 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -13757,7 +14734,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_T4_302 = function(feature, resolution){
+var style_T4_334 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -13785,7 +14762,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_T5_301 = function(feature, resolution){
+var style_T5_333 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -13813,7 +14790,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_T6_300 = function(feature, resolution){
+var style_T6_332 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -13841,7 +14818,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_T7_299 = function(feature, resolution){
+var style_T7_331 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -13869,7 +14846,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_T8_298 = function(feature, resolution){
+var style_T8_330 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -13897,7 +14874,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_T9_297 = function(feature, resolution){
+var style_T9_329 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -13925,7 +14902,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_tuyen_1_322 = function(feature, resolution){
+var style_tuyen_1_354 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -13953,7 +14930,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_tuyen_2A_320 = function(feature, resolution){
+var style_tuyen_2A_352 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -13981,7 +14958,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_tuyen_2_321 = function(feature, resolution){
+var style_tuyen_2_353 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -14009,7 +14986,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_tuyen_3_319 = function(feature, resolution){
+var style_tuyen_3_351 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -14037,7 +15014,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_tuyen_4_318 = function(feature, resolution){
+var style_tuyen_4_350 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -14065,7 +15042,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_tuyen_5_317 = function(feature, resolution){
+var style_tuyen_5_349 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -14093,7 +15070,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_tuyen_6_316 = function(feature, resolution){
+var style_tuyen_6_348 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -14121,7 +15098,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_tuyen_7_315 = function(feature, resolution){
+var style_tuyen_7_347 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -14149,7 +15126,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_tuyen_8_314 = function(feature, resolution){
+var style_tuyen_8_346 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -14177,7 +15154,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_tuyen_M1_312 = function(feature, resolution){
+var style_tuyen_M1_344 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -14205,7 +15182,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_tuyen_M2_311 = function(feature, resolution){
+var style_tuyen_M2_343 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -14233,7 +15210,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_tuyen_M3_310 = function(feature, resolution){
+var style_tuyen_M3_342 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -14261,7 +15238,7 @@ return style;
 };
 var size = 0;
 var placement = 'point';
-var style_tuyen_VT_313 = function(feature, resolution){
+var style_tuyen_VT_345 = function(feature, resolution){
 var context = {
 feature: feature,
 variables: {}
@@ -14281,6 +15258,34 @@ labelText = String("");
 }
 var style = [ new ol.style.Style({
 stroke: new ol.style.Stroke({color: 'rgba(83,83,83,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 3.8}),
+text: createTextStyle(feature, resolution, labelText, labelFont,
+labelFill, placement, bufferColor,
+bufferWidth)
+})];
+return style;
+};
+var size = 0;
+var placement = 'point';
+var style_WebBoAll_290 = function(feature, resolution){
+var context = {
+feature: feature,
+variables: {}
+};
+var labelText = "";
+var value = feature.get("");
+var labelFont = "10px, sans-serif";
+var labelFill = "#000000";
+var bufferColor = "";
+var bufferWidth = 0;
+var textAlign = "left";
+var offsetX = 0;
+var offsetY = 0;
+var placement = 'line';
+if ("" !== null) {
+labelText = String("");
+}
+var style = [ new ol.style.Style({
+stroke: new ol.style.Stroke({color: 'rgba(83,83,83,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 0.988}),
 text: createTextStyle(feature, resolution, labelText, labelFont,
 labelFill, placement, bufferColor,
 bufferWidth)
